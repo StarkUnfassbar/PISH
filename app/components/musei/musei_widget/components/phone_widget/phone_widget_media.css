@@ -46,8 +46,13 @@
 }
 
 @media only screen and (max-width : 500px){
+	.block_phone .block_tip{
+		width: calc(100% - 40px);
+	}
+
 	.block_phone .block_tip p{
 		font-size: 10px;
+		text-align: left;
 	}
 
 	.block_phone .block_controls{
