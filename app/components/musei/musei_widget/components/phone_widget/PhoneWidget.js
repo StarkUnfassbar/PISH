@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -11,10 +11,23 @@ import './phone_widget_media.css';
 
 import slide1 from './img/slide1.png';
 
+import ExhibitInDev from '../exhibit_in_dev/ExhibitInDev';
+
 
 
 export default function PhoneWidget() {
 	const swiperRef = useRef(null);
+
+	const [exhibitInDevOpen, setExhibitInDevOpen] = useState(false);
+
+	const handleExhibitInDevOpen = (exhibitInDev) => {
+		console.log(1)
+		if(exhibitInDev){
+			setExhibitInDevOpen(true);
+		} else{
+			setExhibitInDevOpen(false);
+		}
+	};
 
 	return (
 		<div className="block_phone">
@@ -43,7 +56,7 @@ export default function PhoneWidget() {
 
 			<div className="block_exhibits">
 				<div className="block_exhibit">
-					<button></button>
+					<button onClick={() => handleExhibitInDevOpen(true)}></button>
 				</div>
 			</div>
 
@@ -65,6 +78,9 @@ export default function PhoneWidget() {
 					</svg>
 				</button>
 			</div>
+
+
+			<ExhibitInDev exhibitInDevOpen={exhibitInDevOpen} handleExhibitInDevOpen={handleExhibitInDevOpen} />
 		</div>
 	);
 }
