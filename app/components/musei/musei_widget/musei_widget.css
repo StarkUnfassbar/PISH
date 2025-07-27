@@ -1,0 +1,107 @@
+.musei_widget {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.musei_widget .window{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+
+	transition: all 1s ease;
+}
+
+.musei_widget .window._hidden{
+	opacity: 0;
+}
+
+.musei_widget .window._open{
+	z-index: 15;
+	pointer-events: none;
+}
+
+
+
+.musei_widget .window video {
+	width: 2000px;
+	height: 1100px;
+	min-height: 1100px;
+	position: absolute;
+	top: -150px;
+	left: 0;
+	z-index: -1;
+	object-fit: cover;
+}
+
+
+
+.musei_widget .window .block_buttons_transition{
+	display: flex;
+	gap: 20px;
+	align-items: end;
+	width: 550px;
+	height: 90px;
+	padding: 20px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.musei_widget .window .block_buttons_transition button{
+	width: fit-content;
+	height: fit-content;
+	font-size: 18px;
+	font-family: "Grandis";
+	font-weight: 400;
+	text-align: center;
+	padding: 10px 20px;
+	background: linear-gradient(135deg, rgb(0, 0, 0, .8) 0%, rgba(8, 8, 8, .8) 60%, rgba(102, 102, 102, .8) 100%);
+	border: 2px solid rgb(0, 0, 0, 1);
+	border-radius: 30px;
+	cursor: pointer;
+	user-select: none;
+
+	transition: all .2s ease;
+}
+
+.musei_widget .window .block_buttons_transition button:hover{
+	border: 2px solid rgb(0, 0, 0, 0);
+}
+
+.musei_widget .window .block_buttons_transition button:active{
+	transform: scale(.9);
+}
+
+
+.musei_widget .window .block_tip{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	background: linear-gradient(135deg, rgb(0, 0, 0, .8) 0%, rgba(8, 8, 8, .8) 60%, rgba(102, 102, 102, .8) 100%);
+	border: 2px solid #000;
+	border-radius: 10px;
+	padding: 15px 20px;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	pointer-events: none;
+}
+
+.musei_widget .window .block_tip p{
+	font-size: 18px;
+	font-family: "Grandis";
+	font-weight: 400;
+	text-align: center;
+}

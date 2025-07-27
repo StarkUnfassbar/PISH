@@ -1,0 +1,20 @@
+.widget{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	
+	transition: transform 1s ease, box-shadow .3s ease;
+}
+
+.widget:hover{
+ 	box-shadow: 0 0 50px 10px rgba(71, 154, 193, 0.7);
+}
+
+.widget._mini{
+	transform: scale(.8);
+	cursor: pointer;
+}

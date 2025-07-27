@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Grandis';
+  src: url('/fonts/Grandis/Grandis-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Grandis';
+  src: url('/fonts/Grandis/Grandis-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+
+
+:root{
+	--text-color: #fff;
+	--bg-color: #100E1B;
+}
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+button{
+	all: unset;
+}
+
+
+body{
+	height: 100%;
+	color: var(--text-color);
+	font-family: var(--font-inter);
+	font-weight: 500;
+	background-color: var(--bg-color);
+}

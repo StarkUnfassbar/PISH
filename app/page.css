@@ -1,0 +1,15 @@
+.app{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	position: relative;
+}
+
+/* .app .block_game{
+	width: 1000px;
+	height: 550px;
+	background: url("/img/bg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+} */
