@@ -1,0 +1,20 @@
+@media only screen and (max-width : 1800px){
+	.button_visit{
+		width: 240px;
+		height: 70px;
+	}
+
+	.button_visit .text{
+		font-size: 18px;
+	}
+
+
+	.button_learn_more .icon{
+		width: 25px;
+		height: 25px;
+	}
+
+	.button_learn_more .text{
+		font-size: 18px;
+	}
+}

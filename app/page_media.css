@@ -1,0 +1,205 @@
+@media only screen and (min-width : 1800px) and (min-height : 800px){
+	.app header .header_content{
+		height: 60px;
+	}
+
+
+	.app header .header_content .basic_logo{
+		gap: 40px;
+	}
+
+	.app header .header_content .basic_logo .logo:nth-child(1){
+		height: 61px;
+		width: 127px;
+	}
+
+	.app header .header_content .basic_logo .logo:nth-child(2){
+		height: 60px;
+		width: 120px;
+	}
+
+
+	.app header .header_content .additional_info{
+		gap: 50px;
+	}
+
+	.app header .header_content .additional_info .logo_partner:nth-child(1){
+		height: 70px;
+		width: 90px;
+	}
+
+	.app header .header_content .additional_info .logo_partner:nth-child(2){
+		height: 65px;
+		width: 180px;
+	}
+}
+
+
+@media only screen and (max-width : 1800px){
+	.app header .header_content nav .links .nav_link{
+		font-size: 16px;
+	}
+
+	.app header .header_content .old_version{
+		font-size: 16px;
+	}
+
+	.app header .header_content nav .links .nav_link svg{
+		width: 31px;
+		height: 16px;
+	}
+
+
+
+	.app main .home .text_subheading{
+		font-size: 24px;
+	}
+
+
+
+	.app main .about_museum{
+		height: 1100px;
+	}
+
+	.app main .about_museum h1 span{
+		font-size: 48px;
+	}
+
+	.app main .about_museum .section_content{
+		width: 1450px;
+	}
+
+
+	.app main .about_museum .section_content .upper_part .block_imgs img:nth-child(1){
+		width: 500px;
+	}
+
+	.app main .about_museum .section_content .upper_part .block_imgs img:nth-child(2){
+		width: 800px;
+	}
+
+
+	.app main .about_museum .section_content .upper_part .block_info .text_container{
+		width: 700px;
+	}
+
+	.app main .about_museum .upper_part h3{
+		font-size: 32px;
+	}
+
+	.app main .about_museum .upper_part p{
+		font-size: 24px;
+	}
+
+
+	.app main .about_museum .lower_part p{
+		width: 600px;
+		min-width: 600px;
+		font-size: 24px;
+	}
+
+
+
+	.app main .heroes_pish .section_content{
+		width: 1455px;
+	}
+
+
+	.app main .heroes_pish .section_content .upper_part{
+		gap: 20px;
+	}
+
+	.app main .heroes_pish .section_content .upper_part .block_hero{
+		height: 530px;
+	}
+
+	.app main .heroes_pish .section_content .upper_part .block_hero .block_info .text_info .fio{
+		width: 280px;
+		font-size: 22px;
+	}
+
+	.app main .heroes_pish .section_content .upper_part .block_hero .block_info .text_info .description{
+		width: 330px;
+		font-size: 20px;
+	}
+
+
+	.app main .heroes_pish .section_content .lower_part .block_hero{
+		height: 490px;
+		top: -40px;
+	}
+
+	.app main .heroes_pish .section_content .lower_part .block_hero .block_info .text_info .fio{
+		width: 300px;
+		font-size: 22px;
+	}
+
+	.app main .heroes_pish .section_content .lower_part .block_hero .block_info .text_info .description{
+		width: 470px;
+		font-size: 20px;
+	}
+
+	
+
+	.app main .about_pish{
+		height: 900px;
+	}
+
+
+	.app main .about_pish .section_content h1{
+		width: 1100px;
+		font-size: 64px;
+	}
+
+	.app main .about_pish .section_content h3{
+		width: 1000px;
+		font-size: 32px;
+	}
+
+
+	.app main .about_pish .section_content .mission{
+		width: 590px;
+		bottom: 180px;
+	}
+
+	.app main .about_pish .section_content .mission h2{
+		font-size: 40px;
+	}
+
+	.app main .about_pish .section_content .mission p{
+		font-size: 22px;
+	}
+
+
+	.app main .about_pish .patterns .pattern:nth-child(1){
+		width: 1000px;
+		height: 990px;
+	}
+
+
+
+	.app footer{
+		height: 330px;
+	}
+	
+	.app footer .footer_content .lower_part .block_contact h5{
+		font-size: 20px;
+	}
+
+	.app footer .footer_content .lower_part .block_contact p{
+		font-size: 20px;
+	}
+
+
+	.app footer .footer_content .lower_part nav{
+		width: 250px;
+	}
+
+	.app footer .footer_content .lower_part nav h5{
+		font-size: 20px;
+	}
+
+	.app footer .footer_content .lower_part nav a{
+		font-size: 20px;
+	}
+}

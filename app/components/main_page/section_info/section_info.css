@@ -1,0 +1,373 @@
+.app main .info{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	height: fit-content;
+	min-height: 900px;
+	padding: 120px 40px 0;
+	position: relative;
+	z-index: 2;
+	box-sizing: border-box;
+}
+
+
+
+
+
+.app main .info .block_controls{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.app main .info .block_controls button{
+	width: fit-content;
+	color: #757585;
+	font-family: "Benzin";
+	font-size: 25px;
+	font-weight: 400;
+	text-transform: uppercase;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+
+	transition: all .2s ease;
+}
+
+.app main .info .block_controls button:hover{
+	color: #3FCC6F;
+}
+
+.app main .info .block_controls button._active{
+	color: #3FCC6F;
+}
+
+
+.app main .info .block_controls button::before{
+	content: "";
+	width: 100%;
+	height: 1px;
+	background-color: #3FCC6F;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	opacity: 0;
+	transition: all .2s ease;
+}
+
+.app main .info .block_controls button._active::before{
+	opacity: 1;
+}
+
+
+
+
+
+.app main .info .section_content{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: fit-content;
+	position: relative;
+	z-index: 2;
+}
+
+
+
+
+.app main .info .section_content .bioeconomics{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1400px;
+	height: 580px;
+	position: relative;
+}
+
+
+.app main .info .section_content .bioeconomics .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_1.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -30px;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.app main .info .section_content .bioeconomics .bg::before{
+	content: "Биоэкономика";
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 30px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 5px;
+	left: 595px;
+}
+
+.app main .info .section_content .bioeconomics .bg::after{
+	content: "Биоэкономика";
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 30px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: 15px;
+	left: 30px;
+}
+
+
+.app main .info .section_content .bioeconomics .block_text{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 950px;
+	height: fit-content;
+	margin-bottom: 30px;
+	position: relative;
+	z-index: 5;
+}
+
+.app main .info .section_content .bioeconomics .block_text p{
+	width: 100%;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.app main .info .section_content .bioeconomics .block_text p span{
+	color: #03D75C;
+}
+
+
+
+
+.app main .info .section_content .team{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+	width: 1400px;
+	height: 580px;
+	position: relative;
+}
+
+.app main .info .section_content .team .block_text{
+	display: flex;
+	justify-content: left;
+	width: 100%;
+}
+
+.app main .info .section_content .team .block_text p{
+	width: 600px;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.app main .info .section_content .team .table{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border: 4px solid #4547BB;
+	border-radius: 50px;
+}
+
+
+
+
+.app main .info .section_content .project{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 1200px;
+	height: 730px;
+	position: relative;
+}
+
+
+
+.app main .info .section_content .project .upper_part{
+	display: flex;
+	justify-content: left;
+	width: 100%;
+	height: 100%;
+}
+
+
+.app main .info .section_content .project .upper_part .block_text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 58%;
+	height: 100%;
+	padding: 0 75px 60px;
+	position: relative;
+	top: 20px;
+	box-sizing: border-box;
+}
+
+.app main .info .section_content .project .upper_part .block_text p{
+	width: 100%;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+}
+
+.app main .info .section_content .project .upper_part .block_text p span{
+	color: #03D75C;
+	font-weight: 600;
+}
+
+.app main .info .section_content .project .upper_part .block_text p span._enlarged{
+	font-size: 32px;
+	font-weight: 400;
+}
+
+
+.app main .info .section_content .project .upper_part .block_text .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_3.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.app main .info .section_content .project .upper_part .block_text .bg::before{
+	content: "Федеральный проект";
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 24px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: 15px;
+	left: 25px;
+}
+
+
+
+.app main .info .section_content .project .lower_part{
+	display: flex;
+	justify-content: right;
+	width: 100%;
+	height: 100%;
+}
+
+.app main .info .section_content .project .lower_part .block_text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 58%;
+	height: 100%;
+	padding: 45px 65px 0;
+	position: relative;
+	top: -60px;
+	box-sizing: border-box;
+}
+
+
+.app main .info .section_content .project .lower_part .block_text p{
+	width: 100%;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+}
+
+.app main .info .section_content .project .lower_part .block_text p a{
+	display: inline-flex;
+	color: #03D75C;
+	font-weight: 600;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+.app main .info .section_content .project .lower_part .block_text .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_4.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.app main .info .section_content .project .lower_part .block_text .bg::before{
+	content: "Федеральный проект";
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 24px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+}
+
+
+
+.app main .info .patterns{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+
+.app main .info .patterns .pattern{
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+/* .app main .info .patterns .pattern img{
+	object-fit: contain;
+} */
+
+.app main .info .patterns img{
+	width: 100%;
+	position: absolute;
+	bottom: -400px;
+	left: 0;
+	z-index: 1;
+}
+
+
+.app main .info .patterns .pattern:nth-child(1){
+	width: 100%;
+	/* height: 1900px; */
+	top: -500px;
+	left: 0;
+	z-index: 1;
+}

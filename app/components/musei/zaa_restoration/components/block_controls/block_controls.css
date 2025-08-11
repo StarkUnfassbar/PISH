@@ -1,4 +1,4 @@
-.widget .main_window .block_left .block_controls .part_start{
+.main_window .block_left .block_controls .part_start{
 	display: flex;
 	gap: 40px;
 	align-items: center;
@@ -17,12 +17,12 @@
 	transition: all 1s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_start._hidden{
+.main_window .block_left .block_controls .part_start._hidden{
 	opacity: 0;
 }
 
 
-.widget .main_window .block_left .block_controls .part_start button{
+.main_window .block_left .block_controls .part_start button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -36,11 +36,11 @@
 	transition: all .2s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_start button:active{
+.main_window .block_left .block_controls .part_start button:active{
 	transform: scale(.9);
 }
 
-.widget .main_window .block_left .block_controls .part_start button::before{
+.main_window .block_left .block_controls .part_start button::before{
 	content: "";
 	width: 115%;
 	height: 115%;
@@ -52,28 +52,28 @@
 	transition: all .2s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_start button:hover::before{
+.main_window .block_left .block_controls .part_start button:hover::before{
 	width: 100%;
 	height: 100%;
 	opacity: 0;
 }
 
 
-.widget .main_window .block_left .block_controls .part_start .slider_nav{
+.main_window .block_left .block_controls .part_start .slider_nav{
 	display: flex;
 	gap: 25px;
 }
 
-.widget .main_window .block_left .block_controls .part_start .slider_nav button{
+.main_window .block_left .block_controls .part_start .slider_nav button{
 	width: 50px;
 	height: 50px;
 }
 
-.widget .main_window .block_left .block_controls .part_start .slider_nav button:nth-child(2){
+.main_window .block_left .block_controls .part_start .slider_nav button:nth-child(2){
 	background: linear-gradient(90deg, rgb(24, 137, 148), rgb(66, 88, 116));
 }
 
-.widget .main_window .block_left .block_controls .part_start .slider_nav button span{
+.main_window .block_left .block_controls .part_start .slider_nav button span{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -81,13 +81,13 @@
 	height: 15px;
 }
 
-.widget .main_window .block_left .block_controls .part_start .slider_nav button span svg{
+.main_window .block_left .block_controls .part_start .slider_nav button span svg{
 	width: 100%;
 	height: 100%;
 }
 
 
-.widget .main_window .block_left .block_controls .part_start .art_info{
+.main_window .block_left .block_controls .part_start .art_info{
 	display: flex;
 	flex-direction: column;
 	align-items: start;
@@ -95,14 +95,14 @@
 	width: 100%;
 }
 
-.widget .main_window .block_left .block_controls .part_start .art_info h3{
+.main_window .block_left .block_controls .part_start .art_info h3{
 	font-size: 21px;
 	font-family: "Grandis";
 	font-weight: 700;
 	margin-bottom: 5px;
 }
 
-.widget .main_window .block_left .block_controls .part_start .art_info p{
+.main_window .block_left .block_controls .part_start .art_info p{
 	display: flex;
 	gap: 30px;
 	font-size: 16px;
@@ -110,11 +110,11 @@
 	font-weight: 400;
 }
 
-.widget .main_window .block_left .block_controls .part_start .art_info p span:nth-child(2){
+.main_window .block_left .block_controls .part_start .art_info p span:nth-child(2){
 	position: relative;
 }
 
-.widget .main_window .block_left .block_controls .part_start .art_info p span:nth-child(2)::before{
+.main_window .block_left .block_controls .part_start .art_info p span:nth-child(2)::before{
 	content: "";
 	width: 1px;
 	height: 100%;
@@ -125,7 +125,7 @@
 }
 
 
-.widget .main_window .block_left .block_controls .part_start .button_select{
+.main_window .block_left .block_controls .part_start .button_select{
 	display: flex;
 	align-items: center;
 	width: 140px;
@@ -136,12 +136,12 @@
 	text-transform: uppercase;
 }
 
-.widget .main_window .block_left .block_controls .part_start .button_select::before{
+.main_window .block_left .block_controls .part_start .button_select::before{
 	width: 105%;
 	height: 115%;
 }
 
-.widget .main_window .block_left .block_controls .part_start .button_select .button_text{
+.main_window .block_left .block_controls .part_start .button_select .button_text{
 	display: flex;
 	justify-content: left;
 	align-items: center;
@@ -151,7 +151,7 @@
 	box-sizing: border-box;
 }
 
-.widget .main_window .block_left .block_controls .part_start .button_select span:nth-child(2){
+.main_window .block_left .block_controls .part_start .button_select span:nth-child(2){
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -161,14 +161,14 @@
 	right: 15px;
 }
 
-.widget .main_window .block_left .block_controls .part_start .button_select span:nth-child(2) svg{
+.main_window .block_left .block_controls .part_start .button_select span:nth-child(2) svg{
 	width: 100%;
 	height: 100%;
 }
 
 
 
-.widget .main_window .block_left .block_controls .part_main{
+.main_window .block_left .block_controls .part_main{
 	display: flex;
 	gap: 40px;
 	align-items: center;
@@ -185,12 +185,12 @@
 	transition: all 1s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_main._hidden{
+.main_window .block_left .block_controls .part_main._hidden{
 	opacity: 0;
 }
 
 
-.widget .main_window .block_left .block_controls .part_main button{
+.main_window .block_left .block_controls .part_main button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -207,11 +207,11 @@
 	transition: all .2s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_main button:active{
+.main_window .block_left .block_controls .part_main button:active{
 	transform: scale(.9);
 }
 
-.widget .main_window .block_left .block_controls .part_main button::before{
+.main_window .block_left .block_controls .part_main button::before{
 	content: "";
 	width: 102%;
 	height: 115%;
@@ -223,20 +223,20 @@
 	transition: all .2s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_main button:hover::before{
+.main_window .block_left .block_controls .part_main button:hover::before{
 	width: 100%;
 	height: 100%;
 	opacity: 0;
 }
 
-.widget .main_window .block_left .block_controls .part_main button .button_text{
+.main_window .block_left .block_controls .part_main button .button_text{
 	font-size: 16px;
 	font-family: "Grandis";
 	font-weight: 400;
 	text-transform: uppercase;
 }
 
-.widget .main_window .block_left .block_controls .part_main button .button_icon{
+.main_window .block_left .block_controls .part_main button .button_icon{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -244,34 +244,34 @@
 	height: 15px;
 }
 
-.widget .main_window .block_left .block_controls .part_main button .button_icon svg{
+.main_window .block_left .block_controls .part_main button .button_icon svg{
 	width: 100%;
 	height: 100%;
 }
 
 
-.widget .main_window .block_left .block_controls .part_main .button_back::before{
+.main_window .block_left .block_controls .part_main .button_back::before{
 	width: 105%;
 }
 
-.widget .main_window .block_left .block_controls .part_main .buttons_experiment{
+.main_window .block_left .block_controls .part_main .buttons_experiment{
 	display: flex;
 	gap: 40px;
 	
 	transition: all 1s ease .05s;
 }
 
-.widget .main_window .block_left .block_controls .part_main .buttons_experiment .button_select:active{
+.main_window .block_left .block_controls .part_main .buttons_experiment .button_select:active{
 	transform: scale(.93);
 }
 
-.widget .main_window .block_left .block_controls .part_main._short .buttons_experiment{
+.main_window .block_left .block_controls .part_main._short .buttons_experiment{
 	opacity: 0;
 }
 
 
 
-.widget .main_window .block_left .block_controls .part_final{
+.main_window .block_left .block_controls .part_final{
 	display: flex;
 	gap: 40px;
 	align-items: center;
@@ -288,12 +288,12 @@
 	transition: all 1s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_final._hidden{
+.main_window .block_left .block_controls .part_final._hidden{
 	opacity: 0;
 }
 
 
-.widget .main_window .block_left .block_controls .part_final button{
+.main_window .block_left .block_controls .part_final button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -310,11 +310,11 @@
 	transition: all .2s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_final button:active{
+.main_window .block_left .block_controls .part_final button:active{
 	transform: scale(.9);
 }
 
-.widget .main_window .block_left .block_controls .part_final button::before{
+.main_window .block_left .block_controls .part_final button::before{
 	content: "";
 	width: 103%;
 	height: 115%;
@@ -326,20 +326,20 @@
 	transition: all .2s ease;
 }
 
-.widget .main_window .block_left .block_controls .part_final button:hover::before{
+.main_window .block_left .block_controls .part_final button:hover::before{
 	width: 100%;
 	height: 100%;
 	opacity: 0;
 }
 
-.widget .main_window .block_left .block_controls .part_final button .button_text{
+.main_window .block_left .block_controls .part_final button .button_text{
 	font-size: 16px;
 	font-family: "Grandis";
 	font-weight: 400;
 	text-transform: uppercase;
 }
 
-.widget .main_window .block_left .block_controls .part_final button .button_icon{
+.main_window .block_left .block_controls .part_final button .button_icon{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -347,27 +347,27 @@
 	height: 15px;
 }
 
-.widget .main_window .block_left .block_controls .part_final button .button_icon svg{
+.main_window .block_left .block_controls .part_final button .button_icon svg{
 	width: 100%;
 	height: 100%;
 }
 
 
-.widget .main_window .block_left .block_controls .part_final .buttons_experiment{
+.main_window .block_left .block_controls .part_final .buttons_experiment{
 	display: flex;
 	gap: 40px;
 	
 	transition: all 1s ease .05s;
 }
 
-.widget .main_window .block_left .block_controls .part_final._short .buttons_experiment{
+.main_window .block_left .block_controls .part_final._short .buttons_experiment{
 	opacity: 0;
 }
 
-.widget .main_window .block_left .block_controls .part_final .buttons_experiment .button_select:active{
+.main_window .block_left .block_controls .part_final .buttons_experiment .button_select:active{
 	transform: scale(.93);
 }
 
-.widget .main_window .block_left .block_controls .part_final .buttons_experiment .button_select::before{
+.main_window .block_left .block_controls .part_final .buttons_experiment .button_select::before{
 	width: 102%;
 }

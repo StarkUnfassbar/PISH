@@ -1,0 +1,5 @@
+@media only screen and (max-width : 1800px){
+	.app main .info .block_controls button{
+		font-size: 22px;
+	}
+}

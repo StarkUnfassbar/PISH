@@ -13,6 +13,38 @@
 }
 
 
+@font-face {
+	font-family: 'Raleway';
+	src: url('/fonts/Raleway/Raleway-Medium.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('/fonts/Raleway/Raleway-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+
+@font-face {
+	font-family: 'Benzin';
+	src: url('/fonts/Benzin/Benzin-Semibold.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Benzin';
+	src: url('/fonts/Benzin/Benzin-Medium.ttf') format('truetype');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Benzin';
+	src: url('/fonts/Benzin/Benzin-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+
 
 
 :root{
@@ -27,7 +59,7 @@
 	padding: 0;
 }
 
-button{
+button, a{
 	all: unset;
 }
 

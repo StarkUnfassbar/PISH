@@ -15,6 +15,7 @@ import './window_3/main_widget_w3_media.css';
 
 import ExhibitInDev from '../exhibit_in_dev/ExhibitInDev';
 import ZAARestoration from '../../../zaa_restoration/ZAARestoration';
+import ControllerWidgets from '../controller_widgets/ControllerWidgets';
 
 
 
@@ -136,6 +137,20 @@ export default function MainWidget() {
 	};
 
 
+	const [openWidget, setOpenWidget] = useState(false);
+	const [idOpenedWidget, setIdOpenedWidget] = useState("");
+
+	const handleOpenWidget = (open, id) => {
+		if(open){
+			setOpenWidget(true);
+			setIdOpenedWidget(id);
+		} else{
+			setOpenWidget(false);
+			setIdOpenedWidget("");
+		}
+	};
+
+
 
 	return (
 		<>
@@ -191,15 +206,15 @@ export default function MainWidget() {
 					
 					<div className="block_exhibits">
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={handleExhibitOpen}></button>
+							<button onClick={() => handleOpenWidget(true, "medicine")}></button>
 						</div>
 
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
 						</div>
 
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
 						</div>
 					</div>
 
@@ -244,11 +259,11 @@ export default function MainWidget() {
 
 					<div className="block_exhibits">
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "zaa_restoration")}></button>
 						</div>
 
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
 						</div>
 					</div>
 
@@ -276,15 +291,15 @@ export default function MainWidget() {
 
 					<div className="block_exhibits">
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
 						</div>
 
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "aquabio")}></button>
 						</div>
 
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-							<button onClick={() => handleExhibitInDevOpen(true)}></button>
+							<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
 						</div>
 					</div>
 
@@ -304,8 +319,8 @@ export default function MainWidget() {
 			)}
 
 
-			{exhibitOpen && (<ZAARestoration />)}
-			<ExhibitInDev exhibitInDevOpen={exhibitInDevOpen} handleExhibitInDevOpen={handleExhibitInDevOpen} />
+
+			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} />
 		</>
 	);
 }

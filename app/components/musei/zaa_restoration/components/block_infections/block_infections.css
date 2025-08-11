@@ -5,7 +5,7 @@
 
 
 
-.widget .main_window .block_left .block_infections{
+.main_window .block_left .block_infections{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -20,12 +20,12 @@
 	transition: all 1s ease;
 }
 
-.widget .main_window .block_left .block_infections._hidden{
+.main_window .block_left .block_infections._hidden{
 	opacity: 0;
 }
 
 
-.widget .main_window .block_left .block_infections .infection_img{
+.main_window .block_left .block_infections .infection_img{
 	position: absolute;
 	pointer-events: painted;
 	cursor: pointer;
@@ -33,47 +33,47 @@
 	transition: all 1s ease;
 }
 
-.widget .main_window .block_left .block_infections .infection_img._hidden{
+.main_window .block_left .block_infections .infection_img._hidden{
 	opacity: 0;
 	pointer-events: none;
 }
 
-.widget .main_window .block_left .block_infections .infection_img:nth-child(1){
+.main_window .block_left .block_infections .infection_img:nth-child(1){
 	width: 650px;
 	height: 500px;
 	bottom: 0;
 	left: 0;
 }
 
-.widget .main_window .block_left .block_infections .infection_img:nth-child(2){
+.main_window .block_left .block_infections .infection_img:nth-child(2){
 	width: 600px;
 	height: 350px;
 	bottom: 0;
 	right: 0;
 }
 
-.widget .main_window .block_left .block_infections .infection_img:nth-child(3){
+.main_window .block_left .block_infections .infection_img:nth-child(3){
 	width: 480px;
 	height: 500px;
 	top: 0;
 	right: 0;
 }
 
-.widget .main_window .block_left .block_infections .infection_img:nth-child(4){
+.main_window .block_left .block_infections .infection_img:nth-child(4){
 	width: 800px;
 	height: 450px;
 	top: 0;
 	left: 0;
 }
 
-.widget .main_window .block_left .block_infections .infection_img img{
+.main_window .block_left .block_infections .infection_img img{
 	width: 100%;
 	height: 100%;
 }
 
 
 
-.widget .main_window .block_left .block_infections .tip_click{
+.main_window .block_left .block_infections .tip_click{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -90,7 +90,7 @@
 	animation: pulse 2s infinite ease-in-out;
 }
 
-.widget .main_window .block_left .block_infections .tip_click._hidden{
+.main_window .block_left .block_infections .tip_click._hidden{
 	opacity: 0;
 }
 
@@ -107,7 +107,7 @@
 }
 
 
-.widget .main_window .block_left .block_infections .tip_click::before{
+.main_window .block_left .block_infections .tip_click::before{
 	content: "";
 	width: 80%;
 	height: 80%;
@@ -117,7 +117,7 @@
 	z-index: 2;
 }
 
-.widget .main_window .block_left .block_infections .tip_click::after{
+.main_window .block_left .block_infections .tip_click::after{
 	content: "";
 	width: 115%;
 	height: 115%;
@@ -128,14 +128,14 @@
 }
 
 
-.widget .main_window .block_left .block_infections .tip_click svg{
+.main_window .block_left .block_infections .tip_click svg{
 	width: 35px;
 	height: 32px;
 }
 
 
 
-.widget .main_window .block_left .block_infections .solvent_in_art{    
+.main_window .block_left .block_infections .solvent_in_art{    
     width: 500px;
     height: 350px;
     position: absolute;
@@ -149,11 +149,11 @@
 	transition: all .5s ease;
 }
 
-.widget .main_window .block_left .block_infections .solvent_in_art._hidden{
+.main_window .block_left .block_infections .solvent_in_art._hidden{
 	opacity: 0;
 }
 
-.widget .main_window .block_left .block_infections .solvent_in_art img{
+.main_window .block_left .block_infections .solvent_in_art img{
 	width: 100%;
 	height: 100%;
 	object-fit: contain;

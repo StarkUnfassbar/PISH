@@ -1,77 +1,68 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-
 import './zaa_restoration.css';
-import MainScreen from './components/main_window/MainWindow';
-import WelcomeScreen from './components/welcome_window/WelcomeWindow';
 
 
-import art1 from './img/arts/art1.png';
-import art2 from './img/arts/art2.png';
-import art3 from './img/arts/art3.png';
-
-const paintingsData = [
-	{
-		id: 1,
-		title: "Богатыри",
-		author: "Виктор Васнецов",
-		year: "1898",
-		image: art1
-	},
-	{
-		id: 2,
-		title: "Христос в шторм на Галилейском море",
-		author: "Рембрандт",
-		year: "1633",
-		image: art2
-	},
-	{
-		id: 3,
-		title: "Огни большого города",
-		author: "Артем Малыгин",
-		year: "",
-		image: art3
-	}
-];
+import MainScreen from './components/main_screen/MainScreen';
+import WelcomeScreen from './components/welcome_screen/WelcomeScreen';
 
 
 
-const ZAARestoration = () => {
-	const [appMini, setAppMini] = useState(false);
+export default function ZAARestoration({ funForCloseWidget }) {
+	const [showMainScreen, setShowMainScreen] = useState(false);
+	const [buttonStartActive, setButtonStartActive] = useState(false);
 
-	const handleOpenClick = () => {
-		setAppMini(false);
+	useEffect(() => {
+		const mainScreenTimer = setTimeout(() => {
+			setShowMainScreen(true);
+		}, 500);
 
-		setTimeout(() => {
+		const buttonTimer = setTimeout(() => {
 			setButtonStartActive(true);
-		}, 1000);
-	};
+		}, 800);
 
-	const [showWelcome, setShowWelcome] = useState(true);
-	const [welcomeWindowHidden, setWelcomeWindowHidden] = useState(false);
-	const [buttonStartActive, setButtonStartActive] = useState(true);
+		return () => {
+			clearTimeout(mainScreenTimer);
+			clearTimeout(buttonTimer);
+		};
+	}, []);
+
+
+	const [welcomeHidden, setWelcomeHidden] = useState(false);
+	const [shouldRenderWelcome, setShouldRenderWelcome] = useState(true);
 
 	const handleStartClick = () => {
-		setWelcomeWindowHidden(true);
+		setWelcomeHidden(true);
 
 		setTimeout(() => {
-			setShowWelcome(false);
-		}, 1000);
+			setShouldRenderWelcome(false);
+		}, 1100);
 	};
 
+
+
 	return (
-		<div className={`widget ${appMini ? "_mini" : ""}`} onClick={handleOpenClick}>
-			<MainScreen paintingsData={paintingsData} />
-
-			{showWelcome && (
-				<WelcomeScreen stateWindow={showWelcome} stateButton={buttonStartActive} funForButton={handleStartClick} hiddenStatus={welcomeWindowHidden} />
+		<>
+			{shouldRenderWelcome && (
+				<WelcomeScreen
+					stateButton={buttonStartActive}
+					funForButton={handleStartClick}
+					hiddenStatus={welcomeHidden}
+				/>
 			)}
-		</div>
-	);
-}
 
-export default ZAARestoration;
+			{showMainScreen && <MainScreen />}
+
+			<button className="button_exit" onClick={() => funForCloseWidget(false, "")}>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 73" fill="none">
+					<line x1="4.06066" y1="1.93934" x2="74.0607" y2="71.9393" />
+					<line x1="1.93934" y1="71.9393" x2="71.9393" y2="1.93934" />
+				</svg>
+			</button>
+		</>
+	);
+};
