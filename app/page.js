@@ -74,20 +74,20 @@ export default function Home() {
 
 					<div className="patterns">
 						<div className="pattern">
-							<img src="/img/main/home/pattern_1.png" alt="" />
+							<img src="/img/main/home/pattern_1.png" alt="pattern on the background" />
 							{/* <Image src="/img/main/home/pattern_1.png" alt="pattern on the background" fill /> */}
 						</div>
 
 						<div className="pattern">
-							<Image src="public/img/main/home/pattern_2.png" alt="pattern on the background" fill />
+							<Image src="/img/main/home/pattern_2.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 
 						<div className="pattern">
-							<Image src="public/img/main/home/pattern_3.png" alt="pattern on the background" fill />
+							<Image src="/img/main/home/pattern_3.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 
 						<div className="pattern">
-							<Image src="public/img/main/home/pattern_4.png" alt="pattern on the background" fill />
+							<Image src="/img/main/home/pattern_4.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 					</div>
 				</section>
