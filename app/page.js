@@ -229,15 +229,15 @@ export default function Home() {
 
 					<div className="patterns">
 						<div className="pattern">
-							<Image src="public/img/main/about_pish/pattern_1.png" alt="pattern on the background" fill unoptimized={true} />
+							<Image src="/img/main/about_pish/pattern_1.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 
 						<div className="pattern">
-							<Image src="public/img/main/about_pish/pattern_2.svg" alt="pattern on the background" fill />
+							<Image src="/img/main/about_pish/pattern_2.svg" alt="pattern on the background" fill />
 						</div>
 						
 						<div className="pattern">
-							<Image src="public/img/main/about_pish/pattern_3.svg" alt="pattern on the background" fill />
+							<Image src="/img/main/about_pish/pattern_3.svg" alt="pattern on the background" fill />
 						</div>
 					</div>
 				</section>
