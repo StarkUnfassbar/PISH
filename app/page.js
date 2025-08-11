@@ -303,7 +303,7 @@ export default function Home() {
 						<nav>
 							<h5>Меню</h5>
 
-							<Link href="/">Интерактивный музей</Link>
+							<Link href="/musei">Интерактивный музей</Link>
 							<Link href="/">О нас</Link>
 							<Link href="/">Видеоуроки</Link>
 							<Link href="/">Иностранным партнёрам</Link>

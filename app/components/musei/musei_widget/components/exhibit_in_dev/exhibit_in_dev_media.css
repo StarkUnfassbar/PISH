@@ -6,12 +6,6 @@
 	.block_warning .content p{
 		font-size: 18px;
 	}
-
-
-	.block_warning .content .button_exit{
-		width: 23px;
-		height: 23px;
-	}
 }
 
 @media only screen and (max-width : 1300px){
