@@ -143,7 +143,7 @@ export default function Home() {
 						</div> */}
 
 						<div className="pattern">
-							<Image src="/img/main/about_museum/pattern_4.png" alt="pattern on the background" fill />
+							<Image src="/img/main/about_museum/pattern_4.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 					</div>
 				</section>
@@ -155,7 +155,7 @@ export default function Home() {
 						<div className="upper_part">
 							<div className="block_hero">
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo.png" alt="" fill />
+									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
 										<span className="fio">Сидоренко Андрей Владимирович</span>
@@ -168,7 +168,7 @@ export default function Home() {
 
 							<div className="block_hero">
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo.png" alt="" fill />
+									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
 										<span className="fio">Рочин Егор Олегович</span>
@@ -188,7 +188,7 @@ export default function Home() {
 								<StandardButton text="Узнать больше" type="learn_more" />
 
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo.png" alt="" fill />
+									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
 										<span className="fio">Власова ванесса</span>
@@ -205,7 +205,7 @@ export default function Home() {
 
 					<div className="patterns">
 						<div className="pattern">
-							<Image src="/img/main/heroes_pish/pattern_1.png" alt="pattern on the background" fill />
+							<Image src="/img/main/heroes_pish/pattern_1.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 					</div>
 				</section>
@@ -229,7 +229,7 @@ export default function Home() {
 
 					<div className="patterns">
 						<div className="pattern">
-							<Image src="public/img/main/about_pish/pattern_1.png" alt="pattern on the background" fill />
+							<Image src="public/img/main/about_pish/pattern_1.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 
 						<div className="pattern">
