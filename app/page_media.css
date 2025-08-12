@@ -249,6 +249,11 @@
 	}
 
 
+	
+	.app main .about_museum{
+		height: 950px;
+	}
+
 	.app main .about_museum .section_content{
 		width: 1200px;
 	}
@@ -259,5 +264,37 @@
 
 	.app main .about_museum .section_content .upper_part .block_imgs img:nth-child(2){
 		width: 700px;
+	}
+
+	.app main .about_museum .section_content .upper_part .block_info .text_container{
+		width: 600px;
+	}
+
+
+
+	.app main .heroes_pish{
+		height: 1250px;
+	}
+
+	.app main .heroes_pish .section_content{
+		width: 1200px;
+	}
+
+
+	.app main .heroes_pish .section_content .upper_part .block_hero{
+		height: 435px;
+	}
+
+	.app main .heroes_pish .section_content .upper_part .block_hero .button_learn_more{
+		width: 340px;
+	}
+
+	
+	.app main .heroes_pish .section_content .lower_part .block_hero{
+		height: 400px;
+	}
+
+	.app main .heroes_pish .section_content .lower_part .block_hero .button_learn_more{
+		width: 340px;
 	}
 }
