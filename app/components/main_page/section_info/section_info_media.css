@@ -3,3 +3,27 @@
 		font-size: 22px;
 	}
 }
+
+@media only screen and (max-width : 1500px){
+	.app main .info .section_content .bioeconomics{
+		width: 1200px;
+		height: 503px;
+	}
+
+	.app main .info .section_content .bioeconomics .bg::before{
+		top: 3px;
+		left: 500px;
+	}
+
+
+	.app main .info .section_content .bioeconomics .block_text {
+		margin-bottom: 50px;
+	}
+
+
+
+	.app main .info .section_content .team{
+		width: 1200px;
+		height: 500px;
+	}
+}

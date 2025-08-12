@@ -102,6 +102,7 @@
 
 .app main .info .section_content .bioeconomics .bg::before{
 	content: "Биоэкономика";
+	width: fit-content;
 	color: #fff;
 	font-family: "Benzin";
 	font-size: 30px;
@@ -114,6 +115,7 @@
 
 .app main .info .section_content .bioeconomics .bg::after{
 	content: "Биоэкономика";
+	width: fit-content;
 	color: #fff;
 	font-family: "Benzin";
 	font-size: 30px;
