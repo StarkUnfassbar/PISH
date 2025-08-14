@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
 import Image from "next/image";
 
@@ -6,10 +10,34 @@ import "./page_media.css";
 
 import StandardButton from './components/main_page/standard_button/StandardButton';
 import SectionInfo from './components/main_page/section_info/SectionInfo';
+import PopupHero from './components/main_page/popup_hero/PopupHero';
 
 
 
 export default function Home() {
+	const [popupHeroShow, setPopupHeroShow] = useState(false);
+	const [popupHeroOpen, setPopupHeroOpen] = useState(false);
+	const [popupIdHero, setPopupIdHero] = useState(1);
+
+	const handlePopupOpen = (open, id) => {
+		if(open){
+			setPopupHeroShow(true);
+			setPopupIdHero(id);
+
+			setTimeout(() => {
+				setPopupHeroOpen(true);
+			}, 50);
+		} else{
+			setPopupHeroOpen(false);
+
+			setTimeout(() => {
+				setPopupHeroShow(false);
+			}, 310);
+		}
+	};
+
+
+
 	return (
 		<div className="app">
 			<header>
@@ -89,6 +117,8 @@ export default function Home() {
 						<div className="pattern">
 							<Image src="/img/main/home/pattern_4.png" alt="pattern on the background" fill unoptimized={true} />
 						</div>
+
+						{/* <div className="pattern"></div> */}
 					</div>
 				</section>
 
@@ -107,9 +137,8 @@ export default function Home() {
 									<h3>будущее рядом</h3>
 
 									<p>
-										Сегодня биотехнологии применяются 
-										в самых разных отраслях — фармакологии, экологии, металлодобывающей промышленности, производстве 
-										продуктов питания и тд.
+										Сегодня биотехнологии применяются в самых разных отраслях — фармакологии, экологии, 
+										металлодобывающей промышленности, производстве продуктов питания и других. 
 									</p>
 								</div>
 							</div>
@@ -117,10 +146,10 @@ export default function Home() {
 
 						<div className="lower_part">
 							<p>
-								Как приготовить котлету, из-за которой ни одна корова не пострадала, 
-								что такое FoodNet», как разрабатываются вакцины, новые биодобавки, 
-								как спасти планету от загрязнения, очистить море от пластика и как 
-								новые технологии изменят нашу жизнь – в спецпроекте DEITA.RU.
+								Как приготовить котлету, из-за которой ни одна корова не пострадала, что такое 
+								FoodNet, как разрабатываются вакцины, новые биодобавки, 
+								как спасти планету от загрязнения, очистить море 
+								от пластика и как новые технологии изменят нашу жизнь – в музее биотеха. 
 							</p>
 
 							<img src="/img/main/about_museum/pattern_3.png" alt="" />
@@ -163,7 +192,7 @@ export default function Home() {
 									</div>
 								</div>
 
-								<StandardButton text="Узнать больше" type="learn_more" />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 1)} />
 							</div>
 
 							<div className="block_hero">
@@ -179,19 +208,19 @@ export default function Home() {
 									</div>
 								</div>
 
-								<StandardButton text="Узнать больше" type="learn_more" />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 2)} />
 							</div>
 						</div>
 
 						<div className="lower_part">
 							<div className="block_hero">
-								<StandardButton text="Узнать больше" type="learn_more" />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 
 								<div className="block_info">
 									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
-										<span className="fio">Власова ванесса</span>
+										<span className="fio">Власова Ванесса</span>
 
 										<span className="description">
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
@@ -252,15 +281,19 @@ export default function Home() {
 							<Link href="/" className="logo">
 								<Image src="/img/main/logo/logo_pish.svg" alt="logo of the advanced engineering school" fill />
 							</Link>
+
+							<Link href="https://www.dvfu.ru/" className="logo">
+								<Image src="/img/main/logo/logo_fefu.svg" alt="logo of the Far Eastern Federal University" fill />
+							</Link>
 						</div>
 
 						<div className="right">
-							<Link href="https://minobrnauki.gov.ru/" className="logo_partner">
-								<Image src="/img/main/logo/logo_ministry.svg" alt="logo of the Ministry of Education and Science of the Russian Federation" fill />
+							<Link href="https://наука.рф/" className="logo">
+								<Image src="/img/main/logo/logo_science_technology.svg" alt="The Decade of Science and Technology logo" fill />
 							</Link>
 
-							<Link href="https://www.dvfu.ru/" className="logo_partner">
-								<Image src="/img/main/logo/logo_fefu.svg" alt="logo of the Far Eastern Federal University" fill />
+							<Link href="https://minobrnauki.gov.ru/" className="logo">
+								<Image src="/img/main/logo/logo_ministry.svg" alt="logo of the Ministry of Education and Science of the Russian Federation" fill />
 							</Link>
 						</div>
 					</div>
@@ -306,7 +339,12 @@ export default function Home() {
 							<Link href="/musei">Интерактивный музей</Link>
 							<Link href="/">О нас</Link>
 							<Link href="/">Видеоуроки</Link>
-							<Link href="/">Иностранным партнёрам</Link>
+
+							<Link href="/">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 16" fill="none">
+									<path d="M0.536 3.424H13.432V10.944H12.2V4.592H1.736V11.024H0.536V3.424ZM1.176 8.848H12.92V10.032H1.176V8.848ZM6.328 0.559999H7.592V15.264H6.328V0.559999ZM26.424 3.872L27.688 4.256C27.016 6.208 26.152 7.89333 25.096 9.312C24.0507 10.7307 22.792 11.9253 21.32 12.896C19.8587 13.8667 18.1573 14.6667 16.216 15.296C16.1733 15.1893 16.104 15.0667 16.008 14.928C15.9227 14.7893 15.8267 14.6453 15.72 14.496C15.624 14.3467 15.5333 14.2293 15.448 14.144C17.3467 13.5893 19.0053 12.864 20.424 11.968C21.8427 11.0613 23.048 9.94667 24.04 8.624C25.032 7.29067 25.8267 5.70667 26.424 3.872ZM19.144 3.968C19.7307 5.67467 20.52 7.21067 21.512 8.576C22.5147 9.93067 23.7413 11.0773 25.192 12.016C26.6427 12.9547 28.3333 13.6533 30.264 14.112C30.168 14.1973 30.0613 14.3093 29.944 14.448C29.8373 14.5973 29.7307 14.7467 29.624 14.896C29.528 15.0453 29.448 15.1733 29.384 15.28C27.4107 14.768 25.688 14.0107 24.216 13.008C22.7547 11.9947 21.512 10.7627 20.488 9.312C19.464 7.85067 18.6213 6.18667 17.96 4.32L19.144 3.968ZM15.624 3.28H30.088V4.448H15.624V3.28ZM22.184 0.559999H23.416V3.984H22.184V0.559999Z"/>
+								</svg>
+							</Link>
 						</nav>
 
 						<nav>
@@ -326,6 +364,9 @@ export default function Home() {
 					</div> */}
 				</div>
 			</footer>
+
+
+			{popupHeroShow && <PopupHero popupHeroOpen={popupHeroOpen} popupIdHero={popupIdHero} funForClose={() => handlePopupOpen(false)} />}
 		</div>
 	);
 }

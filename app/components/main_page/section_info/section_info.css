@@ -5,7 +5,7 @@
 	width: 100%;
 	height: fit-content;
 	min-height: 900px;
-	padding: 120px 40px 0;
+	padding: 120px 0px 0;
 	position: relative;
 	z-index: 2;
 	box-sizing: border-box;
@@ -19,6 +19,9 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	width: 100%;
+	padding: 0 40px;
+	box-sizing: border-box;
 }
 
 .app main .info .block_controls button{
@@ -40,6 +43,7 @@
 }
 
 .app main .info .block_controls button._active{
+	font-size: 32px;
 	color: #3FCC6F;
 }
 
@@ -72,6 +76,18 @@
 	height: fit-content;
 	position: relative;
 	z-index: 2;
+}
+
+.app main .info .section_content .swiper {
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.app main .info .section_content .swiper .swiper-slide {
+	display: flex;
+	justify-content: center;
+  	width: 100%;
 }
 
 
@@ -168,14 +184,18 @@
 	display: flex;
 	justify-content: left;
 	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
 }
 
 .app main .info .section_content .team .block_text p{
-	width: 600px;
+	width: 800px;
 	color: #fff;
-	font-family: "Raleway";
+	font-family: "Benzin";
 	font-size: 20px;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 .app main .info .section_content .team .table{
@@ -183,8 +203,145 @@
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	border: 4px solid #4547BB;
-	border-radius: 50px;
+	position: relative;
+	top: 10px;
+}
+
+
+.app main .info .section_content .team .table .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_2.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+
+.app main .info .section_content .team .table .table_content{
+	display: flex;
+	gap: 5px;
+	width: 100%;
+	height: 480px;
+	padding: 5px;
+	margin-top: 60px;
+	box-sizing: border-box;
+}
+
+.app main .info .section_content .team .table .table_content .column{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	width: 420px;
+	height: 100%;
+}
+
+.app main .info .section_content .team .table .table_content .column:nth-child(1){
+	width: 415px;
+	min-width: 415px;
+}
+
+.app main .info .section_content .team .table .table_content .column:nth-child(2){
+	width: 333px;
+	min-width: 333px;
+}
+
+.app main .info .section_content .team .table .table_content .column:nth-child(3){
+	width: 299px;
+	min-width: 299px;
+}
+
+.app main .info .section_content .team .table .table_content .column:nth-child(4){
+	width: 330px;
+	min-width: 330px;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_head{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 79px;
+	min-height: 79px;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_head h3{
+	color: #03D75C;
+	font-size: 20px;
+	font-family: "Benzin";
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_head h5{
+	color: #fff;
+	font-size: 16px;
+	font-family: "Benzin";
+	font-weight: 400;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+	height: 100%;
+	padding: 10px 15px;
+	box-sizing: border-box;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content h4{
+	color: #fff;
+	font-size: 18px;
+	font-family: "Raleway";
+	font-weight: 600;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content p{
+	color: #fff;
+	font-size: 16px;
+	font-family: "Raleway";
+	font-weight: 400;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content p span{
+	color: #03D75C;
+	font-weight: 600;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content ul{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 0;
+	list-style: none;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content ul li{
+	display: inline-flex;
+	align-items: center;
+	color: #fff;
+	font-size: 16px;
+	font-family: "Raleway";
+	font-weight: 400;
+	padding-left: 15px;
+	position: relative;
+}
+
+.app main .info .section_content .team .table .table_content .column .column_content ul li::before{
+	content: "";
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
 }
 
 

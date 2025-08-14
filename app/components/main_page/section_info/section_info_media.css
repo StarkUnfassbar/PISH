@@ -2,6 +2,10 @@
 	.app main .info .block_controls button{
 		font-size: 22px;
 	}
+
+	.app main .info .block_controls button._active{
+		font-size: 28px;
+	}
 }
 
 @media only screen and (max-width : 1500px){

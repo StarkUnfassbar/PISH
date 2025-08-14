@@ -181,6 +181,28 @@
 	.app footer{
 		height: 330px;
 	}
+
+
+	.app footer .footer_content .upper_part .left .logo:nth-child(1){
+		height: 37px;
+		width: 107px;
+	}
+
+	.app footer .footer_content .upper_part .left .logo:nth-child(2){
+		height: 43px;
+		width: 75px;
+	}
+
+	.app footer .footer_content .upper_part .right .logo:nth-child(1){
+		height: 55px;
+		width: 75px;
+	}
+
+	.app footer .footer_content .upper_part .right .logo:nth-child(2){
+		height: 43px;
+		width: 150px;
+	}
+
 	
 	.app footer .footer_content .lower_part .block_contact h5{
 		font-size: 20px;
@@ -188,6 +210,11 @@
 
 	.app footer .footer_content .lower_part .block_contact p{
 		font-size: 20px;
+	}
+
+	.app footer .footer_content .lower_part .block_contact .social_networks a{
+		width: 35px;
+		height: 35px;
 	}
 
 
@@ -268,6 +295,7 @@
 
 	.app main .about_museum .section_content .upper_part .block_info .text_container{
 		width: 600px;
+		margin-left: 300px;
 	}
 
 
