@@ -1,56 +1,4 @@
-@media only screen and (min-width : 1800px) and (min-height : 800px){
-	.app header .header_content{
-		height: 60px;
-	}
-
-
-	.app header .header_content .basic_logo{
-		gap: 40px;
-	}
-
-	.app header .header_content .basic_logo .logo:nth-child(1){
-		height: 61px;
-		width: 127px;
-	}
-
-	.app header .header_content .basic_logo .logo:nth-child(2){
-		height: 60px;
-		width: 120px;
-	}
-
-
-	.app header .header_content .additional_info{
-		gap: 50px;
-	}
-
-	.app header .header_content .additional_info .logo_partner:nth-child(1){
-		height: 70px;
-		width: 90px;
-	}
-
-	.app header .header_content .additional_info .logo_partner:nth-child(2){
-		height: 65px;
-		width: 180px;
-	}
-}
-
-
 @media only screen and (max-width : 1800px){
-	.app header .header_content nav .links .nav_link{
-		font-size: 16px;
-	}
-
-	.app header .header_content .old_version{
-		font-size: 16px;
-	}
-
-	.app header .header_content nav .links .nav_link svg{
-		width: 31px;
-		height: 16px;
-	}
-
-
-
 	.app main .home .text_subheading{
 		font-size: 24px;
 	}
@@ -178,7 +126,7 @@
 
 
 
-	.app footer{
+	/* .app footer{
 		height: 330px;
 	}
 
@@ -228,55 +176,10 @@
 
 	.app footer .footer_content .lower_part nav a{
 		font-size: 20px;
-	}
+	} */
 }
 
-@media only screen and (max-width : 1500px){
-	.app header{
-		padding: 0 20px;
-	}
-
-	.app header .header_content .basic_logo{
-		gap: 10px;
-	}
-
-	.app header .header_content .basic_logo .logo:nth-child(1){
-		height: 40px;
-		width: 90px;
-	}
-
-	.app header .header_content .basic_logo .logo:nth-child(2){
-		height: 40px;
-		width: 90px;
-	}
-
-
-	.app header .header_content nav .logo_home{
-		height: 23px;
-		width: 25px;
-	}
-
-	.app header .header_content nav .links{
-		gap: 50px;
-	}
-
-
-	.app header .header_content .additional_info{
-		gap: 20px;
-	}
-
-	.app header .header_content .additional_info .logo_partner:nth-child(1){
-		height: 45px;
-		width: 65px;
-	}
-
-	.app header .header_content .additional_info .logo_partner:nth-child(2){
-		height: 40px;
-		width: 150px;
-	}
-
-
-	
+@media only screen and (max-width : 1500px){	
 	.app main .about_museum{
 		height: 950px;
 	}
