@@ -141,8 +141,9 @@ export default function Home() {
 					<div className="block_text">
 						<div className="bg"></div>
 						<p>
-							Школа является первой на Дальнем Востоке и одной из трёх в России по биотехнологической специализации. 
-							<Link href="https://engineers2030.ru/" target="_blank">Подробнее</Link>
+							Школа является первой на Дальнем Востоке и одной из трёх в России по биотехнологической специализации, 
+							получивших статус Передовых инженерных школ федерального значения. Подробнее о федеральном проекте:
+							<Link href="https://engineers2030.ru/" target="_blank">https://engineers2030.ru/</Link>
 						</p>
 					</div>
 				</div>
@@ -189,7 +190,9 @@ export default function Home() {
 				>
 					{tabs.map(tab => (
 						<SwiperSlide key={tab.id}>
-							{slides[tab.id]}
+							<div className="swiper_content">
+								{slides[tab.id]}
+							</div>
 						</SwiperSlide>
 					))}
 				</Swiper>

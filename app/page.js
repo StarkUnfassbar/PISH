@@ -152,7 +152,9 @@ export default function Home() {
 								от пластика и как новые технологии изменят нашу жизнь – в музее биотеха. 
 							</p>
 
-							<img src="/img/main/about_museum/pattern_3.png" alt="" />
+							<div className="block_img">
+								<img src="/img/main/about_museum/pattern_3.png" alt="" />
+							</div>
 						</div>
 
 						<StandardButton text="Посетить онлайн" type="standard" />

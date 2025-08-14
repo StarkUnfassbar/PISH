@@ -9,6 +9,12 @@
 }
 
 @media only screen and (max-width : 1500px){
+	.app main .info {
+  		min-height: 800px;
+	}
+
+
+
 	.app main .info .section_content .bioeconomics{
 		width: 1200px;
 		height: 503px;
@@ -27,7 +33,88 @@
 
 
 	.app main .info .section_content .team{
-		width: 1200px;
+		width: 1250px;
 		height: 500px;
+	}
+
+	.app main .info .section_content .team .block_text p{
+		width: 720px;
+		font-size: 18px;
+	}
+
+	.app main .info .section_content .team .table .table_content{
+		height: 430px;
+		margin-top: 53px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column:nth-child(1) {
+		width: 369px;
+		min-width: 369px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column:nth-child(2) {
+		width: 297px;
+		min-width: 297px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column:nth-child(3) {
+		width: 266px;
+		min-width: 266px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column:nth-child(4) {
+		width: 290px;
+		min-width: 290px;
+	}
+
+
+	.app main .info .section_content .team .table .table_content .column .column_head {
+		height: 69px;
+		min-height: 69px;
+		padding: 0 15px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column .column_head h3 {
+		font-size: 18px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column .column_head h5 {
+		font-size: 14px;
+	}
+
+
+	.app main .info .section_content .team .table .table_content .column .column_content{
+		padding: 10px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column .column_content h4 {
+		font-size: 16px;
+	}
+
+	.app main .info .section_content .team .table .table_content .column .column_content p {
+		font-size: 15px;
+	}
+
+
+
+	.app main .info .section_content .project {
+		width: 1200px;
+		height: 700px;
+	}
+
+	.app main .info .section_content .project .upper_part .block_text{
+		width: 56%;
+	}
+
+	.app main .info .section_content .project .upper_part .block_text p{
+		font-size: 22px;
+	}
+
+	.app main .info .section_content .project .lower_part .block_text {
+		width: 56%;
+	}
+
+	.app main .info .section_content .project .lower_part .block_text p{
+		font-size: 22px;
 	}
 }

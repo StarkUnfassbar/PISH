@@ -470,7 +470,12 @@
 	font-weight: 400;
 }
 
-.app main .about_museum .lower_part img{
+.app main .about_museum .lower_part .block_img{
+	width: 100%;
+	position: relative;
+}
+
+.app main .about_museum .lower_part .block_img img{
 	width: 100%;
 	position: relative;
 	top: -30px;
