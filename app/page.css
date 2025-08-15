@@ -549,7 +549,7 @@
 	width: 50%;
 	height: 513px;
 	padding: 25px 20px;
-	position: absolute;
+	position: relative;
 	top: -45px;
 	box-sizing: border-box;
 }

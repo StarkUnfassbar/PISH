@@ -50,6 +50,17 @@
 		min-width: 750px;
 		font-size: 32px;
 	}
+
+
+
+	.app main .heroes_pish {
+		height: 1500px;
+		padding: 0 100px;
+	}
+
+	.app main .heroes_pish h1 span {
+    	font-size: 58px;
+	}
 }
 
 @media only screen and (max-width : 1800px){
