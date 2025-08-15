@@ -133,6 +133,7 @@
 	height: calc(100vh + 150px);
 	top: -50px;
 	right: 0;
+	z-index: 2;
 	mix-blend-mode: lighten;
 }
 
@@ -243,7 +244,7 @@
 .app main .about_museum .section_content .upper_part .block_imgs img:nth-child(2){
 	width: 860px;
 	position: relative;
-	top: -65px;
+	top: -75px;
 }
 
 

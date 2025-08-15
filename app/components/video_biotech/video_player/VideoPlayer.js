@@ -1,17 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+
 import './video_player.css';
+import './video_player_media.css';
 
 
 
 export default function VideoPlayer({ videoPlayerShow }) {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
+    const progressBarRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(1);
+    const [prevVolume, setPrevVolume] = useState(1); // Для запоминания предыдущей громкости
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+	const videoContainerRef = useRef(null);
 
     const videoJsOptions = {
         controls: false,
@@ -25,10 +30,8 @@ export default function VideoPlayer({ videoPlayerShow }) {
     };
 
     useEffect(() => {
-        // Инициализация плеера
         const initPlayer = () => {
             if (videoRef.current && !playerRef.current) {
-				console.log(videoRef.current)
                 const player = videojs(videoRef.current, videoJsOptions);
                 
                 playerRef.current = player;
@@ -38,8 +41,6 @@ export default function VideoPlayer({ videoPlayerShow }) {
                 player.on('volumechange', () => setVolume(player.volume()));
                 player.on('timeupdate', () => setCurrentTime(player.currentTime()));
                 player.on('loadedmetadata', () => setDuration(player.duration()));
-
-				console.log(playerRef.current && !playerRef.current.isDisposed())
             }
         };
 
@@ -69,6 +70,23 @@ export default function VideoPlayer({ videoPlayerShow }) {
             playerRef.current.volume(newVolume);
         }
         setVolume(newVolume);
+        if (newVolume > 0) {
+            setPrevVolume(newVolume);
+        }
+    };
+
+    const toggleMute = () => {
+        if (playerRef.current) {
+            if (volume > 0) {
+				console.log(volume)
+                setPrevVolume(volume);
+                playerRef.current.volume(0);
+                setVolume(0);
+            } else {
+                playerRef.current.volume(prevVolume);
+                setVolume(prevVolume);
+            }
+        }
     };
 
     const handleTimeUpdate = (e) => {
@@ -79,18 +97,34 @@ export default function VideoPlayer({ videoPlayerShow }) {
         setCurrentTime(newTime);
     };
 
-    const toggleFullscreen = () => {
-        if (playerRef.current) {
-            if (playerRef.current.isFullscreen()) {
-                playerRef.current.exitFullscreen();
-            } else {
-                playerRef.current.requestFullscreen();
-            }
+    const handleProgressBarClick = (e) => {
+        if (progressBarRef.current && playerRef.current) {
+            const progressBar = progressBarRef.current;
+            const rect = progressBar.getBoundingClientRect();
+            const clickPosition = e.clientX - rect.left;
+            const progressBarWidth = rect.width;
+            const seekPercentage = clickPosition / progressBarWidth;
+            const seekTime = seekPercentage * duration;
+            
+            playerRef.current.currentTime(seekTime);
+            setCurrentTime(seekTime);
         }
     };
 
+   	const toggleFullscreen = () => {
+		if (!videoContainerRef.current) return;
+
+		if (document.fullscreenElement) {
+			document.exitFullscreen();
+		} else {
+			videoContainerRef.current.requestFullscreen();
+		}
+	};
+
+
+
     return (
-        <div className={`video_container ${videoPlayerShow ? "" : "_hidden"}`}>
+        <div className={`video_container ${videoPlayerShow ? "" : "_hidden"}`} ref={videoContainerRef}>
             <div data-vjs-player>
                 <video
                     ref={videoRef}
@@ -113,13 +147,30 @@ export default function VideoPlayer({ videoPlayerShow }) {
                     </button>
                     
                     <div className="volume_control">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
-                                <path d="M13.6802 4.81799C14.098 5.23586 14.4295 5.73193 14.6557 6.2779C14.8818 6.82386 14.9982 7.40903 14.9982 7.99997C14.9982 8.59092 14.8818 9.17608 14.6557 9.72205C14.4295 10.268 14.098 10.7641 13.6802 11.182" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path d="M5 10.5H2C1.86739 10.5 1.74021 10.4473 1.64645 10.3536C1.55268 10.2598 1.5 10.1326 1.5 10V6C1.5 5.86739 1.55268 5.74021 1.64645 5.64645C1.74021 5.55268 1.86739 5.5 2 5.5H5L9.5 2V14L5 10.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path d="M5 5.5V10.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path d="M11.9121 6.58582C12.0978 6.77153 12.2451 6.99201 12.3457 7.23466C12.4462 7.47731 12.4979 7.73739 12.4979 8.00003C12.4979 8.26267 12.4462 8.52274 12.3457 8.7654C12.2451 9.00805 12.0978 9.22853 11.9121 9.41424" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
+                        <span onClick={toggleMute}>
+                            {volume === 0 ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+									<path d="M13.6807 4.81873C14.5246 5.66264 14.9987 6.80723 14.9987 8.00071C14.9987 9.19418 14.5246 10.3388 13.6807 11.1827" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M4.99951 5.50073V10.5007" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M11.9126 6.58649C12.2877 6.96156 12.4984 7.47027 12.4984 8.0007C12.4984 8.53113 12.2877 9.03984 11.9126 9.41491" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M3 2.5L13 13.5" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M9.5 9.65V14.0007L5 10.5007H2C1.86739 10.5007 1.74021 10.4481 1.64645 10.3543C1.55268 10.2605 1.5 10.1333 1.5 10.0007V6.00073C1.5 5.86812 1.55268 5.74095 1.64645 5.64718C1.74021 5.55341 1.86739 5.50073 2 5.50073H5L5.42642 5.16907" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M7.00977 3.93754L9.50002 2.00073V6.6768" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+								</svg>
+                            ) : volume < 0.5 ? (
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+									<path d="M5 10.5H2C1.86739 10.5 1.74021 10.4473 1.64645 10.3536C1.55268 10.2598 1.5 10.1326 1.5 10V6C1.5 5.86739 1.55268 5.74021 1.64645 5.64645C1.74021 5.55268 1.86739 5.5 2 5.5H5L9.5 2V14L5 10.5Z" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M5 5.5V10.5" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+									<path d="M11.9121 6.58582C12.0978 6.77153 12.2451 6.99201 12.3457 7.23466C12.4462 7.47731 12.4979 7.73739 12.4979 8.00003C12.4979 8.26267 12.4462 8.52274 12.3457 8.7654C12.2451 9.00805 12.0978 9.22853 11.9121 9.41424" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+								</svg>
+							) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                                    <path d="M13.6802 4.81799C14.098 5.23586 14.4295 5.73193 14.6557 6.2779C14.8818 6.82386 14.9982 7.40903 14.9982 7.99997C14.9982 8.59092 14.8818 9.17608 14.6557 9.72205C14.4295 10.268 14.098 10.7641 13.6802 11.182" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M5 10.5H2C1.86739 10.5 1.74021 10.4473 1.64645 10.3536C1.55268 10.2598 1.5 10.1326 1.5 10V6C1.5 5.86739 1.55268 5.74021 1.64645 5.64645C1.74021 5.55268 1.86739 5.5 2 5.5H5L9.5 2V14L5 10.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M5 5.5V10.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M11.9121 6.58582C12.0978 6.77153 12.2451 6.99201 12.3457 7.23466C12.4462 7.47731 12.4979 7.73739 12.4979 8.00003C12.4979 8.26267 12.4462 8.52274 12.3457 8.7654C12.2451 9.00805 12.0978 9.22853 11.9121 9.41424" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            )}
                         </span>
 
                         <input
@@ -135,12 +186,14 @@ export default function VideoPlayer({ videoPlayerShow }) {
                     
                     <div className="progress_container">
                         <input
+                            ref={progressBarRef}
                             type="range"
                             min="0"
                             max={duration}
                             step="0.1"
                             value={currentTime}
                             onChange={handleTimeUpdate}
+                            onClick={handleProgressBarClick}
                             className="progress_bar"
                         />
                         <div 

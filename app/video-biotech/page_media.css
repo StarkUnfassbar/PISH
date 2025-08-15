@@ -1,0 +1,9 @@
+@media only screen and (min-width : 2000px){
+	.app main .list_video{
+		grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+	}
+
+	.app main .list_video .block_video .video_cover{
+		height: 380px;
+	}
+}

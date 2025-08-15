@@ -1,6 +1,7 @@
 .video_container {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 820px;
 	border-radius: 20px;
@@ -17,8 +18,8 @@
 }
 
 .video_container .video-js {
-  height: 100%;
-  object-fit: contain;
+	height: 100%;
+	object-fit: contain;
 }
 
 .video_container .block_controls {
@@ -66,6 +67,7 @@
 .volume_control span{
 	width: 16px;
 	height: 16px;
+	cursor: pointer;
 }
 
 .volume_control span svg{
@@ -133,6 +135,7 @@
 	-webkit-appearance: none;
 	background: transparent;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .progress_bar::-webkit-slider-thumb {
