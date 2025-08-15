@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import Link from 'next/link';
+
 
 import './window_1/main_widget_w1.css';
 import './window_1/main_widget_w1_media.css';
@@ -12,6 +14,8 @@ import './window_2/main_widget_w2_media.css';
 import './window_3/main_widget_w3.css';
 import './window_3/main_widget_w3_media.css';
 
+
+import Header from '../../../../header/Header';
 
 import ExhibitInDev from '../exhibit_in_dev/ExhibitInDev';
 import ZAARestoration from '../../../zaa_restoration/ZAARestoration';
@@ -323,6 +327,13 @@ export default function MainWidget() {
 			)}
 
 
+
+			<Link href="/" className="button_exit">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 73" fill="none">
+					<line x1="4.06066" y1="1.93934" x2="74.0607" y2="71.9393" stroke="white" strokeWidth="3"/>
+					<line x1="1.93934" y1="71.9393" x2="71.9393" y2="1.93934" stroke="white" strokeWidth="3"/>
+				</svg>
+			</Link>
 
 			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} />
 		</>
