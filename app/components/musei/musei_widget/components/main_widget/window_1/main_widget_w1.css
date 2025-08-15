@@ -48,7 +48,7 @@
 	position: absolute;
 	cursor: pointer;
 
-	/* opacity: 0; */
+	opacity: 0;
 	transition: all .5s ease;
 }
 
@@ -97,7 +97,7 @@
 	top: 0;
 	left: 0;
 	pointer-events: painted;
-	background-color: #00000050;
+	/* background-color: #00000050; */
 }
 
 
@@ -120,7 +120,7 @@
 	justify-content: center;
 	width: 210px;
 	height: 380px;
-	background-color: rgb(0, 0, 0, .5);
+	/* background-color: rgb(0, 0, 0, .5); */
 	position: absolute;
 	cursor: pointer;
 

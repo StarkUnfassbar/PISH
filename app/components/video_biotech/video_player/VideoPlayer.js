@@ -3,6 +3,8 @@ import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import './video_player.css';
 
+
+
 export default function VideoPlayer({ videoPlayerShow }) {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
@@ -17,7 +19,7 @@ export default function VideoPlayer({ videoPlayerShow }) {
         responsive: true,
         fluid: false,
         sources: [{
-            src: '/video/video_biotech/video_1.mp4',
+            src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video_1.mp4',
             type: 'video/mp4'
         }]
     };
