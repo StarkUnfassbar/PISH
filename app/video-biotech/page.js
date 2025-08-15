@@ -13,6 +13,8 @@ import Footer from '../components/footer/Footer';
 import BlockVideo from '../components/video_biotech/block_video/BlockVideo';
 import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/PopupAboutBlocked';
 
+import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
+
 
 
 export default function VideoBiotech() {
@@ -36,6 +38,17 @@ export default function VideoBiotech() {
 	};
 
 
+	const [videoPlayerShow, setVideoPlayerShow] = useState(false);
+
+	const handleVideoPlayerShow = (open) => {
+		if(open){
+			setVideoPlayerShow(true);
+		} else{
+			setVideoPlayerShow(false);
+		}
+	};
+
+
 
 	return (
 		<div className="app">
@@ -43,11 +56,17 @@ export default function VideoBiotech() {
 
 			<main>
 				<section className="video_content">
-					<h1>Видеоуроки о биотехе</h1>
+					{!videoPlayerShow && (
+						<h1>Видеоуроки о биотехе</h1>
+					)}
+
+					<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} />
+
 
 					<div className="list_video">
 						<BlockVideo
 							videoBlocked={false}
+							funForButton={() => handleVideoPlayerShow(true)}
 							videoInfoHeader={"Получение и применение ГМ растений"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий "}
 						/>

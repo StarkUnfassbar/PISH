@@ -15,11 +15,13 @@ export default function PopupAboutBlocked({ popupHeroOpen, funForClose }) {
 			<div className="popup_content">
 				{/* <Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} /> */}
 
-				<div className="block_info">
+				<div className="block_content">
 					<div className="block_text">
-						<h3>УПС!</h3>
+						<h1>УПС!</h1>
 						<p>Для просмотра остальных видеоуроков необходима регестрация</p>
 					</div>
+
+					<button className="button_registration">Зарегестрироваться</button>
 				</div>
 
 				<button className="button_exit" onClick={funForClose}>

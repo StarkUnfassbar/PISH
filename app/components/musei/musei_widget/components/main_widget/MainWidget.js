@@ -157,7 +157,7 @@ export default function MainWidget() {
 			{window1Active && (
 				<div className={`window window_1 ${window1Open ? "_open" : ''} ${window1Hidden ? "_hidden" : ''}`}>
 					<video autoPlay loop muted>
-						<source src="/video/video1.mp4" type="video/mp4" />
+						<source src="/video/musei/video_1.mp4" type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
 
@@ -183,7 +183,7 @@ export default function MainWidget() {
 							</button>
 						</div>
 
-						<div className="block_transition" onMouseEnter={() => handleTransitionHover(true, "transition")} onMouseLeave={() => handleTransitionHover(false, "transition")}>
+						{/* <div className="block_transition" onMouseEnter={() => handleTransitionHover(true, "transition")} onMouseLeave={() => handleTransitionHover(false, "transition")}>
 							<button onClick={() => handleWindowOpen(3)}>
 								<span className="icon">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 68" fill="none">
@@ -201,13 +201,13 @@ export default function MainWidget() {
 
 								<span className="text">Нажмите, чтобы переместиться</span>
 							</button>
-						</div>
+						</div> */}
 					</div>
 					
 					<div className="block_exhibits">
-						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
+						{/* <div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
 							<button onClick={() => handleOpenWidget(true, "medicine")}></button>
-						</div>
+						</div> */}
 
 						<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
 							<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>

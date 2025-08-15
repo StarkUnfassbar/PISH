@@ -18,6 +18,7 @@
 
 
 
+
 .popup .popup_blackout{
 	width: 100%;
 	height: 100%;
@@ -30,20 +31,22 @@
 
 
 
+
 .popup .popup_content{
 	display: flex;
-	align-items: center;
-	width: 1110px;
-	min-height: 480px;
+	justify-content: center;
+	width: 500px;
+	min-height: 600px;
 	max-height: 100vh;
 	border: 4px solid #4547bb8e;
-	border-radius: 15px;
+	border-radius: 35px;
 	background-color: #191933;
-	padding: 20px 25px;
+	padding: 70px 25px;
 	position: absolute;
 	z-index: 2;
 	box-sizing: border-box;
 }
+
 
 
 .popup .popup_content img{
@@ -56,55 +59,80 @@
 }
 
 
-.popup .popup_content .block_info{
+
+.popup .popup_content .block_content{
 	display: flex;
-	gap: 30px;
+	justify-content: center;
 	position: relative;
 	z-index: 2;
 }
 
-.popup .popup_content .block_info .block_img{
-	width: 400px;
-	min-width: 400px;
-	height: 400px;
-	border-radius: 15px;
-	background: linear-gradient(rgba(103, 104, 139, 1), rgb(55, 56, 74));
-}
 
-.popup .popup_content .block_info .block_text{
+.popup .popup_content .block_content .block_text{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
-.popup .popup_content .block_info .block_text h3{
-	width: 400px;
+.popup .popup_content .block_content .block_text h1{
+	width: fit-content;
 	color: #fff;
-	font-size: 30px;
+	font-size: 65px;
+	font-family: 'Benzin';
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 35px;
+}
+
+.popup .popup_content .block_content .block_text p{
+	width: 450px;
+	columns: #fff;
+	font-size: 24px;
 	font-family: 'Benzin';
 	font-weight: 400;
-	margin-bottom: 40px;
+	text-align: center;
 }
 
-.popup .popup_content .block_info .block_text p{
-	columns: #fff;
+
+.popup .popup_content .block_content button{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 270px;
+	height: 60px;
+	color: #fff;
+	font-family: "Raleway";
 	font-size: 20px;
-	font-family: 'Raleway';
-	font-weight: 400;
+	font-weight: 600;
+	border: 3px solid #03D75C;
+	border-radius: 15px;
+	background-color: #03d75b00;
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+	user-select: none;
+
+	transition: all .3s ease;
 }
+
+.popup .popup_content .block_content button:hover{
+	background-color: #03D75C;
+}
+
 
 
 .popup .popup_content .button_exit{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 32px;
-	height: 32px;
+	width: 28px;
+	height: 28px;
 	border: 2px solid #75758500;
 	border-radius: 10px;
 	background-color: #ffffff00;
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 35px;
+	right: 25px;
 	z-index: 100;
 	cursor: pointer;
 
@@ -117,8 +145,8 @@
 }
 
 .popup .popup_content .button_exit svg{
-	width: 20px;
-	height: 20px;
+	width: 17px;
+	height: 17px;
 }
 
 .popup .popup_content .button_exit svg line{
