@@ -35,8 +35,8 @@
 	justify-content: center;
 	width: 280px;
 	height: 280px;
-	background: linear-gradient(135deg, rgb(0, 0, 0, .8) 0%, rgba(8, 8, 8, .8) 60%, rgba(102, 102, 102, .8) 100%);
-	border: 2px solid #000;
+	background: linear-gradient(160deg, #4547bbd2 0%, #434db8b7 20%, #1e9b82c0 100%);
+	border: 3px solid #2a2ca293;
 	border-radius: 10px;
 	backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
@@ -55,7 +55,7 @@
 .musei_widget .window_2 .block_transitions .block_transition button .text{
 	width: 90%;
 	font-size: 19px;
-	font-family: "Grandis";
+	font-family: "Benzin";
 	font-weight: 400;
 	text-align: center;
 }
