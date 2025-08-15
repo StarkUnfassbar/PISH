@@ -221,6 +221,19 @@
 	pointer-events: none;
 }
 
+.app main .info .section_content .team .table .bg::before{
+	content: "Команда";
+	width: fit-content;
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 30px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 11px;
+	right: 40px;
+}
+
 
 .app main .info .section_content .team .table .table_content{
 	display: flex;

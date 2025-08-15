@@ -7,6 +7,22 @@
 	.button_visit .text{
 		font-size: 26px;
 	}
+
+
+	.app main .heroes_pish .section_content .upper_part .block_hero .button_learn_more,
+	.app main .heroes_pish .section_content .lower_part .block_hero .button_learn_more {
+		width: 480px;
+		height: 80px;
+	}
+
+	.button_learn_more .icon{
+		width: 30px;
+		height: 30px;
+	}
+
+	.button_learn_more .text {
+    	font-size: 22px;
+	}
 }
 
 @media only screen and (max-width : 1800px){

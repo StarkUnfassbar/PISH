@@ -54,12 +54,67 @@
 
 
 	.app main .heroes_pish {
-		height: 1500px;
+		height: 1700px;
 		padding: 0 100px;
 	}
 
 	.app main .heroes_pish h1 span {
     	font-size: 58px;
+	}
+
+	.app main .heroes_pish .section_content {
+    	width: 1800px;
+	}
+
+	.app main .heroes_pish .section_content .upper_part .block_hero{
+		height: 650px;
+	}
+
+	.app main .heroes_pish .section_content .lower_part .block_hero{
+		height: 590px;
+	}
+
+
+
+	.app main .about_pish {
+    	height: 1600px;
+	}
+
+	.app main .about_pish .section_content h1 {
+		width: 1400px;
+		font-size: 80px;
+	}
+
+	.app main .about_pish .section_content h3 {
+		width: 1100px;
+		font-size: 38px;
+	}
+
+	.app main .about_pish .section_content .mission {
+		width: 870px;
+	}
+
+	.app main .about_pish .section_content .mission h2 {
+    	font-size: 48px;
+	}
+
+	.app main .about_pish .section_content .mission p {
+    	font-size: 30px;
+	}
+
+	.app main .about_pish .patterns .pattern:nth-child(1) {
+		width: 1600px;
+		height: 1600px;
+	}
+
+	.app main .about_pish .section_content .button_visit .text {
+		font-size: 28px;
+	}
+
+
+
+	.app main .info .section_content .bioeconomics .block_text p {
+		font-size: 28px !important;
 	}
 }
 
