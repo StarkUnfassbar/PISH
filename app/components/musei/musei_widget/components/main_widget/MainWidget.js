@@ -32,6 +32,10 @@ export default function MainWidget() {
 	const [window3Hidden, setWindow3Hidden] = useState(true);
 	const [window3Open, setWindow3Open] = useState(false);
 
+	const [window4Active, setWindow4Active] = useState(false);
+	const [window4Hidden, setWindow4Hidden] = useState(true);
+	const [window4Open, setWindow4Open] = useState(false);
+
 	const handleWindowOpen = (index) => {
 		if(index === 1){
 			setWindow1Active(true);

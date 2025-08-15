@@ -13,7 +13,7 @@ export default function PopupAboutBlocked({ popupHeroOpen, funForClose }) {
 			<div className="popup_blackout" onClick={funForClose}></div>
 
 			<div className="popup_content">
-				{/* <Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} /> */}
+				<Image src="/img/video_biotech/popup_bg.png" alt="" fill unoptimized={true} />
 
 				<div className="block_content">
 					<div className="block_text">
