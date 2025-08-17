@@ -8,30 +8,52 @@ import './footer_media.css';
 
 
 
-export default function Footer({ patternsActive }) {
+export default function Footer({ isMobile, patternsActive }) {
 	return (
 		<footer>
 			<div className="footer_content">
 				<div className="upper_part">
-					<div className="left">
-						<Link href="/" className="logo">
-							<Image src="/img/main/logo/logo_pish.svg" alt="logo of the advanced engineering school" fill />
-						</Link>
+					{isMobile ? (
+						<>
+							<Link href="/" className="logo">
+								<Image src="/img/main/logo/logo_pish.svg" alt="logo of the advanced engineering school" fill />
+							</Link>
 
-						<Link href="https://www.dvfu.ru/" className="logo">
-							<Image src="/img/main/logo/logo_fefu.svg" alt="logo of the Far Eastern Federal University" fill />
-						</Link>
-					</div>
+							<Link href="https://www.dvfu.ru/" className="logo">
+								<Image src="/img/main/logo/logo_fefu.svg" alt="logo of the Far Eastern Federal University" fill />
+							</Link>
 
-					<div className="right">
-						<Link href="https://наука.рф/" className="logo">
-							<Image src="/img/main/logo/logo_science_technology.svg" alt="The Decade of Science and Technology logo" fill />
-						</Link>
+							<Link href="https://наука.рф/" className="logo">
+								<Image src="/img/main/logo/logo_science_technology.svg" alt="The Decade of Science and Technology logo" fill />
+							</Link>
 
-						<Link href="https://minobrnauki.gov.ru/" className="logo">
-							<Image src="/img/main/logo/logo_ministry.svg" alt="logo of the Ministry of Education and Science of the Russian Federation" fill />
-						</Link>
-					</div>
+							<Link href="https://minobrnauki.gov.ru/" className="logo">
+								<Image src="/img/main/logo/logo_ministry.svg" alt="logo of the Ministry of Education and Science of the Russian Federation" fill />
+							</Link>
+						</>
+					) : (
+						<>
+							<div className="left">
+								<Link href="/" className="logo">
+									<Image src="/img/main/logo/logo_pish.svg" alt="logo of the advanced engineering school" fill />
+								</Link>
+
+								<Link href="https://www.dvfu.ru/" className="logo">
+									<Image src="/img/main/logo/logo_fefu.svg" alt="logo of the Far Eastern Federal University" fill />
+								</Link>
+							</div>
+
+							<div className="right">
+								<Link href="https://наука.рф/" className="logo">
+									<Image src="/img/main/logo/logo_science_technology.svg" alt="The Decade of Science and Technology logo" fill />
+								</Link>
+
+								<Link href="https://minobrnauki.gov.ru/" className="logo">
+									<Image src="/img/main/logo/logo_ministry.svg" alt="logo of the Ministry of Education and Science of the Russian Federation" fill />
+								</Link>
+							</div>
+						</>
+					)}
 				</div>
 
 				<div className="lower_part">

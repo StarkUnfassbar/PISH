@@ -10,7 +10,9 @@ import 'swiper/css';
 import "./section_info.css";
 import "./section_info_media.css";
 
-export default function Home() {
+
+
+export default function SectionInfo({ isMobile }) {
 	const [activeTab, setActiveTab] = useState("bioeconomics");
 	const swiperRef = useRef(null);
 
@@ -20,7 +22,6 @@ export default function Home() {
 		{ id: "project", label: "Федеральный проект ПИШ" }
 	];
 
-	// Содержимое слайдов
 	const slides = {
 		bioeconomics: (
 			<div className="bioeconomics">
@@ -151,7 +152,6 @@ export default function Home() {
 		)
 	};
 
-	// Переключение слайда по индексу
 	const handleTabClick = (tabId) => {
 		setActiveTab(tabId);
 
@@ -161,11 +161,16 @@ export default function Home() {
 		}
 	};
 
-	// Обновление активной вкладки при свайпе
 	const handleSlideChange = (swiper) => {
 		const activeIndex = swiper.activeIndex;
 		setActiveTab(tabs[activeIndex].id);
 	};
+
+
+	
+	if(isMobile){
+		return null;
+	}
 
 	return (
 		<section className="info">
@@ -185,8 +190,8 @@ export default function Home() {
 				<Swiper
 					ref={swiperRef}
 					onSlideChange={handleSlideChange}
-					allowTouchMove={false} // Отключаем свайп, если нужно
-					autoHeight={true}      // Автовысота под контент
+					allowTouchMove={false}
+					autoHeight={true}
 				>
 					{tabs.map(tab => (
 						<SwiperSlide key={tab.id}>
