@@ -7,7 +7,7 @@
 
 @media only screen and (max-width : 930px){
 	.info_musei.mobile {
-		height: 2000px;
+		height: 2100px;
 	}
 
 	.info_musei.mobile h1 {
@@ -59,7 +59,7 @@
 
 @media only screen and (max-width : 760px){
 	.info_musei.mobile {
-		height: 2000px;
+		height: 1700px;
 		padding: 100px 20px 0;
 	}
 
@@ -103,11 +103,12 @@
 	}
 
 	.info_musei.mobile .block_facts .block_content .block_text{
-		width: 500px;
+		width: 440px;
 	}
 
 	.info_musei.mobile .block_facts .block_content .block_text p{
 		font-size: 16px;
+		line-height: normal;
 	}
 
 
@@ -124,7 +125,7 @@
 
 @media only screen and (max-width : 650px){
 	.info_musei.mobile {
-		height: 2000px;
+		height: 1450px;
 		padding: 100px 20px 0;
 	}
 
@@ -174,31 +175,32 @@
 
 	.info_musei.mobile .block_facts .block_content .block_text p{
 		font-size: 12px;
-		line-height: normal;
 	}
 
 
 
 	.info_musei.mobile .block_button .button_visit{
-		width: 260px;
-		height: 70px;
+		width: 240px;
+		height: 65px;
+		top: 70px;
 	}
 
 	.info_musei.mobile .block_button .button_visit .text{
-		font-size: 20px;
+		font-size: 18px;
 	}
 }
 
-@media only screen and (max-width : 570px){
+@media only screen and (max-width : 560px){
 	.info_musei.mobile {
-		height: 2000px;
-		padding: 100px 20px 0;
+		height: 1100px;
+		padding: 50px 20px 0;
 	}
 
 	.info_musei.mobile h1 {
-		width: 550px;
-		font-size: 35px;
-		line-height: 70px;
+		width: 450px;
+		font-size: 28px;
+		line-height: 50px;
+		margin-bottom: 50px;
 	}
 
 
@@ -208,50 +210,185 @@
 	}
 
 	.info_musei.mobile .block_info_opening .content{
-		width: 480px;
-		height: 230px;
-		padding: 20px;
+		width: 400px;
+		height: 190px;
+		padding: 10px;
 	}
 
 
 	.info_musei.mobile .block_info_opening .content h4{
-		font-size: 20px;
+		font-size: 15px;
 	}
 
 
 	.info_musei.mobile .block_info_opening .content .block_text{
-		width: 400px;
+		width: 350px;
 		gap: 10px;
 	}
 
 	.info_musei.mobile .block_info_opening .content .block_text p{
-		font-size: 13px;
+		font-size: 11px;
 	}
 
 
 
 	.info_musei.mobile .block_facts .block_content {
-		width: 480px;
-  		height: 315px;
+		width: 400px;
+  		height: 270px;
 	}
 
 	.info_musei.mobile .block_facts .block_content .block_text{
-		width: 380px;
+		width: 350px;
 	}
 
 	.info_musei.mobile .block_facts .block_content .block_text p{
-		font-size: 12px;
-		line-height: normal;
+		font-size: 11px;
 	}
 
 
 
 	.info_musei.mobile .block_button .button_visit{
-		width: 260px;
-		height: 70px;
+		width: 220px;
+		height: 60px;
+		top: 50px;
 	}
 
 	.info_musei.mobile .block_button .button_visit .text{
-		font-size: 20px;
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width : 450px){
+	.info_musei.mobile {
+		height: 1100px;
+		padding: 50px 20px 0;
+	}
+
+	.info_musei.mobile h1 {
+		width: 380px;
+		font-size: 24px;
+		line-height: 50px;
+		margin-bottom: 50px;
+	}
+
+
+
+	.info_musei.mobile .block_info_opening{
+		margin-bottom: 20px;
+	}
+
+	.info_musei.mobile .block_info_opening .content{
+		width: 370px;
+		height: 170px;
+		padding: 10px;
+	}
+
+
+	.info_musei.mobile .block_info_opening .content h4{
+		font-size: 14px;
+	}
+
+
+	.info_musei.mobile .block_info_opening .content .block_text{
+		width: 330px;
+		gap: 10px;
+	}
+
+	.info_musei.mobile .block_info_opening .content .block_text p{
+		font-size: 10px;
+	}
+
+
+
+	.info_musei.mobile .block_facts .block_content {
+		width: 370px;
+  		height: 245px;
+	}
+
+	.info_musei.mobile .block_facts .block_content .block_text{
+		width: 340px;
+	}
+
+	.info_musei.mobile .block_facts .block_content .block_text p{
+		font-size: 10px;
+	}
+
+
+
+	.info_musei.mobile .block_button .button_visit{
+		width: 220px;
+		height: 60px;
+		top: 50px;
+	}
+
+	.info_musei.mobile .block_button .button_visit .text{
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width : 400px){
+	.info_musei.mobile {
+		height: 900px;
+		padding: 30px 20px 0;
+	}
+
+	.info_musei.mobile h1 {
+		width: 350px;
+		font-size: 22px;
+		line-height: 40px;
+		margin-bottom: 50px;
+	}
+
+
+
+	.info_musei.mobile .block_info_opening{
+		margin-bottom: 20px;
+	}
+
+	.info_musei.mobile .block_info_opening .content{
+		width: 320px;
+		height: 150px;
+		padding: 10px;
+	}
+
+
+	.info_musei.mobile .block_info_opening .content h4{
+		font-size: 12px;
+	}
+
+
+	.info_musei.mobile .block_info_opening .content .block_text{
+		width: 280px;
+	}
+
+	.info_musei.mobile .block_info_opening .content .block_text p{
+		font-size: 8px;
+	}
+
+
+
+	.info_musei.mobile .block_facts .block_content {
+		width: 320px;
+  		height: 210px;
+	}
+
+	.info_musei.mobile .block_facts .block_content .block_text{
+		width: 260px;
+	}
+
+	.info_musei.mobile .block_facts .block_content .block_text p{
+		font-size: 8px;
+	}
+
+
+
+	.info_musei.mobile .block_button .button_visit{
+		width: 200px;
+		height: 55px;
+		top: 30px;
+	}
+
+	.info_musei.mobile .block_button .button_visit .text{
+		font-size: 14px;
 	}
 }
