@@ -12,19 +12,7 @@ import StandardButton from '../../main_page/standard_button/StandardButton';
 
 
 
-export default function Header({ isMobile }) {
-	const [activeHeaderMobile, setActiveHeaderMobile] = useState(false);
-
-	const handleActiveHeaderMobile = () => {
-		if(!activeHeaderMobile){
-			setActiveHeaderMobile(true);
-		} else{
-			setActiveHeaderMobile(false);
-		}
-	};
-
-
-
+export default function SectionInfoMusei({ isMobile }) {
 	return (
 		<>
 			{isMobile ? (

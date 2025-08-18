@@ -19,6 +19,20 @@ import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
 
 
 export default function VideoBiotech() {
+	const [isMobile, setIsMobile] = useState(null);
+	
+	useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1100);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
 	const [popupHeroShow, setPopupHeroShow] = useState(false);
 	const [popupHeroOpen, setPopupHeroOpen] = useState(false);
 
@@ -51,9 +65,13 @@ export default function VideoBiotech() {
 
 
 
+	if (isMobile === null) {
+        return null;
+    }
+
 	return (
 		<div className="app">
-			<Header />
+			<Header isMobile={isMobile} />
 
 			<main>
 				<section className="video_content">
@@ -101,6 +119,8 @@ export default function VideoBiotech() {
 					</div>
 				</section>
 			</main>
+
+			<Footer isMobile={isMobile} patternsActive={true} />
 
 			{popupHeroShow && <PopupAboutBlocked popupHeroOpen={popupHeroOpen} funForClose={() => handlePopupOpen(false)} />}
 		</div>
