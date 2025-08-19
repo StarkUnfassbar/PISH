@@ -114,7 +114,7 @@ export default function Footer({ isMobile, patternsActive }) {
 				</div>
 			</div>
 
-			{patternsActive && (
+			{!isMobile && patternsActive && (
 				<div className="patterns">
 					<img src="/img/main/footer/pattern_1.png" alt="pattern on the background" />
 

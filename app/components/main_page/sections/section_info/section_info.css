@@ -69,7 +69,7 @@
 
 
 
-.app main .info .section_content{
+.app main .info .section_content.desktop{
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -78,13 +78,13 @@
 	z-index: 2;
 }
 
-.app main .info .section_content .swiper {
+.app main .info .section_content.desktop .swiper {
 	width: 100%;
 	height: auto;
 	overflow: visible;
 }
 
-.app main .info .section_content .swiper .swiper-slide .swiper_content{
+.app main .info .section_content.desktop .swiper .swiper-slide .swiper_content{
 	display: flex;
 	justify-content: center;
   	width: 100%;
@@ -93,7 +93,7 @@
 
 
 
-.app main .info .section_content .bioeconomics{
+.app main .info .section_content.desktop .bioeconomics{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -103,7 +103,7 @@
 }
 
 
-.app main .info .section_content .bioeconomics .bg{
+.app main .info .section_content.desktop .bioeconomics .bg{
 	width: 100%;
 	height: 100%;
 	background: url("/img/main/info/frame_1.svg");
@@ -116,7 +116,7 @@
 	pointer-events: none;
 }
 
-.app main .info .section_content .bioeconomics .bg::before{
+.app main .info .section_content.desktop .bioeconomics .bg::before{
 	content: "Биоэкономика";
 	width: fit-content;
 	color: #fff;
@@ -129,7 +129,7 @@
 	left: 595px;
 }
 
-.app main .info .section_content .bioeconomics .bg::after{
+.app main .info .section_content.desktop .bioeconomics .bg::after{
 	content: "Биоэкономика";
 	width: fit-content;
 	color: #fff;
@@ -143,7 +143,7 @@
 }
 
 
-.app main .info .section_content .bioeconomics .block_text{
+.app main .info .section_content.desktop .bioeconomics .block_text{
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -154,7 +154,7 @@
 	z-index: 5;
 }
 
-.app main .info .section_content .bioeconomics .block_text p{
+.app main .info .section_content.desktop .bioeconomics .block_text p{
 	width: 100%;
 	color: #fff;
 	font-family: "Raleway";
@@ -162,14 +162,14 @@
 	font-weight: 600;
 }
 
-.app main .info .section_content .bioeconomics .block_text p span{
+.app main .info .section_content.desktop .bioeconomics .block_text p span{
 	color: #03D75C;
 }
 
 
 
 
-.app main .info .section_content .team{
+.app main .info .section_content.desktop .team{
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -180,7 +180,7 @@
 	position: relative;
 }
 
-.app main .info .section_content .team .block_text{
+.app main .info .section_content.desktop .team .block_text{
 	display: flex;
 	justify-content: left;
 	width: 100%;
@@ -190,7 +190,7 @@
 	z-index: 2;
 }
 
-.app main .info .section_content .team .block_text p{
+.app main .info .section_content.desktop .team .block_text p{
 	width: 800px;
 	color: #fff;
 	font-family: "Benzin";
@@ -198,7 +198,7 @@
 	font-weight: 400;
 }
 
-.app main .info .section_content .team .table{
+.app main .info .section_content.desktop .team .table{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -208,7 +208,7 @@
 }
 
 
-.app main .info .section_content .team .table .bg{
+.app main .info .section_content.desktop .team .table .bg{
 	width: 100%;
 	height: 100%;
 	background: url("/img/main/info/frame_2.svg");
@@ -221,7 +221,7 @@
 	pointer-events: none;
 }
 
-.app main .info .section_content .team .table .bg::before{
+.app main .info .section_content.desktop .team .table .bg::before{
 	content: "Команда";
 	width: fit-content;
 	color: #fff;
@@ -235,7 +235,7 @@
 }
 
 
-.app main .info .section_content .team .table .table_content{
+.app main .info .section_content.desktop .team .table .table_content{
 	display: flex;
 	gap: 5px;
 	width: 100%;
@@ -245,7 +245,7 @@
 	box-sizing: border-box;
 }
 
-.app main .info .section_content .team .table .table_content .column{
+.app main .info .section_content.desktop .team .table .table_content .column{
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -253,27 +253,27 @@
 	height: 100%;
 }
 
-.app main .info .section_content .team .table .table_content .column:nth-child(1){
+.app main .info .section_content.desktop .team .table .table_content .column:nth-child(1){
 	width: 415px;
 	min-width: 415px;
 }
 
-.app main .info .section_content .team .table .table_content .column:nth-child(2){
+.app main .info .section_content.desktop .team .table .table_content .column:nth-child(2){
 	width: 333px;
 	min-width: 333px;
 }
 
-.app main .info .section_content .team .table .table_content .column:nth-child(3){
+.app main .info .section_content.desktop .team .table .table_content .column:nth-child(3){
 	width: 299px;
 	min-width: 299px;
 }
 
-.app main .info .section_content .team .table .table_content .column:nth-child(4){
+.app main .info .section_content.desktop .team .table .table_content .column:nth-child(4){
 	width: 330px;
 	min-width: 330px;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_head{
+.app main .info .section_content.desktop .team .table .table_content .column .column_head{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -284,7 +284,7 @@
 	box-sizing: border-box;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_head h3{
+.app main .info .section_content.desktop .team .table .table_content .column .column_head h3{
 	color: #03D75C;
 	font-size: 20px;
 	font-family: "Benzin";
@@ -292,14 +292,14 @@
 	text-transform: uppercase;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_head h5{
+.app main .info .section_content.desktop .team .table .table_content .column .column_head h5{
 	color: #fff;
 	font-size: 16px;
 	font-family: "Benzin";
 	font-weight: 400;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content{
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -309,26 +309,26 @@
 	box-sizing: border-box;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content h4{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content h4{
 	color: #fff;
 	font-size: 18px;
 	font-family: "Raleway";
 	font-weight: 600;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content p{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content p{
 	color: #fff;
 	font-size: 16px;
 	font-family: "Raleway";
 	font-weight: 400;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content p span{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content p span{
 	color: #03D75C;
 	font-weight: 600;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content ul{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content ul{
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -336,7 +336,7 @@
 	list-style: none;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content ul li{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content ul li{
 	display: inline-flex;
 	align-items: center;
 	color: #fff;
@@ -347,7 +347,7 @@
 	position: relative;
 }
 
-.app main .info .section_content .team .table .table_content .column .column_content ul li::before{
+.app main .info .section_content.desktop .team .table .table_content .column .column_content ul li::before{
 	content: "";
 	width: 4px;
 	height: 4px;
@@ -360,7 +360,7 @@
 
 
 
-.app main .info .section_content .project{
+.app main .info .section_content.desktop .project{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -372,7 +372,7 @@
 
 
 
-.app main .info .section_content .project .upper_part{
+.app main .info .section_content.desktop .project .upper_part{
 	display: flex;
 	justify-content: left;
 	width: 100%;
@@ -380,7 +380,7 @@
 }
 
 
-.app main .info .section_content .project .upper_part .block_text{
+.app main .info .section_content.desktop .project .upper_part .block_text{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -392,7 +392,7 @@
 	box-sizing: border-box;
 }
 
-.app main .info .section_content .project .upper_part .block_text p{
+.app main .info .section_content.desktop .project .upper_part .block_text p{
 	width: 100%;
 	color: #fff;
 	font-family: "Raleway";
@@ -401,18 +401,18 @@
 	line-height: 28px;
 }
 
-.app main .info .section_content .project .upper_part .block_text p span{
+.app main .info .section_content.desktop .project .upper_part .block_text p span{
 	color: #03D75C;
 	font-weight: 600;
 }
 
-.app main .info .section_content .project .upper_part .block_text p span._enlarged{
+.app main .info .section_content.desktop .project .upper_part .block_text p span._enlarged{
 	font-size: 32px;
 	font-weight: 400;
 }
 
 
-.app main .info .section_content .project .upper_part .block_text .bg{
+.app main .info .section_content.desktop .project .upper_part .block_text .bg{
 	width: 100%;
 	height: 100%;
 	background: url("/img/main/info/frame_3.svg");
@@ -425,7 +425,7 @@
 	pointer-events: none;
 }
 
-.app main .info .section_content .project .upper_part .block_text .bg::before{
+.app main .info .section_content.desktop .project .upper_part .block_text .bg::before{
 	content: "Федеральный проект";
 	color: #fff;
 	font-family: "Benzin";
@@ -439,14 +439,14 @@
 
 
 
-.app main .info .section_content .project .lower_part{
+.app main .info .section_content.desktop .project .lower_part{
 	display: flex;
 	justify-content: right;
 	width: 100%;
 	height: 100%;
 }
 
-.app main .info .section_content .project .lower_part .block_text{
+.app main .info .section_content.desktop .project .lower_part .block_text{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -459,7 +459,7 @@
 }
 
 
-.app main .info .section_content .project .lower_part .block_text p{
+.app main .info .section_content.desktop .project .lower_part .block_text p{
 	width: 100%;
 	color: #fff;
 	font-family: "Raleway";
@@ -468,7 +468,7 @@
 	line-height: 28px;
 }
 
-.app main .info .section_content .project .lower_part .block_text p a{
+.app main .info .section_content.desktop .project .lower_part .block_text p a{
 	display: inline-flex;
 	color: #03D75C;
 	font-weight: 600;
@@ -477,7 +477,7 @@
 }
 
 
-.app main .info .section_content .project .lower_part .block_text .bg{
+.app main .info .section_content.desktop .project .lower_part .block_text .bg{
 	width: 100%;
 	height: 100%;
 	background: url("/img/main/info/frame_4.svg");
@@ -490,7 +490,7 @@
 	pointer-events: none;
 }
 
-.app main .info .section_content .project .lower_part .block_text .bg::before{
+.app main .info .section_content.desktop .project .lower_part .block_text .bg::before{
 	content: "Федеральный проект";
 	color: #fff;
 	font-family: "Benzin";
@@ -542,4 +542,320 @@
 	top: -500px;
 	left: 0;
 	z-index: 1;
+}
+
+
+
+
+
+.app main .info .section_content.mobile{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: fit-content;
+	position: relative;
+	z-index: 2;
+}
+
+.app main .info .section_content.mobile .swiper {
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.app main .info .section_content.mobile .swiper .swiper-slide .swiper_content{
+	display: flex;
+	justify-content: center;
+  	width: 100%;
+}
+
+
+
+
+.app main .info .section_content.mobile .bioeconomics{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	height: 650px;
+	padding: 0 30px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+
+.app main .info .section_content.mobile .bioeconomics .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_1_mobile.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.app main .info .section_content.mobile .bioeconomics .bg::before{
+	content: "Биоэкономика";
+	width: fit-content;
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 24px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 14px;
+	right: 40px;
+}
+
+.app main .info .section_content.mobile .bioeconomics .bg::after{
+	content: "Биоэкономика";
+	width: fit-content;
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 24px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: 16px;
+	left: 40px;
+}
+
+
+.app main .info .section_content.mobile .bioeconomics .block_text{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	height: fit-content;
+	position: relative;
+	z-index: 5;
+}
+
+.app main .info .section_content.mobile .bioeconomics .block_text p{
+	width: 100%;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.app main .info .section_content.mobile .bioeconomics .block_text p span{
+	color: #03D75C;
+}
+
+
+
+
+.app main .info .section_content.mobile .team{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	height: 750px;
+	padding: 60px 30px 0;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.app main .info .section_content.mobile .team .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_2_mobile.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.app main .info .section_content.mobile .team .bg::before{
+	content: "Команда";
+	width: fit-content;
+	color: #fff;
+	font-family: "Benzin";
+	font-size: 26px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 11px;
+	left: 30px;
+}
+
+
+.app main .info .section_content.mobile .team .block_text{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: fit-content;
+	position: relative;
+	z-index: 5;
+}
+
+.app main .info .section_content.mobile .team .block_text h3{
+	color: #03D75C;
+	font-size: 26px;
+	font-family: "Benzin";
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.app main .info .section_content.mobile .team .block_text h5{
+	color: #fff;
+	font-size: 24px;
+	font-family: "Benzin";
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.app main .info .section_content.mobile .team .block_text h4{
+	color: #fff;
+	font-size: 25px;
+	font-family: "Raleway";
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+
+.app main .info .section_content.mobile .team .block_text p{
+	color: #fff;
+	font-size: 24px;
+	font-family: "Raleway";
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.app main .info .section_content.mobile .team .block_text p:last-child{
+	margin-bottom: 0;
+}
+
+.app main .info .section_content.mobile .team .block_text p span{
+	color: #03D75C;
+	font-weight: 600;
+}
+
+
+
+
+.app main .info .section_content.mobile .project{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	height: 730px;
+	position: relative;
+}
+
+
+
+.app main .info .section_content.mobile .project .upper_part{
+	display: flex;
+	justify-content: left;
+	width: 100%;
+	height: 100%;
+}
+
+
+.app main .info .section_content.mobile .project .upper_part .block_text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 0 40px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.app main .info .section_content.mobile .project .upper_part .block_text p{
+	width: 100%;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+}
+
+.app main .info .section_content.mobile .project .upper_part .block_text p span{
+	color: #03D75C;
+	font-weight: 600;
+}
+
+.app main .info .section_content.mobile .project .upper_part .block_text p span._enlarged{
+	font-size: 30px;
+	font-weight: 400;
+}
+
+
+.app main .info .section_content.mobile .project .upper_part .block_text .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_3_mobile.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+
+
+.app main .info .section_content.mobile .project .lower_part{
+	display: flex;
+	justify-content: right;
+	width: 100%;
+	height: 100%;
+}
+
+.app main .info .section_content.mobile .project .lower_part .block_text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 0 40px;
+	position: relative;
+	top: -10px;
+	box-sizing: border-box;
+}
+
+
+.app main .info .section_content.mobile .project .lower_part .block_text p{
+	width: 100%;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+}
+
+.app main .info .section_content.mobile .project .lower_part .block_text p a{
+	display: inline-flex;
+	color: #03D75C;
+	font-weight: 600;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+.app main .info .section_content.mobile .project .lower_part .block_text .bg{
+	width: 100%;
+	height: 100%;
+	background: url("/img/main/info/frame_4_mobile.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
 }
