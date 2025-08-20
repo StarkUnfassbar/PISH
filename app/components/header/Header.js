@@ -44,7 +44,7 @@ export default function Header({ isMobile }) {
 							<Image src="/img/main/logo/logo_ministry.svg" alt="logo of the Ministry of Education and Science of the Russian Federation" fill />
 						</Link>
 
-						<Link href="" className="old_version">версия 2024</Link>
+						<Link href="" className="old_version">Версия 2024</Link>
 					</div>
 
 					<div className="block_burger" onClick={handleActiveHeaderMobile}>
@@ -57,9 +57,9 @@ export default function Header({ isMobile }) {
 					{activeHeaderMobile && (
 						<nav>
 							<div className="links">
-								<Link href="/about-us" className="nav_link">о нас</Link>
-								<Link href="/musei" className="nav_link">интерактивный музей</Link>
-								<Link href="/video-biotech" className="nav_link">видеоуроки</Link>
+								<Link href="/about-us" className="nav_link">О нас</Link>
+								<Link href="/musei" className="nav_link">Интерактивный музей</Link>
+								<Link href="/video-biotech" className="nav_link">Видеоуроки</Link>
 
 								<Link href="" className="nav_link">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 16" fill="none">
@@ -90,9 +90,9 @@ export default function Header({ isMobile }) {
 						</Link>
 
 						<div className="links">
-							<Link href="/about-us" className="nav_link">о нас</Link>
-							<Link href="/musei" className="nav_link">интерактивный музей</Link>
-							<Link href="/video-biotech" className="nav_link">видеоуроки</Link>
+							<Link href="/about-us" className="nav_link">О нас</Link>
+							<Link href="/musei" className="nav_link">Интерактивный музей</Link>
+							<Link href="/video-biotech" className="nav_link">Видеоуроки</Link>
 
 							<Link href="" className="nav_link">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 16" fill="none">
@@ -101,7 +101,7 @@ export default function Header({ isMobile }) {
 							</Link>
 						</div>
 
-						<Link href="" className="old_version">версия 2024</Link>
+						<Link href="" className="old_version">Версия 2024</Link>
 					</nav>
 
 					<div className="additional_info">

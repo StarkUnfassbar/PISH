@@ -1,0 +1,72 @@
+@media only screen and (max-width : 1100px){
+	.popup .popup_content .button_exit {
+		width: 40px;
+		height: 40px;
+		top: 18px;
+		right: 18px;
+	}
+
+	.popup .popup_content .button_exit svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+@media only screen and (max-width : 600px){
+	.popup .popup_content {
+		width: 400px;
+		min-height: 520px;
+	}
+
+	.popup .popup_content .block_content .block_text h1 {
+		font-size: 60px;
+	}
+
+	.popup .popup_content .block_content .block_text p {
+		width: 100%;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width : 500px){
+	.popup .popup_content {
+		width: 370px;
+		min-height: 480px;
+	}
+
+
+	.popup .popup_content .button_exit {
+		width: 30px;
+		height: 30px;
+		top: 15px;
+		right: 15px;
+	}
+
+	.popup .popup_content .button_exit svg {
+		width: 20px;
+		height: 20px;
+	}
+
+
+	.popup .popup_content .block_content .block_text h1 {
+		font-size: 55px;
+		margin-bottom: 20px;
+	}
+
+	.popup .popup_content .block_content .block_text p {
+		font-size: 16px;
+	}
+
+	.popup .popup_content .block_content button {
+		width: 240px;
+		height: 50px;
+		font-size: 18px;
+		border-radius: 10px;
+	}
+}
+
+@media only screen and (max-width : 500px){
+	.popup .popup_content {
+		width: 340px;
+	}
+}

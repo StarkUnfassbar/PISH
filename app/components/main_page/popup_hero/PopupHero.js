@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import './popup_hero.css';
+import './popup_hero_media.css';
 
 
 const heroesData = [
@@ -44,7 +45,7 @@ const heroesData = [
 
 
 
-export default function StandardButton({ popupHeroOpen, popupIdHero, funForClose }) {
+export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, funForClose }) {
 	const hero = heroesData.find(item => item.id === popupIdHero) || heroesData[0];
 
 	return (
@@ -52,7 +53,7 @@ export default function StandardButton({ popupHeroOpen, popupIdHero, funForClose
 			<div className="popup_blackout" onClick={funForClose}></div>
 
 			<div className="popup_content">
-				<Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} />
+				{!isMobile && <Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} />}
 
 				<div className="block_info">
 					<div className="block_img"></div>

@@ -291,9 +291,11 @@ export default function SectionInfo({ isMobile }) {
 				</div>
 			)}
 
-			<div className="patterns">
-				<img src="/img/main/info/pattern_1.png" alt="pattern on the background" />
-			</div>
+			{!isMobile && (
+				<div className="patterns">
+					<img src="/img/main/info/pattern_1.png" alt="pattern on the background" />
+				</div>
+			)}
 		</section>
 	);
 }

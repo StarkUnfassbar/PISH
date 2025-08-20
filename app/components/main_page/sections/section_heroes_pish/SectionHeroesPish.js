@@ -150,7 +150,7 @@ export default function SectionHeroesPish({ isMobile }) {
 				</section>
 			)}
 
-			{popupHeroShow && <PopupHero popupHeroOpen={popupHeroOpen} popupIdHero={popupIdHero} funForClose={() => handlePopupOpen(false)} />}
+			{popupHeroShow && <PopupHero isMobile={isMobile} popupHeroOpen={popupHeroOpen} popupIdHero={popupIdHero} funForClose={() => handlePopupOpen(false)} />}
 		</>
 	);
 }

@@ -36,13 +36,17 @@
 	text-transform: uppercase;
 }
 
+.home .text_heading span:nth-child(1){
+	font-size: 50px;
+}
+
 
 
 .home .text_subheading{
 	width: fit-content;
 	color: rgba(63, 204, 111, 1);
 	font-family: "Benzin";
-	font-size: 32px;
+	font-size: 36px;
 	font-weight: 500;
 }
 

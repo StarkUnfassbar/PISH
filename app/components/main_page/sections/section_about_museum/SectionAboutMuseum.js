@@ -18,7 +18,7 @@ export default function SectionAboutMuseum({ isMobile }) {
 					<div className="section_content">
 						<div className="upper_part">
 							<div className="block_imgs">
-								<img src="/img/main/about_museum/pattern_1_mobile.svg" alt="" />
+								<img src="/img/main/about_museum/pattern_1_mobile.png" alt="" />
 							</div>
 
 							<div className="block_text">
@@ -40,7 +40,7 @@ export default function SectionAboutMuseum({ isMobile }) {
 							</p>
 
 							<div className="block_img">
-								<img src="/img/main/about_museum/pattern_2_mobile.svg" alt="" />
+								<img src="/img/main/about_museum/pattern_2_mobile.png" alt="" />
 							</div>
 						</div>
 

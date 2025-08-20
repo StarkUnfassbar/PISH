@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import './popup_about_blocked.css';
+import './popup_about_blocked_media.css';
 
 
 
@@ -21,7 +22,7 @@ export default function PopupAboutBlocked({ popupHeroOpen, funForClose }) {
 						<p>Для просмотра остальных видеоуроков необходима регестрация</p>
 					</div>
 
-					<button className="button_registration">Зарегестрироваться</button>
+					<button className="button_registration">Зарегистрироваться</button>
 				</div>
 
 				<button className="button_exit" onClick={funForClose}>

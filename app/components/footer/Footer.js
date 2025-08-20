@@ -95,8 +95,8 @@ export default function Footer({ isMobile, patternsActive }) {
 						<h5>Меню</h5>
 
 						<Link href="/musei">Интерактивный музей</Link>
-						<Link href="/">О нас</Link>
-						<Link href="/">Видеоуроки</Link>
+						<Link href="/about-us">О нас</Link>
+						<Link href="/video-biotech">Видеоуроки</Link>
 
 						<Link href="/">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 16" fill="none">
@@ -114,15 +114,13 @@ export default function Footer({ isMobile, patternsActive }) {
 				</div>
 			</div>
 
-			{!isMobile && patternsActive && (
-				<div className="patterns">
-					<img src="/img/main/footer/pattern_1.png" alt="pattern on the background" />
+			<div className="patterns">
+				<img src="/img/main/footer/pattern_1.png" alt="pattern on the background" />
 
-					{/* <div className="pattern">
-						<Image src="/img/main/footer/pattern_1.png" alt="pattern on the background" fill />
-					</div> */}
-				</div>
-			)}
+				{/* <div className="pattern">
+					<Image src="/img/main/footer/pattern_1.png" alt="pattern on the background" fill />
+				</div> */}
+			</div>
 		</footer>
 	);
 }
