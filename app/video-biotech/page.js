@@ -70,7 +70,7 @@ export default function VideoBiotech() {
     }
 
 	return (
-		<div className="app">
+		<div className="video_biotech">
 			<Header isMobile={isMobile} />
 
 			<main>

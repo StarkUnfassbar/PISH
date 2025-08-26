@@ -1,4 +1,4 @@
-.app footer{
+footer{
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -8,7 +8,7 @@
 	position: relative;
 }
 
-.app footer .footer_content{
+footer .footer_content{
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
@@ -25,14 +25,14 @@
 
 
 
-.app footer .footer_content .upper_part{
+footer .footer_content .upper_part{
 	display: flex;
 	align-items: center;
 	width: 100%;
 }
 
 
-.app footer .footer_content .upper_part .left{
+footer .footer_content .upper_part .left{
 	display: flex;
 	gap: 25px;
 	align-items: center;
@@ -40,27 +40,27 @@
 	width: 100%;
 }
 
-.app footer .footer_content .upper_part .left .logo{
+footer .footer_content .upper_part .left .logo{
 	position: relative;
 	cursor: pointer;
 }
 
-.app footer .footer_content .upper_part .left .logo:nth-child(1){
+footer .footer_content .upper_part .left .logo:nth-child(1){
 	height: 41px;
 	width: 111px;
 }
 
-.app footer .footer_content .upper_part .left .logo:nth-child(2){
+footer .footer_content .upper_part .left .logo:nth-child(2){
 	height: 47px;
 	width: 79px;
 }
 
-.app footer .footer_content .upper_part .left .logo img{
+footer .footer_content .upper_part .left .logo img{
 	object-fit: contain;
 }
 
 
-.app footer .footer_content .upper_part .right{
+footer .footer_content .upper_part .right{
 	display: flex;
 	gap: 40px;
 	align-items: center;
@@ -68,29 +68,29 @@
 	width: 100%;
 }
 
-.app footer .footer_content .upper_part .right .logo{
+footer .footer_content .upper_part .right .logo{
 	position: relative;
 	cursor: pointer;
 }
 
-.app footer .footer_content .upper_part .right .logo:nth-child(1){
+footer .footer_content .upper_part .right .logo:nth-child(1){
 	height: 59px;
 	width: 79px;
 }
 
-.app footer .footer_content .upper_part .right .logo:nth-child(2){
+footer .footer_content .upper_part .right .logo:nth-child(2){
 	height: 50px;
 	width: 157px;
 }
 
-.app footer .footer_content .upper_part .right .logo img{
+footer .footer_content .upper_part .right .logo img{
 	height: 100%;
 	object-fit: contain;
 }
 
 
 
-.app footer .footer_content .lower_part{
+footer .footer_content .lower_part{
 	display: flex;
 	align-items: start;
 	justify-content: space-between;
@@ -98,13 +98,13 @@
 }
 
 
-.app footer .footer_content .lower_part .block_contact{
+footer .footer_content .lower_part .block_contact{
 	display: flex;
 	flex-direction: column;
 	width: 320px;
 }
 
-.app footer .footer_content .lower_part .block_contact h5{
+footer .footer_content .lower_part .block_contact h5{
 	width: 100%;
 	color: #fff;
 	font-family: "Raleway";
@@ -113,7 +113,7 @@
 	margin-bottom: 20px;
 }
 
-.app footer .footer_content .lower_part .block_contact p{
+footer .footer_content .lower_part .block_contact p{
 	width: 100%;
 	color: #fff;
 	font-family: "Raleway";
@@ -122,31 +122,31 @@
 	margin-bottom: 7px;
 }
 
-.app footer .footer_content .lower_part .block_contact .social_networks{
+footer .footer_content .lower_part .block_contact .social_networks{
 	display: flex;
 	gap: 15px;
 	margin-top: 13px;
 }
 
-.app footer .footer_content .lower_part .block_contact .social_networks a{
+footer .footer_content .lower_part .block_contact .social_networks a{
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
 }
 
-.app footer .footer_content .lower_part .block_contact .social_networks a svg{
+footer .footer_content .lower_part .block_contact .social_networks a svg{
 	width: 100%;
 	height: 100%;
 }
 
 
-.app footer .footer_content .lower_part nav{
+footer .footer_content .lower_part nav{
 	display: flex;
 	flex-direction: column;
 	width: 300px;
 }
 
-.app footer .footer_content .lower_part nav h5{
+footer .footer_content .lower_part nav h5{
 	width: 100%;
 	color: #fff;
 	font-family: "Benzin";
@@ -155,7 +155,7 @@
 	margin-bottom: 20px;
 }
 
-.app footer .footer_content .lower_part nav a{
+footer .footer_content .lower_part nav a{
 	width: 100%;
 	color: #fff;
 	font-family: "Raleway";
@@ -165,27 +165,27 @@
 	cursor: pointer;
 }
 
-.app footer .footer_content .lower_part nav a:hover{
+footer .footer_content .lower_part nav a:hover{
 	color: #03D75C;
 	text-decoration: underline;
 }
 
-.app footer .footer_content .lower_part nav a svg{
+footer .footer_content .lower_part nav a svg{
 	width: 32px;
 	height: 17px;
 }
 
-.app footer .footer_content .lower_part nav a svg path{
+footer .footer_content .lower_part nav a svg path{
 	fill: #fff;
 }
 
-.app footer .footer_content .lower_part nav a:hover svg path{
+footer .footer_content .lower_part nav a:hover svg path{
 	fill: #03D75C;
 }
 
 
 
-.app footer .patterns{
+footer .patterns{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -198,13 +198,13 @@
 }
 
 
-.app footer .patterns .pattern{
+footer .patterns .pattern{
 	width: 0;
 	height: 0;
 	position: absolute;
 }
 
-.app footer .patterns img{
+footer .patterns img{
 	width: 100%;
 	position: absolute;
 	bottom: 0;

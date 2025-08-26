@@ -1,390 +1,390 @@
 @media only screen and (min-width : 2000px){
-	.app footer{
+	footer{
 		height: 500px;
 		padding-top: 250px;
 	}
 
-	.app footer .footer_content{
+	footer .footer_content{
 		padding: 30px 40px;
 	}
 
 
 
-	.app footer .footer_content .upper_part .left{
+	footer .footer_content .upper_part .left{
 		gap: 40px;
 	}
 
-	.app footer .footer_content .upper_part .left .logo:nth-child(1){
+	footer .footer_content .upper_part .left .logo:nth-child(1){
 		height: 50px;
 		width: 130px;
 	}
 
-	.app footer .footer_content .upper_part .left .logo:nth-child(2){
+	footer .footer_content .upper_part .left .logo:nth-child(2){
 		height: 57px;
 		width: 93px;
 	}
 
 
-	.app footer .footer_content .upper_part .right{
+	footer .footer_content .upper_part .right{
 		gap: 45px;
 	}
 
-	.app footer .footer_content .upper_part .right .logo:nth-child(1){
+	footer .footer_content .upper_part .right .logo:nth-child(1){
 		height: 70px;
 		width: 85px;
 	}
 
-	.app footer .footer_content .upper_part .right .logo:nth-child(2){
+	footer .footer_content .upper_part .right .logo:nth-child(2){
 		height: 60px;
 		width: 180px;
 	}
 
 
 
-	.app footer .footer_content .lower_part .block_contact {
+	footer .footer_content .lower_part .block_contact {
 		width: 350px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact h5{
+	footer .footer_content .lower_part .block_contact h5{
 		font-size: 26px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact p {
+	footer .footer_content .lower_part .block_contact p {
 		font-size: 26px;
 		margin-bottom: 10px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact .social_networks a {
+	footer .footer_content .lower_part .block_contact .social_networks a {
 		width: 45px;
 		height: 45px;
 	}
 
 
-	.app footer .footer_content .lower_part nav h5 {
+	footer .footer_content .lower_part nav h5 {
 		font-size: 26px;
 	}
 
-	.app footer .footer_content .lower_part nav a {
+	footer .footer_content .lower_part nav a {
 		font-size: 26px;
 	}
 
-	.app footer .footer_content .lower_part nav a svg {
+	footer .footer_content .lower_part nav a svg {
 		width: 40px;
 		height: 22px;
 	}
 
 
-	.app footer .footer_content .lower_part nav {
+	footer .footer_content .lower_part nav {
 		width: 350px;
 	}
 }
 
 @media only screen and (max-width : 1800px){
-	.app footer{
+	footer{
 		height: 330px;
 	}
 
 
-	.app footer .footer_content .upper_part .left .logo:nth-child(1){
+	footer .footer_content .upper_part .left .logo:nth-child(1){
 		height: 37px;
 		width: 107px;
 	}
 
-	.app footer .footer_content .upper_part .left .logo:nth-child(2){
+	footer .footer_content .upper_part .left .logo:nth-child(2){
 		height: 43px;
 		width: 75px;
 	}
 
-	.app footer .footer_content .upper_part .right .logo:nth-child(1){
+	footer .footer_content .upper_part .right .logo:nth-child(1){
 		height: 55px;
 		width: 75px;
 	}
 
-	.app footer .footer_content .upper_part .right .logo:nth-child(2){
+	footer .footer_content .upper_part .right .logo:nth-child(2){
 		height: 43px;
 		width: 150px;
 	}
 
 	
-	.app footer .footer_content .lower_part .block_contact h5{
+	footer .footer_content .lower_part .block_contact h5{
 		font-size: 20px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact p{
+	footer .footer_content .lower_part .block_contact p{
 		font-size: 20px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact .social_networks a{
+	footer .footer_content .lower_part .block_contact .social_networks a{
 		width: 35px;
 		height: 35px;
 	}
 
 
-	.app footer .footer_content .lower_part nav{
+	footer .footer_content .lower_part nav{
 		width: 250px;
 	}
 
-	.app footer .footer_content .lower_part nav h5{
+	footer .footer_content .lower_part nav h5{
 		font-size: 20px;
 	}
 
-	.app footer .footer_content .lower_part nav a{
+	footer .footer_content .lower_part nav a{
 		font-size: 20px;
 	}
 }
 
 @media only screen and (max-width : 1100px){
-	.app footer .footer_content .upper_part{
+	footer .footer_content .upper_part{
 		display: flex;
 		justify-content: center;
 		gap: 30px;
 	}
 
-	.app footer .footer_content .upper_part .logo{
+	footer .footer_content .upper_part .logo{
 		position: relative;
 		cursor: pointer;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(1){
+	footer .footer_content .upper_part .logo:nth-child(1){
 		height: 37px;
 		width: 107px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(2){
+	footer .footer_content .upper_part .logo:nth-child(2){
 		height: 43px;
 		width: 75px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(3){
+	footer .footer_content .upper_part .logo:nth-child(3){
 		height: 55px;
 		width: 75px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(4){
+	footer .footer_content .upper_part .logo:nth-child(4){
 		height: 43px;
 		width: 150px;
 	}
 }
 
 @media only screen and (max-width : 900px){
-	.app footer .footer_content .lower_part nav:nth-child(2){
+	footer .footer_content .lower_part nav:nth-child(2){
 		display: none;
 	}
 }
 
 @media only screen and (max-width : 700px){
-	.app footer .footer_content .upper_part{
+	footer .footer_content .upper_part{
 		gap: 20px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(1){
+	footer .footer_content .upper_part .logo:nth-child(1){
 		height: 32px;
 		width: 90px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(2){
+	footer .footer_content .upper_part .logo:nth-child(2){
 		height: 40px;
 		width: 70px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(3){
+	footer .footer_content .upper_part .logo:nth-child(3){
 		height: 50px;
 		width: 70px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(4){
+	footer .footer_content .upper_part .logo:nth-child(4){
 		height: 40px;
 		width: 140px;
 	}
 
 
-	.app footer .footer_content .lower_part .block_contact h5 {
+	footer .footer_content .lower_part .block_contact h5 {
 		font-size: 18px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact p {
+	footer .footer_content .lower_part .block_contact p {
 		font-size: 18px;
 	}
 
-	.app footer .footer_content .lower_part nav h5 {
+	footer .footer_content .lower_part nav h5 {
 		font-size: 18px;
 	}
 
-	.app footer .footer_content .lower_part nav a {
+	footer .footer_content .lower_part nav a {
 		font-size: 18px;
 	}
 }
 
 @media only screen and (max-width : 600px){
-	.app footer {
+	footer {
 		height: 300px;
 	}
 
-	.app footer .footer_content {
+	footer .footer_content {
 		padding: 15px 15px;
 	}
 
 
-	.app footer .footer_content .upper_part{
+	footer .footer_content .upper_part{
 		gap: 20px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(1){
+	footer .footer_content .upper_part .logo:nth-child(1){
 		height: 28px;
 		width: 80px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(2){
+	footer .footer_content .upper_part .logo:nth-child(2){
 		height: 35px;
 		width: 60px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(3){
+	footer .footer_content .upper_part .logo:nth-child(3){
 		height: 45px;
 		width: 60px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(4){
+	footer .footer_content .upper_part .logo:nth-child(4){
 		height: 35px;
 		width: 130px;
 	}
 
 
-	.app footer .footer_content .lower_part .block_contact h5 {
+	footer .footer_content .lower_part .block_contact h5 {
 		font-size: 16px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact p {
+	footer .footer_content .lower_part .block_contact p {
 		font-size: 16px;
 	}
 
-	.app footer .footer_content .lower_part nav {
+	footer .footer_content .lower_part nav {
 		width: 210px;
 	}
 
-	.app footer .footer_content .lower_part nav h5 {
+	footer .footer_content .lower_part nav h5 {
 		font-size: 15px;
 	}
 
-	.app footer .footer_content .lower_part nav a {
+	footer .footer_content .lower_part nav a {
 		font-size: 16px;
 	}
 }
 
 @media only screen and (max-width : 500px){
-	.app footer {
+	footer {
 		height: 280px;
 	}
 
 
-	.app footer .footer_content .upper_part{
+	footer .footer_content .upper_part{
 		gap: 10px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(1){
+	footer .footer_content .upper_part .logo:nth-child(1){
 		height: 23px;
 		width: 70px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(2){
+	footer .footer_content .upper_part .logo:nth-child(2){
 		height: 30px;
 		width: 50px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(3){
+	footer .footer_content .upper_part .logo:nth-child(3){
 		height: 40px;
 		width: 50px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(4){
+	footer .footer_content .upper_part .logo:nth-child(4){
 		height: 30px;
 		width: 120px;
 	}
 
 
-	.app footer .footer_content .lower_part {
+	footer .footer_content .lower_part {
 		gap: 10px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact h5 {
+	footer .footer_content .lower_part .block_contact h5 {
 		font-size: 14px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact p {
+	footer .footer_content .lower_part .block_contact p {
 		font-size: 14px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact .social_networks a {
+	footer .footer_content .lower_part .block_contact .social_networks a {
 		width: 30px;
 		height: 30px;
 	}
 
-	.app footer .footer_content .lower_part nav {
+	footer .footer_content .lower_part nav {
 		width: 210px;
 	}
 
-	.app footer .footer_content .lower_part nav h5 {
+	footer .footer_content .lower_part nav h5 {
 		font-size: 14px;
 	}
 
-	.app footer .footer_content .lower_part nav a {
+	footer .footer_content .lower_part nav a {
 		font-size: 14px;
 	}
 }
 
 @media only screen and (max-width : 400px){
-	.app footer .footer_content {
+	footer .footer_content {
 		padding: 10px;
 	}
 
 
-	.app footer .footer_content .upper_part{
+	footer .footer_content .upper_part{
 		gap: 10px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(1){
+	footer .footer_content .upper_part .logo:nth-child(1){
 		height: 23px;
 		width: 70px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(2){
+	footer .footer_content .upper_part .logo:nth-child(2){
 		height: 30px;
 		width: 50px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(3){
+	footer .footer_content .upper_part .logo:nth-child(3){
 		height: 40px;
 		width: 50px;
 	}
 
-	.app footer .footer_content .upper_part .logo:nth-child(4){
+	footer .footer_content .upper_part .logo:nth-child(4){
 		height: 30px;
 		width: 120px;
 	}
 	
 
-	.app footer .footer_content .lower_part .block_contact h5 {
+	footer .footer_content .lower_part .block_contact h5 {
 		font-size: 12px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact p {
+	footer .footer_content .lower_part .block_contact p {
 		font-size: 12px;
 	}
 
-	.app footer .footer_content .lower_part .block_contact .social_networks a {
+	footer .footer_content .lower_part .block_contact .social_networks a {
 		width: 27px;
 		height: 27px;
 	}
 
-	.app footer .footer_content .lower_part nav {
+	footer .footer_content .lower_part nav {
 		width: 210px;
 	}
 
-	.app footer .footer_content .lower_part nav h5 {
+	footer .footer_content .lower_part nav h5 {
 		font-size: 12px;
 	}
 
-	.app footer .footer_content .lower_part nav a {
+	footer .footer_content .lower_part nav a {
 		font-size: 12px;
 	}
 }

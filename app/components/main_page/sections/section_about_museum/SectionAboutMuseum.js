@@ -60,8 +60,19 @@ export default function SectionAboutMuseum({ isMobile }) {
 					<div className="section_content">
 						<div className="upper_part">
 							<div className="block_imgs">
-								<img src="/img/main/about_museum/pattern_1.png" alt="" />
-								<img src="/img/main/about_museum/pattern_2.png" alt="" />
+								<div className="block_img">
+									{/* <img src="/img/main/about_museum/pattern_1.png" alt="" /> */}
+									<img src="/img/main/about_museum/block_img_1__part_1.png" alt="" />
+									<img src="/img/main/about_museum/block_img_1__part_2.svg" alt="" />
+									<img src="/img/main/about_museum/block_img_1__part_3.svg" alt="" />
+								</div>
+
+								<div className="block_img">
+									{/* <img src="/img/main/about_museum/pattern_2.png" alt="" /> */}
+									<img src="/img/main/about_museum/block_img_2__part_1.png" alt="" />
+									<img src="/img/main/about_museum/block_img_2__part_2.svg" alt="" />
+									<img src="/img/main/about_museum/block_img_2__part_3.svg" alt="" />
+								</div>
 							</div>
 
 							<div className="block_info">
@@ -85,7 +96,10 @@ export default function SectionAboutMuseum({ isMobile }) {
 							</p>
 
 							<div className="block_img">
-								<img src="/img/main/about_museum/pattern_3.png" alt="" />
+								{/* <img src="/img/main/about_museum/pattern_3.png" alt="" /> */}
+								<img src="/img/main/about_museum/block_img_3__part_1.png" alt="" />
+								<img src="/img/main/about_museum/block_img_3__part_2.svg" alt="" />
+								<img src="/img/main/about_museum/block_img_3__part_3.svg" alt="" />
 							</div>
 						</div>
 

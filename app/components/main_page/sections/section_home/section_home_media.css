@@ -106,6 +106,10 @@
 		font-size: 45px;
 	}
 
+    .home .text_heading span:nth-child(1) {
+        font-size: 37px;
+    }
+
 	.home .patterns .pattern:nth-child(1) {
 		bottom: 0px;
 	}
@@ -124,6 +128,10 @@
 		font-size: 40px;
 	}
 
+	.home .text_heading span:nth-child(1) {
+        font-size: 32px;
+    }
+
 	.home .patterns .pattern:nth-child(1) {
 		bottom: 50px;
 	}
@@ -138,6 +146,10 @@
 		font-size: 34px;
 	}
 
+	.home .text_heading span:nth-child(1) {
+        font-size: 27px;
+    }
+
 	.app main .home .text_subheading {
 		font-size: 28px;
 	}
@@ -147,14 +159,18 @@
 	.home .section_content {
 		padding: 180px 15px;
 	}
+	
+	.home .text_subheading {
+		font-size: 25px;
+	}
 
 	.home .text_heading span {
 		font-size: 28px;
 	}
 
-	.home .text_subheading {
-		font-size: 25px;
-	}
+	.home .text_heading span:nth-child(1) {
+        font-size: 22px;
+    }
 
 	.home .button_visit {
   		left: calc(50% - 130px);
@@ -169,6 +185,10 @@
 	.home .text_heading span {
 		font-size: 22px;
 	}
+
+	.home .text_heading span:nth-child(1) {
+        font-size: 18px;
+    }
 
 	.app main .home .text_subheading {
 		font-size: 22px;
@@ -190,13 +210,17 @@
 }
 
 @media only screen and (max-width : 400px){
+	.home .text_subheading {
+		font-size: 20px;
+	}
+
 	.home .text_heading span {
 		font-size: 20px;
 	}
 
-	.home .text_subheading {
-		font-size: 20px;
-	}
+	.home .text_heading span:nth-child(1) {
+        font-size: 17px;
+    }
 
 	.home .button_visit {
   		left: calc(50% - 110px);

@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from "next/image";
 
 import "./page.css";
-import "./page_media.css";
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -37,7 +36,7 @@ export default function Home() {
 
 
     if (isMobile === null) {
-        return null;
+        return (<div className="app"></div>);
     }
 
 	return (

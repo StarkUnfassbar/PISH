@@ -1,4 +1,4 @@
-.app{
+.video_biotech{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -10,7 +10,7 @@
 	overflow-x: hidden;
 }
 
-.app main{
+.video_biotech main{
 	width: 100vw;
 	height: 100%;
 	margin-top: 100px;
@@ -18,7 +18,7 @@
 	z-index: 2;
 }
 
-.app main .video_content{
+.video_biotech main .video_content{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -29,7 +29,7 @@
 
 
 
-.app main .video_content h1{
+.video_biotech main .video_content h1{
 	width: 100%;
 	color: #fff;
 	font-size: 64px;
@@ -41,7 +41,7 @@
 
 
 
-.app main .list_video{
+.video_biotech main .list_video{
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   	gap: 100px 20px;

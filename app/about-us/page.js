@@ -37,8 +37,8 @@ export default function AboutUs() {
 	}
 
 	return (
-		<div className="app">
-			<div className="app_bg">
+		<div className="page_about_us">
+			<div className="page_bg">
 				<img src="/img/about_us/bg.png" alt="" />
 			</div>
 
