@@ -1,4 +1,4 @@
-.musei_widget .window_1 video {
+.musei_widget .window .video-wrapper-1 video {
 	top: -50px;
 }
 
@@ -8,6 +8,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 10;
 	pointer-events: none;
 }
 
@@ -84,6 +85,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 11;
 	pointer-events: none;
 }
 

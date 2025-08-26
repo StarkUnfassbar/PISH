@@ -6,7 +6,7 @@
 	height: 100vh;
 	background-color: rgba(25, 25, 51, 1);
 	position: absolute;
-	z-index: 15;
+	z-index: 100;
 }
 
 .block_warning .content{

@@ -16,6 +16,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 11;
 	pointer-events: painted;
 }
 
@@ -79,6 +80,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 10;
 	pointer-events: none;
 }
 
@@ -138,4 +140,22 @@
 	height: 450px;
 	top: 230px;
 	left: 0;
+}
+
+
+
+.musei_widget .window_2 .pattern {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 120px;
+    left: 690px;
+    z-index: 3;
+}
+
+.musei_widget .window_2 .pattern img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	/* opacity: 0.5; */
 }
