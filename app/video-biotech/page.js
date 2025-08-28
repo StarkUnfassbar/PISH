@@ -54,9 +54,11 @@ export default function VideoBiotech() {
 
 
 	const [videoPlayerShow, setVideoPlayerShow] = useState(false);
+	const [videoSrc, setVideoSrc] = useState("");
 
-	const handleVideoPlayerShow = (open) => {
+	const handleVideoPlayerShow = (open, src) => {
 		if(open){
+			setVideoSrc(src);
 			setVideoPlayerShow(true);
 		} else{
 			setVideoPlayerShow(false);
@@ -79,20 +81,24 @@ export default function VideoBiotech() {
 						<h1>Видеоуроки о биотехе</h1>
 					)}
 
-					<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} />
+					<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
 
 
 					<div className="list_video">
 						<BlockVideo
 							videoBlocked={false}
-							funForButton={() => handleVideoPlayerShow(true)}
+							videoCoverSrc={"/img/video_biotech/cover_1.jpg"}
+							videoTimer={"07:24"}
+							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4")}
 							videoInfoHeader={"Получение и применение ГМ растений"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий "}
 						/>
 
 						<BlockVideo
-							videoBlocked={true}
-							funForButton={() => handlePopupOpen(true)}
+							videoBlocked={false}
+							videoCoverSrc={"/img/video_biotech/cover_2.jpg"}
+							videoTimer={"08:48"}
+							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4")}
 							videoInfoHeader={"Бактерии как объект биотехнологий"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
 						/>

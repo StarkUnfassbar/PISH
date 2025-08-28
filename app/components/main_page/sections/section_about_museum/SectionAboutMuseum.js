@@ -47,11 +47,11 @@ export default function SectionAboutMuseum({ isMobile }) {
 						<StandardButton text="Посетить онлайн" type="standard" />
 					</div>
 
-					{/* <div className="patterns">
+					<div className="patterns">
 						<div className="pattern">
-							<Image src="/img/main/about_museum/pattern_4.png" alt="pattern on the background" fill unoptimized={true} />
+							<Image src="/img/main/ellips_2.svg" alt="pattern on the background" fill unoptimized={true} />
 						</div>
-					</div> */}
+					</div>
 				</section>
 			) : (
 				<section className="about_museum main">
@@ -108,7 +108,7 @@ export default function SectionAboutMuseum({ isMobile }) {
 
 					<div className="patterns">
 						<div className="pattern">
-							<Image src="/img/main/about_museum/pattern_4.png" alt="pattern on the background" fill unoptimized={true} />
+							<Image src="/img/main/ellips_2.svg" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 					</div>
 				</section>

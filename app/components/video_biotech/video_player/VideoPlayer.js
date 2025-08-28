@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './video_player.css';
 import './video_player_media.css';
 
-export default function VideoPlayer({ videoPlayerShow }) {
+export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     const videoRef = useRef(null);
     const progressBarRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -10,9 +10,44 @@ export default function VideoPlayer({ videoPlayerShow }) {
     const [prevVolume, setPrevVolume] = useState(1);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [showRemainingTime, setShowRemainingTime] = useState(false);
     const videoContainerRef = useRef(null);
     const lastClickTimeRef = useRef(0);
     const clickCountRef = useRef(0);
+
+    // Сброс состояния при изменении видео
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
+        setIsPlaying(false);
+        setCurrentTime(0);
+        setDuration(0);
+        setShowRemainingTime(false);
+    }, [videoSrc]);
+
+    // Форматирование времени в MM:SS
+    const formatTime = (timeInSeconds) => {
+        if (isNaN(timeInSeconds) || timeInSeconds === Infinity) return '--:--';
+        
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = Math.floor(timeInSeconds % 60);
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    // Получение текущего времени для отображения
+    const getDisplayTime = () => {
+        if (showRemainingTime) {
+            const remaining = duration - currentTime;
+            return `-${formatTime(remaining)}`;
+        }
+        return formatTime(currentTime);
+    };
+
+    const toggleTimeDisplay = () => {
+        setShowRemainingTime(!showRemainingTime);
+    };
 
     const togglePlay = () => {
         if (videoRef.current) {
@@ -159,11 +194,14 @@ export default function VideoPlayer({ videoPlayerShow }) {
                 onPlay={handlePlay}
                 onPause={handlePause}
                 onVolumeChange={handleVolumeChangeEvent}
+                key={videoSrc} // Ключ для принудительного пересоздания видео при смене источника
             >
-                <source 
-                    src="https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video_1.mp4" 
-                    type="video/mp4" 
-                />
+                {videoSrc && (
+					<source 
+						src={videoSrc} 
+						type="video/mp4" 
+					/>
+				)}
                 Your browser does not support the video tag.
             </video>
             
@@ -218,6 +256,12 @@ export default function VideoPlayer({ videoPlayerShow }) {
                             className="volume_slider"
                         />
                     </div>
+
+                    <p className="timer_control" onClick={toggleTimeDisplay}>
+                        <span className="current_time">{getDisplayTime()}</span>
+                        /
+                        <span className="total_time">{formatTime(duration)}</span>
+                    </p>
                     
                     <div className="progress_container">
                         <input
@@ -233,7 +277,7 @@ export default function VideoPlayer({ videoPlayerShow }) {
                         />
                         <div 
                             className="progress_filled"
-                            style={{ width: `${(currentTime / duration) * 100}%` }}
+                            style={{ width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%` }}
                         />
                     </div>
                     

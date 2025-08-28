@@ -34,15 +34,18 @@ export default function SectionHome({ isMobile }) {
 				</div>
 
 				<div className="pattern">
-					<Image src="/img/main/home/pattern_2.png" alt="pattern on the background" fill unoptimized={true} />
+					{/* <Image src="/img/main/home/pattern_2.png" alt="pattern on the background" fill unoptimized={true} /> */}
+					<Image src="/img/main/ellips_1.svg" alt="pattern on the background" fill unoptimized={true} />
 				</div>
 
 				<div className="pattern">
-					<Image src="/img/main/home/pattern_3.png" alt="pattern on the background" fill unoptimized={true} />
+					{/* <Image src="/img/main/home/pattern_3.png" alt="pattern on the background" fill unoptimized={true} /> */}
+					<Image src="/img/main/ellips_1.svg" alt="pattern on the background" fill unoptimized={true} />
 				</div>
 
 				<div className="pattern">
-					<Image src="/img/main/home/pattern_4.png" alt="pattern on the background" fill unoptimized={true} />
+					{/* <Image src="/img/main/home/pattern_4.png" alt="pattern on the background" fill unoptimized={true} /> */}
+					<Image src="/img/main/ellips_1.svg" alt="pattern on the background" fill unoptimized={true} />
 				</div>
 			</div>
 		</section>

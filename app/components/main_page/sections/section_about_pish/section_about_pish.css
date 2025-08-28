@@ -141,34 +141,17 @@
 }
 
 .about_pish .patterns .pattern:nth-child(2){
-	width: 730px;
-	height: 1000px;
-	top: -350px;
-	right: 0px;
+	width: 800px;
+	height: 800px;
+	top: -400px;
+	right: -100px;
+	opacity: 0.8;
+
+	animation: fade-transform-4 5s ease-in-out 0s infinite;
 }
 
-.about_pish .patterns .pattern:nth-child(3){
-	width: 700px;
-	height: 700px;
-	top: 0px;
-	right: 100px;
-}
-
-.about_pish .patterns .pattern:nth-child(4){
-	width: 700px;
-	height: 70px;
-	background-color: #191933;
-	filter: blur(6px);
-	bottom: 50px;
-	left: 0px;
-}
-
-.about_pish .patterns .pattern:nth-child(5){
-	width: 70px;
-	height: 700px;
-	background-color: #191933;
-	background-color: #fff;
-	filter: blur(6px);
-	bottom: 50px;
-	left: 1200px;
+@keyframes fade-transform-4 {
+	0% { transform: translateX(0); opacity: 0.8; }
+	60% { transform: translateX(-300px); opacity: 0.5; }
+	100% { transform: translateX(0); opacity: 0.8; }
 }

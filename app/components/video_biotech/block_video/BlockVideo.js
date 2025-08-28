@@ -5,7 +5,7 @@ import "./block_video.css";
 
 
 
-export default function BlockVideo({ videoBlocked, funForButton, videoInfoHeader, videoInfoDescription }) {
+export default function BlockVideo({ videoBlocked, videoCoverSrc, videoTimer, funForButton, videoInfoHeader, videoInfoDescription }) {
 	return (
 		<>
 			{videoBlocked ? (
@@ -26,8 +26,8 @@ export default function BlockVideo({ videoBlocked, funForButton, videoInfoHeader
 			) : (
 				<div className="block_video" onClick={funForButton}>
 					<div className="video_cover">
-						<Image src="/img/video_biotech/cover_1.png" alt="video cover" fill unoptimized={true} />
-						<span>15:20</span>
+						<Image src={videoCoverSrc} alt="video cover" fill unoptimized={true} />
+						<span>{videoTimer}</span>
 					</div>
 
 					<div className="video_info">

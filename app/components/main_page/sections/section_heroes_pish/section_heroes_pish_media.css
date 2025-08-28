@@ -82,6 +82,24 @@
 		width: 470px;
 		font-size: 20px;
 	}
+
+
+
+	.heroes_pish.main .patterns .pattern:nth-child(1){
+		width: 1800px;
+		height: 1800px;
+		bottom: -450px;
+		left: -500px;
+	}
+}
+
+@media only screen and (max-width : 1600px){
+	.heroes_pish.main .patterns .pattern:nth-child(1){
+		width: 1700px;
+		height: 1700px;
+		bottom: -450px;
+		left: -500px;
+	}
 }
 
 @media only screen and (max-width : 1500px){
@@ -109,6 +127,15 @@
 
 	.heroes_pish.main .section_content .lower_part .block_hero .button_learn_more{
 		width: 340px;
+	}
+
+
+
+	.heroes_pish.main .patterns .pattern:nth-child(1){
+		width: 1600px;
+		height: 1600px;
+		bottom: -400px;
+		left: -500px;
 	}
 }
 
@@ -148,6 +175,22 @@
 	.heroes_pish.main .section_content .lower_part .block_hero .block_info .text_info .description {
     	width: 85%;
 		font-size: 18px;
+	}
+	
+
+
+	.heroes_pish.main .patterns .pattern:nth-child(1){
+		width: 1500px;
+		height: 1500px;
+		bottom: -400px;
+		left: -500px;
+	}
+
+	@keyframes fade-transform-3 {
+		0% { transform: scale(1); opacity: 0.5; }
+		40% { transform: scale(1.2); opacity: 0.8; }
+		80% { transform: scale(1); opacity: 0.5; }
+		100% { transform: scale(1); opacity: 0.5; }
 	}
 }
 

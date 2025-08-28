@@ -57,6 +57,18 @@
 
 
 
+.block_controls .timer_control{
+	display: inline-flex;
+	align-items: center;
+	height: 100%;
+	font-family: "Grandis";
+	font-size: 16px;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+
+
 .volume_control {
 	display: flex;
 	align-items: center;

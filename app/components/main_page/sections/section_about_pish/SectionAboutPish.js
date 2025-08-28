@@ -33,11 +33,7 @@ export default function SectionAboutPish({ isMobile }) {
 				</div>
 
 				<div className="pattern">
-					<Image src="/img/main/about_pish/pattern_2.svg" alt="pattern on the background" fill />
-				</div>
-				
-				<div className="pattern">
-					<Image src="/img/main/about_pish/pattern_3.svg" alt="pattern on the background" fill />
+					<Image src="/img/main/ellips_1.svg" alt="pattern on the background" fill />
 				</div>
 			</div>
 		</section>

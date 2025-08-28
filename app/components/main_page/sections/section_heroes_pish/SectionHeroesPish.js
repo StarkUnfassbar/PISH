@@ -144,7 +144,7 @@ export default function SectionHeroesPish({ isMobile }) {
 
 					<div className="patterns">
 						<div className="pattern">
-							<Image src="/img/main/heroes_pish/pattern_1.png" alt="pattern on the background" fill unoptimized={true} />
+							<Image src="/img/main/ellips_2.svg" alt="pattern on the background" fill unoptimized={true} />
 						</div>
 					</div>
 				</section>

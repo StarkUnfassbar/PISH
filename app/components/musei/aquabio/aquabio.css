@@ -66,69 +66,22 @@
 	left: 0;
 }
 
-
-.video_container .block_controls .upper_part{
+.video_container .block_controls .video_buttons{
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	flex-wrap: wrap-reverse;
+	gap: 10px;
 	width: 100%;
-	padding: 0 40px;
+	padding: 20px 30px;
 	box-sizing: border-box;
 }
 
-
-.video_container .block_controls .upper_part button.play{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 45px;
-	height: 45px;
-	border: 2px solid #75758500;
-	border-radius: 50%;
-	background-color: #ffffff00;
-	cursor: pointer;
-	box-sizing: border-box;
-
-	transition: all .3s ease;
-}
-
-.video_container .block_controls .upper_part button.play:hover{
-	border: 2px solid #757585;
-	background-color: #fff;
-}
-
-.video_container .block_controls .upper_part button.play svg{
-	position: absolute;
-}
-
-.video_container .block_controls .upper_part button.play svg.icon_play{
-	width: 18px;
-	height: 23px;
-	margin-left: 4px;
-}
-
-.video_container .block_controls .upper_part button.play svg.icon_pause{
-	width: 18px;
-	height: 18px;
-}
-
-.video_container .block_controls .upper_part button.play svg path{
-	fill: #fff;
-	transition: all .3s ease;
-}
-
-.video_container .block_controls .upper_part button.play:hover svg path{
-	fill: #757585;
-}
-
-
-.video_container .block_controls .upper_part button.next{
+.video_container .block_controls .video_buttons button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: fit-content;
 	height: 35px;
-	padding: 0 20px;
+	padding: 0 15px;
 	border: 2px solid #757585;
 	border-radius: 30px;
 	background-color: #fff;
@@ -136,43 +89,10 @@
 	cursor: pointer;
 }
 
-.video_container .block_controls .upper_part button.next span{
+.video_container .block_controls .video_buttons button span{
 	color: #000;
-	font-size: 20px;
+	font-size: 16px;
 	font-family: "Grandis";
 	font-weight: 400;
 	text-align: center;
-}
-
-
-
-.video_container .block_controls .lower_part{
-	width: 100%;
-	height: 5px;
-}
-
-.video_container .block_controls .lower_part .progress_bar{
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-
-.video_container .block_controls .lower_part .progress_bar .progress_bg{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(255, 255, 255, 0.5);
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-
-.video_container .block_controls .lower_part .progress_bar .progress_fill{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(255, 255, 255, 1);
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2;
 }
