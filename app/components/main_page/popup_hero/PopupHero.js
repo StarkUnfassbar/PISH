@@ -49,7 +49,7 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, f
 	const hero = heroesData.find(item => item.id === popupIdHero) || heroesData[0];
 
 	return (
-		<div className={`popup ${popupHeroOpen ? "" : "_hidden"}`}>
+		<div className={`popup_hero ${popupHeroOpen ? "" : "_hidden"}`}>
 			<div className="popup_blackout" onClick={funForClose}></div>
 
 			<div className="popup_content">

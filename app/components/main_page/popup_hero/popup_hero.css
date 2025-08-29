@@ -1,4 +1,4 @@
-.popup{
+.popup_hero{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,13 +12,13 @@
 	transition: all .3s ease;
 }
 
-.popup._hidden{
+.popup_hero._hidden{
 	opacity: 0;
 }
 
 
 
-.popup .popup_blackout{
+.popup_hero .popup_blackout{
 	width: 100%;
 	height: 100%;
 	background-color: rgb(0, 0, 0, .8);
@@ -30,7 +30,7 @@
 
 
 
-.popup .popup_content{
+.popup_hero .popup_content{
 	display: flex;
 	align-items: center;
 	width: 1110px;
@@ -46,7 +46,7 @@
 }
 
 
-.popup .popup_content img{
+.popup_hero .popup_content img{
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -56,14 +56,14 @@
 }
 
 
-.popup .popup_content .block_info{
+.popup_hero .popup_content .block_info{
 	display: flex;
 	gap: 30px;
 	position: relative;
 	z-index: 2;
 }
 
-.popup .popup_content .block_info .block_img{
+.popup_hero .popup_content .block_info .block_img{
 	width: 400px;
 	min-width: 400px;
 	height: 400px;
@@ -71,12 +71,12 @@
 	background: linear-gradient(rgba(103, 104, 139, 1), rgb(55, 56, 74));
 }
 
-.popup .popup_content .block_info .block_text{
+.popup_hero .popup_content .block_info .block_text{
 	display: flex;
 	flex-direction: column;
 }
 
-.popup .popup_content .block_info .block_text h3{
+.popup_hero .popup_content .block_info .block_text h3{
 	width: 400px;
 	color: #fff;
 	font-size: 30px;
@@ -85,7 +85,7 @@
 	margin-bottom: 40px;
 }
 
-.popup .popup_content .block_info .block_text p{
+.popup_hero .popup_content .block_info .block_text p{
 	columns: #fff;
 	font-size: 20px;
 	font-family: 'Raleway';
@@ -93,7 +93,7 @@
 }
 
 
-.popup .popup_content .button_exit{
+.popup_hero .popup_content .button_exit{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -111,23 +111,23 @@
 	transition: all .3s ease;
 }
 
-.popup .popup_content .button_exit:hover{
+.popup_hero .popup_content .button_exit:hover{
 	border: 2px solid #757585;
 	background-color: #fff;
 }
 
-.popup .popup_content .button_exit svg{
+.popup_hero .popup_content .button_exit svg{
 	width: 20px;
 	height: 20px;
 }
 
-.popup .popup_content .button_exit svg line{
+.popup_hero .popup_content .button_exit svg line{
 	stroke: #fff;
 	stroke-width: 10px;
 
 	transition: all .3s ease;
 }
 
-.popup .popup_content .button_exit:hover svg line{
+.popup_hero .popup_content .button_exit:hover svg line{
 	stroke: #757585;
 }

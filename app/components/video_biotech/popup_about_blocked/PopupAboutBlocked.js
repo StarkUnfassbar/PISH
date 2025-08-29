@@ -10,7 +10,7 @@ import './popup_about_blocked_media.css';
 
 export default function PopupAboutBlocked({ popupHeroOpen, funForClose }) {
 	return (
-		<div className={`popup ${popupHeroOpen ? "" : "_hidden"}`}>
+		<div className={`popup_about_blocked ${popupHeroOpen ? "" : "_hidden"}`}>
 			<div className="popup_blackout" onClick={funForClose}></div>
 
 			<div className="popup_content">

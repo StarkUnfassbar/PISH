@@ -1,4 +1,4 @@
-.popup{
+.popup_about_blocked{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,14 +12,14 @@
 	transition: all .3s ease;
 }
 
-.popup._hidden{
+.popup_about_blocked._hidden{
 	opacity: 0;
 }
 
 
 
 
-.popup .popup_blackout{
+.popup_about_blocked .popup_blackout{
 	width: 100%;
 	height: 100%;
 	background-color: rgb(0, 0, 0, .8);
@@ -32,7 +32,7 @@
 
 
 
-.popup .popup_content{
+.popup_about_blocked .popup_content{
 	display: flex;
 	justify-content: center;
 	width: 500px;
@@ -50,7 +50,7 @@
 
 
 
-.popup .popup_content img{
+.popup_about_blocked .popup_content img{
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -61,7 +61,7 @@
 
 
 
-.popup .popup_content .block_content{
+.popup_about_blocked .popup_content .block_content{
 	display: flex;
 	justify-content: center;
 	position: relative;
@@ -69,13 +69,13 @@
 }
 
 
-.popup .popup_content .block_content .block_text{
+.popup_about_blocked .popup_content .block_content .block_text{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.popup .popup_content .block_content .block_text h1{
+.popup_about_blocked .popup_content .block_content .block_text h1{
 	width: fit-content;
 	color: #fff;
 	font-size: 65px;
@@ -85,7 +85,7 @@
 	margin-bottom: 35px;
 }
 
-.popup .popup_content .block_content .block_text p{
+.popup_about_blocked .popup_content .block_content .block_text p{
 	width: 450px;
 	columns: #fff;
 	font-size: 24px;
@@ -95,7 +95,7 @@
 }
 
 
-.popup .popup_content .block_content button{
+.popup_about_blocked .popup_content .block_content button{
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -116,13 +116,13 @@
 	transition: all .3s ease;
 }
 
-.popup .popup_content .block_content button:hover{
+.popup_about_blocked .popup_content .block_content button:hover{
 	background-color: #03D75C;
 }
 
 
 
-.popup .popup_content .button_exit{
+.popup_about_blocked .popup_content .button_exit{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -140,23 +140,23 @@
 	transition: all .3s ease;
 }
 
-.popup .popup_content .button_exit:hover{
+.popup_about_blocked .popup_content .button_exit:hover{
 	border: 2px solid #757585;
 	background-color: #fff;
 }
 
-.popup .popup_content .button_exit svg{
+.popup_about_blocked .popup_content .button_exit svg{
 	width: 17px;
 	height: 17px;
 }
 
-.popup .popup_content .button_exit svg line{
+.popup_about_blocked .popup_content .button_exit svg line{
 	stroke: #fff;
 	stroke-width: 10px;
 
 	transition: all .3s ease;
 }
 
-.popup .popup_content .button_exit:hover svg line{
+.popup_about_blocked .popup_content .button_exit:hover svg line{
 	stroke: #757585;
 }
