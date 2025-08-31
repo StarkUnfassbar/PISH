@@ -88,7 +88,7 @@ export default function VideoBiotech() {
 						<BlockVideo
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_1.png"}
-							videoTimer={"07:24"}
+							videoTimer={"08:48"}
 							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4")}
 							videoInfoHeader={"Получение и применение ГМ растений"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий "}
@@ -97,7 +97,7 @@ export default function VideoBiotech() {
 						<BlockVideo
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_2.png"}
-							videoTimer={"08:48"}
+							videoTimer={"07:24"}
 							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4")}
 							videoInfoHeader={"Бактерии как объект биотехнологий"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
@@ -106,24 +106,27 @@ export default function VideoBiotech() {
 						<BlockVideo
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_3.png"}
-							videoTimer={"08:48"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4")}
+							videoTimer={"24:18"}
+							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_3.mp4")}
+							videoInfoHeader={"Объекты микробиологических технологий"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
 						/>
 
 						<BlockVideo
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_4.png"}
-							videoTimer={"08:48"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4")}
+							videoTimer={"22:47"}
+							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_4.mp4")}
+							videoInfoHeader={"Использование моноклональных и поликлональных антител в медицине"}
 							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
 						/>
 
 						<BlockVideo
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_5.png"}
-							videoTimer={"08:48"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4")}
+							videoTimer={"35:13"}
+							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4")}
+							videoInfoHeader={"Экологические и этические проблемы генной инженерии"}
 							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
 						/>
 
