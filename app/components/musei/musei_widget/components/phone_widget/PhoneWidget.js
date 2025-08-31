@@ -14,6 +14,7 @@ import './slide_2.css';
 import './slide_3.css';
 import './slide_4.css';
 import './slide_5.css';
+import './slide_6.css';
 
 import ControllerWidgets from '../controller_widgets/ControllerWidgets';
 
@@ -181,6 +182,24 @@ export default function PhoneWidget() {
 								playsInline
 								loop
 								className={activeSlideIndex === 5 ? 'video-active' : 'video-inactive'}
+							/>
+
+							<div className="block_exhibit">
+								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+							</div>
+						</div>
+					</SwiperSlide>
+
+					<SwiperSlide data-slide="6">
+						<div className="slide__content">
+							<video
+								ref={el => videoRefs.current[5] = el}
+								src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_6.mp4"}
+								preload="auto"
+								muted
+								playsInline
+								loop
+								className={activeSlideIndex === 6 ? 'video-active' : 'video-inactive'}
 							/>
 
 							<div className="block_exhibit">
