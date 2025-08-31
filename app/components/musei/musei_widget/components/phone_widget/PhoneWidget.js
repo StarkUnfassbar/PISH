@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -9,25 +9,81 @@ import 'swiper/css';
 import './phone_widget.css';
 import './phone_widget_media.css';
 
-import slide1 from './img/slide1.png';
+import './slide_1.css';
+import './slide_2.css';
+import './slide_3.css';
+import './slide_4.css';
+import './slide_5.css';
 
-import ExhibitInDev from '../exhibit_in_dev/ExhibitInDev';
+import ControllerWidgets from '../controller_widgets/ControllerWidgets';
 
 
 
 export default function PhoneWidget() {
 	const swiperRef = useRef(null);
+	const videoRefs = useRef([]);
+	const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
-	const [exhibitInDevOpen, setExhibitInDevOpen] = useState(false);
+	const [openWidget, setOpenWidget] = useState(false);
+	const [idOpenedWidget, setIdOpenedWidget] = useState("");
 
-	const handleExhibitInDevOpen = (exhibitInDev) => {
-		console.log(1)
-		if(exhibitInDev){
-			setExhibitInDevOpen(true);
+	const handleOpenWidget = (open, id) => {
+		if(open){
+			setOpenWidget(true);
+			setIdOpenedWidget(id);
 		} else{
-			setExhibitInDevOpen(false);
+			setOpenWidget(false);
+			setIdOpenedWidget("");
 		}
 	};
+
+	// Функция для обработки изменения слайда
+	const handleSlideChange = (swiper) => {
+		setActiveSlideIndex(swiper.realIndex);
+		
+		// Останавливаем все видео кроме активного
+		videoRefs.current.forEach((video, index) => {
+			if (video) {
+				if (index === swiper.realIndex) {
+					// Запускаем активное видео
+					video.play().catch(error => {
+						console.log('Автовоспроизведение не разрешено:', error);
+					});
+				} else {
+					// Останавливаем неактивные видео и сбрасываем позицию
+					video.pause();
+				}
+			}
+		});
+	};
+
+	// Инициализация видео при монтировании
+	useEffect(() => {
+		// Предзагрузка всех видео
+		videoRefs.current.forEach(video => {
+			if (video) {
+				video.preload = 'auto';
+				video.load();
+			}
+		});
+
+		// Запуск первого видео если он активен
+		if (videoRefs.current[0]) {
+			videoRefs.current[0].play().catch(error => {
+				console.log('Автовоспроизведение не разрешено:', error);
+			});
+		}
+
+		return () => {
+			// Очистка при размонтировании
+			videoRefs.current.forEach(video => {
+				if (video) {
+					video.pause();
+					video.src = '';
+				}
+			});
+		};
+	}, []);
 
 	return (
 		<div className="block_phone">
@@ -40,28 +96,103 @@ export default function PhoneWidget() {
 					onSwiper={(swiper) => {
 						swiperRef.current = swiper;
 					}}
+					onSlideChange={handleSlideChange}
+					initialSlide={activeSlideIndex}
 				>
-					<SwiperSlide>
-						<img src={slide1.src} alt="Slide 1" />
+					<SwiperSlide data-slide="1">
+						<div className="slide__content">
+							<video
+								ref={el => videoRefs.current[0] = el}
+								src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_1.mp4"}
+								preload="auto"
+								muted
+								playsInline
+								loop
+								className={activeSlideIndex === 0 ? 'video-active' : 'video-inactive'}
+							/>
+
+							<div className="block_exhibit">
+								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+							</div>
+						</div>
 					</SwiperSlide>
-					<SwiperSlide>
-						<img src={slide1.src} alt="Slide 2" />
+
+					<SwiperSlide data-slide="2">
+						<div className="slide__content">
+							<video
+								ref={el => videoRefs.current[1] = el}
+								src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_2.mp4"}
+								preload="auto"
+								muted
+								playsInline
+								loop
+								className={activeSlideIndex === 1 ? 'video-active' : 'video-inactive'}
+							/>
+
+							<div className="block_exhibit">
+								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+							</div>
+						</div>
 					</SwiperSlide>
-					<SwiperSlide>
-						<img src={slide1.src} alt="Slide 3" />
+
+					<SwiperSlide data-slide="3">
+						<div className="slide__content">
+							<video
+								ref={el => videoRefs.current[2] = el}
+								src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_3.mp4"}
+								preload="auto"
+								muted
+								playsInline
+								loop
+								className={activeSlideIndex === 3 ? 'video-active' : 'video-inactive'}
+							/>
+
+							<div className="block_exhibit">
+								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+							</div>
+						</div>
+					</SwiperSlide>
+
+					<SwiperSlide data-slide="4">
+						<div className="slide__content">
+							<video
+								ref={el => videoRefs.current[3] = el}
+								src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_4.mp4"}
+								preload="auto"
+								muted
+								playsInline
+								loop
+								className={activeSlideIndex === 4 ? 'video-active' : 'video-inactive'}
+							/>
+
+							<div className="block_exhibit">
+								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+							</div>
+						</div>
+					</SwiperSlide>
+
+					<SwiperSlide data-slide="5">
+						<div className="slide__content">
+							<video
+								ref={el => videoRefs.current[4] = el}
+								src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_5.mp4"}
+								preload="auto"
+								muted
+								playsInline
+								loop
+								className={activeSlideIndex === 5 ? 'video-active' : 'video-inactive'}
+							/>
+
+							<div className="block_exhibit">
+								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+							</div>
+						</div>
 					</SwiperSlide>
 				</Swiper>
 			</div>
 
-
-			<div className="block_exhibits">
-				<div className="block_exhibit">
-					<button onClick={() => handleExhibitInDevOpen(true)}></button>
-				</div>
-			</div>
-
 			<div className="block_tip">
-				<p>Добро пожаловать в музей Передовой Инженерной школы ДВФУ!</p>
+				{/* <p>Добро пожаловать в музей Передовой Инженерной школы ДВФУ!</p> */}
 				<p>Для того чтобы начать, выберите экспонат и нажмите на него</p>
 			</div>
 
@@ -79,8 +210,7 @@ export default function PhoneWidget() {
 				</button>
 			</div>
 
-
-			<ExhibitInDev exhibitInDevOpen={exhibitInDevOpen} handleExhibitInDevOpen={handleExhibitInDevOpen} />
+			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} />
 		</div>
 	);
 }
