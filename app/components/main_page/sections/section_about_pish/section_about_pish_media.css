@@ -32,7 +32,7 @@
 
 
 	.about_pish .section_content .button_visit .text {
-		font-size: 28px;
+		font-size: 30px;
 	}
 
 
@@ -81,7 +81,7 @@
 
 
 	.about_pish .section_content .mission{
-		width: 590px;
+		width: 650px;
 		bottom: 180px;
 	}
 
@@ -91,6 +91,11 @@
 
 	.about_pish .section_content .mission p{
 		font-size: 22px;
+	}
+
+
+	.about_pish .section_content .button_visit .text{
+		font-size: 20px;
 	}
 
 

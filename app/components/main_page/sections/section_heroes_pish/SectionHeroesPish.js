@@ -130,11 +130,11 @@ export default function SectionHeroesPish({ isMobile }) {
 									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
-										<span className="fio">Власова Ванесса</span>
+										<span className="fio">Штермер Ванесса</span>
 
 										<span className="description">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-											labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+											Лаборант-исследователь молодёжной лаборатории ДНК-рекомбинантных технологий ПИШ, студентка 
+											4 курса направления "Биотехнология"
 										</span>
 									</div>
 								</div>

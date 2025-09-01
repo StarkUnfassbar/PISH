@@ -77,6 +77,19 @@
 	footer .footer_content .lower_part nav {
 		width: 350px;
 	}
+
+
+
+	footer .patterns{
+		height: 1700px;
+	}
+
+	footer .patterns .pattern:nth-child(1){
+		width: 2900px;
+		height: 2900px;
+		bottom: -1300px;
+		right: -1000px;
+	}
 }
 
 @media only screen and (max-width : 1800px){
@@ -130,6 +143,37 @@
 
 	footer .footer_content .lower_part nav a{
 		font-size: 20px;
+	}
+
+
+
+	footer .patterns{
+		height: 1100px;
+	}
+
+	footer .patterns .pattern:nth-child(1){
+		width: 2200px;
+		height: 2200px;
+		bottom: -1000px;
+		right: -800px;
+	}
+}
+
+@media only screen and (max-width : 1600px){
+	footer .patterns .pattern:nth-child(1){
+		width: 2000px;
+		height: 2000px;
+		bottom: -900px;
+		right: -650px;
+	}
+}
+
+@media only screen and (max-width : 1300px){
+	footer .patterns .pattern:nth-child(1){
+		width: 1800px;
+		height: 1800px;
+		bottom: -800px;
+		right: -550px;
 	}
 }
 

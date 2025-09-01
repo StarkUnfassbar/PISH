@@ -1,3 +1,33 @@
+@media only screen and (min-width : 2000px){
+	.advantages_pish.main{
+		padding: 120px 250px 0;
+	}
+}
+
+@media only screen and (max-width : 1800px){
+	.advantages_pish.main{
+		padding: 120px 150px 0;
+	}
+}
+
+@media only screen and (max-width : 1600px){
+	.advantages_pish.main{
+		padding: 120px 100px 0;
+	}
+}
+
+@media only screen and (max-width : 1600px){
+	.advantages_pish.main{
+		padding: 120px 70px 0;
+	}
+}
+
+@media only screen and (max-width : 1400px){
+	.advantages_pish.main{
+		padding: 120px 40px 0;
+	}
+}
+
 @media only screen and (max-width : 930px){
 	.advantages_pish.mobile h1{
 		width: 550px;
