@@ -147,10 +147,6 @@
 
 
 
-	footer .patterns{
-		height: 1100px;
-	}
-
 	footer .patterns .pattern:nth-child(1){
 		width: 2200px;
 		height: 2200px;
@@ -160,6 +156,10 @@
 }
 
 @media only screen and (max-width : 1600px){
+	footer .patterns{
+		height: 1300px;
+	}
+
 	footer .patterns .pattern:nth-child(1){
 		width: 2000px;
 		height: 2000px;

@@ -1,7 +1,9 @@
-@media only screen and (min-width : 2000px){
+@media only screen and (max-width : 1800px){
 	.video_container {
-		height: 950px;
-		max-width: 2000px;
-		margin: 0 auto 100px;
+		height: calc(100vh - 160px);
+	}
+
+	.video_container .block_controls {
+		bottom: 20px;
 	}
 }

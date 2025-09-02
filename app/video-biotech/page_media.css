@@ -8,14 +8,42 @@
 	}
 }
 
-@media only screen and (max-width : 1100px){
-	.video_biotech main .video_content h1 {
-		font-size: 60px;
+@media only screen and (max-width : 1800px){
+	.video_biotech main .list_video{
+		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+		gap: 100px 20px;
+	}
+
+	.video_biotech main .list_video .block_video .video_cover{
+		height: 320px;
 	}
 
 
+
+	.video_biotech main .video_content{
+		padding: 30px 40px 150px;
+	}
+}
+
+@media only screen and (max-width : 1600px){
+	.video_biotech main .list_video{
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+
+	.video_biotech main .list_video .block_video .video_cover{
+		height: 300px;
+	}
+}
+
+@media only screen and (max-width : 1100px){
 	.video_biotech main .video_container {
 		height: 600px;
+		min-width: auto;
+		min-height: auto;
+	}
+
+	.video_biotech main .video_content h1 {
+		font-size: 60px;
 	}
 }
 

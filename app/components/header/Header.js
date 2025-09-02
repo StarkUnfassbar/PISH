@@ -28,7 +28,7 @@ export default function Header({ isMobile }) {
 			{isMobile ? (
 				<div className="header_content_mobile">
 					<div className="block_logo">
-						<Link href="/" className="logo">
+						<Link href="https://pish.dvfu.ru/" className="logo">
 							<Image src="/img/main/logo/logo_pish.svg" alt="logo of the advanced engineering school" fill />
 						</Link>
 
@@ -73,7 +73,7 @@ export default function Header({ isMobile }) {
 			) : (
 				<div className="header_content">
 					<div className="basic_logo">
-						<Link href="/" className="logo">
+						<Link href="https://pish.dvfu.ru/" className="logo">
 							<Image src="/img/main/logo/logo_pish.svg" alt="logo of the advanced engineering school" fill />
 						</Link>
 

@@ -14,6 +14,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     const videoContainerRef = useRef(null);
     const lastClickTimeRef = useRef(0);
     const clickCountRef = useRef(0);
+	const [fullWidthVideo, setFullWidthVideo] = useState(false);
 
     // Сброс состояния при изменении видео
     useEffect(() => {
@@ -154,6 +155,14 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         }
     };
 
+	const toggleFullWidth = () => {
+        if(!fullWidthVideo){
+			setFullWidthVideo(true);
+		} else{
+			setFullWidthVideo(false);
+		}
+    };
+
     const handleVideoTimeUpdate = () => {
         if (videoRef.current) {
             setCurrentTime(videoRef.current.currentTime);
@@ -182,7 +191,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
 
     return (
         <div 
-            className={`video_container ${videoPlayerShow ? "" : "_hidden"}`} 
+            className={`video_container ${videoPlayerShow ? "" : "_hidden"} ${fullWidthVideo ? "_full_width" : ""}`} 
             ref={videoContainerRef}
             onClick={handleVideoClick}
         >
@@ -280,6 +289,15 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                             style={{ width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%` }}
                         />
                     </div>
+
+					<button onClick={toggleFullWidth} className="button_fullscreen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" fill="none">
+                            <path d="M25.9688 7.5H33.4805V15" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M24.7168 16.25L33.4805 7.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M15.9531 32.5H8.44141V25" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M17.2051 23.75L8.44141 32.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
                     
                     <button onClick={toggleFullscreen} className="button_fullscreen">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" fill="none">

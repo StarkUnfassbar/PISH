@@ -21,6 +21,7 @@
 .video_biotech main .video_content{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	height: fit-content;
 	padding: 60px 40px 150px;
@@ -43,8 +44,12 @@
 
 .video_biotech main .list_video{
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  	gap: 100px 20px;
+	grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  	gap: 100px 40px;
 	width: 100%;
 	height: fit-content;
+}
+
+.video_biotech main .list_video .block_video .video_cover{
+	height: 340px;
 }
