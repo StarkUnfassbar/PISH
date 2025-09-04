@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,8 +15,6 @@ import BlockVideo from '../components/video_biotech/block_video/BlockVideo';
 import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/PopupAboutBlocked';
 
 import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
-
-
 
 export default function VideoBiotech() {
 	const [isMobile, setIsMobile] = useState(null);
@@ -56,10 +54,30 @@ export default function VideoBiotech() {
 	const [videoPlayerShow, setVideoPlayerShow] = useState(false);
 	const [videoSrc, setVideoSrc] = useState("");
 
+	// Функция для определения позиции скролла в зависимости от ширины экрана
+	const getScrollPosition = () => {
+		const screenWidth = window.innerWidth;
+		
+		if (screenWidth > 2000) {
+			return 125; // для экранов больше 2000px
+		} else if (screenWidth < 1800) {
+			return 100;  // для экранов меньше 1800px
+		} else {
+			return 110; // стандартное значение
+		}
+	};
+
 	const handleVideoPlayerShow = (open, src) => {
 		if(open){
 			setVideoSrc(src);
 			setVideoPlayerShow(true);
+			
+			// Плавный скролл к адаптивной позиции
+			const scrollPosition = getScrollPosition();
+			window.scrollTo({
+				top: scrollPosition,
+				behavior: 'smooth'
+			});
 		} else{
 			setVideoPlayerShow(false);
 		}
@@ -129,12 +147,6 @@ export default function VideoBiotech() {
 							videoInfoHeader={"Экологические и этические проблемы генной инженерии"}
 							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
 						/>
-
-						{/* <BlockVideo
-							videoBlocked={true}
-							funForButton={() => handlePopupOpen(true)}
-							videoInfoHeader={"Экологические и этические проблемы генной инженерии"}
-						/> */}
 					</div>
 				</section>
 			</main>

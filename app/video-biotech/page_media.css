@@ -1,4 +1,9 @@
 @media only screen and (min-width : 2000px){
+	.video_biotech main{
+		margin-top: 125px;
+	}
+
+
 	.video_biotech main .list_video{
 		grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 	}
@@ -6,9 +11,19 @@
 	.video_biotech main .list_video .block_video .video_cover{
 		height: 380px;
 	}
+
+
+	.video_biotech main .video_content{
+		padding: 50px 40px 150px;
+	}
 }
 
 @media only screen and (max-width : 1800px){
+	.video_biotech main{
+		margin-top: 100px;
+	}
+
+
 	.video_biotech main .list_video{
 		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
 		gap: 100px 20px;

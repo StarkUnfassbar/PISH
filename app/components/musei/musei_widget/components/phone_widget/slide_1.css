@@ -8,7 +8,7 @@
 
 
 @media only screen and (max-width : 500px) and (min-height : 880px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 550px;
 		left: -25px;
 	}
@@ -23,7 +23,7 @@
 
 
 @media only screen and (max-width : 470px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 470px;
 	}
 
@@ -36,7 +36,7 @@
 }
 
 @media only screen and (max-width : 470px) and (min-height : 830px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 530px;
 		left: -25px;
 	}
@@ -51,7 +51,7 @@
 
 
 @media only screen and (max-width : 430px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 430px;
 	}
 
@@ -64,7 +64,7 @@
 }
 
 @media only screen and (max-width : 430px) and (min-height : 750px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 480px;
 		left: -25px;
 	}
@@ -78,7 +78,7 @@
 }
 
 @media only screen and (max-width : 430px) and (min-height : 840px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 550px;
 		left: -50px;
 	}
@@ -93,7 +93,7 @@
 
 
 @media only screen and (max-width : 400px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 400px;
 	}
 
@@ -106,7 +106,7 @@
 }
 
 @media only screen and (max-width : 400px) and (min-height : 700px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 450px;
 		left: -25px;
 	}
@@ -120,7 +120,7 @@
 }
 
 @media only screen and (max-width : 400px) and (min-height : 800px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 520px;
 		left: -60px;
 	}
@@ -135,7 +135,7 @@
 
 
 @media only screen and (max-width : 370px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 370px;
 	}
 
@@ -148,7 +148,7 @@
 }
 
 @media only screen and (max-width : 370px) and (min-height : 650px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 420px;
 		left: -25px;
 	}
@@ -162,7 +162,7 @@
 }
 
 @media only screen and (max-width : 370px) and (min-height : 740px){
-	.block_phone .block_swiper .swiper-slide[data-slide="1"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="1"] .slide_video_container{
 		width: 470px;
 		left: -50px;
 	}

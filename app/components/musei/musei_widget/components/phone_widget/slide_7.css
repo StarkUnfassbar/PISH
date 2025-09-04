@@ -8,7 +8,7 @@
 
 
 @media only screen and (max-width : 500px) and (min-height : 880px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 550px;
 		left: -25px;
 	}
@@ -21,7 +21,7 @@
 
 
 @media only screen and (max-width : 470px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 470px;
 	}
 
@@ -32,7 +32,7 @@
 }
 
 @media only screen and (max-width : 470px) and (min-height : 820px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 520px;
 		left: -25px;
 	}
@@ -44,7 +44,7 @@
 }
 
 @media only screen and (max-width : 470px) and (min-height : 910px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 550px;
 		left: -40px;
 	}
@@ -57,7 +57,7 @@
 
 
 @media only screen and (max-width : 430px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 430px;
 	}
 
@@ -68,7 +68,7 @@
 }
 
 @media only screen and (max-width : 430px) and (min-height : 750px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 480px;
 		left: -25px;
 	}
@@ -80,7 +80,7 @@
 }
 
 @media only screen and (max-width : 430px) and (min-height : 850px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 510px;
 		left: -40px;
 	}
@@ -93,7 +93,7 @@
 
 
 @media only screen and (max-width : 390px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 390px;
 	}
 
@@ -104,7 +104,7 @@
 }
 
 @media only screen and (max-width : 390px) and (min-height : 680px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 440px;
 		left: -25px;
 	}
@@ -116,7 +116,7 @@
 }
 
 @media only screen and (max-width : 390px) and (min-height : 770px){
-	.block_phone .block_swiper .swiper-slide[data-slide="7"] video {
+	.block_phone .block_swiper .swiper-slide[data-slide="7"] .slide_video_container{
 		width: 470px;
 		left: -40px;
 	}

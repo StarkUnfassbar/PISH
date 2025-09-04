@@ -1,9 +1,15 @@
+@media only screen and (min-width : 2000px){
+	.video_container {
+		height: calc(100vh - 100px);
+	}
+}
+
 @media only screen and (max-width : 1800px){
 	.video_container {
-		height: calc(100vh - 160px);
+		height: calc(100vh - 60px);
 	}
 
-	.video_container .block_controls {
+	/* .video_container .block_controls {
 		bottom: 20px;
-	}
+	} */
 }

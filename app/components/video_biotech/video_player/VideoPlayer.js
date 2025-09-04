@@ -14,7 +14,26 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     const videoContainerRef = useRef(null);
     const lastClickTimeRef = useRef(0);
     const clickCountRef = useRef(0);
-	const [fullWidthVideo, setFullWidthVideo] = useState(false);
+    const [fullWidthVideo, setFullWidthVideo] = useState(false);
+    const [fullScreenVideo, setFullScreenVideo] = useState(false);
+
+    // Используем рефы для значений, которые часто меняются
+    const volumeRef = useRef(volume);
+    const currentTimeRef = useRef(currentTime);
+    const durationRef = useRef(duration);
+
+    // Синхронизируем рефы с состоянием
+    useEffect(() => {
+        volumeRef.current = volume;
+    }, [volume]);
+
+    useEffect(() => {
+        currentTimeRef.current = currentTime;
+    }, [currentTime]);
+
+    useEffect(() => {
+        durationRef.current = duration;
+    }, [duration]);
 
     // Сброс состояния при изменении видео
     useEffect(() => {
@@ -27,6 +46,96 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         setDuration(0);
         setShowRemainingTime(false);
     }, [videoSrc]);
+
+    // Обработка нажатия клавиш
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Игнорируем, если фокус на элементах ввода
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+
+            switch (e.code) {
+                case 'Space':
+                    e.preventDefault(); // Предотвращаем прокрутку страницы
+                    togglePlay();
+                    break;
+                case 'Escape':
+                    e.preventDefault(); // Предотвращаем стандартное поведение
+                    if (document.fullscreenElement) {
+                        exitFullscreen();
+                    }
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    changeVolume(0.05); // Увеличиваем громкость на 5%
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    changeVolume(-0.05); // Уменьшаем громкость на 5%
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    seekVideo(-5); // Перематываем назад на 5 секунд
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    seekVideo(5); // Перематываем вперед на 5 секунд
+                    break;
+                default:
+                    break;
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isPlaying, fullScreenVideo]); // Убрали изменяющиеся зависимости
+
+    // Слушатель изменения полноэкранного режима
+    useEffect(() => {
+        const handleFullscreenChange = () => {
+            setFullScreenVideo(!!document.fullscreenElement);
+        };
+
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+
+        return () => {
+            document.removeEventListener('fullscreenchange', handleFullscreenChange);
+        };
+    }, []);
+
+    // Изменение громкости
+    const changeVolume = (delta) => {
+        if (videoRef.current) {
+            let newVolume = volumeRef.current + delta;
+            
+            // Ограничиваем громкость в диапазоне 0-1
+            newVolume = Math.max(0, Math.min(1, newVolume));
+            
+            videoRef.current.volume = newVolume;
+            setVolume(newVolume);
+            
+            if (newVolume > 0) {
+                setPrevVolume(newVolume);
+            }
+        }
+    };
+
+    // Перемотка видео
+    const seekVideo = (seconds) => {
+        if (videoRef.current) {
+            let newTime = currentTimeRef.current + seconds;
+            
+            // Ограничиваем время в диапазоне 0-durationRef.current
+            newTime = Math.max(0, Math.min(durationRef.current, newTime));
+            
+            videoRef.current.currentTime = newTime;
+            setCurrentTime(newTime);
+        }
+    };
 
     // Форматирование времени в MM:SS
     const formatTime = (timeInSeconds) => {
@@ -145,22 +254,30 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         }
     };
 
+    const exitFullscreen = () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+            setFullScreenVideo(false);
+        }
+    };
+
     const toggleFullscreen = () => {
         if (!videoContainerRef.current) return;
 
         if (document.fullscreenElement) {
-            document.exitFullscreen();
+            exitFullscreen();
         } else {
             videoContainerRef.current.requestFullscreen();
+            setFullScreenVideo(true);
         }
     };
 
-	const toggleFullWidth = () => {
+    const toggleFullWidth = () => {
         if(!fullWidthVideo){
-			setFullWidthVideo(true);
-		} else{
-			setFullWidthVideo(false);
-		}
+            setFullWidthVideo(true);
+        } else{
+            setFullWidthVideo(false);
+        }
     };
 
     const handleVideoTimeUpdate = () => {
@@ -206,11 +323,11 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                 key={videoSrc} // Ключ для принудительного пересоздания видео при смене источника
             >
                 {videoSrc && (
-					<source 
-						src={videoSrc} 
-						type="video/mp4" 
-					/>
-				)}
+                    <source 
+                        src={videoSrc} 
+                        type="video/mp4" 
+                    />
+                )}
                 Your browser does not support the video tag.
             </video>
             
@@ -234,7 +351,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
                                     <path d="M13.6807 4.81873C14.5246 5.66264 14.9987 6.80723 14.9987 8.00071C14.9987 9.19418 14.5246 10.3388 13.6807 11.1827" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M4.99951 5.50073V10.50073" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M11.9126 6.58649C12.2877 6.96156 12.4984 7.47027 12.4984 8.0007C12.4984 8.53113 12.2877 9.03984 11.9126 9.41491" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M11.9126 6.58649C12.2877 6.96156 12.4984 6.47027 12.4984 8.0007C12.4984 8.53113 12.2877 9.03984 11.9126 9.41491" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M3 2.5L13 13.5" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M9.5 9.65V14.0007L5 10.5007H2C1.86739 10.5007 1.74021 10.4481 1.64645 10.3543C1.55268 10.2605 1.5 10.1333 1.5 10.0007V6.00073C1.5 5.86812 1.55268 5.74095 1.64645 5.64718C1.74021 5.55341 1.86739 5.50073 2 5.50073H5L5.42642 5.16907" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M7.00977 3.93754L9.50002 2.00073V6.6768" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
@@ -290,22 +407,40 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                         />
                     </div>
 
-					<button onClick={toggleFullWidth} className="button_fullscreen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" fill="none">
-                            <path d="M25.9688 7.5H33.4805V15" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M24.7168 16.25L33.4805 7.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M15.9531 32.5H8.44141V25" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M17.2051 23.75L8.44141 32.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                    </button>
+                    {!fullScreenVideo && (
+                        <button onClick={toggleFullWidth} className="button_fullwidth">
+                            {fullWidthVideo ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 33" fill="none">
+                                    <rect x="1.5" y="1.5" width="50" height="30" stroke="white" strokeWidth="3"/>
+                                </svg>
+                            ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 28" fill="none">
+                                    <rect x="1.5" y="1.5" width="50" height="25" stroke="white" strokeWidth="3"/>
+                                </svg>
+                            )}
+                        </button>
+                    )}
                     
                     <button onClick={toggleFullscreen} className="button_fullscreen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" fill="none">
-                            <path d="M25.9688 7.5H33.4805V15" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M24.7168 16.25L33.4805 7.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M15.9531 32.5H8.44141V25" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M17.2051 23.75L8.44141 32.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                        {fullScreenVideo ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 52" fill="none">
+                                <line x1="57.0607" y1="1.06066" x2="38.5539" y2="19.5674" stroke="white" strokeWidth="3"/>
+                                <line x1="38.2466" y1="20.7534" x2="38.2466" y2="4.75342" stroke="white" strokeWidth="3"/>
+                                <line x1="52.7466" y1="20.2534" x2="36.7466" y2="20.2534" stroke="white" strokeWidth="3"/>
+                                <line x1="1.93934" y1="50.6928" x2="20.4461" y2="32.186" stroke="white" strokeWidth="3"/>
+                                <line x1="20.7534" y1="31" x2="20.7534" y2="47" stroke="white" strokeWidth="3"/>
+                                <line x1="6.25342" y1="31.5" x2="22.2534" y2="31.5" stroke="white" strokeWidth="3"/>
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 54" fill="none">
+                                <line x1="32.6859" y1="20.6928" x2="51.1927" y2="2.186" stroke="white" strokeWidth="3"/>
+                                <line x1="51.5" y1="1" x2="51.5" y2="17" stroke="white" strokeWidth="3"/>
+                                <line x1="37" y1="1.5" x2="53" y2="1.5" stroke="white" strokeWidth="3"/>
+                                <line x1="20.3141" y1="33.0607" x2="1.80732" y2="51.5674" stroke="white" strokeWidth="3"/>
+                                <line x1="1.5" y1="52.7534" x2="1.5" y2="36.7534" stroke="white" strokeWidth="3"/>
+                                <line x1="16" y1="52.2534" y2="52.2534" stroke="white" strokeWidth="3"/>
+                            </svg>
+                        )}
                     </button>
                 </div>
             </div>

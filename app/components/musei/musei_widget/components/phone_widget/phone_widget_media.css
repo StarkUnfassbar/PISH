@@ -19,7 +19,7 @@
 	.block_phone .block_tip{
 		top: 10px;
 		left: 10px;
-		padding: 5px 10px;
+		padding: 10px 20px;
 		border-radius: 5px;
 	}
 	
@@ -31,7 +31,7 @@
 	.block_phone .block_controls{
 		gap: 20px;
 		bottom: 30px;
-		left: 30px;
+		right: 30px;
 	}
 
 	.block_phone .block_controls button{
@@ -47,18 +47,17 @@
 
 @media only screen and (max-width : 500px){
 	.block_phone .block_tip{
-		width: calc(100% - 40px);
+		width: calc(100% - 20px);
 	}
 
 	.block_phone .block_tip p{
-		font-size: 10px;
-		text-align: left;
+		font-size: 16px;
 	}
 
 	.block_phone .block_controls{
 		gap: 15px;
 		bottom: 20px;
-		left: 20px;
+		right: 20px;
 	}
 
 	.block_phone .block_controls button{
@@ -72,9 +71,15 @@
 	}
 }
 
+@media only screen and (max-width : 400px){
+	.block_phone .block_tip p{
+		font-size: 14px;
+	}
+}
+
 @media only screen and (max-width : 360px){
 	.block_phone .block_tip p{
-		font-size: 10px;
+		font-size: 12px;
 	}
 
 
