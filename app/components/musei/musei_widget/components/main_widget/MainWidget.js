@@ -188,7 +188,7 @@ const videos = [
 
 
 
-export default function MainWidget() {
+export default function MainWidget({ isMobile }) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isTransitioning, setIsTransitioning] = useState(false);
 	const playersRef = useRef([]);
@@ -347,7 +347,7 @@ export default function MainWidget() {
 				</svg>
 			</Link>
 
-			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} />
+			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} isMobile={isMobile} />
 		</>
 	);
 }

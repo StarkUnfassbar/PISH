@@ -9,7 +9,7 @@ import PhoneWidget from './components/phone_widget/PhoneWidget';
 export default function MuseiWidget({ isMobile }) {
 	return (
 		<div className="musei_widget">
-			{isMobile ? <PhoneWidget /> : <MainWidget />}
+			{isMobile ? <PhoneWidget isMobile={isMobile} /> : <MainWidget isMobile={isMobile} />}
 		</div>
 	);
 }

@@ -23,7 +23,7 @@ import ControllerWidgets from '../controller_widgets/ControllerWidgets';
 
 
 
-export default function PhoneWidget() {
+export default function PhoneWidget({ isMobile }) {
 const swiperRef = useRef(null);
 	const videoRefs = useRef([]);
 	const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -111,195 +111,197 @@ const swiperRef = useRef(null);
 
 	return (
 		<div className="block_phone">
-			<div className="block_swiper">
-				<Swiper
-					modules={[Navigation]}
-					spaceBetween={0}
-					slidesPerView={1}
-					loop={true}
-					onSwiper={(swiper) => {
-						swiperRef.current = swiper;
-					}}
-					onSlideChange={handleSlideChange}
-					initialSlide={activeSlideIndex}
-				>
-					<SwiperSlide data-slide="1">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_1.jpg" alt="logo of the advanced engineering school" fill />
+			<div className="block_phone__container">
+				<div className="block_swiper">
+					<Swiper
+						modules={[Navigation]}
+						spaceBetween={0}
+						slidesPerView={1}
+						loop={true}
+						onSwiper={(swiper) => {
+							swiperRef.current = swiper;
+						}}
+						onSlideChange={handleSlideChange}
+						initialSlide={activeSlideIndex}
+					>
+						<SwiperSlide data-slide="1">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_1.jpg" alt="logo of the advanced engineering school" fill />
 
-								<video
-									ref={el => videoRefs.current[0] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_1.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 0 ? 'video-active' : 'video-inactive'}
-								/>
+									<video
+										ref={el => videoRefs.current[0] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_1.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 0 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "medicine")}></button>
+								</div>
 							</div>
+						</SwiperSlide>
 
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+						<SwiperSlide data-slide="2">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_2.jpg" alt="logo of the advanced engineering school" fill />
+
+									<video
+										ref={el => videoRefs.current[1] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_2.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 1 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
+						</SwiperSlide>
 
-					<SwiperSlide data-slide="2">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_2.jpg" alt="logo of the advanced engineering school" fill />
+						<SwiperSlide data-slide="3">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_3.jpg" alt="logo of the advanced engineering school" fill />
 
-								<video
-									ref={el => videoRefs.current[1] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_2.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 1 ? 'video-active' : 'video-inactive'}
-								/>
+									<video
+										ref={el => videoRefs.current[2] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_3.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 3 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+								</div>
 							</div>
+						</SwiperSlide>
 
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+						<SwiperSlide data-slide="4">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_4.jpg" alt="logo of the advanced engineering school" fill />
+
+									<video
+										ref={el => videoRefs.current[3] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_4.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 4 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
+						</SwiperSlide>
 
-					<SwiperSlide data-slide="3">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_3.jpg" alt="logo of the advanced engineering school" fill />
+						<SwiperSlide data-slide="5">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_5.jpg" alt="logo of the advanced engineering school" fill />
 
-								<video
-									ref={el => videoRefs.current[2] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_3.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 3 ? 'video-active' : 'video-inactive'}
-								/>
+									<video
+										ref={el => videoRefs.current[4] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_5.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 5 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+								</div>
 							</div>
+						</SwiperSlide>
 
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+						<SwiperSlide data-slide="6">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_6.jpg" alt="logo of the advanced engineering school" fill />
+
+									<video
+										ref={el => videoRefs.current[5] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_6.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 6 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
+						</SwiperSlide>
 
-					<SwiperSlide data-slide="4">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_4.jpg" alt="logo of the advanced engineering school" fill />
+						<SwiperSlide data-slide="7">
+							<div className="slide__content">
+								<div className="slide_video_container">
+									<Image src="/img/musei/phone/video_bg_7.jpg" alt="logo of the advanced engineering school" fill />
 
-								<video
-									ref={el => videoRefs.current[3] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_4.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 4 ? 'video-active' : 'video-inactive'}
-								/>
+									<video
+										ref={el => videoRefs.current[6] = el}
+										src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_7.mp4"}
+										preload="auto"
+										muted
+										playsInline
+										loop
+										className={activeSlideIndex === 7 ? 'video-active' : 'video-inactive'}
+									/>
+								</div>
+
+								<div className="block_exhibit">
+									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+								</div>
 							</div>
-
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
-							</div>
-						</div>
-					</SwiperSlide>
-
-					<SwiperSlide data-slide="5">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_5.jpg" alt="logo of the advanced engineering school" fill />
-
-								<video
-									ref={el => videoRefs.current[4] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_5.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 5 ? 'video-active' : 'video-inactive'}
-								/>
-							</div>
-
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
-							</div>
-						</div>
-					</SwiperSlide>
-
-					<SwiperSlide data-slide="6">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_6.jpg" alt="logo of the advanced engineering school" fill />
-
-								<video
-									ref={el => videoRefs.current[5] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_6.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 6 ? 'video-active' : 'video-inactive'}
-								/>
-							</div>
-
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
-							</div>
-						</div>
-					</SwiperSlide>
-
-					<SwiperSlide data-slide="7">
-						<div className="slide__content">
-							<div className="slide_video_container">
-								<Image src="/img/musei/phone/video_bg_7.jpg" alt="logo of the advanced engineering school" fill />
-
-								<video
-									ref={el => videoRefs.current[6] = el}
-									src={"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/phone_musei/video_7.mp4"}
-									preload="auto"
-									muted
-									playsInline
-									loop
-									className={activeSlideIndex === 7 ? 'video-active' : 'video-inactive'}
-								/>
-							</div>
-
-							<div className="block_exhibit">
-								<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
-							</div>
-						</div>
-					</SwiperSlide>
-				</Swiper>
-			</div>
-
-			{!hasInteracted && (
-				<div className={`block_tip ${showTip ? '' : '_hidden'}`}>
-					<p>Для того чтобы начать, выберите экспонат и нажмите на него</p>
+						</SwiperSlide>
+					</Swiper>
 				</div>
-			)}
 
-			<div className="block_controls">
-				<button onClick={() => handleControlsClick('prev')}>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
-						<path d="M12.5 23L2 12.5L12.5 1" stroke="white" strokeWidth="2"/>
-					</svg>
-				</button>
+				{!hasInteracted && (
+					<div className={`block_tip ${showTip ? '' : '_hidden'}`}>
+						<p>Для того чтобы начать, выберите экспонат и нажмите на него</p>
+					</div>
+				)}
 
-				<button onClick={() => handleControlsClick('next')}>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
-						<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
-					</svg>
-				</button>
+				<div className="block_controls">
+					<button onClick={() => handleControlsClick('prev')}>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
+							<path d="M12.5 23L2 12.5L12.5 1" stroke="white" strokeWidth="2"/>
+						</svg>
+					</button>
+
+					<button onClick={() => handleControlsClick('next')}>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+							<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+						</svg>
+					</button>
+				</div>
 			</div>
 
-			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} />
+			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} isMobile={isMobile} />
 		</div>
 	);
 }

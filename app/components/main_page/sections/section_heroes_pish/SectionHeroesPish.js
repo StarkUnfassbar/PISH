@@ -98,7 +98,7 @@ export default function SectionHeroesPish({ isMobile }) {
 
 									<div className="text_info">
 										<span className="fio">Сидоренко Андрей Владимирович</span>
-										<span className="description">Главный механик производства “Кормбиосинтез”.</span>
+										<span className="description">Главный механик производства “Кормбиосинтез”</span>
 									</div>
 								</div>
 
@@ -113,7 +113,7 @@ export default function SectionHeroesPish({ isMobile }) {
 										<span className="fio">Рочин Егор Олегович</span>
 										<span className="description">
 											Ведущий технолог НГПК “Арника”, специализирующейся на производстве биодобавок 
-											для сельскохозяйственной отрасли.
+											для сельскохозяйственной отрасли
 										</span>
 									</div>
 								</div>

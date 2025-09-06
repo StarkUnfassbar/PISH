@@ -1,94 +1,94 @@
 @media only screen and (max-width : 1000px){
-	.block_phone .block_tip p{
+	.block_phone .block_phone__container .block_tip p{
 		font-size: 20px;
 	}
 
 
-	.block_phone .block_controls button{
+	.block_phone .block_phone__container .block_controls button{
 		width: 80px;
 		height: 80px;
 	}
 
-	.block_phone .block_controls button svg{
+	.block_phone .block_phone__container .block_controls button svg{
 		width: 40px;
 		height: 35px;
 	}
 }
 
 @media only screen and (max-width : 760px){
-	.block_phone .block_tip{
+	.block_phone .block_phone__container .block_tip{
 		top: 10px;
 		left: 10px;
 		padding: 10px 20px;
 		border-radius: 5px;
 	}
 	
-	.block_phone .block_tip p{
+	.block_phone .block_phone__container .block_tip p{
 		font-size: 16px;
 	}
 
 
-	.block_phone .block_controls{
+	.block_phone .block_phone__container .block_controls{
 		gap: 20px;
 		bottom: 30px;
 		right: 30px;
 	}
 
-	.block_phone .block_controls button{
+	.block_phone .block_phone__container .block_controls button{
 		width: 70px;
 		height: 70px;
 	}
 
-	.block_phone .block_controls button svg{
+	.block_phone .block_phone__container .block_controls button svg{
 		width: 35px;
 		height: 30px;
 	}
 }
 
 @media only screen and (max-width : 500px){
-	.block_phone .block_tip{
+	.block_phone .block_phone__container .block_tip{
 		width: calc(100% - 20px);
 	}
 
-	.block_phone .block_tip p{
+	.block_phone .block_phone__container .block_tip p{
 		font-size: 16px;
 	}
 
-	.block_phone .block_controls{
+	.block_phone .block_phone__container .block_controls{
 		gap: 15px;
 		bottom: 20px;
 		right: 20px;
 	}
 
-	.block_phone .block_controls button{
+	.block_phone .block_phone__container .block_controls button{
 		width: 50px;
 		height: 50px;
 	}
 
-	.block_phone .block_controls button svg{
+	.block_phone .block_phone__container .block_controls button svg{
 		width: 25px;
 		height: 20px;
 	}
 }
 
 @media only screen and (max-width : 400px){
-	.block_phone .block_tip p{
+	.block_phone .block_phone__container .block_tip p{
 		font-size: 14px;
 	}
 }
 
 @media only screen and (max-width : 360px){
-	.block_phone .block_tip p{
+	.block_phone .block_phone__container .block_tip p{
 		font-size: 12px;
 	}
 
 
-	.block_phone .block_controls button{
+	.block_phone .block_phone__container .block_controls button{
 		width: 45px;
 		height: 45px;
 	}
 
-	.block_phone .block_controls button svg{
+	.block_phone .block_phone__container .block_controls button svg{
 		width: 22px;
 		height: 18px;
 	}

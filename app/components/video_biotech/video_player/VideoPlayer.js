@@ -16,11 +16,14 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     const clickCountRef = useRef(0);
     const [fullWidthVideo, setFullWidthVideo] = useState(false);
     const [fullScreenVideo, setFullScreenVideo] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const [showControls, setShowControls] = useState(false);
 
     // Используем рефы для значений, которые часто меняются
     const volumeRef = useRef(volume);
     const currentTimeRef = useRef(currentTime);
     const durationRef = useRef(duration);
+    const inactivityTimeoutRef = useRef(null);
 
     // Синхронизируем рефы с состоянием
     useEffect(() => {
@@ -45,6 +48,13 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         setCurrentTime(0);
         setDuration(0);
         setShowRemainingTime(false);
+        setShowControls(false);
+        clearTimeout(inactivityTimeoutRef.current);
+        
+        const videoContainer = videoContainerRef.current;
+        if (videoContainer) {
+            videoContainer.style.cursor = 'auto';
+        }
     }, [videoSrc]);
 
     // Обработка нажатия клавиш
@@ -55,32 +65,39 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                 return;
             }
 
+            // Показываем контролы и курсор при любом нажатии клавиш
+            const videoContainer = videoContainerRef.current;
+            if (videoContainer) {
+                videoContainer.style.cursor = 'auto';
+            }
+            showControlsTemporarily();
+
             switch (e.code) {
                 case 'Space':
-                    e.preventDefault(); // Предотвращаем прокрутку страницы
+                    e.preventDefault();
                     togglePlay();
                     break;
                 case 'Escape':
-                    e.preventDefault(); // Предотвращаем стандартное поведение
+                    e.preventDefault();
                     if (document.fullscreenElement) {
                         exitFullscreen();
                     }
                     break;
                 case 'ArrowUp':
                     e.preventDefault();
-                    changeVolume(0.05); // Увеличиваем громкость на 5%
+                    changeVolume(0.05);
                     break;
                 case 'ArrowDown':
                     e.preventDefault();
-                    changeVolume(-0.05); // Уменьшаем громкость на 5%
+                    changeVolume(-0.05);
                     break;
                 case 'ArrowLeft':
                     e.preventDefault();
-                    seekVideo(-5); // Перематываем назад на 5 секунд
+                    seekVideo(-5);
                     break;
                 case 'ArrowRight':
                     e.preventDefault();
-                    seekVideo(5); // Перематываем вперед на 5 секунд
+                    seekVideo(5);
                     break;
                 default:
                     break;
@@ -92,7 +109,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [isPlaying, fullScreenVideo]); // Убрали изменяющиеся зависимости
+    }, [isPlaying, fullScreenVideo]);
 
     // Слушатель изменения полноэкранного режима
     useEffect(() => {
@@ -107,12 +124,123 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         };
     }, []);
 
+    // Единый таймер для скрытия контролов и курсора
+    useEffect(() => {
+        const videoContainer = videoContainerRef.current;
+        if (!videoContainer) return;
+
+        let inactivityTimeout = null;
+
+        const hideControlsAndCursor = () => {
+            if (isPlaying) {
+                setShowControls(false);
+                videoContainer.style.cursor = 'none';
+            }
+        };
+
+        const showControlsAndCursor = () => {
+            setShowControls(true);
+            videoContainer.style.cursor = 'auto';
+            clearTimeout(inactivityTimeout);
+            
+            if (isPlaying) {
+                inactivityTimeout = setTimeout(hideControlsAndCursor, 3000);
+            }
+        };
+
+        // Инициализируем скрытие
+        if (isPlaying) {
+            inactivityTimeout = setTimeout(hideControlsAndCursor, 3000);
+        } else {
+            // При паузе всегда показываем
+            setShowControls(true);
+            videoContainer.style.cursor = 'auto';
+        }
+
+        videoContainer.addEventListener('mousemove', showControlsAndCursor);
+        videoContainer.addEventListener('mouseenter', showControlsAndCursor);
+        videoContainer.addEventListener('mouseleave', () => {
+            clearTimeout(inactivityTimeout);
+            if (isPlaying) {
+                setShowControls(false);
+                videoContainer.style.cursor = 'none';
+            }
+        });
+
+        return () => {
+            clearTimeout(inactivityTimeout);
+            videoContainer.removeEventListener('mousemove', showControlsAndCursor);
+            videoContainer.removeEventListener('mouseenter', showControlsAndCursor);
+            videoContainer.style.cursor = 'auto';
+        };
+    }, [isPlaying]);
+
+    // Функция для временного показа контролов и курсора
+    const showControlsTemporarily = () => {
+        const videoContainer = videoContainerRef.current;
+        if (videoContainer) {
+            setShowControls(true);
+            videoContainer.style.cursor = 'auto';
+            clearTimeout(inactivityTimeoutRef.current);
+            
+            if (isPlaying) {
+                inactivityTimeoutRef.current = setTimeout(() => {
+                    setShowControls(false);
+                    videoContainer.style.cursor = 'none';
+                }, 3000);
+            }
+        }
+    };
+
+    // Обработчики движения мыши
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        showControlsTemporarily();
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        if (isPlaying) {
+            setShowControls(false);
+            const videoContainer = videoContainerRef.current;
+            if (videoContainer) {
+                videoContainer.style.cursor = 'none';
+            }
+        }
+        clearTimeout(inactivityTimeoutRef.current);
+    };
+
+    const handleMouseMove = () => {
+        if (isHovered) {
+            showControlsTemporarily();
+        }
+    };
+
+    // Автоматически показываем контролы при паузе
+    useEffect(() => {
+        const videoContainer = videoContainerRef.current;
+        if (!videoContainer) return;
+
+        if (!isPlaying) {
+            setShowControls(true);
+            videoContainer.style.cursor = 'auto';
+        } else {
+            // При воспроизведении запускаем таймер скрытия
+            inactivityTimeoutRef.current = setTimeout(() => {
+                setShowControls(false);
+                videoContainer.style.cursor = 'none';
+            }, 3000);
+        }
+
+        return () => {
+            clearTimeout(inactivityTimeoutRef.current);
+        };
+    }, [isPlaying]);
+
     // Изменение громкости
     const changeVolume = (delta) => {
         if (videoRef.current) {
             let newVolume = volumeRef.current + delta;
-            
-            // Ограничиваем громкость в диапазоне 0-1
             newVolume = Math.max(0, Math.min(1, newVolume));
             
             videoRef.current.volume = newVolume;
@@ -128,8 +256,6 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     const seekVideo = (seconds) => {
         if (videoRef.current) {
             let newTime = currentTimeRef.current + seconds;
-            
-            // Ограничиваем время в диапазоне 0-durationRef.current
             newTime = Math.max(0, Math.min(durationRef.current, newTime));
             
             videoRef.current.currentTime = newTime;
@@ -178,13 +304,12 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                               e.target.closest('.button_fullscreen');
         
         if (isControlClick) {
-            return; // Игнорируем клики по контролам
+            return;
         }
 
         const currentTime = Date.now();
         const timeSinceLastClick = currentTime - lastClickTimeRef.current;
 
-        // Если прошло больше 300ms, сбрасываем счетчик
         if (timeSinceLastClick > 300) {
             clickCountRef.current = 0;
         }
@@ -192,7 +317,6 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         clickCountRef.current++;
         lastClickTimeRef.current = currentTime;
 
-        // Одиночный клик - пауза/воспроизведение
         if (clickCountRef.current === 1) {
             setTimeout(() => {
                 if (clickCountRef.current === 1) {
@@ -200,9 +324,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                 }
                 clickCountRef.current = 0;
             }, 300);
-        } 
-        // Двойной клик - полноэкранный режим
-        else if (clickCountRef.current === 2) {
+        } else if (clickCountRef.current === 2) {
             toggleFullscreen();
             clickCountRef.current = 0;
         }
@@ -273,11 +395,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     };
 
     const toggleFullWidth = () => {
-        if(!fullWidthVideo){
-            setFullWidthVideo(true);
-        } else{
-            setFullWidthVideo(false);
-        }
+        setFullWidthVideo(!fullWidthVideo);
     };
 
     const handleVideoTimeUpdate = () => {
@@ -306,11 +424,17 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
         }
     };
 
+    // Определяем, нужно ли показывать контролы
+    const shouldShowControls = showControls || !isPlaying;
+
     return (
         <div 
             className={`video_container ${videoPlayerShow ? "" : "_hidden"} ${fullWidthVideo ? "_full_width" : ""}`} 
             ref={videoContainerRef}
             onClick={handleVideoClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseMove}
         >
             <video
                 ref={videoRef}
@@ -320,7 +444,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                 onPlay={handlePlay}
                 onPause={handlePause}
                 onVolumeChange={handleVolumeChangeEvent}
-                key={videoSrc} // Ключ для принудительного пересоздания видео при смене источника
+                key={videoSrc}
             >
                 {videoSrc && (
                     <source 
@@ -331,7 +455,7 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                 Your browser does not support the video tag.
             </video>
             
-            <div className="block_controls">
+            <div className={`block_controls ${shouldShowControls ? "_active" : ""}`}>
                 <div className="container">
                     <button onClick={togglePlay} className="control_button">
                         {isPlaying ? (

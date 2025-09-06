@@ -6,9 +6,17 @@
 	height: 100%;
 }
 
+.block_phone .block_phone__container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
 
 
-.block_phone .block_exhibits{
+
+.block_phone .block_phone__container .block_exhibits{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -21,7 +29,7 @@
 	pointer-events: none;
 }
 
-.block_phone .block_exhibits .block_exhibit{
+.block_phone .block_phone__container .block_exhibits .block_exhibit{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -30,7 +38,7 @@
 	pointer-events: painted;
 }
 
-.block_phone .block_exhibits .block_exhibit button{
+.block_phone .block_phone__container .block_exhibits .block_exhibit button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -47,7 +55,7 @@
 
 
 
-.block_phone .block_swiper {
+.block_phone .block_phone__container .block_swiper {
     flex: 1;
     width: 100%;
 	height: 100%;
@@ -56,25 +64,25 @@
     overflow: hidden;
 }
 
-.block_phone .block_swiper .swiper {
+.block_phone .block_phone__container .block_swiper .swiper {
     width: 100%;
     height: 100%;
 }
 
-.block_phone .block_swiper .swiper-wrapper {
+.block_phone .block_phone__container .block_swiper .swiper-wrapper {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 
-.block_phone .block_swiper .swiper-slide {
+.block_phone .block_phone__container .block_swiper .swiper-slide {
     width: 100%;
     height: 100%;
     flex-shrink: 0;
 	position: relative;
 }
 
-.block_phone .block_swiper .swiper-slide .slide__content{
+.block_phone .block_phone__container .block_swiper .swiper-slide .slide__content{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -84,7 +92,7 @@
 	overflow: hidden;
 }
 
-.block_phone .block_swiper .swiper-slide .slide_video_container{
+.block_phone .block_phone__container .block_swiper .swiper-slide .slide_video_container{
     width: 500px;
 	height: fit-content;
 	position: absolute;
@@ -92,7 +100,7 @@
 	left: 0;
 }
 
-.block_phone .block_swiper .swiper-slide .slide_video_container img {
+.block_phone .block_phone__container .block_swiper .swiper-slide .slide_video_container img {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -101,7 +109,7 @@
 	z-index: 1;
 }
 
-.block_phone .block_swiper .swiper-slide .slide_video_container video {
+.block_phone .block_phone__container .block_swiper .swiper-slide .slide_video_container video {
     width: 100%;
     object-fit: cover;
 	position: absolute;
@@ -110,7 +118,7 @@
 	z-index: 2;
 }
 
-.block_phone .block_swiper .swiper-slide .block_exhibit{
+.block_phone .block_phone__container .block_swiper .swiper-slide .block_exhibit{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -123,7 +131,7 @@
 	user-select: none;
 }
 
-.block_phone .block_swiper .swiper-slide .block_exhibit button{
+.block_phone .block_phone__container .block_swiper .swiper-slide .block_exhibit button{
 	width: 100%;
 	height: 100%;
 	/* background-color: rgb(0, 0, 0, .5); */
@@ -133,7 +141,7 @@
 
 
 
-.block_phone .block_controls{
+.block_phone .block_phone__container .block_controls{
 	display: flex;
 	gap: 30px;
 	width: fit-content;
@@ -144,7 +152,7 @@
 	z-index: 10;
 }
 
-.block_phone .block_controls button{
+.block_phone .block_phone__container .block_controls button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -155,14 +163,14 @@
 	border-radius: 50%;
 }
 
-.block_phone .block_controls button svg{
+.block_phone .block_phone__container .block_controls button svg{
 	width: 45px;
 	height: 40px;
 }
 
 
 
-.block_phone .block_tip{
+.block_phone .block_phone__container .block_tip{
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -179,11 +187,11 @@
 	transition: all .5s ease;
 }
 
-.block_phone .block_tip._hidden{
+.block_phone .block_phone__container .block_tip._hidden{
 	opacity: 0;
 }
 
-.block_phone .block_tip p{
+.block_phone .block_phone__container .block_tip p{
 	width: 100%;
 	font-size: 22px;
 	font-family: "Benzin";

@@ -26,7 +26,7 @@ const WIDGET_COMPONENTS = {
 
 
 
-export default function ControllerWidgets({ openWidget, idOpenedWidget, funForCloseWidget }) {
+export default function ControllerWidgets({ openWidget, idOpenedWidget, funForCloseWidget, isMobile }) {
 	const [showWidgetWindow, setShowWidgetWindow] = useState(false);
 
 	useEffect(() => {
@@ -53,7 +53,7 @@ export default function ControllerWidgets({ openWidget, idOpenedWidget, funForCl
 		
 		if(WIDGET_COMPONENTS[currentWidget]){
 			const WidgetComponent = WIDGET_COMPONENTS[currentWidget];
-			return <WidgetComponent funForCloseWidget={funForCloseWidget} />;
+			return <WidgetComponent funForCloseWidget={funForCloseWidget} isMobile={isMobile} />;
 		}
 
 		return <ExhibitInDev funForCloseWidget={funForCloseWidget} />;
