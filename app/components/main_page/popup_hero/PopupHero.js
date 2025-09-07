@@ -52,8 +52,15 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, f
 		<div className={`popup_hero ${popupHeroOpen ? "" : "_hidden"}`}>
 			<div className="popup_blackout" onClick={funForClose}></div>
 
+			<button className="button_exit" onClick={funForClose}>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 73" fill="none">
+					<line x1="4.06066" y1="1.93934" x2="74.0607" y2="71.9393" />
+					<line x1="1.93934" y1="71.9393" x2="71.9393" y2="1.93934" />
+				</svg>
+			</button>
+
 			<div className="popup_content">
-				{!isMobile && <Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} />}
+				{/* {!isMobile && <Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} />}
 
 				<div className="block_info">
 					<div className="block_img"></div>
@@ -62,14 +69,15 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, f
 						<h3>{hero.fio}</h3>
             			<p>{hero.description}</p>
 					</div>
-				</div>
+				</div> */}
 
-				<button className="button_exit" onClick={funForClose}>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 73" fill="none">
-						<line x1="4.06066" y1="1.93934" x2="74.0607" y2="71.9393" />
-						<line x1="1.93934" y1="71.9393" x2="71.9393" y2="1.93934" />
-					</svg>
-				</button>
+				<video 
+					autoPlay 
+					loop={true}
+				>
+					<source src="https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_1.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
 			</div>
 		</div>
 	);

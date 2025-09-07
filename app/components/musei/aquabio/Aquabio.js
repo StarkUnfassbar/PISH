@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 import './aquabio.css';
+import './aquabio_media.css';
 
 
 const videoList = [
@@ -18,8 +19,9 @@ const videoList = [
 
 
 
-export default function Aquabio({ funForCloseWidget }) {
+export default function Aquabio({ funForCloseWidget, isMobile }) {
 	const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+	const [showMobileControls, setShowMobileControls] = useState(false);
 	const videoRef = useRef(null);
 	const isLastVideo = currentVideoIndex === videoList.length - 1;
 
@@ -32,6 +34,10 @@ export default function Aquabio({ funForCloseWidget }) {
 
 	const handleVideoSelect = (index) => {
 		setCurrentVideoIndex(index);
+		// На мобильных устройствах скрываем кнопки после выбора
+		if (isMobile) {
+			setShowMobileControls(false);
+		}
 	};
 
 	const handleNextButtonClick = () => {
@@ -42,13 +48,18 @@ export default function Aquabio({ funForCloseWidget }) {
 		}
 	};
 
+	const toggleMobileControls = () => {
+		setShowMobileControls(prev => !prev);
+	};
+
 	return (
-		<div className="video_container">
+		<div className="exhibit_video_container">
 			<video 
 				ref={videoRef} 
 				autoPlay 
 				muted
 				key={currentVideoIndex}
+				loop={true}
 			>
 				<source src={videoList[currentVideoIndex]} type="video/mp4" />
 				Your browser does not support the video tag.
@@ -62,7 +73,17 @@ export default function Aquabio({ funForCloseWidget }) {
 			</button>
 
 			<div className="block_controls">
-				<div className="video_buttons">
+				{isMobile && (
+					<div className="open_block" onClick={toggleMobileControls}>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="12" cy="6" r="2" fill="#757585"/>
+							<circle cx="12" cy="12" r="2" fill="#757585"/>
+							<circle cx="12" cy="18" r="2" fill="#757585"/>
+						</svg>
+					</div>
+				)}
+
+				<div className={`video_buttons ${isMobile && !showMobileControls ? 'mobile_hidden' : ''}`}>
 					{videoList.map((_, index) => (
 						<button
 							key={index}

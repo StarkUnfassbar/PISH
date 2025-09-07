@@ -46,7 +46,7 @@ export default function SectionHeroesPish({ isMobile }) {
 						<div className="block_hero">
 							<div className="block_info">
 								<span className="fio">Сидоренко Андрей Владимирович</span>
-								<span className="description">Главный механик производства “Кормбиосинтез”.</span>
+								<span className="description">Главный механик производства «Кормбиосинтез».</span>
 
 								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 1)} />
 							</div>
@@ -60,7 +60,7 @@ export default function SectionHeroesPish({ isMobile }) {
 							<div className="block_info">
 								<span className="fio">Рочин Егор Олегович</span>
 								<span className="description">
-									Ведущий технолог НГПК <span>“Арника”</span>, специализирующейся на производстве биодобавок 
+									Ведущий технолог НГПК <span>«Арника»</span>, специализирующейся на производстве биодобавок 
 									для сельскохозяйственной отрасли.
 								</span>
 
@@ -70,8 +70,8 @@ export default function SectionHeroesPish({ isMobile }) {
 
 						<div className="block_hero">
 							<div className="block_info">
-								<span className="fio">Власова Ванесса</span>
-								<span className="description">Lorem ipsum</span>
+								<span className="fio">Штермер Ванесса</span>
+								<span className="description">Лаборант-исследователь молодёжной лаборатории ДНК-рекомбинантных технологий ПИШ, студентка 4 курса направления «Биотехнология»</span>
 
 								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 							</div>
@@ -98,7 +98,7 @@ export default function SectionHeroesPish({ isMobile }) {
 
 									<div className="text_info">
 										<span className="fio">Сидоренко Андрей Владимирович</span>
-										<span className="description">Главный механик производства “Кормбиосинтез”</span>
+										<span className="description">Главный механик производства «Кормбиосинтез»</span>
 									</div>
 								</div>
 
@@ -112,7 +112,7 @@ export default function SectionHeroesPish({ isMobile }) {
 									<div className="text_info">
 										<span className="fio">Рочин Егор Олегович</span>
 										<span className="description">
-											Ведущий технолог НГПК “Арника”, специализирующейся на производстве биодобавок 
+											Ведущий технолог НГПК «Арника», специализирующейся на производстве биодобавок 
 											для сельскохозяйственной отрасли
 										</span>
 									</div>
@@ -134,7 +134,7 @@ export default function SectionHeroesPish({ isMobile }) {
 
 										<span className="description">
 											Лаборант-исследователь молодёжной лаборатории ДНК-рекомбинантных технологий ПИШ, студентка 
-											4 курса направления "Биотехнология"
+											4 курса направления «Биотехнология»
 										</span>
 									</div>
 								</div>
