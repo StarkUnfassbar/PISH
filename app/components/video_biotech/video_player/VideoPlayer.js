@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import './video_player.css';
 import './video_player_media.css';
 
+
+
 export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
     const videoRef = useRef(null);
     const progressBarRef = useRef(null);

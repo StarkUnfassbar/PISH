@@ -94,19 +94,19 @@
 
 .block_phone .block_phone__container .block_swiper .swiper-slide .slide_video_container{
     width: 500px;
-	height: fit-content;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
 .block_phone .block_phone__container .block_swiper .swiper-slide .slide_video_container img {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    object-fit: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 2;
 }
 
 .block_phone .block_phone__container .block_swiper .swiper-slide .slide_video_container video {
@@ -137,6 +137,38 @@
 	/* background-color: rgb(0, 0, 0, .5); */
 	cursor: pointer;
 	user-select: none;
+}
+
+
+
+.block_phone .button_exit{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	border: 2px solid #757585;
+	border-radius: 10px;
+	background-color: #fff;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	z-index: 20;
+	cursor: pointer;
+
+	transition: all .3s ease;
+}
+
+.block_phone .button_exit svg{
+	width: 20px;
+	height: 20px;
+}
+
+.block_phone .button_exit svg line{
+	stroke: #757585;
+	stroke-width: 10px;
+
+	transition: all .3s ease;
 }
 
 
@@ -178,7 +210,7 @@
 	border-radius: 10px;
 	padding: 15px 20px;
 	position: absolute;
-	top: 20px;
+	top: 40px;
 	left: 20px;
 	z-index: 10;
 	pointer-events: none;

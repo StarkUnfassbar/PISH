@@ -17,7 +17,7 @@
 
 @media only screen and (max-width : 760px){
 	.block_phone .block_phone__container .block_tip{
-		top: 10px;
+		top: 60px;
 		left: 10px;
 		padding: 10px 20px;
 		border-radius: 5px;
@@ -74,6 +74,18 @@
 @media only screen and (max-width : 400px){
 	.block_phone .block_phone__container .block_tip p{
 		font-size: 14px;
+	}
+
+
+	.block_phone .button_exit{
+		width: 30px;
+		height: 30px;
+		border-radius: 7px;
+	}
+
+	.block_phone .button_exit svg{
+		width: 18px;
+		height: 18px;
 	}
 }
 

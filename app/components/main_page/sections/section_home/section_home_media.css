@@ -8,15 +8,11 @@
 	}
 
 	.home .text_heading span {
-		font-size: 90px;
-	}
-
-	.home .text_heading span:nth-child(1){
-		font-size: 67px;
+		font-size: 80px;
 	}
 
 	.home .text_subheading {
-		font-size: 45px;
+		font-size: 42px;
 	}
 
 	.home .button_visit{
@@ -82,6 +78,12 @@
 	}
 }
 
+@media only screen and (max-width : 1500px){
+	.home .text_heading span {
+		font-size: 60px;
+	}
+}
+
 @media only screen and (max-width : 1300px){
 	.home .section_content {
   		gap: 15px;
@@ -93,10 +95,6 @@
 
 	.home .text_heading span {
 		font-size: 55px;
-	}
-
-	.home .text_heading span:nth-child(1){
-		font-size: 43px;
 	}
 
 	.home .text_subheading {
@@ -129,7 +127,7 @@
 		padding: 300px 40px;
 	}
 
-	.app main .home .text_subheading {
+	.home .text_subheading {
 		font-size: 30px;
 	}
 
@@ -177,10 +175,6 @@
 		font-size: 45px;
 	}
 
-    .home .text_heading span:nth-child(1) {
-        font-size: 37px;
-    }
-
 	.home .patterns .pattern:nth-child(1) {
 		bottom: 0px;
 	}
@@ -199,10 +193,6 @@
 		font-size: 40px;
 	}
 
-	.home .text_heading span:nth-child(1) {
-        font-size: 32px;
-    }
-
 	.home .patterns .pattern:nth-child(1) {
 		bottom: 50px;
 	}
@@ -217,11 +207,7 @@
 		font-size: 34px;
 	}
 
-	.home .text_heading span:nth-child(1) {
-        font-size: 27px;
-    }
-
-	.app main .home .text_subheading {
+	.home .text_subheading {
 		font-size: 28px;
 	}
 }
@@ -238,10 +224,6 @@
 	.home .text_heading span {
 		font-size: 28px;
 	}
-
-	.home .text_heading span:nth-child(1) {
-        font-size: 22px;
-    }
 
 	.home .button_visit {
   		left: calc(50% - 130px);
@@ -265,11 +247,7 @@
 		font-size: 22px;
 	}
 
-	.home .text_heading span:nth-child(1) {
-        font-size: 18px;
-    }
-
-	.app main .home .text_subheading {
+	.home .text_subheading {
 		font-size: 22px;
 	}
 
@@ -289,17 +267,13 @@
 }
 
 @media only screen and (max-width : 400px){
-	.home .text_subheading {
-		font-size: 20px;
-	}
-
 	.home .text_heading span {
 		font-size: 20px;
 	}
 
-	.home .text_heading span:nth-child(1) {
-        font-size: 17px;
-    }
+	.home .text_subheading {
+		font-size: 20px;
+	}
 
 	.home .button_visit {
   		left: calc(50% - 110px);

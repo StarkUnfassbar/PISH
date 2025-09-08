@@ -8,8 +8,4 @@
 	.video_container {
 		height: calc(100vh - 60px);
 	}
-
-	/* .video_container .block_controls {
-		bottom: 20px;
-	} */
 }

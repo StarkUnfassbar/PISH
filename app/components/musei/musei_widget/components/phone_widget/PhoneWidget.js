@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 import Image from "next/image";
+import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -127,7 +128,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="1">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_1.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_1.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[0] = el}
@@ -149,7 +150,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="2">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_2.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_2.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[1] = el}
@@ -171,7 +172,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="3">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_3.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_3.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[2] = el}
@@ -193,7 +194,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="4">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_4.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_4.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[3] = el}
@@ -215,7 +216,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="5">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_5.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_5.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[4] = el}
@@ -237,7 +238,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="6">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_6.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_6.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[5] = el}
@@ -259,7 +260,7 @@ const swiperRef = useRef(null);
 						<SwiperSlide data-slide="7">
 							<div className="slide__content">
 								<div className="slide_video_container">
-									<Image src="/img/musei/phone/video_bg_7.jpg" alt="logo of the advanced engineering school" fill />
+									<img src="/img/musei/phone/video_bg_7.jpg" alt="logo of the advanced engineering school" />
 
 									<video
 										ref={el => videoRefs.current[6] = el}
@@ -300,6 +301,13 @@ const swiperRef = useRef(null);
 					</button>
 				</div>
 			</div>
+
+			<Link href="/" className="button_exit">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 73" fill="none">
+					<line x1="4.06066" y1="1.93934" x2="74.0607" y2="71.9393" stroke="white" strokeWidth="3"/>
+					<line x1="1.93934" y1="71.9393" x2="71.9393" y2="1.93934" stroke="white" strokeWidth="3"/>
+				</svg>
+			</Link>
 
 			<ControllerWidgets openWidget={openWidget} idOpenedWidget={idOpenedWidget} funForCloseWidget={handleOpenWidget} isMobile={isMobile} />
 		</div>

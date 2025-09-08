@@ -26,7 +26,7 @@ export default function BlockVideo({ videoBlocked, videoCoverSrc, videoTimer, fu
 			) : (
 				<div className="block_video" onClick={funForButton}>
 					<div className="video_cover">
-						<Image src={videoCoverSrc} alt="video cover" fill unoptimized={true} />
+						<img src={videoCoverSrc} alt="video cover" />
 						<span>{videoTimer}</span>
 					</div>
 

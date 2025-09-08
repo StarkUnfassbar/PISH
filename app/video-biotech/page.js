@@ -15,6 +15,9 @@ import BlockVideo from '../components/video_biotech/block_video/BlockVideo';
 import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/PopupAboutBlocked';
 
 import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
+import VideoPlayerMobile from '../components/video_biotech/video_player/video_player_mobile/VideoPlayerMobile';
+
+
 
 export default function VideoBiotech() {
 	const [isMobile, setIsMobile] = useState(null);
@@ -99,7 +102,12 @@ export default function VideoBiotech() {
 						<h1>Видеоуроки о биотехе</h1>
 					)}
 
-					<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+					{isMobile ? (
+						// <VideoPlayerMobile key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+						<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+					) : (
+						<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+					)}
 
 
 					<div className="list_video">
