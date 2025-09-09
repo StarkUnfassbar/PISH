@@ -103,8 +103,8 @@ export default function VideoBiotech() {
 					)}
 
 					{isMobile ? (
-						// <VideoPlayerMobile key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
-						<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+						<VideoPlayerMobile key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+						// <VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
 					) : (
 						<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
 					)}

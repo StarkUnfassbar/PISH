@@ -48,6 +48,7 @@
   	gap: 100px 40px;
 	width: 100%;
 	height: fit-content;
+	box-sizing: border-box;
 }
 
 .video_biotech main .list_video .block_video .video_cover{

@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './video_player_mobile.css';
-
-
+import './video_player_mobile_media.css';
 
 export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
     const videoRef = useRef(null);
@@ -68,6 +67,16 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
         }
     }, [isPlaying]);
 
+    // Функция для сброса таймера скрытия интерфейса
+    const resetInactivityTimer = () => {
+        clearTimeout(inactivityTimeoutRef.current);
+        if (isPlaying && showControls) {
+            inactivityTimeoutRef.current = setTimeout(() => {
+                setShowControls(false);
+            }, 2000);
+        }
+    };
+
     // Перемотка видео
     const seekVideo = (seconds) => {
         if (videoRef.current) {
@@ -76,6 +85,9 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
             
             videoRef.current.currentTime = newTime;
             setCurrentTime(newTime);
+            
+            // Сброс таймера скрытия интерфейса
+            resetInactivityTimer();
         }
     };
 
@@ -96,6 +108,9 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
                 videoRef.current.play();
             }
         }
+        
+        // Сброс таймера скрытия интерфейса
+        resetInactivityTimer();
     };
 
     const handleVideoClick = (e) => {
@@ -110,12 +125,7 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
         
         if (isControlClick) {
             // Сбрасываем таймер скрытия при клике на элементы управления
-            clearTimeout(inactivityTimeoutRef.current);
-            if (isPlaying) {
-                inactivityTimeoutRef.current = setTimeout(() => {
-                    setShowControls(false);
-                }, 2000);
-            }
+            resetInactivityTimer();
             return;
         }
 
@@ -124,10 +134,7 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
         
         // Сбрасываем таймер при открытии контролов
         if (!showControls && isPlaying) {
-            clearTimeout(inactivityTimeoutRef.current);
-            inactivityTimeoutRef.current = setTimeout(() => {
-                setShowControls(false);
-            }, 2000);
+            resetInactivityTimer();
         }
     };
 
@@ -142,6 +149,9 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
                 setVolume(prevVolume);
             }
         }
+        
+        // Сброс таймера скрытия интерфейса
+        resetInactivityTimer();
     };
 
     const handleTimeUpdate = (e) => {
@@ -150,9 +160,13 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
             videoRef.current.currentTime = newTime;
         }
         setCurrentTime(newTime);
+        
+        // Сброс таймера скрытия интерфейса
+        resetInactivityTimer();
     };
 
     const handleProgressBarClick = (e) => {
+		console.log(1)
         if (progressBarRef.current && videoRef.current) {
             const progressBar = progressBarRef.current;
             const rect = progressBar.getBoundingClientRect();
@@ -163,6 +177,9 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
             
             videoRef.current.currentTime = seekTime;
             setCurrentTime(seekTime);
+            
+            // Сброс таймера скрытия интерфейса
+            resetInactivityTimer();
         }
     };
 
@@ -182,6 +199,9 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
             videoContainerRef.current.requestFullscreen();
             setFullScreenVideo(true);
         }
+        
+        // Сброс таймера скрытия интерфейса
+        resetInactivityTimer();
     };
 
     const handleVideoTimeUpdate = () => {
@@ -240,21 +260,36 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
             
             {/* Центральные кнопки управления */}
             <div className={`mobile_center_controls ${shouldShowControls ? "_active" : ""}`}>
-                <div className="rewind_button" onClick={(e) => { e.stopPropagation(); seekVideo(-5); }} />
+                <button className="rewind_button" onClick={(e) => { e.stopPropagation(); seekVideo(-5); }} >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="78" height="82" viewBox="0 0 78 82" fill="none">
+                        <path d="M38.9307 4.12854C60.4334 4.12880 77.8651 21.5607 77.8652 43.0641C77.8652 64.5675 60.4335 81.9994 38.9307 81.9996C17.9951 81.9996 0.920752 65.4754 0.0341797 44.7574H6.03809C6.9194 62.1605 21.3094 75.9996 38.9307 75.9996C57.1196 75.9994 71.8652 61.254 71.8652 43.0641C71.8651 24.8743 57.1196 10.1288 38.9307 10.1285C29.2012 10.1286 20.4578 14.3488 14.4287 21.0573H6.80957C13.8265 10.8347 25.5949 4.12859 38.9307 4.12854Z" fill="white"/>
+                        <rect x="6" y="20" width="25" height="6" rx="3" fill="white"/>
+                        <rect x="6" y="25" width="25" height="6" rx="3" transform="rotate(-90 6 25)" fill="white"/>
+                        <path d="M29.7401 42.3665V46.9062H18.294V42.3665H29.7401ZM43.3262 57.3381C41.5231 57.3381 39.9213 57.0121 38.5208 56.3601C37.1202 55.7081 36.0134 54.8106 35.2005 53.6676C34.3955 52.5246 33.977 51.2126 33.9448 49.7315H39.7402C39.7885 50.6411 40.1588 51.3736 40.851 51.929C41.5433 52.4763 42.3683 52.75 43.3262 52.75C44.0748 52.75 44.7388 52.585 45.3184 52.255C45.8979 51.925 46.3527 51.4621 46.6827 50.8665C47.0127 50.2628 47.1737 49.5705 47.1657 48.7898C47.1737 47.9929 47.0087 47.2966 46.6706 46.701C46.3406 46.1054 45.8818 45.6425 45.2942 45.3125C44.7147 44.9744 44.0466 44.8054 43.29 44.8054C42.5736 44.7973 41.8934 44.9543 41.2495 45.2763C40.6136 45.5982 40.1306 46.0369 39.8006 46.5923L34.5243 45.6023L35.5989 32.2727H51.464V37.0902H40.513L39.9455 42.9219H40.0904C40.5009 42.2377 41.1609 41.6742 42.0705 41.2315C42.9881 40.7808 44.0305 40.5554 45.1976 40.5554C46.6787 40.5554 47.9988 40.9015 49.1578 41.5938C50.325 42.2779 51.2426 43.2277 51.9107 44.4432C52.5868 45.6586 52.9249 47.0511 52.9249 48.6207C52.9249 50.3191 52.5224 51.8243 51.7175 53.1364C50.9206 54.4484 49.8018 55.4787 48.361 56.2273C46.9282 56.9678 45.2499 57.3381 43.3262 57.3381Z" fill="white"/>
+                    </svg>
+                </button>
                 
                 <button onClick={(e) => { e.stopPropagation(); togglePlay(); }} className="control_button">
                     {isPlaying ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 36" fill="none">
-                            <path d="M33.5 3V33C33.4991 33.7954 33.1827 34.5579 32.6203 35.1203C32.0579 35.6827 31.2954 35.9991 30.5 36H23.75C22.9546 35.9991 22.1921 35.6827 21.6297 35.1203C21.0673 34.5579 20.7509 33.7954 20.75 33V3C20.7509 2.20463 21.0673 1.4421 21.6297 0.879684C22.1921 0.317272 22.9546 0.000909634 23.75 0H30.5C31.2954 0.000909634 32.0579 0.317272 32.6203 0.879684C33.1827 1.4421 33.4991 2.20463 33.5 3V3ZM10.25 0H3.5C2.70463 0.000909634 1.9421 0.317272 1.37968 0.879684C0.817272 1.4421 0.50091 2.20463 0.5 3V33C0.50091 33.7954 0.817272 34.5579 1.37968 35.1203C1.9421 35.6827 2.70463 35.9991 3.5 36H10.25C11.0454 35.9991 11.8079 35.6827 12.3703 35.1203C12.9327 34.5579 13.2491 33.7954 13.25 33V3C13.2491 2.20463 12.9327 1.4421 12.3703 0.879684C11.8079 0.317272 11.0454 0.000909634 10.25 0V0Z" fill="white"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none">
+                            <rect x="6" y="1" width="20" height="68" rx="2" fill="white"/>
+                            <rect x="44" y="1" width="20" height="68" rx="2" fill="white"/>
                         </svg>
                     ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 25" fill="none">
-                            <path d="M19.3758 10.9531L3.0413 0.98613C2.76617 0.818147 2.45117 0.726388 2.12873 0.720295C1.80629 0.714202 1.48804 0.793995 1.20674 0.951463C0.925433 1.10893 0.691228 1.33839 0.528221 1.61623C0.365215 1.89406 0.279293 2.21025 0.279297 2.53224V22.468C0.279559 22.7899 0.365646 23.1059 0.528715 23.3836C0.691783 23.6612 0.925954 23.8906 1.20717 24.048C1.48838 24.2054 1.8065 24.2852 2.12884 24.2793C2.45118 24.2733 2.76612 24.1818 3.0413 24.0141L19.3758 14.0471C19.6411 13.8851 19.8604 13.6578 20.0125 13.3869C20.1646 13.116 20.2445 12.8107 20.2445 12.5001C20.2445 12.1896 20.1646 11.8842 20.0125 11.6133C19.8604 11.3425 19.6411 11.1151 19.3758 10.9531Z" fill="white"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" fill="none" style={{marginLeft: 5 + "px"}}>
+                            <path d="M62.7011 32.4261C64.6463 33.5907 64.6463 36.4093 62.7011 37.5739L10.7911 68.6542C8.79148 69.8514 6.25 68.4109 6.25 66.0802L6.25 3.91975C6.25 1.58912 8.79147 0.148598 10.7911 1.34584L62.7011 32.4261Z" fill="white"/>
                         </svg>
                     )}
                 </button>
-                
-                <div className="rewind_button" onClick={(e) => { e.stopPropagation(); seekVideo(5); }} />
+
+                <button className="rewind_button" onClick={(e) => { e.stopPropagation(); seekVideo(5); }} >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 82" fill="none">
+                        <path d="M38.9346 4.12854C17.4318 4.12880 0.000107685 21.5607 0 43.0641C0 64.5675 17.4317 81.9994 38.9346 81.9996C59.8702 81.9996 76.9445 65.4754 77.8311 44.7574H71.8271C70.9458 62.1605 56.5558 75.9996 38.9346 75.9996C20.7456 75.9994 6 61.254 6 43.0641C6.00011 24.8743 20.7457 10.1288 38.9346 10.1285C48.664 10.1286 57.4074 14.3488 63.4365 21.0573H71.0557C64.0387 10.8347 52.2703 4.12859 38.9346 4.12854Z" fill="white"/>
+                        <rect width="25" height="6" rx="3" transform="matrix(-1 0 0 1 71.8652 20)" fill="white"/>
+                        <rect width="25" height="6" rx="3" transform="matrix(0 -1 -1 0 71.8652 25)" fill="white"/>
+                        <path d="M23.2365 53.4261V35.9432H28.1023V53.4261H23.2365ZM16.9219 47.1236V42.2457H34.4048V47.1236H16.9219ZM48.6309 57.3381C46.8278 57.3381 45.226 57.0121 43.8255 56.3601C42.4249 55.7081 41.3181 54.8106 40.5051 53.6676C39.7002 52.5246 39.2817 51.2126 39.2495 49.7315H45.0449C45.0932 50.6411 45.4635 51.3736 46.1557 51.929C46.848 52.4763 47.673 52.75 48.6309 52.75C49.3794 52.75 50.0435 52.585 50.623 52.255C51.2026 51.925 51.6574 51.4621 51.9874 50.8665C52.3174 50.2628 52.4784 49.5705 52.4703 48.7898C52.4784 47.9929 52.3134 47.2966 51.9753 46.701C51.6453 46.1054 51.1865 45.6425 50.5989 45.3125C50.0194 44.9744 49.3513 44.8054 48.5946 44.8054C47.8783 44.7973 47.1981 44.9543 46.5542 45.2763C45.9183 45.5982 45.4353 46.0369 45.1053 46.5923L39.829 45.6023L40.9036 32.2727H56.7686V37.0902H45.8176L45.2502 42.9219H45.3951C45.8056 42.2377 46.4656 41.6742 47.3752 41.2315C48.2928 40.7808 49.3352 40.5554 50.5023 40.5554C51.9834 40.5554 53.3034 40.9015 54.4625 41.5938C55.6297 42.2779 56.5473 43.2277 57.2154 44.4432C57.8915 45.6586 58.2296 47.0511 58.2296 48.6207C58.2296 50.3191 57.8271 51.8243 57.0222 53.1364C56.2253 54.4484 55.1065 55.4787 53.6657 56.2273C52.2329 56.9678 50.5546 57.3381 48.6309 57.3381Z" fill="white"/>
+                    </svg>
+                </button>
             </div>
 
             {/* Нижние контролы */}
@@ -287,7 +322,7 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
 
                 <p className="timer_control">{formatTime(currentTime)}</p>
                 
-                <div className="progress_container">
+                <div className="progress_container" onClick={handleProgressBarClick}>
                     <input
                         ref={progressBarRef}
                         type="range"
@@ -296,7 +331,6 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
                         step="0.1"
                         value={currentTime}
                         onChange={handleTimeUpdate}
-                        onClick={handleProgressBarClick}
                         className="progress_bar"
                     />
                     <div 
