@@ -4,7 +4,7 @@ import './video_player_media.css';
 
 
 
-export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
+export default function VideoPlayer({ videoPlayerShow, videoSrc, videoTitle }) {
     const videoRef = useRef(null);
     const progressBarRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -456,6 +456,12 @@ export default function VideoPlayer({ videoPlayerShow, videoSrc }) {
                 )}
                 Your browser does not support the video tag.
             </video>
+
+			{videoTitle && (
+                <div className={`top_title ${shouldShowControls ? "_active" : ""}`}>
+                    <p className="title_text">{videoTitle}</p>
+                </div>
+            )}
             
             <div className={`block_controls ${shouldShowControls ? "_active" : ""}`}>
                 <div className="container">

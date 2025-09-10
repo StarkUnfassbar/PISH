@@ -1,8 +1,9 @@
+// VideoPlayerMobile.js
 import React, { useRef, useState, useEffect } from 'react';
 import './video_player_mobile.css';
 import './video_player_mobile_media.css';
 
-export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
+export default function VideoPlayerMobile({ videoPlayerShow, videoSrc, videoTitle }) {
     const videoRef = useRef(null);
     const progressBarRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -117,6 +118,7 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
         // Проверяем, был ли клик по элементам управления
         const isControlClick = e.target.closest('.mobile_center_controls') || 
                               e.target.closest('.mobile_bottom_controls') ||
+                              e.target.closest('.mobile_top_title') ||
                               e.target.closest('.control_button') ||
                               e.target.closest('.rewind_button') ||
                               e.target.closest('.mute_button') ||
@@ -166,7 +168,8 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
     };
 
     const handleProgressBarClick = (e) => {
-		console.log(1)
+        console.log(progressBarRef.current)
+        console.log(videoRef.current)
         if (progressBarRef.current && videoRef.current) {
             const progressBar = progressBarRef.current;
             const rect = progressBar.getBoundingClientRect();
@@ -258,6 +261,13 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
                 Your browser does not support the video tag.
             </video>
             
+            {/* Заголовок видео */}
+            {videoTitle && (
+                <div className={`mobile_top_title ${shouldShowControls ? "_active" : ""}`}>
+                    <p className="title_text">{videoTitle}</p>
+                </div>
+            )}
+            
             {/* Центральные кнопки управления */}
             <div className={`mobile_center_controls ${shouldShowControls ? "_active" : ""}`}>
                 <button className="rewind_button" onClick={(e) => { e.stopPropagation(); seekVideo(-5); }} >
@@ -307,61 +317,44 @@ export default function VideoPlayerMobile({ videoPlayerShow, videoSrc }) {
                     ) : volume < 0.5 ? (
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
                             <path d="M5 10.5H2C1.86739 10.5 1.74021 10.4473 1.64645 10.3536C1.55268 10.2598 1.5 10.1326 1.5 10V6C1.5 5.86739 1.55268 5.74021 1.64645 5.64645C1.74021 5.55268 1.86739 5.5 2 5.5H5L9.5 2V14L5 10.5Z" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M5 5.5V10.5" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M11.9121 6.58582C12.0978 6.77153 12.2451 6.99201 12.3457 7.23466C12.4462 7.47731 12.4979 7.73739 12.4979 8.00003C12.4979 8.26267 12.4462 8.52274 12.3457 8.7654C12.2451 9.00805 12.0978 9.22853 11.9121 9.41424" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M11.9126 6.58649C12.2877 6.96156 12.4984 6.47027 12.4984 8.0007C12.4984 8.53113 12.2877 9.03984 11.9126 9.41491" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     ) : (
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
-                            <path d="M13.6802 4.81799C14.098 5.23586 14.4295 5.73193 14.6557 6.2779C14.8818 6.82386 14.9982 7.40903 14.9982 7.99997C14.9982 8.59092 14.8818 9.17608 14.6557 9.72205C14.4295 10.268 14.098 10.7641 13.6802 11.182" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M5 10.5H2C1.86739 10.5 1.74021 10.4473 1.64645 10.3536C1.55268 10.2598 1.5 10.1326 1.5 10V6C1.5 5.86739 1.55268 5.74021 1.64645 5.64645C1.74021 5.55268 1.86739 5.5 2 5.5H5L9.5 2V14L5 10.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M5 5.5V10.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M11.9121 6.58582C12.0978 6.77153 12.2451 6.99201 12.3457 7.23466C12.4462 7.47731 12.4979 7.73739 12.4979 8.00003C12.4979 8.26267 12.4462 8.52274 12.3457 8.7654C12.2451 9.00805 12.0978 9.22853 11.9121 9.41424" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 10.5H2C1.86739 10.5 1.74021 10.4473 1.64645 10.3536C1.55268 10.2598 1.5 10.1326 1.5 10V6C1.5 5.86739 1.55268 5.74021 1.64645 5.64645C1.74021 5.55268 1.86739 5.5 2 5.5H5L9.5 2V14L5 10.5Z" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M13.6807 4.81873C14.5246 5.66264 14.9987 6.80723 14.9987 8.00071C14.9987 9.19418 14.5246 10.3388 13.6807 11.1827" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M11.9126 6.58649C12.2877 6.96156 12.4984 6.47027 12.4984 8.0007C12.4984 8.53113 12.2877 9.03984 11.9126 9.41491" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     )}
                 </span>
 
-                <p className="timer_control">{formatTime(currentTime)}</p>
-                
-                <div className="progress_container" onClick={handleProgressBarClick}>
+                <span className="timer_control">{formatTime(currentTime)}</span>
+
+                <div className="progress_container" onClick={handleProgressBarClick} ref={progressBarRef}>
+                    <div className="progress_filled" style={{ width: `${(currentTime / duration) * 100}%` }}></div>
                     <input
-                        ref={progressBarRef}
                         type="range"
+                        className="progress_bar"
                         min="0"
                         max={duration}
-                        step="0.1"
                         value={currentTime}
                         onChange={handleTimeUpdate}
-                        className="progress_bar"
-                    />
-                    <div 
-                        className="progress_filled"
-                        style={{ width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%` }}
                     />
                 </div>
 
-                <p className="timer_control">{formatTime(duration)}</p>
-                
-                <button onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }} className="fullscreen_button">
+                <span className="timer_control">{formatTime(duration)}</span>
+
+                <span onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }} className="fullscreen_button">
                     {fullScreenVideo ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 52" fill="none">
-                            <line x1="57.0607" y1="1.06066" x2="38.5539" y2="19.5674" stroke="white" strokeWidth="3"/>
-                            <line x1="38.2466" y1="20.7534" x2="38.2466" y2="4.75342" stroke="white" strokeWidth="3"/>
-                            <line x1="52.7466" y1="20.2534" x2="36.7466" y2="20.2534" stroke="white" strokeWidth="3"/>
-                            <line x1="1.93934" y1="50.6928" x2="20.4461" y2="32.186" stroke="white" strokeWidth="3"/>
-                            <line x1="20.7534" y1="31" x2="20.7534" y2="47" stroke="white" strokeWidth="3"/>
-                            <line x1="6.25342" y1="31.5" x2="22.2534" y2="31.5" stroke="white" strokeWidth="3"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                            <path d="M6.5 9.5L2 14M2 14V10.5M2 14H5.5M9.5 6.5L14 2M14 2V5.5M14 2H10.5" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 54" fill="none">
-                            <line x1="32.6859" y1="20.6928" x2="51.1927" y2="2.186" stroke="white" strokeWidth="3"/>
-                            <line x1="51.5" y1="1" x2="51.5" y2="17" stroke="white" strokeWidth="3"/>
-                            <line x1="37" y1="1.5" x2="53" y2="1.5" stroke="white" strokeWidth="3"/>
-                            <line x1="20.3141" y1="33.0607" x2="1.80732" y2="51.5674" stroke="white" strokeWidth="3"/>
-                            <line x1="1.5" y1="52.7534" x2="1.5" y2="36.7534" stroke="white" strokeWidth="3"/>
-                            <line x1="16" y1="52.2534" y2="52.2534" stroke="white" strokeWidth="3"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                            <path d="M5.5 9.5L2 13M2 13V10M2 13H5M10.5 6.5L14 3M14 3V6M14 3H11" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     )}
-                </button>
+                </span>
             </div>
         </div>
     );

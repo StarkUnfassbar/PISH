@@ -17,8 +17,6 @@ import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/P
 import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
 import VideoPlayerMobile from '../components/video_biotech/video_player/video_player_mobile/VideoPlayerMobile';
 
-
-
 export default function VideoBiotech() {
 	const [isMobile, setIsMobile] = useState(null);
 	
@@ -56,6 +54,7 @@ export default function VideoBiotech() {
 
 	const [videoPlayerShow, setVideoPlayerShow] = useState(false);
 	const [videoSrc, setVideoSrc] = useState("");
+	const [videoTitle, setVideoTitle] = useState(""); // Добавляем состояние для заголовка
 
 	// Функция для определения позиции скролла в зависимости от ширины экрана
 	const getScrollPosition = () => {
@@ -70,9 +69,11 @@ export default function VideoBiotech() {
 		}
 	};
 
-	const handleVideoPlayerShow = (open, src) => {
+	// Обновляем функцию для принятия заголовка
+	const handleVideoPlayerShow = (open, src, title = "") => {
 		if(open){
 			setVideoSrc(src);
+			setVideoTitle(title); // Устанавливаем заголовок
 			setVideoPlayerShow(true);
 			
 			// Плавный скролл к адаптивной позиции
@@ -103,10 +104,19 @@ export default function VideoBiotech() {
 					)}
 
 					{isMobile ? (
-						<VideoPlayerMobile key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
-						// <VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+						<VideoPlayerMobile 
+							key="video-player" 
+							videoPlayerShow={videoPlayerShow} 
+							videoSrc={videoSrc} 
+							videoTitle={videoTitle} // Передаем заголовок
+						/>
 					) : (
-						<VideoPlayer key="video-player" videoPlayerShow={videoPlayerShow} videoSrc={videoSrc} />
+						<VideoPlayer 
+							key="video-player" 
+							videoPlayerShow={videoPlayerShow} 
+							videoSrc={videoSrc} 
+							videoTitle={videoTitle} // Передаем заголовок
+						/>
 					)}
 
 
@@ -115,7 +125,11 @@ export default function VideoBiotech() {
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_1.png"}
 							videoTimer={"08:48"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4")}
+							funForButton={() => handleVideoPlayerShow(
+								true, 
+								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4",
+								"Получение и применение ГМ растений" // Передаем заголовок
+							)}
 							videoInfoHeader={"Получение и применение ГМ растений"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий "}
 						/>
@@ -124,7 +138,11 @@ export default function VideoBiotech() {
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_2.png"}
 							videoTimer={"07:24"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4")}
+							funForButton={() => handleVideoPlayerShow(
+								true, 
+								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4",
+								"Бактерии как объект биотехнологий" // Передаем заголовок
+							)}
 							videoInfoHeader={"Бактерии как объект биотехнологий"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
 						/>
@@ -133,7 +151,11 @@ export default function VideoBiotech() {
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_3.png"}
 							videoTimer={"24:18"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_3.mp4")}
+							funForButton={() => handleVideoPlayerShow(
+								true, 
+								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_3.mp4",
+								"Объекты микробиологических технологий" // Передаем заголовок
+							)}
 							videoInfoHeader={"Объекты микробиологических технологий"}
 							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
 						/>
@@ -142,7 +164,11 @@ export default function VideoBiotech() {
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_4.png"}
 							videoTimer={"22:47"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_4.mp4")}
+							funForButton={() => handleVideoPlayerShow(
+								true, 
+								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_4.mp4",
+								"Использование моноклональных и поликлональных антител в медицине" // Передаем заголовок
+							)}
 							videoInfoHeader={"Использование моноклональных и поликлональных антител в медицине"}
 							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
 						/>
@@ -151,7 +177,11 @@ export default function VideoBiotech() {
 							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_5.png"}
 							videoTimer={"35:13"}
-							funForButton={() => handleVideoPlayerShow(true, "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4")}
+							funForButton={() => handleVideoPlayerShow(
+								true, 
+								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4",
+								"Экологические и этические проблемы генной инженерии" // Передаем заголовок
+							)}
 							videoInfoHeader={"Экологические и этические проблемы генной инженерии"}
 							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
 						/>
