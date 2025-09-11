@@ -107,7 +107,7 @@ export default function SectionHeroesPish({ isMobile }) {
 
 							<div className="block_hero">
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
+									<Image src="/img/main/heroes_pish/photo_2.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
 										<span className="fio">Рочин Егор Олегович</span>
@@ -127,7 +127,7 @@ export default function SectionHeroesPish({ isMobile }) {
 								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo.png" alt="" fill unoptimized={true} />
+									<Image src="/img/main/heroes_pish/photo_3.png" alt="" fill unoptimized={true} />
 
 									<div className="text_info">
 										<span className="fio">Штермер Ванесса</span>

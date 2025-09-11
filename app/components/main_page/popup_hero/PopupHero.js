@@ -75,7 +75,7 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, f
 					autoPlay 
 					loop={true}
 				>
-					<source src="https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_1.mp4" type="video/mp4" />
+					<source src="https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_3.mp4" type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 			</div>

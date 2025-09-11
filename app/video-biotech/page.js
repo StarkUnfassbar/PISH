@@ -128,10 +128,10 @@ export default function VideoBiotech() {
 							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4",
-								"Получение и применение ГМ растений" // Передаем заголовок
+								"Получение и применение генетически модифицированных растений" // Передаем заголовок
 							)}
-							videoInfoHeader={"Получение и применение ГМ растений"}
-							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий "}
+							videoInfoHeader={"«Получение и применение генетически модифицированных растений»"}
+							videoInfoDescription={"От создания супер-культур, побеждающих голод, до «золотого риса», спасающего миллионы людей от болезней."}
 						/>
 
 						<BlockVideo
@@ -143,8 +143,8 @@ export default function VideoBiotech() {
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4",
 								"Бактерии как объект биотехнологий" // Передаем заголовок
 							)}
-							videoInfoHeader={"Бактерии как объект биотехнологий"}
-							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
+							videoInfoHeader={"«Бактерии как объект биотехнологии»"}
+							videoInfoDescription={"Как бактерии совершают революцию в медицине, производят топливо будущего и создают любимые продукты питания."}
 						/>
 
 						<BlockVideo
@@ -156,8 +156,8 @@ export default function VideoBiotech() {
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_3.mp4",
 								"Объекты микробиологических технологий" // Передаем заголовок
 							)}
-							videoInfoHeader={"Объекты микробиологических технологий"}
-							videoInfoDescription={"Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии лишь добавляют фракционных разногласий"}
+							videoInfoHeader={"«Объекты микробиологических технологий»"}
+							videoInfoDescription={"Фабрики микробов, день и ночь производящие антибиотики, витамины и ферменты, меняя будущее."}
 						/>
 
 						<BlockVideo
@@ -169,8 +169,8 @@ export default function VideoBiotech() {
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_4.mp4",
 								"Использование моноклональных и поликлональных антител в медицине" // Передаем заголовок
 							)}
-							videoInfoHeader={"Использование моноклональных и поликлональных антител в медицине"}
-							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+							videoInfoHeader={"«Использование моноклональных и поликлональных антител в медицине»"}
+							videoInfoDescription={"Как умные антитела стали новым словом в лечении рака и победе над опасными вирусами."}
 						/>
 
 						<BlockVideo
@@ -182,8 +182,8 @@ export default function VideoBiotech() {
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4",
 								"Экологические и этические проблемы генной инженерии" // Передаем заголовок
 							)}
-							videoInfoHeader={"Экологические и этические проблемы генной инженерии"}
-							videoInfoDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+							videoInfoHeader={"«Экологические и этические проблемы генной инженерии»"}
+							videoInfoDescription={"«За» и «против» генной инженерии — от редактирования ДНК человека до этичных границ науки будущего."}
 						/>
 					</div>
 				</section>
