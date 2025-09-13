@@ -79,8 +79,7 @@
 	min-height: 480px;
 	max-height: 100vh; */
 	width: 90% !important;
-	height: auto !important;
-	max-height: 90vh !important;
+	height: 90vh !important;
 	border: 4px solid #4547bb8e;
 	border-radius: 15px;
 	background-color: #191933;

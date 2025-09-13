@@ -16,9 +16,26 @@ export default function SectionHeroesPish({ isMobile }) {
 	const [popupHeroShow, setPopupHeroShow] = useState(false);
 	const [popupHeroOpen, setPopupHeroOpen] = useState(false);
 	const [popupIdHero, setPopupIdHero] = useState(1);
+	const [popupVideoUrl, setPopupVideoUrl] = useState("");
 
 	const handlePopupOpen = (open, id) => {
 		if(open){
+			let videoUrl = "";
+			switch(id) {
+				case 1:
+					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_3.mp4";
+					break;
+				case 2:
+					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_2.mp4";
+					break;
+				case 3:
+					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_3.mp4";
+					break;
+				default:
+					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_1.mp4";
+			}
+			
+			setPopupVideoUrl(videoUrl);
 			setPopupHeroShow(true);
 			setPopupIdHero(id);
 
@@ -150,7 +167,7 @@ export default function SectionHeroesPish({ isMobile }) {
 				</section>
 			)}
 
-			{popupHeroShow && <PopupHero isMobile={isMobile} popupHeroOpen={popupHeroOpen} popupIdHero={popupIdHero} funForClose={() => handlePopupOpen(false)} />}
+			{popupHeroShow && <PopupHero isMobile={isMobile} popupHeroOpen={popupHeroOpen} popupIdHero={popupIdHero} popupVideoUrl={popupVideoUrl} funForClose={() => handlePopupOpen(false)} />}
 		</>
 	);
 }

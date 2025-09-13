@@ -45,7 +45,7 @@ const heroesData = [
 
 
 
-export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, funForClose }) {
+export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, popupVideoUrl, funForClose }) {
 	const hero = heroesData.find(item => item.id === popupIdHero) || heroesData[0];
 
 	return (
@@ -75,7 +75,7 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, f
 					autoPlay 
 					loop={true}
 				>
-					<source src="https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_3.mp4" type="video/mp4" />
+					<source src={popupVideoUrl} type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 			</div>

@@ -53,7 +53,7 @@
 }
 
 .widget_window .welcome_window._active .info .block_button{
-	height: 40px;
+	height: fit-content;
 }
 
 .widget_window .welcome_window .info .block_button button{
@@ -62,6 +62,9 @@
 	justify-content: center;
 	width: 200px;
 	height: 40px;
+	font-size: 20px;
+	font-family: "Grandis";
+	font-weight: 400;
 	border-radius: 10px;
 	background: linear-gradient(90deg, rgba(46, 114, 96, 0.89), rgba(71, 82, 112, 0.89));
 	cursor: pointer;

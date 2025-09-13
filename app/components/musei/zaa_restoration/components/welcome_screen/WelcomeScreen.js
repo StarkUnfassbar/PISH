@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import './welcome_screen.css';
+import './welcome_screen_media.css';
 
 
 
