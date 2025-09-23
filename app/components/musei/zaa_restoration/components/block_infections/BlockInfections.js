@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import './block_infections.css';
+import './block_infections_media.css';
 
 import infectionImg1 from '../../img/infections/1.png';
 import infectionImg2 from '../../img/infections/2.png';
@@ -88,7 +89,7 @@ const BlockInfections = ({ experimentState, onInfectionsClick, funFinalExperimen
 	return (
         <>
             {blockInfectionsShow && (
-                <div className={`block_infections ${blockInfectionsHidden ? "_hidden" : ''}`}>
+                <div className={`zaa_block_infections ${blockInfectionsHidden ? "_hidden" : ''}`}>
 					<span
 						className={`infection_img ${hiddenInfections.includes(1) ? "_hidden" : ""}`}
 						onClick={() => handleInfectionClick(1)}

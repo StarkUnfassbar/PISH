@@ -12,7 +12,7 @@ import WelcomeScreen from './components/welcome_screen/WelcomeScreen';
 
 
 
-export default function ZAARestoration({ funForCloseWidget }) {
+export default function ZAARestoration({ funForCloseWidget, isMobile }) {
 	const [showMainScreen, setShowMainScreen] = useState(false);
 	const [buttonStartActive, setButtonStartActive] = useState(false);
 
@@ -55,7 +55,7 @@ export default function ZAARestoration({ funForCloseWidget }) {
 				/>
 			)}
 
-			{showMainScreen && <MainScreen />}
+			{showMainScreen && <MainScreen isMobile={isMobile} />}
 
 			<button className="button_exit" onClick={() => funForCloseWidget(false, "")}>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 73" fill="none">

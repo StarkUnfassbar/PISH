@@ -5,7 +5,7 @@
 
 
 
-.main_window .block_left .block_infections{
+.zaa_block_infections{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -20,12 +20,12 @@
 	transition: all 1s ease;
 }
 
-.main_window .block_left .block_infections._hidden{
+.zaa_block_infections._hidden{
 	opacity: 0;
 }
 
 
-.main_window .block_left .block_infections .infection_img{
+.zaa_block_infections .infection_img{
 	position: absolute;
 	pointer-events: painted;
 	cursor: pointer;
@@ -33,47 +33,47 @@
 	transition: all 1s ease;
 }
 
-.main_window .block_left .block_infections .infection_img._hidden{
+.zaa_block_infections .infection_img._hidden{
 	opacity: 0;
 	pointer-events: none;
 }
 
-.main_window .block_left .block_infections .infection_img:nth-child(1){
+.zaa_block_infections .infection_img:nth-child(1){
 	width: 650px;
 	height: 500px;
 	bottom: 0;
 	left: 0;
 }
 
-.main_window .block_left .block_infections .infection_img:nth-child(2){
+.zaa_block_infections .infection_img:nth-child(2){
 	width: 600px;
 	height: 350px;
 	bottom: 0;
 	right: 0;
 }
 
-.main_window .block_left .block_infections .infection_img:nth-child(3){
+.zaa_block_infections .infection_img:nth-child(3){
 	width: 480px;
 	height: 500px;
 	top: 0;
 	right: 0;
 }
 
-.main_window .block_left .block_infections .infection_img:nth-child(4){
+.zaa_block_infections .infection_img:nth-child(4){
 	width: 800px;
 	height: 450px;
 	top: 0;
 	left: 0;
 }
 
-.main_window .block_left .block_infections .infection_img img{
+.zaa_block_infections .infection_img img{
 	width: 100%;
 	height: 100%;
 }
 
 
 
-.main_window .block_left .block_infections .tip_click{
+.zaa_block_infections .tip_click{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -90,7 +90,7 @@
 	animation: pulse 2s infinite ease-in-out;
 }
 
-.main_window .block_left .block_infections .tip_click._hidden{
+.zaa_block_infections .tip_click._hidden{
 	opacity: 0;
 }
 
@@ -107,7 +107,7 @@
 }
 
 
-.main_window .block_left .block_infections .tip_click::before{
+.zaa_block_infections .tip_click::before{
 	content: "";
 	width: 80%;
 	height: 80%;
@@ -117,7 +117,7 @@
 	z-index: 2;
 }
 
-.main_window .block_left .block_infections .tip_click::after{
+.zaa_block_infections .tip_click::after{
 	content: "";
 	width: 115%;
 	height: 115%;
@@ -128,14 +128,14 @@
 }
 
 
-.main_window .block_left .block_infections .tip_click svg{
+.zaa_block_infections .tip_click svg{
 	width: 35px;
 	height: 32px;
 }
 
 
 
-.main_window .block_left .block_infections .solvent_in_art{    
+.zaa_block_infections .solvent_in_art{    
     width: 500px;
     height: 350px;
     position: absolute;
@@ -149,11 +149,11 @@
 	transition: all .5s ease;
 }
 
-.main_window .block_left .block_infections .solvent_in_art._hidden{
+.zaa_block_infections .solvent_in_art._hidden{
 	opacity: 0;
 }
 
-.main_window .block_left .block_infections .solvent_in_art img{
+.zaa_block_infections .solvent_in_art img{
 	width: 100%;
 	height: 100%;
 	object-fit: contain;

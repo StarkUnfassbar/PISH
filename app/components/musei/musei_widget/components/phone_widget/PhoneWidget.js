@@ -186,8 +186,8 @@ const swiperRef = useRef(null);
 								</div>
 
 								<div className="block_exhibit">
-									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
-									{/* <button onClick={() => handleOpenWidget(true, "zaa_restoration")}></button> */}
+									{/* <button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button> */}
+									<button onClick={() => handleOpenWidget(true, "zaa_restoration")}></button>
 								</div>
 							</div>
 						</SwiperSlide>

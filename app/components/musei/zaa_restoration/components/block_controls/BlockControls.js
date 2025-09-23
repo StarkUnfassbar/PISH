@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react';
 
-import './block_controls.css'
+import './block_controls.css';
+import './block_controls_media.css';
 
 
 
-const BlockControls = ({ experimentState, funSwiperPrev, funSwiperNext, artInfo, handleSelectClick, handleBackClick, handleExperimentSolventClick, handleExperimentAntibioticClick }) => {
+const BlockControls = ({ isMobile, experimentState, funSwiperPrev, funSwiperNext, artInfo, handleSelectClick, handleBackClick, handleExperimentSolventClick, handleExperimentAntibioticClick }) => {
 	const [stageExperiment, currentStep] = experimentState;
 	
 	const [partStartShow, setPartStartShow] = useState(true);
@@ -84,45 +85,92 @@ const BlockControls = ({ experimentState, funSwiperPrev, funSwiperNext, artInfo,
 
 
 	return (
-		<div className="block_controls">
+		<div className="zaa_block_controls">
 			{partStartShow && (
 				<div className={`part_start ${partStartHidden ? "_hidden" : ''}`}>
-					<div className="slider_nav">
-						<button onClick={funSwiperPrev}>
-							<span>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
-									<path d="M12.5 23L2 12.5L12.5 1" stroke="white" strokeWidth="2"/>
-								</svg>
-							</span>
-						</button>
+					{isMobile ? (
+						<>
+							<div className="block_top">
+								<div className="art_info">
+									<h3 className="title">{artInfo.title}</h3>
+									
+									<p>
+										<span className="author">{artInfo.author}</span>
+										{artInfo.year && <span className="year">{artInfo.year}</span>}
+									</p>
+								</div>
+							</div>
 
-						<button onClick={funSwiperNext}>
-							<span>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
-									<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
-								</svg>
-							</span>
-						</button>
-					</div>
+							<div className="block_bottom">
+								<div className="slider_nav">
+									<button onClick={funSwiperPrev}>
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
+												<path d="M12.5 23L2 12.5L12.5 1" stroke="white" strokeWidth="2"/>
+											</svg>
+										</span>
+									</button>
 
-					<div className="art_info">
-						<h3 className="title">{artInfo.title}</h3>
-						
-						<p>
-							<span className="author">{artInfo.author}</span>
-							{artInfo.year && <span className="year">{artInfo.year}</span>}
-						</p>
-					</div>
+									<button onClick={funSwiperNext}>
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+												<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+											</svg>
+										</span>
+									</button>
+								</div>
 
-					<button className="button_select" onClick={handleSelectClick}>
-						<span className="button_text">Выбрать</span>
-						
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
-								<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
-							</svg>
-						</span>
-					</button>
+								<button className="button_select" onClick={handleSelectClick}>
+									<span className="button_text">Выбрать</span>
+									
+									<span>
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+											<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</>
+					) : (
+						<>
+							<div className="slider_nav">
+								<button onClick={funSwiperPrev}>
+									<span>
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 24" fill="none">
+											<path d="M12.5 23L2 12.5L12.5 1" stroke="white" strokeWidth="2"/>
+										</svg>
+									</span>
+								</button>
+
+								<button onClick={funSwiperNext}>
+									<span>
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+											<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+										</svg>
+									</span>
+								</button>
+							</div>
+
+							<div className="art_info">
+								<h3 className="title">{artInfo.title}</h3>
+								
+								<p>
+									<span className="author">{artInfo.author}</span>
+									{artInfo.year && <span className="year">{artInfo.year}</span>}
+								</p>
+							</div>
+
+							<button className="button_select" onClick={handleSelectClick}>
+								<span className="button_text">Выбрать</span>
+								
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</button>
+						</>
+					)}
 				</div>
 			)}
 

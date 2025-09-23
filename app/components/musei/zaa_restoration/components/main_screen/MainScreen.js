@@ -6,8 +6,8 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-
 import './main_screen.css';
+import './main_screen_media.css';
 
 import TipLeft from '../tips/TipLeft';
 import BlockControls from '../block_controls/BlockControls';
@@ -19,8 +19,6 @@ import VialImg2 from '../../img/vials/solvent.png';
 import VialImg3 from '../../img/vials/antibiotic.png';
 import VialImgStandardActive from '../../img/vials/standard_active.png';
 
-
-
 export const instructionsForTipRight = {
 	solvent: {
 		1: "Поместите образец патогена с картины в чашку Петри с питательной средой",
@@ -31,7 +29,6 @@ export const instructionsForTipRight = {
 		3: "Протестируйте антибиотик на патогене в чашке Петри",
 	},
 };
-
 
 import art1 from '../../img/arts/art1.png';
 import art2 from '../../img/arts/art2.png';
@@ -61,12 +58,9 @@ const paintingsData = [
 	}
 ];
 
-
-
-export default function MainScreen() {
+export default function MainScreen({ isMobile }) {
 	const [stageExperiment, setStageExperiment] = useState("art_select");
   	const [currentStep, setCurrentStep] = useState(0);
-
 
 	const handleArtSelectClick = () => {
 		setStageExperiment("art_select");
@@ -227,8 +221,6 @@ export default function MainScreen() {
 		setDescriptionAntibioticShow(false);
 	};
 
-
-
 	const [currentPainting, setCurrentPainting] = useState(paintingsData[0]);
 	const swiperRef = useRef(null);
 
@@ -243,8 +235,6 @@ export default function MainScreen() {
 	const goPrev = () => {
 		if (swiperRef.current) { swiperRef.current.slidePrev(); }
 	};
-
-	
 
 	const [petriActive, setPetriActive] = useState(false);
 	const [petriClick, setPetriClick] = useState(false);
@@ -261,111 +251,218 @@ export default function MainScreen() {
   	const [tipAntibioticShow, setTipAntibioticShow] = useState(false);
   	const [descriptionAntibioticShow, setDescriptionAntibioticShow] = useState(false);
 
-
-
+	
 
 	return (
 		<div className="main_window">
 			<TipLeft experimentState={[stageExperiment, currentStep]} handlePlaceSolventOnArt={handlePlaceSolventOnArt}/>
 
-			<div className="block_left">
-				<BlockInfections experimentState={[stageExperiment, currentStep]} onInfectionsClick={handleInfectionsClick} funFinalExperiment={handleFinalExperiment} />
+			{!isMobile ? (
+				<>
+					<div className="block_left">
+						<BlockInfections experimentState={[stageExperiment, currentStep]} onInfectionsClick={handleInfectionsClick} funFinalExperiment={handleFinalExperiment} />
 
-				<div className="block_swiper">
-					<Swiper
-						modules={[Navigation]}
-						spaceBetween={0}
-						slidesPerView={1}
-						loop={true}
-						onSwiper={(swiper) => {
-							swiperRef.current = swiper;
-						}}
-						onSlideChange={handleSlideChange}
-					>
-						{paintingsData.map((painting) => (
-							<SwiperSlide key={painting.id}>
-								<img src={painting.image.src} alt={painting.title} />
-							</SwiperSlide>
-						))}
-					</Swiper>
-				</div>
+						<div className="block_swiper">
+							<Swiper
+								modules={[Navigation]}
+								spaceBetween={0}
+								slidesPerView={1}
+								loop={true}
+								onSwiper={(swiper) => {
+									swiperRef.current = swiper;
+								}}
+								onSlideChange={handleSlideChange}
+							>
+								{paintingsData.map((painting) => (
+									<SwiperSlide key={painting.id}>
+										<img src={painting.image.src} alt={painting.title} />
+									</SwiperSlide>
+								))}
+							</Swiper>
+						</div>
 
-				<BlockControls 
-					experimentState={[stageExperiment, currentStep]} 
-					funSwiperPrev={goPrev} 
-					funSwiperNext={goNext} 
-					artInfo={currentPainting}
-					handleSelectClick={handleExperimentSelectClick}
-					handleBackClick={handleArtSelectClick}
-					handleExperimentSolventClick={handleExperimentSolventClick}
-					handleExperimentAntibioticClick={handleExperimentAntibioticClick}
-				/>
-			</div>
+						<BlockControls 
+							experimentState={[stageExperiment, currentStep]} 
+							funSwiperPrev={goPrev} 
+							funSwiperNext={goNext} 
+							artInfo={currentPainting}
+							handleSelectClick={handleExperimentSelectClick}
+							handleBackClick={handleArtSelectClick}
+							handleExperimentSolventClick={handleExperimentSolventClick}
+							handleExperimentAntibioticClick={handleExperimentAntibioticClick}
+						/>
+					</div>
 
-			<div className="block_right">
-				<div className={`block_vial ${petriClick ? "_click" : ""} ${petriActive ? "_active" : ""} ${descriptionPetriShow ? "_description_on" : ""} ${tipPetriShow ? "_tip_on" : ""}`}>
-					<button onClick={handlePathogenInPetri}>
-						<img src={VialImg1.src} alt="Petri vial" />
-						<img className="additional_img" src={VialImg1Active.src} alt="Pathogen in petri" />
-					</button>
+					<div className="block_right">
+						<div className={`block_vial ${petriClick ? "_click" : ""} ${petriActive ? "_active" : ""} ${descriptionPetriShow ? "_description_on" : ""} ${tipPetriShow ? "_tip_on" : ""}`}>
+							<button onClick={handlePathogenInPetri}>
+								<img src={VialImg1.src} alt="Petri vial" />
+								<img className="additional_img" src={VialImg1Active.src} alt="Pathogen in petri" />
+							</button>
 
-					<span className="description">
-						<p>среда питательная</p>
-					</span>
-					
-					<div className="tip">
-						<p>{instructionsForTipRight[stageExperiment]?.[currentStep] ?? ""}</p>
+							<span className="description">
+								<p>среда питательная</p>
+							</span>
+							
+							<div className="tip">
+								<p>{instructionsForTipRight[stageExperiment]?.[currentStep] ?? ""}</p>
 
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
-								<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
-							</svg>
-						</span>
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+
+						<div className={`block_vial ${solventClick ? "_click" : ""} ${solventActive ? "_active" : ""} ${descriptionSolventShow ? "_description_on" : ""} ${tipSolventShow ? "_tip_on" : ""}`}>
+							<button onClick={handleTakeSolvent}>
+								<img src={VialImg2.src} alt="Solvent vial" />
+								<img className="additional_img" src={VialImgStandardActive.src} />
+							</button>
+
+							<span className="description">
+								<p>растворитель</p>
+							</span>
+
+							<div className="tip">
+								<p>Поместите растворитель в чашку Петри с образцом патогена</p>
+
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+
+						<div className={`block_vial ${antibioticClick ? "_click" : ""} ${antibioticActive ? "_active" : ""} ${descriptionAntibioticShow ? "_description_on" : ""} ${tipAntibioticShow ? "_tip_on" : ""}`}>
+							<button onClick={handleTakeAntibiotic}>
+								<img src={VialImg3.src} alt="Antibiotic vial" />
+								<img className="additional_img" src={VialImgStandardActive.src} />
+							</button>
+
+							<span className="description">
+								<p>антибиотик</p>
+							</span>
+
+							<div className="tip">
+								<p>Поместите антибиотик в чашку Петри с образцом патогена</p>
+
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</div>
+				</>
+			) : (
+				<div className="block_mobile">
+					<div className="mobile_top_section">
+						<BlockInfections experimentState={[stageExperiment, currentStep]} onInfectionsClick={handleInfectionsClick} funFinalExperiment={handleFinalExperiment} />
+						
+						<div className="block_swiper">
+							<Swiper
+								modules={[Navigation]}
+								spaceBetween={0}
+								slidesPerView={1}
+								loop={true}
+								onSwiper={(swiper) => {
+									swiperRef.current = swiper;
+								}}
+								onSlideChange={handleSlideChange}
+							>
+								{paintingsData.map((painting) => (
+									<SwiperSlide key={painting.id}>
+										<img src={painting.image.src} alt={painting.title} />
+									</SwiperSlide>
+								))}
+							</Swiper>
+						</div>
+					</div>
+
+					<div className="block_vials_mobile">
+						<div className={`block_vial ${petriClick ? "_click" : ""} ${petriActive ? "_active" : ""} ${descriptionPetriShow ? "_description_on" : ""} ${tipPetriShow ? "_tip_on" : ""}`}>
+							<button onClick={handlePathogenInPetri}>
+								<img src={VialImg1.src} alt="Petri vial" />
+								<img className="additional_img" src={VialImg1Active.src} alt="Pathogen in petri" />
+							</button>
+
+							<span className="description">
+								<p>среда питательная</p>
+							</span>
+							
+							<div className="tip">
+								<p>{instructionsForTipRight[stageExperiment]?.[currentStep] ?? ""}</p>
+
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+
+						<div className={`block_vial ${solventClick ? "_click" : ""} ${solventActive ? "_active" : ""} ${descriptionSolventShow ? "_description_on" : ""} ${tipSolventShow ? "_tip_on" : ""}`}>
+							<button onClick={handleTakeSolvent}>
+								<img src={VialImg2.src} alt="Solvent vial" />
+								<img className="additional_img" src={VialImgStandardActive.src} />
+							</button>
+
+							<span className="description">
+								<p>растворитель</p>
+							</span>
+
+							<div className="tip">
+								<p>Поместите растворитель в чашку Петри с образцом патогена</p>
+
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+
+						<div className={`block_vial ${antibioticClick ? "_click" : ""} ${antibioticActive ? "_active" : ""} ${descriptionAntibioticShow ? "_description_on" : ""} ${tipAntibioticShow ? "_tip_on" : ""}`}>
+							<button onClick={handleTakeAntibiotic}>
+								<img src={VialImg3.src} alt="Antibiotic vial" />
+								<img className="additional_img" src={VialImgStandardActive.src} />
+							</button>
+
+							<span className="description">
+								<p>антибиотик</p>
+							</span>
+
+							<div className="tip">
+								<p>Поместите антибиотик в чашку Петри с образцом патогена</p>
+
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
+										<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div className="mobile_bottom_section">
+						<BlockControls 
+							isMobile={isMobile}
+							experimentState={[stageExperiment, currentStep]} 
+							funSwiperPrev={goPrev} 
+							funSwiperNext={goNext} 
+							artInfo={currentPainting}
+							handleSelectClick={handleExperimentSelectClick}
+							handleBackClick={handleArtSelectClick}
+							handleExperimentSolventClick={handleExperimentSolventClick}
+							handleExperimentAntibioticClick={handleExperimentAntibioticClick}
+						/>
 					</div>
 				</div>
-
-				<div className={`block_vial ${solventClick ? "_click" : ""} ${solventActive ? "_active" : ""} ${descriptionSolventShow ? "_description_on" : ""} ${tipSolventShow ? "_tip_on" : ""}`}>
-					<button onClick={handleTakeSolvent}>
-						<img src={VialImg2.src} alt="Solvent vial" />
-						<img className="additional_img" src={VialImgStandardActive.src} />
-					</button>
-
-					<span className="description">
-						<p>растворитель</p>
-					</span>
-
-					<div className="tip">
-						<p>Поместите растворитель в чашку Петри с образцом патогена</p>
-
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
-								<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
-							</svg>
-						</span>
-					</div>
-				</div>
-
-				<div className={`block_vial ${antibioticClick ? "_click" : ""} ${antibioticActive ? "_active" : ""} ${descriptionAntibioticShow ? "_description_on" : ""} ${tipAntibioticShow ? "_tip_on" : ""}`}>
-					<button onClick={handleTakeAntibiotic}>
-						<img src={VialImg3.src} alt="Antibiotic vial" />
-						<img className="additional_img" src={VialImgStandardActive.src} />
-					</button>
-
-					<span className="description">
-						<p>антибиотик</p>
-					</span>
-
-					<div className="tip">
-						<p>Поместите антибиотик в чашку Петри с образцом патогена</p>
-
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 24" fill="none">
-								<path d="M1 1L11.5 11.5L1 23" stroke="white" strokeWidth="2"/>
-							</svg>
-						</span>
-					</div>
-				</div>
-			</div>
+			)}
 		</div>
 	);
 };
