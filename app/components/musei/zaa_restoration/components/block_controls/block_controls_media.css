@@ -7,6 +7,12 @@
 
 
 
+	.zaa_block_controls{
+		height: 100%;
+	}
+
+
+
 	.zaa_block_controls .part_start{
 		flex-direction: column;
 		gap: 30px;

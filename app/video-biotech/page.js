@@ -17,6 +17,8 @@ import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/P
 import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
 import VideoPlayerMobile from '../components/video_biotech/video_player/video_player_mobile/VideoPlayerMobile';
 
+
+
 export default function VideoBiotech() {
 	const [isMobile, setIsMobile] = useState(null);
 	

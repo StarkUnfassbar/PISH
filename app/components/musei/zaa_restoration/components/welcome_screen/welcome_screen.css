@@ -1,4 +1,4 @@
-.widget_window .welcome_window{
+.widget_window.zaa_restoration .welcome_window{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,11 +16,11 @@
 	transition: all 1s ease;
 }
 
-.widget_window .welcome_window._hidden{
+.widget_window.zaa_restoration .welcome_window._hidden{
 	opacity: 0;
 }
 
-.widget_window .welcome_window .info{
+.widget_window.zaa_restoration .welcome_window .info{
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -29,7 +29,7 @@
 }
 
 
-.widget_window .welcome_window .info h1{
+.widget_window.zaa_restoration .welcome_window .info h1{
 	width: 80%;
 	font-size: 34px;
 	font-family: "Grandis";
@@ -38,7 +38,7 @@
 }
 
 
-.widget_window .welcome_window .info p{
+.widget_window.zaa_restoration .welcome_window .info p{
 	font-size: 20px;
 	font-family: "Grandis";
 	font-weight: 400;
@@ -46,17 +46,17 @@
 }
 
 
-.widget_window .welcome_window .info .block_button{
+.widget_window.zaa_restoration .welcome_window .info .block_button{
 	height: 0;
 	overflow: hidden;
 	transition: all .7s ease;
 }
 
-.widget_window .welcome_window._active .info .block_button{
+.widget_window.zaa_restoration .welcome_window._active .info .block_button{
 	height: fit-content;
 }
 
-.widget_window .welcome_window .info .block_button button{
+.widget_window.zaa_restoration .welcome_window .info .block_button button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -74,11 +74,11 @@
 	transition: all .5s ease .7s;
 }
 
-.widget_window .welcome_window._active .info .block_button button{
+.widget_window.zaa_restoration .welcome_window._active .info .block_button button{
 	opacity: 1;
 	transform: scale(1);
 }
 
-.widget_window .welcome_window .info .block_button button:hover{
+.widget_window.zaa_restoration .welcome_window .info .block_button button:hover{
 
 }

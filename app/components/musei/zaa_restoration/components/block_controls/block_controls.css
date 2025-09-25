@@ -1,3 +1,14 @@
+.zaa_block_controls{
+	height: 120px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+}
+
+
+
 .zaa_block_controls .part_start{
 	display: flex;
 	gap: 40px;
@@ -10,7 +21,7 @@
 	padding: 0 80px;
 	box-sizing: border-box;
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	z-index: 2;
 
@@ -183,7 +194,7 @@
 	padding: 0 80px;
 	box-sizing: border-box;
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	z-index: 1;
 
@@ -286,7 +297,7 @@
 	padding: 0 80px;
 	box-sizing: border-box;
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	z-index: 1;
 

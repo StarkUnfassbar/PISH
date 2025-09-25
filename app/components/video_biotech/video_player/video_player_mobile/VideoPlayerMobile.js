@@ -3,6 +3,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import './video_player_mobile.css';
 import './video_player_mobile_media.css';
 
+
+
 export default function VideoPlayerMobile({ videoPlayerShow, videoSrc, videoTitle }) {
     const videoRef = useRef(null);
     const progressBarRef = useRef(null);
