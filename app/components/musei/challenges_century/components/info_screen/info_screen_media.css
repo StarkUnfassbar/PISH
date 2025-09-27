@@ -285,6 +285,20 @@
     .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_progression .progression p span{
 	    font-size: 10px;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h2 {
+        font-size: 50px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h4{
+	    font-size: 22px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch p{
+	    font-size: 12px;
+    }
 }
 
 @media only screen and (max-width : 1500px){
@@ -301,6 +315,12 @@
         width: 950px;
         min-width: 950px;
         gap: 80px;
+    }
+    
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 300px;
     }
 }
 
@@ -466,6 +486,12 @@
         min-width: 840px;
         padding: 20px 25px 30px;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 80px;
+    }
 }
 
 @media only screen and (max-width : 1200px){
@@ -493,6 +519,20 @@
 
     .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_progression {
         width: 350px;
+    }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches {
+        gap: 15px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 270px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_text {
+        padding: 15px 20px;
     }
 }
 
@@ -607,7 +647,20 @@
 
 
     .widget_window.challenges_century .info_window .block_switches {
-        display: none;
+        height: 340px;
+        align-items: end;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 820px;
+        top: 10px;
+        left: auto;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        height: 210px;
     }
 }
 
@@ -730,9 +783,57 @@
         min-width: 200px;
         height: 25px;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches {
+        height: 285px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 740px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 240px;
+        height: 180px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_text {
+        padding: 10px 15px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h2 {
+        font-size: 45px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h4 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch p {
+        width: 100%;
+        line-height: 15px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .arrow {
+        display: none;
+    }
 }
 
 @media only screen and (max-width : 800px){
+    .widget_window.challenges_century .info_window .pattern {
+        width: 620px;
+        height: 515px;
+    }
+
+
+
     .widget_window.challenges_century .info_window .block_info .block_general_info {
         width: 650px;
     }
@@ -774,9 +875,48 @@
         width: 120px;
         align-items: start;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches {
+        height: 265px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 620px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 200px;
+        height: 160px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_text {
+        padding: 7px 10px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h2 {
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h4 {
+        font-size: 18px;
+        line-height: 25px;
+    }
 }
 
 @media only screen and (max-width : 700px){
+    .widget_window.challenges_century .info_window .pattern {
+        width: 560px;
+        height: 465px;
+    }
+
+
+
     .widget_window.challenges_century .info_window .block_info .block_general_info {
         gap: 20px;
         width: 550px;
@@ -812,9 +952,67 @@
     .widget_window.challenges_century .info_window .block_info .block_general_info .parameter p.description {
         font-size: 16px;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches {
+        height: 220px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 500px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 160px;
+        height: 130px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch::before {
+        border-radius: 10px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch::after {
+        border-radius: 10px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_text {
+        padding: 7px 10px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h2 {
+        font-size: 32px;
+        line-height: 30px;
+        margin-bottom: 0;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h4 {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_animation {
+        border-radius: 10px;
+    }
 }
 
 @media only screen and (max-width : 600px){
+    .widget_window.challenges_century .info_window .pattern {
+        width: 500px;
+        height: 415px;
+    }
+
+
+
     .widget_window.challenges_century .info_window .block_info .block_general_info {
         width: 450px;
     }
@@ -826,9 +1024,52 @@
         min-width: 450px;
         padding: 20px;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches {
+        height: 130px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 385px;
+        font-size: 12px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 120px;
+        height: 70px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_text {
+        padding: 15px 10px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h2 {
+        font-size: 26px;
+        line-height: 25px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h4 {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch p {
+        display: none;
+    }
 }
 
 @media only screen and (max-width : 500px){
+    .widget_window.challenges_century .info_window .pattern {
+        width: 420px;
+        height: 350px;
+    }
+
+
+
     .widget_window.challenges_century .info_window .block_info .block_general_info {
         width: 400px;
     }
@@ -966,9 +1207,67 @@
     .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_progression .progression p span {
         bottom: -13px;
     }
+
+
+
+    .widget_window.challenges_century .info_window .block_switches {
+        height: 110px;
+        gap: 10px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches span {
+        width: 330px;
+        font-size: 10px;
+        top: 5px;
+    }
+
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch {
+        width: 105px;
+        height: 60px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch .block_text {
+        padding: 15px 7px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h2 {
+        font-size: 22px;
+        line-height: 20px;
+    }
+
+    .widget_window.challenges_century .info_window .block_switches .block_switch h4 {
+        font-size: 8px;
+    }
 }
 
 @media only screen and (max-width : 400px){
+    .widget_window.challenges_century .info_window .block_return {
+        width: 140px;
+        height: 40px;
+    }
+
+    .widget_window.challenges_century .info_window .block_return h4 {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+
+
+    .widget_window.challenges_century .info_window .pattern {
+        width: 370px;
+        height: 310px;
+    }
+
+
+
+    .widget_window.challenges_century .info_window .block_info {
+        height: calc(100% - 60px);
+        margin: 60px 0 10px;
+    }
+
+
     .widget_window.challenges_century .info_window .block_info .block_general_info {
         width: 320px;
     }

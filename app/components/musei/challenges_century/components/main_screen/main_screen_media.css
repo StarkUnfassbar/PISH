@@ -282,15 +282,15 @@
 
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(1){
-        top: 70px;
-        left: -70px;
+        top: 120px;
+        left: -40px;
     }
 
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(2){
-        top: 220px;
+        top: 240px;
         left: auto;
-        right: -70px;
+        right: -40px;
         transform: scaleX(-1);
     }
 
@@ -304,15 +304,15 @@
 
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(3){
-        top: 420px;
+        top: 470px;
         left: -20px;
     }
 
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(4){
-        top: 620px;
+        top: 655px;
         left: auto;
-        right: 50px;
+        right: 75px;
         transform: scaleX(-1);
     }
 
@@ -326,9 +326,9 @@
 
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(5){
-        top: 790px;
+        top: 820px;
         left: auto;
-        right: -115px;
+        right: -90px;
         transform: scaleX(-1);
     }
 
@@ -342,8 +342,8 @@
 
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(6){
-        top: 890px;
-        left: -55px;
+        top: 925px;
+        left: -35px;
     }
 }
 
@@ -353,26 +353,27 @@
     }
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(2) {
-        top: 190px;
-        right: -60px;
+        top: 215px;
+        right: -50px;
     }
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(3) {
-        top: 385px;
+        top: 415px;
+        left: 0;
     }
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(4) {
-        top: 580px;
-        right: 30px;
+        top: 605px;
+        right: 70px;
     }
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(5) {
-        top: 730px;
+        top: 760px;
     }
 
     .widget_window.challenges_century .main_window .block_chronology .block_year:nth-child(6) {
-        top: 840px;
-        left: -60px;
+        top: 855px;
+        left: -40px;
     }
 }
 
