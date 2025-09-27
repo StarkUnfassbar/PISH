@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import './welcome_screen.css';
-// import './welcome_screen_media.css';
+import './welcome_screen_media.css';
 
 
 
@@ -47,6 +47,23 @@ export default function WelcomeScreen({ stateButton, funForButton, hiddenStatus 
 						<span className="text">Нажмите, чтобы узнать</span>
 					</button>
 				</div>
+			</div>
+
+			<div className="pattern">
+				<span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 14" fill="none">
+						<path d="M0 0H98C99.6569 0 101 1.34315 101 3V11C101 12.6569 99.6569 14 98 14H0V0Z" fill="url(#paint0_linear_395_93)"/>
+						<circle cx="93" cy="7" r="5" fill="#727AFF"/>
+						<defs>
+							<linearGradient id="paint0_linear_395_93" x1="0" y1="7" x2="101" y2="7" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#434895" stopOpacity="0.05"/>
+								<stop offset="1" stopColor="#434895"/>
+							</linearGradient>
+						</defs>
+					</svg>
+				</span>
+
+				<p>Биотех</p>
 			</div>
 		</div>
 	);

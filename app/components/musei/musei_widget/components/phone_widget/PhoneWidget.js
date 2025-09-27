@@ -209,7 +209,7 @@ const swiperRef = useRef(null);
 								</div>
 
 								<div className="block_exhibit">
-									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+									<button onClick={() => handleOpenWidget(true, "challenges_century")}></button>
 								</div>
 							</div>
 						</SwiperSlide>

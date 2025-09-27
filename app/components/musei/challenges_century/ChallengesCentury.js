@@ -8,17 +8,18 @@ import './challenges_century.css';
 
 import MainScreen from './components/main_screen/MainScreen';
 import WelcomeScreen from './components/welcome_screen/WelcomeScreen';
-import InfoScreen from './components/info_screen/InfoScreen'; // Импортируем новый компонент
+import InfoScreen from './components/info_screen/InfoScreen';
 
 export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
+	const [activeYear, setActiveYear] = useState(null);
+
 	const [showMainScreen, setShowMainScreen] = useState(false);
 	const [mainScreenHidden, setMainScreenHidden] = useState(true);
 	const [buttonStartActive, setButtonStartActive] = useState(false);
-	
-	// Новые состояния для InfoScreen
+
 	const [showInfoScreen, setShowInfoScreen] = useState(false);
 	const [infoScreenHidden, setInfoScreenHidden] = useState(true);
-	const [shouldRenderInfo, setShouldRenderInfo] = useState(false);
+
 
 	useEffect(() => {
 		const buttonTimer = setTimeout(() => {
@@ -29,6 +30,7 @@ export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
 			clearTimeout(buttonTimer);
 		};
 	}, []);
+
 
 	const [welcomeHidden, setWelcomeHidden] = useState(false);
 	const [shouldRenderWelcome, setShouldRenderWelcome] = useState(true);
@@ -81,6 +83,7 @@ export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
 		
 		setTimeout(() => {
 			setShowInfoScreen(false);
+			setActiveYear(null);
 		}, 800);
 	};
 
@@ -101,6 +104,8 @@ export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
 					isMobile={isMobile} 
 					hiddenStatus={mainScreenHidden}
 					onOpenInfoScreen={handleOpenInfoScreen}
+					activeYear={activeYear}
+					setActiveYear={setActiveYear}
 				/>
 			)}
 
@@ -109,6 +114,7 @@ export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
 					isMobile={isMobile} 
 					hiddenStatus={infoScreenHidden}
 					onCloseInfoScree={handleCloseInfoScreen}
+					activeYear={activeYear}
 				/>
 			)}
 

@@ -4,6 +4,10 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
+	background: url("../../img/bg_welcome.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -16,18 +20,20 @@
 	opacity: 0;
 }
 
+
+
 .widget_window.challenges_century .welcome_window .info{
 	display: flex;
 	flex-direction: column;
 	gap: 45px;
-	width: 700px;
+	width: 750px;
 }
 
 
 .widget_window.challenges_century .welcome_window .info h1{
 	width: 100%;
 	color: #fff;
-	font-size: 65px;
+	font-size: 70px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 55px;
@@ -39,7 +45,7 @@
 .widget_window.challenges_century .welcome_window .info p{
 	width: 400px;
 	color: #737AFF;
-	font-size: 30px;
+	font-size: 32px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 45px;
@@ -93,7 +99,7 @@
 
 
 .widget_window.challenges_century .welcome_window .info .block_button button .text{
-	font-size: 30px;
+	font-size: 32px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	text-transform: uppercase;
@@ -115,4 +121,36 @@
 .widget_window.challenges_century .welcome_window .info .block_button button .icon svg{
 	width: 42px;
 	height: 42px;
+}
+
+
+
+.widget_window.challenges_century .welcome_window .pattern{
+	display: flex;
+	gap: 30px;
+	align-items: end;
+	position: absolute;
+	bottom: 60px;
+	left: 0;
+}
+
+
+.widget_window.challenges_century .welcome_window .pattern span{
+	width: 80px;
+	height: 14px;
+}
+
+.widget_window.challenges_century .welcome_window .pattern span svg{
+	width: 100%;
+	height: 100%;
+}
+
+
+.widget_window.challenges_century .welcome_window .pattern p{
+	color: #5056B4;
+	font-size: 18px;
+	font-family: "Eimantas";
+	font-weight: 700;
+	line-height: 14px;
+	text-transform: uppercase;
 }

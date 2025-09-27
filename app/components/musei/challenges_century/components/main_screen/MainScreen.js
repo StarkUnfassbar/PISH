@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import './main_screen.css';
 import './main_screen_media.css';
 
-export default function MainScreen({ isMobile, hiddenStatus, onOpenInfoScreen }) {
+
+
+export default function MainScreen({ isMobile, hiddenStatus, onOpenInfoScreen, activeYear, setActiveYear }) {
 	const swiperRef = useRef(null);
-	const [activeYear, setActiveYear] = useState(null);
 
 	const handleYearClick = (year) => {
 		setActiveYear(year);
@@ -17,7 +18,7 @@ export default function MainScreen({ isMobile, hiddenStatus, onOpenInfoScreen })
 	};
 
 
-
+	
 	return (
 		<div className={`main_window ${hiddenStatus ? "_hidden" : ''}`}>
 			<div className="block_header">

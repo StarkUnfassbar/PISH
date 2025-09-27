@@ -17,34 +17,82 @@
 
 
 
-.widget_window.challenges_century .info_window .block_close{
+.widget_window.challenges_century .info_window .block_return{
 	display: flex;
-	gap: 15px;
-	justify-content: right;
-	width: 200px;
+	align-items: end;
+	width: 165px;
+	height: 45px;
+	border-radius: 0 0 10px 0;
+	background: linear-gradient(90deg, #5558af3d, #5558AF);
+	padding-right: 15px;
 	position: absolute;
-	top: 20px;
+	top: 0;
 	left: 0;
+	z-index: 5;
 	cursor: pointer;
 }
 
-
-.widget_window.challenges_century .info_window .block_close span{
-	width: 65px;
-	margin-top: 1px;
+.widget_window.challenges_century .info_window .block_return .block_return__content{
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	justify-content: right;
+	width: 100%;
+	height: 20px;
+	margin-bottom: 10px;
 }
 
-.widget_window.challenges_century .info_window .block_close span svg{
+
+.widget_window.challenges_century .info_window .block_return h4{
+	color: #fff;
+	font-size: 18px;
+	font-family: "Eimantas";
+	font-weight: 700;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+
+.widget_window.challenges_century .info_window .block_return span{
+	width: 30px;
+	position: absolute;
+	left: 15px;
+}
+
+.widget_window.challenges_century .info_window .block_return span svg{
 	width: 100%;
 }
 
 
-.widget_window.challenges_century .info_window .block_close h4{
-	color: #fff;
-	font-size: 26px;
-	font-family: "Eimantas";
-	font-weight: 700;
-	line-height: 30px;
+
+.widget_window.challenges_century .info_window .pattern{
+	width: 970px;
+	height: 805px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.widget_window.challenges_century .info_window .pattern svg{
+	width: 100%;
+	height: 100%;
+}
+
+.widget_window.challenges_century .info_window .pattern svg path{
+	transition: all .2s ease;
+}
+
+.widget_window.challenges_century .info_window .pattern.conservative svg path{
+	fill: #32C0C7;
+}
+
+.widget_window.challenges_century .info_window .pattern.proactive svg path{
+	fill: #2068bb;
+}
+
+.widget_window.challenges_century .info_window .pattern.futurological svg path{
+	fill: #8656B9;
 }
 
 
@@ -64,7 +112,7 @@
 	gap: 20px;
 	width: 100%;
 	height: 100%;
-	padding: 0 40px 40px 0;
+	padding: 0 60px 40px 0;
 	box-sizing: border-box;
 	overflow-y: auto;
 	scrollbar-width: thin;
@@ -78,7 +126,7 @@
 	gap: 40px;
 	width: 100%;
 	height: 100%;
-	padding: 0 70px;
+	padding-left: 90px;
 	box-sizing: border-box;
 }
 
@@ -94,7 +142,7 @@
 	display: inline-flex;
 	gap: 10px;
 	color: #fff;
-	font-size: 42px;
+	font-size: 55px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 50px;
@@ -104,14 +152,14 @@
 .widget_window.challenges_century .info_window .block_info .block_general_info .population_earth h1.number{
 	align-items: start;
 	color: #63FDFD;
-	font-size: 80px;
-	line-height: 70px;
+	font-size: 100px;
+    line-height: 75px;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_general_info .population_earth h1.number span{
 	width: 50px;
-	font-size: 16px;
-	line-height: 15px;
+	font-size: 20px;
+	line-height: 20px;
 }
 
 
@@ -126,22 +174,22 @@
 	align-items: start;
 	gap: 5px;
 	color: #63FDFD;
-	font-size: 45px;
+	font-size: 55px;
 	font-family: "Eimantas";
 	font-weight: 700;
-	line-height: 35px;
+	line-height: 45px;
 	text-transform: uppercase;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_general_info .parameter p.description{
 	color: #fff;
-	font-size: 16px;
+	font-size: 22px;
 	line-height: 20px;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_general_info .parameter p span{
 	width: 30px;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 15px;
 }
 
@@ -150,9 +198,9 @@
 .widget_window.challenges_century .info_window .block_info .block_factors{
 	display: flex;
 	flex-direction: column;
-	gap: 80px;
-	width: 1000px;
-	min-width: 1000px;
+	gap: 90px;
+	width: 1150px;
+	min-width: 1150px;
 	height: fit-content;
 	border: 2px solid rgb(50, 87, 158);
 	border-radius: 40px;
@@ -165,7 +213,7 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	height: 170px;
+	height: 185px;
 	position: relative;
 }
 
@@ -188,13 +236,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 350px;
+	width: 450px;
 	height: 100%;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .left_part h4{
 	color: #F7FF73;
-	font-size: 26px;
+	font-size: 30px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 32px;
@@ -204,12 +252,12 @@
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .left_part .block_progression{
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 20px;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .left_part .block_progression h5{
 	color: #fff;
-	font-size: 16px;
+	font-size: 20px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 22px;
@@ -226,8 +274,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 250px;
-	height: 25px;
+	width: 300px;
+	height: 30px;
 	position: relative;
 }
 
@@ -253,7 +301,7 @@
 	display: inline-flex;
 	align-items: center;
 	color: #63FDFD;
-	font-size: 32px;
+	font-size: 36px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 25px;
@@ -263,7 +311,7 @@
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .left_part .block_progression .progression p span{
 	width: 100px;
-	font-size: 10px;
+	font-size: 12px;
 	line-height: 12px;
 	position: absolute;
 	right: -107px;
@@ -276,38 +324,40 @@
 	gap: 20px;
 	align-items: start;
 	justify-content: space-around;
-	width: 400px;
+	width: 520px;
 	height: 100%;
 }
 
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_statistics{
 	display: flex;
-	gap: 60px;
 	align-items: center;
 	width: 100%;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_statistics h5{
-	display: inline;
-	width: 55px;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	width: 200px;
 	color: #63FDFD;
-	font-size: 30px;
+	font-size: 36px;
 	font-family: "Eimantas";
 	font-weight: 700;
-	line-height: 23px;
+	line-height: 30px;
 	text-transform: uppercase;
 	text-align: center;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_statistics h5 span{
-	font-size: 12px;
+	display: inline-flex;
+	font-size: 14px;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_statistics p{
-	width: 245px;
+	width: 280px;
 	color: #fff;
-	font-size: 15px;
+	font-size: 17px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 22px;
@@ -330,12 +380,12 @@
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_progression{
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 20px;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_progression h5{
 	color: #fff;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 22px;
@@ -352,8 +402,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 250px;
-	height: 25px;
+	width: 300px;
+	height: 30px;
 	position: relative;
 }
 
@@ -380,7 +430,7 @@
 	align-items: center;
 	justify-content: center;
 	color: #63FDFD;
-	font-size: 32px;
+	font-size: 36px;
 	font-family: "Eimantas";
 	font-weight: 700;
 	line-height: 25px;
@@ -389,7 +439,7 @@
 }
 
 .widget_window.challenges_century .info_window .block_info .block_factors .block_factor .right_part .block_progression .progression p span{
-	font-size: 10px;
+	font-size: 12px;
 	line-height: 15px;
 	position: absolute;
 	bottom: -20px;
@@ -423,16 +473,121 @@
 
 .widget_window.challenges_century .info_window .block_switches .block_switch{
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 360px;
+	position: relative;
+	cursor: pointer;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	border: 2px solid #6C70EB;
+	border-radius: 20px;
+	background: linear-gradient(to right, rgba(93, 77, 156, 0.5), rgba(93, 77, 156, 0.5));
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+
+	opacity: 1;
+	transition: all .3s ease;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch._active::before{
+	opacity: 0;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch::after{
+	content: "";
+	width: 100%;
+	height: 100%;
+	border: 2px solid #6C70EB;
+	border-radius: 20px;
+	background: linear-gradient(to right, rgba(93, 77, 156, 0.5), rgba(93, 77, 156, 0.5));
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	opacity: 0;
+	transition: all .3s ease;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch._active::after{
+	opacity: 1;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(2)._active::after{
+	border: 2px solid #056C71;
+	background: linear-gradient(to right, rgba(6, 135, 138, 0.95), rgba(5, 108, 113, 0.6));
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(3)._active::after{
+	border: 2px solid #3B5F8C;
+	background: linear-gradient(to right, rgba(94, 100, 197, 0.95), rgba(75, 61, 113, 0.6));
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(4)._active::after{
+	border: 2px solid #4B3352;
+	background: linear-gradient(to right, rgba(148, 85, 162, 0.95), rgba(65, 46, 84, 0.6));
+}
+
+
+.widget_window.challenges_century .info_window .block_switches .block_switch .block_animation{
+	width: 100%;
+	height: 100%;
+	border: 2px solid #6C70EB;
+	border-radius: 20px;
+	background: linear-gradient(to right, rgba(93, 77, 156, 0.5), rgba(93, 77, 156, 0.5));
+	position: absolute;
+	z-index: -1;
+
+	opacity: 0;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(2) .block_animation{
+	border: 2px solid #056C71;
+	background: linear-gradient(to right, rgba(6, 135, 138, 0.95), rgba(5, 108, 113, 0.6));
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(3) .block_animation{
+	border: 2px solid #3B5F8C;
+	background: linear-gradient(to right, rgba(94, 100, 197, 0.95), rgba(75, 61, 113, 0.6));
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(4) .block_animation{
+	border: 2px solid #4B3352;
+	background: linear-gradient(to right, rgba(148, 85, 162, 0.95), rgba(65, 46, 84, 0.6));
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch._active .block_animation {
+    animation: shrinkDisappear 0.55s ease-in-out forwards;
+}
+
+@keyframes shrinkDisappear {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+}
+
+
+.widget_window.challenges_century .info_window .block_switches .block_switch .block_text{
+	display: flex;
 	flex-direction: column;
 	justify-content: left;
 	height: 100%;
-	width: 360px;
-	border: 2px solid #6C70EB;
-	border-radius: 20px;
-	background-color: rgba(93, 77, 156, 0.5);
+	width: 100%;
 	padding: 20px 25px;
 	box-sizing: border-box;
-	cursor: pointer;
 }
 
 .widget_window.challenges_century .info_window .block_switches .block_switch h2{
@@ -462,4 +617,58 @@
 	font-family: "Eimantas";
 	font-weight: 400;
 	line-height: 20px;
+}
+
+
+.widget_window.challenges_century .info_window .block_switches .block_switch .arrow{
+	width: 80px;
+	height: 15px;
+	position: absolute;
+	top: 30px;
+	right: 60px;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch .arrow svg{
+	width: 100%;
+	height: 100%;
+	opacity: .8;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch._active .arrow svg{
+	opacity: .2;
+}
+
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(2) .arrow {
+    animation: arrowSlide 1.7s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(3) .arrow {
+    animation: arrowSlide 1.7s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+.widget_window.challenges_century .info_window .block_switches .block_switch:nth-child(4) .arrow {
+    animation: arrowSlide 1.7s ease-in-out infinite;
+    animation-delay: 0.6s;
+}
+
+@keyframes arrowSlide {
+    0% {
+        transform: translateX(-70%);
+        opacity: 0;
+    }
+    45% {
+        transform: translateX(0);
+        opacity: .8;
+    }
+	55% {
+        transform: translateX(0);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(70%);
+        opacity: 0;
+    }
 }
