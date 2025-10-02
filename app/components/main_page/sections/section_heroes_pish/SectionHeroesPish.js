@@ -23,7 +23,7 @@ export default function SectionHeroesPish({ isMobile }) {
 			let videoUrl = "";
 			switch(id) {
 				case 1:
-					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_3.mp4";
+					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_1.mp4";
 					break;
 				case 2:
 					videoUrl = "https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/pish_heroes/video_2.mp4";

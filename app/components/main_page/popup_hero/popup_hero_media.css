@@ -12,7 +12,8 @@
 @media only screen and (max-width : 1100px){
 	.popup_hero .popup_content {
 		width: 600px;
-		height: 800px;
+		/* height: 800px; */
+		height: fit-content !important;
 		min-height: auto;
 	}
 
@@ -91,7 +92,6 @@
 
 @media only screen and (max-width : 450px){
 	.popup_hero .popup_content {
-		align-items: end;
 		width: 330px;
 		height: 560px;
 		padding: 10px 15px 20px;

@@ -275,7 +275,7 @@ const swiperRef = useRef(null);
 								</div>
 
 								<div className="block_exhibit">
-									<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+									<button onClick={() => handleOpenWidget(true, "bacteria_guard_ecology")}></button>
 								</div>
 							</div>
 						</SwiperSlide>

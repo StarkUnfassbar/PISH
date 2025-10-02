@@ -7,6 +7,10 @@ import './popup_hero.css';
 import './popup_hero_media.css';
 
 
+import VideoPlayer from './video_player/VideoPlayer';
+import VideoPlayerMobile from './video_player/video_player_mobile/VideoPlayerMobile';
+
+
 const heroesData = [
   {
     id: 1,
@@ -71,13 +75,27 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, p
 					</div>
 				</div> */}
 
-				<video 
+				{isMobile ? (
+					<VideoPlayerMobile 
+						key="video-player"
+						videoSrc={popupVideoUrl}
+						videoTitle={"Биоженеры дальнего"}
+					/>
+				) : (
+					<VideoPlayer 
+						key="video-player"
+						videoSrc={popupVideoUrl}
+						videoTitle={"Биоженеры дальнего"}
+					/>
+				)}
+
+				{/* <video 
 					autoPlay 
 					loop={true}
 				>
 					<source src={popupVideoUrl} type="video/mp4" />
 					Your browser does not support the video tag.
-				</video>
+				</video> */}
 			</div>
 		</div>
 	);

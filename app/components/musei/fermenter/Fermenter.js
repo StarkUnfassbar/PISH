@@ -1,13 +1,16 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import './bacteria_guard_ecology.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import './fermenter.css';
 
 import MainScreen from './components/main_screen/MainScreen';
 
 
 
-export default function BacteriaGuardEcology({ funForCloseWidget, isMobile }) {
+export default function Fermenter({ funForCloseWidget, isMobile }) {
 	const [buttonStartActive, setButtonStartActive] = useState(false);
 
 	useEffect(() => {
@@ -24,14 +27,14 @@ export default function BacteriaGuardEcology({ funForCloseWidget, isMobile }) {
 	const [shouldRenderWelcome, setShouldRenderWelcome] = useState(true);
 
 	const handleStartClick = () => {
-		setWelcomeHidden(true);
+		setTimeout(() => {
+			setWelcomeHidden(true);
+		}, 50);
 		
 		setTimeout(() => {
 			setShouldRenderWelcome(false);
 		}, 800);
 	};
-
-
 
 	return (
 		<>
@@ -40,7 +43,6 @@ export default function BacteriaGuardEcology({ funForCloseWidget, isMobile }) {
 					stateButton={buttonStartActive}
 					funForButton={handleStartClick}
 					hiddenStatus={welcomeHidden}
-					isMobile={isMobile}
 				/>
 			)}
 

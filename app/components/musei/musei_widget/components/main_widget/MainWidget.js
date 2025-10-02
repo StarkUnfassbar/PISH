@@ -48,11 +48,11 @@ const Video1Controls = ({ handleTransitionHover, handleNextVideo, handlePrevVide
 
 		<div className="block_exhibits">
 			<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-				<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+				<button onClick={() => handleOpenWidget(true, "fermenter")}></button>
 			</div>
 
 			<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-				<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+				<button onClick={() => handleOpenWidget(true, "fermenter")}></button>
 			</div>
 		</div>
 	</>
@@ -143,7 +143,7 @@ const Video4Controls = ({ handleTransitionHover, handleNextVideo, handlePrevVide
 	<>
 		<div className="block_exhibits">
 			<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-				<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+				<button onClick={() => handleOpenWidget(true, "fermenter")}></button>
 			</div>
 
 			<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>

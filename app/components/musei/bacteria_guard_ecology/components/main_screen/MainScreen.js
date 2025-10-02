@@ -53,7 +53,7 @@ import musorImg5 from '../../img/bg_illustrations/musor_5.png';
 
 
 
-export default function MainScreen({ stateButton, funForButton, hiddenStatus }) {
+export default function MainScreen({ stateButton, funForButton, hiddenStatus, isMobile }) {
 	const [selectedBacteria, setSelectedBacteria] = useState(null);
 	const [bacteriaVictoryState, setBacteriaVictoryState] = useState(INITIAL_BACTERIA_STATE);
 
@@ -95,6 +95,44 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus }) 
 		return isCorrect;
 	};
 
+	// Верстка для мобильных устройств
+	if (isMobile) {
+		return (
+			<div className={`main_screen ${hiddenStatus ? "_hidden" : ''}`}>
+				<div className="block_bg">
+					<img className="bg_illustration" src={bgIllustrationImg.src} alt=""></img>
+					
+					<div className="musur_illustrations">
+						<img className={`musor_illustration ${bacteriaVictoryState.marine_bacteria ? "_victory" : ""}`} src={musorImg1.src} alt=""></img>
+						<img className={`musor_illustration ${bacteriaVictoryState.clostridium ? "_victory" : ""}`} src={musorImg2.src} alt=""></img>
+						<img className={`musor_illustration ${bacteriaVictoryState.sphingomonas ? "_victory" : ""}`} src={musorImg3.src} alt=""></img>
+						<img className={`musor_illustration ${bacteriaVictoryState.flavobacteria ? "_victory" : ""}`} src={musorImg4.src} alt=""></img>
+						<img className={`musor_illustration ${bacteriaVictoryState.pediococcus ? "_victory" : ""}`} src={musorImg5.src} alt=""></img>
+					</div>
+				</div>
+
+				<div className="choosing_bacterium">
+					<div className="mobile_upper_part">
+						<UpperPart 
+							selectedBacteria={selectedBacteria}
+							onBacteriaSelect={handleBacteriaSelect}
+							onRestart={handleRestart}
+							bacteriaVictoryState={bacteriaVictoryState}
+						/>
+					</div>
+
+					<div className="mobile_down_part">
+						<DownPart 
+							selectedBacteria={selectedBacteria} 
+							onCheckAnswer={checkAnswer}
+						/>
+					</div>
+				</div>
+			</div>
+		);
+	}
+
+	// Стандартная верстка для десктопов
 	return (
 		<div className={`main_screen ${hiddenStatus ? "_hidden" : ''}`}>
 			<div className="choosing_bacterium">

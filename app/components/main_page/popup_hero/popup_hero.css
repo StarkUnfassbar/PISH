@@ -80,9 +80,9 @@
 	max-height: 100vh; */
 	width: 90% !important;
 	height: 90vh !important;
-	border: 4px solid #4547bb8e;
+	/* border: 4px solid #4547bb8e; */
 	border-radius: 15px;
-	background-color: #191933;
+	/* background-color: #191933; */
 	padding: 0 !important;
 	position: absolute;
 	z-index: 2;
@@ -90,11 +90,11 @@
 	overflow: hidden;
 }
 
-.popup_hero .popup_content video{
+/* .popup_hero .popup_content video{
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-}
+} */
 
 
 .popup_hero .popup_content img{
