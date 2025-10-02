@@ -151,7 +151,7 @@ const Video4Controls = ({ handleTransitionHover, handleNextVideo, handlePrevVide
 			</div>
 
 			<div className="block_exhibit" onMouseEnter={() => handleTransitionHover(true, "exhibit")} onMouseLeave={() => handleTransitionHover(false, "exhibit")}>
-				<button onClick={() => handleOpenWidget(true, "widget_in_dev")}></button>
+				<button onClick={() => handleOpenWidget(true, "bacteria_guard_ecology")}></button>
 			</div>
 		</div>
 

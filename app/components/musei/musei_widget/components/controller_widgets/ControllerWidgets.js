@@ -8,6 +8,7 @@ import ZAARestoration from '../../../zaa_restoration/ZAARestoration';
 import Medicine from '../../../medicine/Medicine';
 import Aquabio from '../../../aquabio/Aquabio';
 import ChallengesCentury from '../../../challenges_century/ChallengesCentury';
+import BacteriaGuardEcology from '../../../bacteria_guard_ecology/BacteriaGuardEcology';
 
 const WidgetID = {
 	WIDGET_IN_DEV: "widget_in_dev",
@@ -15,6 +16,7 @@ const WidgetID = {
 	MEDICINE: "medicine",
 	AQUABIO: "aquabio",
 	CHALLENGES_CENTURY: "challenges_century",
+	BACTERIA_GUARD_ECOLOGY: "bacteria_guard_ecology",
 };
 
 const WIDGET_COMPONENTS = {
@@ -23,6 +25,7 @@ const WIDGET_COMPONENTS = {
 	[WidgetID.MEDICINE]: Medicine,
 	[WidgetID.AQUABIO]: Aquabio,
 	[WidgetID.CHALLENGES_CENTURY]: ChallengesCentury,
+	[WidgetID.BACTERIA_GUARD_ECOLOGY]: BacteriaGuardEcology,
 };
 
 export default function ControllerWidgets({ openWidget, idOpenedWidget, funForCloseWidget, isMobile }) {

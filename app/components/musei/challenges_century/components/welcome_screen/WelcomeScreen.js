@@ -56,7 +56,7 @@ export default function WelcomeScreen({ stateButton, funForButton, hiddenStatus 
 						<circle cx="93" cy="7" r="5" fill="#727AFF"/>
 						<defs>
 							<linearGradient id="paint0_linear_395_93" x1="0" y1="7" x2="101" y2="7" gradientUnits="userSpaceOnUse">
-								<stop stop-color="#434895" stopOpacity="0.05"/>
+								<stop stopColor="#434895" stopOpacity="0.05"/>
 								<stop offset="1" stopColor="#434895"/>
 							</linearGradient>
 						</defs>

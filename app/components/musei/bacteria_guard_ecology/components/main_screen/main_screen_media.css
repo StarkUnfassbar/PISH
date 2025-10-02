@@ -1,0 +1,86 @@
+@media only screen and (max-width : 1800px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1800px;
+        height: 1000px;
+    }
+}
+
+@media only screen and (max-width : 1800px) and (min-height : 1000px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 2000px;
+        height: 1100px;
+    }
+}
+
+
+@media only screen and (max-width : 1600px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1600px;
+        height: 850px;
+    }
+}
+
+@media only screen and (max-width : 1600px) and (min-height : 850px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1650px;
+        height: 920px;
+    }
+}
+
+@media only screen and (max-width : 1600px) and (min-height : 920px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1800px;
+        height: 1000px;
+    }
+}
+
+
+@media only screen and (max-width : 1400px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1400px;
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width : 1400px) and (min-height : 800px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1600px;
+        height: 850px;
+    }
+}
+
+@media only screen and (max-width : 1400px) and (min-height : 850px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1650px;
+        height: 920px;
+    }
+}
+
+
+@media only screen and (max-width : 1250px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1250px;
+        height: 750px;
+    }
+}
+
+@media only screen and (max-width : 1250px) and (min-height : 750px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1400px;
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width : 1250px) and (min-height : 800px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1600px;
+        height: 850px;
+    }
+}
+
+@media only screen and (max-width : 1250px) and (min-height : 850px){
+    .widget_window.bacteria_guard_ecology .main_screen .block_bg{
+        width: 1650px;
+        height: 920px;
+    }
+}
