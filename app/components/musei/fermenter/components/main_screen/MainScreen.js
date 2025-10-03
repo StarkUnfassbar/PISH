@@ -1,3 +1,4 @@
+// MainScreen.js
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -8,14 +9,20 @@ import BlockPartitions from '../block_partitions/BlockPartitions';
 import BlockPartition from '../block_partition/BlockPartition';
 import BlockBiotechnologies from '../block_biotechnologies/BlockBiotechnologies';
 
+
+
 export default function MainScreen({ stateButton, funForButton, hiddenStatus }) {
 	const [activeBlock, setActiveBlock] = useState(false);
-	const [currentView, setCurrentView] = useState('partitions'); // 'partitions' | 'biotechnologies'
+	const [currentView, setCurrentView] = useState('partitions'); // 'partitions' | 'partition' | 'biotechnologies'
 	
 	// Состояния для BlockBiotechnologies
 	const [biotechActiveIndex, setBiotechActiveIndex] = useState(0);
 	const [biotechSelected, setBiotechSelected] = useState(null);
 	const [biotechShowDetails, setBiotechShowDetails] = useState(false);
+	
+	// Состояния для BlockPartition
+	const [partitionSelected, setPartitionSelected] = useState(null);
+	const [selectedLiveSystem, setSelectedLiveSystem] = useState(null);
 
 	useEffect(() => {
 		if(stateButton){
@@ -40,23 +47,47 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus }) 
 				// Сбрасываем состояние биотехнологий
 				resetBiotechState();
 			}
+		} else if (currentView === 'partition') {
+			// Если открыта детальная информация о живой системе - возвращаемся к списку систем
+			if (selectedLiveSystem) {
+				setSelectedLiveSystem(null);
+			} else {
+				// Если открыт список систем - возвращаемся к разделам
+				setCurrentView('partitions');
+				setPartitionSelected(null);
+			}
 		}
-		// Можно добавить обработку для других компонентов
 	};
 
 	const handleHomeButton = () => {
 		setCurrentView('partitions');
 		resetBiotechState();
+		resetPartitionState();
 	};
 
 	const handleBiotechnologiesButton = () => {
 		setCurrentView('biotechnologies');
 	};
 
+	const handlePartitionSelect = (partitionKey) => {
+		setPartitionSelected(partitionKey);
+		setCurrentView('partition');
+		setSelectedLiveSystem(null); // Сбрасываем выбранную систему при переходе к разделу
+	};
+
+	const handleLiveSystemSelect = (liveSystem) => {
+		setSelectedLiveSystem(liveSystem);
+	};
+
 	const resetBiotechState = () => {
 		setBiotechActiveIndex(0);
 		setBiotechSelected(null);
 		setBiotechShowDetails(false);
+	};
+
+	const resetPartitionState = () => {
+		setPartitionSelected(null);
+		setSelectedLiveSystem(null);
 	};
 
 	// Функции для управления состоянием BlockBiotechnologies
@@ -150,7 +181,16 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus }) 
 				</div>
 
 				<div className="content">
-					<BlockPartitions isHidden={currentView !== 'partitions'} />
+					<BlockPartitions 
+						isHidden={currentView !== 'partitions'} 
+						onPartitionSelect={handlePartitionSelect}
+					/>
+					<BlockPartition 
+						isHidden={currentView !== 'partition'} 
+						partitionKey={partitionSelected}
+						selectedLiveSystem={selectedLiveSystem}
+						onLiveSystemSelect={handleLiveSystemSelect}
+					/>
 					<BlockBiotechnologies 
 						isHidden={currentView !== 'biotechnologies'} 
 						activeIndex={biotechActiveIndex}
