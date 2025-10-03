@@ -175,6 +175,7 @@
 	height: 50px;
 	border-radius: 50%;
 	background-color: #1060b058;
+    transform: rotate(-45deg);
 }
 
 .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system .block_hint .icon svg{
