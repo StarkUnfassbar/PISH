@@ -24,12 +24,21 @@ export default function SectionAboutPish({ isMobile }) {
 					</p>
 				</div>
 
-				<StandardButton text="Поступить" type="standard" />
+				<StandardButton text="Поступить" type="standard" link="https://pish.dvfu.ru/" />
 			</div>
 
 			<div className="patterns">
 				<div className="pattern">
-					<Image src="/img/main/about_pish/pattern_1.png" alt="pattern on the background" fill unoptimized={true} />
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet="/img/main/about_pish/pattern_1.webp" type="image/webp" />
+						<source srcSet="/img/main/about_pish/pattern_1.png" type="image/jpeg" />
+						<Image 
+							src="/img/main/about_pish/pattern_1.png" 
+							alt="Портрет Штермер Ванессы" 
+							fill
+							unoptimized={true}
+						/>
+					</picture>
 				</div>
 
 				<div className="pattern">

@@ -8,7 +8,7 @@ import './standard_button_media.css';
 
 
 
-export default function StandardButton({ text, type, funForButton }) {
+export default function StandardButton({ text, type, funForButton, link="/musei" }) {
 	const [typeButton, setTypeButton] = useState("standard");
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ export default function StandardButton({ text, type, funForButton }) {
 					<span className="bg"></span>
 				</button>
 			) : (
-				<Link href="/musei" className="button_visit">
+				<Link href={link} className="button_visit">
 					<span className="text">{text}</span>
 					<span className="bg"></span>
 				</Link>

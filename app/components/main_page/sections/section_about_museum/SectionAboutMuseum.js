@@ -18,7 +18,16 @@ export default function SectionAboutMuseum({ isMobile }) {
 					<div className="section_content">
 						<div className="upper_part">
 							<div className="block_imgs">
-								<img src="/img/main/about_museum/pattern_1_mobile.png" alt="" />
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/main/about_museum/pattern_1_mobile.webp" type="image/webp" />
+									<source srcSet="/img/main/about_museum/pattern_1_mobile.png" type="image/jpeg" />
+									<Image 
+										src="/img/main/about_museum/pattern_1_mobile.png" 
+										alt="экспонат 'Бактерии на страже экологии'" 
+										fill
+										unoptimized={true}
+									/>
+								</picture>
 							</div>
 
 							<div className="block_text">
@@ -40,7 +49,16 @@ export default function SectionAboutMuseum({ isMobile }) {
 							</p>
 
 							<div className="block_img">
-								<img src="/img/main/about_museum/pattern_2_mobile.png" alt="" />
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/main/about_museum/pattern_2_mobile.webp" type="image/webp" />
+									<source srcSet="/img/main/about_museum/pattern_2_mobile.png" type="image/jpeg" />
+									<Image 
+										src="/img/main/about_museum/pattern_2_mobile.png" 
+										alt="экспонат 'Бактерии на страже экологии'" 
+										fill
+										unoptimized={true}
+									/>
+								</picture>
 							</div>
 						</div>
 
@@ -61,17 +79,57 @@ export default function SectionAboutMuseum({ isMobile }) {
 						<div className="upper_part">
 							<div className="block_imgs">
 								<div className="block_img">
-									{/* <img src="/img/main/about_museum/pattern_1.png" alt="" /> */}
-									<img src="/img/main/about_museum/block_img_1__part_1.png" alt="" />
-									<img src="/img/main/about_museum/block_img_1__part_2.svg" alt="" />
-									<img src="/img/main/about_museum/block_img_1__part_3.svg" alt="" />
+									<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+										<source srcSet="/img/main/about_museum/block_img_1__part_1.webp" type="image/webp" />
+										<source srcSet="/img/main/about_museum/block_img_1__part_1.png" type="image/jpeg" />
+										<Image 
+											src="/img/main/about_museum/block_img_1__part_1.png" 
+											alt="экспонат 'Бактерии на страже экологии'" 
+											fill
+											unoptimized={true}
+										/>
+									</picture>
+
+									<Image 
+										src="/img/main/about_museum/block_img_1__part_2.svg" 
+										alt="" 
+										fill
+										unoptimized={true}
+									/>
+									<Image 
+										className="_img_hover" 
+										src="/img/main/about_museum/block_img_1__part_3.svg" 
+										alt="" 
+										fill
+										unoptimized={true}
+									/>
 								</div>
 
 								<div className="block_img">
-									{/* <img src="/img/main/about_museum/pattern_2.png" alt="" /> */}
-									<img src="/img/main/about_museum/block_img_2__part_1.png" alt="" />
-									<img src="/img/main/about_museum/block_img_2__part_2.svg" alt="" />
-									<img src="/img/main/about_museum/block_img_2__part_3.svg" alt="" />
+									<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+										<source srcSet="/img/main/about_museum/block_img_2__part_1.webp" type="image/webp" />
+										<source srcSet="/img/main/about_museum/block_img_2__part_1.png" type="image/jpeg" />
+										<Image 
+											src="/img/main/about_museum/block_img_2__part_1.png" 
+											alt="экспонат 'Бактерии на страже экологии'" 
+											fill
+											unoptimized={true}
+										/>
+									</picture>
+
+									<Image 
+										src="/img/main/about_museum/block_img_2__part_2.svg" 
+										alt="" 
+										fill
+										unoptimized={true}
+									/>
+									<Image 
+										className="_img_hover" 
+										src="/img/main/about_museum/block_img_2__part_3.svg" 
+										alt="" 
+										fill
+										unoptimized={true}
+									/>
 								</div>
 							</div>
 
@@ -96,10 +154,30 @@ export default function SectionAboutMuseum({ isMobile }) {
 							</p>
 
 							<div className="block_img">
-								{/* <img src="/img/main/about_museum/pattern_3.png" alt="" /> */}
-								<img src="/img/main/about_museum/block_img_3__part_1.png" alt="" />
-								<img src="/img/main/about_museum/block_img_3__part_2.svg" alt="" />
-								<img src="/img/main/about_museum/block_img_3__part_3.svg" alt="" />
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/main/about_museum/block_img_3__part_1.webp" type="image/webp" />
+									<source srcSet="/img/main/about_museum/block_img_3__part_1.png" type="image/jpeg" />
+									<Image 
+										src="/img/main/about_museum/block_img_3__part_1.png" 
+										alt="экспонат 'Бактерии на страже экологии'" 
+										fill
+										unoptimized={true}
+									/>
+								</picture>
+
+								<Image 
+									src="/img/main/about_museum/block_img_3__part_2.svg" 
+									alt="" 
+									fill
+									unoptimized={true}
+								/>
+								<Image 
+									className="_img_hover" 
+									src="/img/main/about_museum/block_img_3__part_3.svg" 
+									alt="" 
+									fill
+									unoptimized={true}
+								/>
 							</div>
 						</div>
 

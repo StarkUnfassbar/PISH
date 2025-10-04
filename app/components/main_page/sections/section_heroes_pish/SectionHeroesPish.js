@@ -68,11 +68,33 @@ export default function SectionHeroesPish({ isMobile }) {
 								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 1)} />
 							</div>
 
-							<div className="block_img"></div>
+							<div className="block_img">
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/main/heroes_pish/photo_1_mobile.webp" type="image/webp" />
+									<source srcSet="/img/main/heroes_pish/photo_1_mobile.jpg" type="image/jpeg" />
+									<Image 
+										src="/img/main/heroes_pish/photo_1_mobile.jpg" 
+										alt="Портрет Штермер Ванессы" 
+										fill
+										unoptimized={true}
+									/>
+								</picture>
+							</div>
 						</div>
 
 						<div className="block_hero _reverse">
-							<div className="block_img"></div>
+							<div className="block_img">
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/main/heroes_pish/photo_2_mobile.webp" type="image/webp" />
+									<source srcSet="/img/main/heroes_pish/photo_2_mobile.jpg" type="image/jpeg" />
+									<Image 
+										src="/img/main/heroes_pish/photo_2_mobile.jpg" 
+										alt="Портрет Штермер Ванессы" 
+										fill
+										unoptimized={true}
+									/>
+								</picture>
+							</div>
 
 							<div className="block_info">
 								<span className="fio">Рочин Егор Олегович</span>
@@ -93,7 +115,18 @@ export default function SectionHeroesPish({ isMobile }) {
 								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 							</div>
 
-							<div className="block_img"></div>
+							<div className="block_img">
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/main/heroes_pish/photo_3_mobile.webp" type="image/webp" />
+									<source srcSet="/img/main/heroes_pish/photo_3_mobile.jpg" type="image/jpeg" />
+									<Image 
+										src="/img/main/heroes_pish/photo_3_mobile.jpg" 
+										alt="Портрет Штермер Ванессы" 
+										fill
+										unoptimized={true}
+									/>
+								</picture>
+							</div>
 						</div>
 					</div>
 
@@ -111,7 +144,16 @@ export default function SectionHeroesPish({ isMobile }) {
 						<div className="upper_part">
 							<div className="block_hero">
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo_1.webp" alt="" fill />
+									<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+										<source srcSet="/img/main/heroes_pish/photo_1.webp" type="image/webp" />
+										<source srcSet="/img/main/heroes_pish/photo_1.jpg" type="image/jpeg" />
+										<Image 
+											src="/img/main/heroes_pish/photo_1.jpg" 
+											alt="Портрет Сидоренко Андрея Владимировича" 
+											fill
+											unoptimized={true}
+										/>
+									</picture>
 
 									<div className="text_info">
 										<span className="fio">Сидоренко Андрей Владимирович</span>
@@ -124,7 +166,16 @@ export default function SectionHeroesPish({ isMobile }) {
 
 							<div className="block_hero">
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo_2.webp" alt="" fill />
+									<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+										<source srcSet="/img/main/heroes_pish/photo_2.webp" type="image/webp" />
+										<source srcSet="/img/main/heroes_pish/photo_2.jpg" type="image/jpeg" />
+										<Image 
+											src="/img/main/heroes_pish/photo_2.jpg" 
+											alt="Портрет Рочина Егора Олеговича" 
+											fill
+											unoptimized={true}
+										/>
+									</picture>
 
 									<div className="text_info">
 										<span className="fio">Рочин Егор Олегович</span>
@@ -144,7 +195,16 @@ export default function SectionHeroesPish({ isMobile }) {
 								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 
 								<div className="block_info">
-									<Image src="/img/main/heroes_pish/photo_3.webp" alt="" fill />
+									<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+										<source srcSet="/img/main/heroes_pish/photo_3.webp" type="image/webp" />
+										<source srcSet="/img/main/heroes_pish/photo_3.jpg" type="image/jpeg" />
+										<Image 
+											src="/img/main/heroes_pish/photo_3.jpg" 
+											alt="Портрет Штермер Ванессы" 
+											fill
+											unoptimized={true}
+										/>
+									</picture>
 
 									<div className="text_info">
 										<span className="fio">Штермер Ванесса</span>

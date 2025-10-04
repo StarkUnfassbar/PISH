@@ -109,6 +109,7 @@
 
 .home .patterns .pattern:nth-child(1){
 	display: flex;
+	min-width: 200px;
 	width: auto;
 	height: calc(100vh + 150px);
 	top: -50px;

@@ -55,55 +55,33 @@
 
 .about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1){
 	width: 560px;
-	height: fit-content;
+	height: 440px;
 	position: relative;
 	top: 40px;
 }
 
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1) img{
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1) img:nth-child(1){
-	position: relative;
-}
-
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1) img:nth-child(3){
+.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1) img._img_hover{
 	opacity: 1;
 	transition: all .3s ease;
 }
 
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1):hover img:nth-child(3){
+.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1):hover img._img_hover{
 	opacity: 0;
 }
 
 .about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2){
 	width: 860px;
-	height: fit-content;
+	height: 420px;
 	position: relative;
 	top: -75px;
 }
 
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2) img{
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2) img:nth-child(1){
-	position: relative;
-}
-
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2) img:nth-child(3){
+.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2) img._img_hover{
 	opacity: 1;
 	transition: all .3s ease;
 }
 
-.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2):hover img:nth-child(3){
+.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2):hover img._img_hover{
 	opacity: 0;
 }
 
@@ -156,27 +134,17 @@
 
 .about_museum.main .lower_part .block_img{
 	width: 100%;
+	height: 470px;
 	position: relative;
 	top: -30px;
 }
 
-.about_museum.main .lower_part .block_img:nth-child(2) img{
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.about_museum.main .lower_part .block_img:nth-child(2) img:nth-child(1){
-	position: relative;
-}
-
-.about_museum.main .lower_part .block_img:nth-child(2) img:nth-child(3){
+.about_museum.main .lower_part .block_img:nth-child(2) img._img_hover{
 	opacity: 1;
 	transition: all .3s ease;
 }
 
-.about_museum.main .lower_part .block_img:nth-child(2):hover img:nth-child(3){
+.about_museum.main .lower_part .block_img:nth-child(2):hover img._img_hover{
 	opacity: 0;
 }
 
@@ -293,6 +261,7 @@
 
 .about_museum.mobile .upper_part .block_imgs{
 	width: 100%;
+	height: 350px;
 	position: relative;
 	top: 40px;
 }
@@ -341,6 +310,7 @@
 
 .about_museum.mobile .lower_part .block_img{
 	width: 100%;
+	height: 330px;
 	position: relative;
 	top: -30px;
 }

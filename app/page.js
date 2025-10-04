@@ -16,8 +16,6 @@ import SectionHeroesPish from './components/main_page/sections/section_heroes_pi
 import SectionAboutPish from './components/main_page/sections/section_about_pish/SectionAboutPish';
 import SectionInfo from './components/main_page/sections/section_info/SectionInfo';
 
-import SectionTest from './components/main_page/sections/section_heroes_pish/SectionTest';
-
 
 
 
@@ -51,8 +49,6 @@ export default function Home() {
 				<SectionAboutMuseum isMobile={isMobile} />
 
 				<SectionHeroesPish isMobile={isMobile} />
-
-				<SectionTest isMobile={isMobile} />
 
 				<SectionAboutPish isMobile={isMobile} />
 

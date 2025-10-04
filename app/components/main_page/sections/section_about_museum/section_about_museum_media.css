@@ -14,10 +14,12 @@
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1) {
     	width: 680px;
+		height: 536px;
 	}
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2) {
     	width: 1000px;
+		height: 480px;
 		top: -100px;
 	}
 
@@ -33,6 +35,12 @@
 
 	.about_museum.main .upper_part p{
 		font-size: 32px;
+	}
+
+
+
+	.about_museum.main .lower_part .block_img{
+		height: 550px;
 	}
 
 	.about_museum.main .lower_part p {
@@ -74,10 +82,12 @@
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1){
 		width: 500px;
+		height: 395px;
 	}
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2){
 		width: 800px;
+		height: 385px;
 		top: -65px;
 	}
 
@@ -94,6 +104,11 @@
 		font-size: 24px;
 	}
 
+
+
+	.about_museum.main .lower_part .block_img{
+		height: 447px;
+	}
 
 	.about_museum.main .lower_part p{
 		width: 600px;
@@ -122,15 +137,23 @@
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1){
 		width: 400px;
+		height: 316px;
 	}
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2){
 		width: 700px;
+		height: 340px;
 	}
 
 	.about_museum.main .section_content .upper_part .block_info .text_container{
 		width: 600px;
 		margin-left: 300px;
+	}
+
+
+
+	.about_museum.main .lower_part .block_img{
+		height: 310px;
 	}
 
 
@@ -163,10 +186,12 @@
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(1){
 		width: 350px;
+		height: 277px;
 	}
 
 	.about_museum.main .section_content .upper_part .block_imgs .block_img:nth-child(2){
 		width: 550px;
+		height: 265px;
 	}
 
 
@@ -185,11 +210,17 @@
 	}
 
 
+
+	.about_museum.main .lower_part .block_img{
+		height: 288px;
+	}
+
 	.about_museum.main .lower_part p {
 		width: 440px;
 		min-width: 440px;
 		font-size: 20px;
 	}
+
 
 
 	.about_museum.main .section_content .button_visit {
@@ -224,8 +255,18 @@
 		width: 100%;
 	}
 
+
+	.about_museum.mobile .upper_part .block_imgs{
+		height: 330px;
+	}
+
+
 	.about_museum.mobile .lower_part{
 		margin-bottom: 10px;
+	}
+
+	.about_museum.mobile .lower_part .block_img{
+		height: 310px;
 	}
 }
 
@@ -235,10 +276,14 @@
 		margin-bottom: 70px;
 	}
 
+
+	.about_museum.mobile .upper_part .block_imgs{
+		height: 300px;
+	}
+
 	.about_museum.mobile h1{
 		font-size: 42px;
 	}
-
 
 	.about_museum.mobile .upper_part h3{
 		font-size: 30px;
@@ -249,6 +294,10 @@
 		font-size: 24px;
 	}
 
+
+	.about_museum.mobile .lower_part .block_img{
+		height: 290px;
+	}
 
 	.about_museum.mobile .lower_part p{
 		width: 510px;
@@ -279,6 +328,10 @@
 }
 
 @media only screen and (max-width : 530px){
+	.about_museum.mobile .upper_part .block_imgs{
+		height: 230px;
+	}
+
 	.about_museum.mobile .upper_part h3{
 		font-size: 22px;
 	}
@@ -288,6 +341,10 @@
 		font-size: 20px;
 	}
 
+
+	.about_museum.mobile .lower_part .block_img{
+		height: 210px;
+	}
 	
 	.about_museum.mobile .lower_part p{
 		width: 380px;
@@ -311,6 +368,10 @@
 	}
 
 
+	.about_museum.mobile .upper_part .block_imgs{
+		height: 190px;
+	}
+
 	.about_museum.mobile .upper_part h3{
 		font-size: 20px;
 	}
@@ -320,6 +381,10 @@
 		font-size: 18px;
 	}
 
+
+	.about_museum.mobile .lower_part .block_img{
+		height: 170px;
+	}
 
 	.about_museum.mobile .lower_part p{
 		width: 370px;
@@ -333,10 +398,13 @@
 	}
 
 
+	.about_museum.mobile .upper_part .block_imgs{
+		height: 180px;
+	}
+
 	.about_museum.mobile h1{
 		font-size: 26px;
 	}
-
 
 	.about_museum.mobile .upper_part h3{
 		font-size: 17px;
@@ -347,6 +415,10 @@
 		font-size: 16px;
 	}
 
+
+	.about_museum.mobile .lower_part .block_img{
+		height: 160px;
+	}
 
 	.about_museum.mobile .lower_part p{
 		width: 340px;
