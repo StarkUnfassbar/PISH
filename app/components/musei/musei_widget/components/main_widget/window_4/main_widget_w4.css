@@ -1,3 +1,11 @@
+.musei_widget .window .video-wrapper-4 .block_img{
+	top: 0;
+}
+
+.musei_widget .window .video-wrapper-4 video {
+	top: 0;
+}
+
 .musei_widget .window_4 .block_exhibits{
 	width: 100%;
 	height: 100%;

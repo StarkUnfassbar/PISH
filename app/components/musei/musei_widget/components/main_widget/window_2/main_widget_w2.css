@@ -1,5 +1,9 @@
+.musei_widget .window .video-wrapper-2 .block_img{
+	top: 0;
+}
+
 .musei_widget .window .video-wrapper-2 video {
-	top: -80px;
+	top: 0;
 }
 
 .musei_widget .window_2 .block_transitions{

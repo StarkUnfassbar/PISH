@@ -50,13 +50,8 @@
 	min-height: 150px;
 	border-radius: 15px;
 	background-color: #000;
+	position: relative;
 	overflow: hidden;
-}
-
-.widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_img img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
 }
 
 

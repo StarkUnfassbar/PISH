@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
 
 import './block_biotechnologies.css';
 
-import blockImg1 from '../../img/block_biotechnologies/img1.png';
+import blockImg1Webp from '../../img/block_biotechnologies/img1.webp';
+import blockImg1Png from '../../img/block_biotechnologies/img1.png';
 
 // Данные о биотехнологиях
 const biotechnologiesData = {
@@ -49,7 +51,16 @@ export default function BlockBiotechnologies({
         <div className={`block_biotechnologies ${isHidden ? '_hidden' : ''}`}>
            <div className={`block_selection_biotechnologies ${showDetails ? '_hidden' : ''}`}>
                 <div className="block_img">
-                    <img src={blockImg1.src} alt="" />
+                    <picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+                        <source srcSet={blockImg1Webp.src} type="image/webp" />
+                        <source srcSet={blockImg1Png.src} type="image/jpeg" />
+                        <Image 
+                            src={blockImg1Png} 
+                            alt="" 
+                            fill
+                            unoptimized={true}
+                        />
+                    </picture>
                 </div>
 
                 <div className="block_selection">

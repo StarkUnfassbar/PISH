@@ -175,22 +175,22 @@ const videos = [
 	{
 		id: 2,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_4.mp4',
-		srcImg1: '/img/musei/window_1/bg.webp',
-		srcImg2: '/img/musei/window_1/bg.jpg',
+		srcImg1: '/img/musei/window_4/bg.webp',
+		srcImg2: '/img/musei/window_4/bg.jpg',
 		Controls: Video2Controls,
 	},
 	{
 		id: 3,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_2.mp4',
-		srcImg1: '/img/musei/window_1/bg.webp',
-		srcImg2: '/img/musei/window_1/bg.jpg',
+		srcImg1: '/img/musei/window_2/bg.webp',
+		srcImg2: '/img/musei/window_2/bg.jpg',
 		Controls: Video3Controls,
 	},
 	{
 		id: 4,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_3.mp4',
-		srcImg1: '/img/musei/window_1/bg.webp',
-		srcImg2: '/img/musei/window_1/bg.jpg',
+		srcImg1: '/img/musei/window_3/bg.webp',
+		srcImg2: '/img/musei/window_3/bg.jpg',
 		Controls: Video4Controls,
 	}
 ];

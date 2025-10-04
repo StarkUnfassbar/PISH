@@ -2,34 +2,56 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
 
 import './block_partition.css';
 
 
-import blockImg1 from '../../img/block_partition/bioengineering/1.png';
-import blockImg2 from '../../img/block_partition/bioengineering/2.jpg';
-import blockImg3 from '../../img/block_partition/bioengineering/3.jpg';
-import blockImg4 from '../../img/block_partition/bioengineering/4.jpg';
-import blockImg5 from '../../img/block_partition/bioengineering/5.jpg';
-import blockImg6 from '../../img/block_partition/bioengineering/6.jpg';
-import blockImg7 from '../../img/block_partition/bioengineering/7.png';
+import blockImg1Webp from '../../img/block_partition/bioengineering/1.webp';
+import blockImg1Png from '../../img/block_partition/bioengineering/1.png';
+import blockImg2Webp from '../../img/block_partition/bioengineering/2.webp';
+import blockImg2Jpg from '../../img/block_partition/bioengineering/2.jpg';
+import blockImg3Webp from '../../img/block_partition/bioengineering/3.webp';
+import blockImg3Jpg from '../../img/block_partition/bioengineering/3.jpg';
+import blockImg4Webp from '../../img/block_partition/bioengineering/4.webp';
+import blockImg4Jpg from '../../img/block_partition/bioengineering/4.jpg';
+import blockImg5Webp from '../../img/block_partition/bioengineering/5.webp';
+import blockImg5Jpg from '../../img/block_partition/bioengineering/5.jpg';
+import blockImg6Webp from '../../img/block_partition/bioengineering/6.webp';
+import blockImg6Jpg from '../../img/block_partition/bioengineering/6.jpg';
+import blockImg7Webp from '../../img/block_partition/bioengineering/7.webp';
+import blockImg7Png from '../../img/block_partition/bioengineering/7.png';
 
-import blockImg8 from '../../img/block_partition/industrial_goods/1.jpg';
-import blockImg9 from '../../img/block_partition/industrial_goods/2.jpg';
-import blockImg10 from '../../img/block_partition/industrial_goods/3.jpg';
-import blockImg11 from '../../img/block_partition/industrial_goods/4.png';
-import blockImg12 from '../../img/block_partition/industrial_goods/5.jpg';
-import blockImg13 from '../../img/block_partition/industrial_goods/6.jpg';
-import blockImg14 from '../../img/block_partition/industrial_goods/7.jpg';
+import blockImg8Webp from '../../img/block_partition/industrial_goods/1.webp';
+import blockImg8Jpg from '../../img/block_partition/industrial_goods/1.jpg';
+import blockImg9Webp from '../../img/block_partition/industrial_goods/2.webp';
+import blockImg9Jpg from '../../img/block_partition/industrial_goods/2.jpg';
+import blockImg10Webp from '../../img/block_partition/industrial_goods/3.webp';
+import blockImg10Jpg from '../../img/block_partition/industrial_goods/3.jpg';
+import blockImg11Webp from '../../img/block_partition/industrial_goods/4.webp';
+import blockImg11Png from '../../img/block_partition/industrial_goods/4.png';
+import blockImg12Webp from '../../img/block_partition/industrial_goods/5.webp';
+import blockImg12Jpg from '../../img/block_partition/industrial_goods/5.jpg';
+import blockImg13Webp from '../../img/block_partition/industrial_goods/6.webp';
+import blockImg13Jpg from '../../img/block_partition/industrial_goods/6.jpg';
+import blockImg14Webp from '../../img/block_partition/industrial_goods/7.webp';
+import blockImg14Jpg from '../../img/block_partition/industrial_goods/7.jpg';
 
-import blockImg15 from '../../img/block_partition/food/1.jpg';
-import blockImg16 from '../../img/block_partition/food/2.jpg';
-import blockImg17 from '../../img/block_partition/food/3.jpg';
-import blockImg18 from '../../img/block_partition/food/4.jpg';
+import blockImg15Webp from '../../img/block_partition/food/1.webp';
+import blockImg15Jpg from '../../img/block_partition/food/1.jpg';
+import blockImg16Webp from '../../img/block_partition/food/2.webp';
+import blockImg16Jpg from '../../img/block_partition/food/2.jpg';
+import blockImg17Webp from '../../img/block_partition/food/3.webp';
+import blockImg17Jpg from '../../img/block_partition/food/3.jpg';
+import blockImg18Webp from '../../img/block_partition/food/4.webp';
+import blockImg18Jpg from '../../img/block_partition/food/4.jpg';
 
-import blockImg19 from '../../img/block_partition/science/1.png';
-import blockImg20 from '../../img/block_partition/science/2.jpg';
-import blockImg21 from '../../img/block_partition/science/3.jpg';
+import blockImg19Webp from '../../img/block_partition/science/1.webp';
+import blockImg19Png from '../../img/block_partition/science/1.png';
+import blockImg20Webp from '../../img/block_partition/science/2.webp';
+import blockImg20Jpg from '../../img/block_partition/science/2.jpg';
+import blockImg21Webp from '../../img/block_partition/science/3.webp';
+import blockImg21Jpg from '../../img/block_partition/science/3.jpg';
 
 // Данные о живых системах для каждого раздела
 const partitionsData = {
@@ -39,43 +61,50 @@ const partitionsData = {
                 id: "archaea",
                 title: "Архея",
                 description: "Эти микроорганизмы, обитающие в экстремальных условиях, изучаются для создания устойчивых ферментов используемых в биотехнологии и фармакологии. Их ферменты применяются в биокатализе при производстве лекарств, способных сохранять активность в жестких условиях.",
-                image: blockImg1
+                imageWebp: blockImg1Webp,
+                imageFallback: blockImg1Png
             },
             {
                 id: "actinobacteria",
                 title: "Актинобактерии",
                 description: "Эти бактерии являются основными источниками антибиотиков, таких как стрептомицин и тетрациклин. Актибактерии играют ключевую роль в борьбе с инфекциями и широко используются в фармацевтической промышленности для разработки новых противомикробных препаратов.",
-                image: blockImg2
+                imageWebp: blockImg2Webp,
+                imageFallback: blockImg2Jpg
             },
             {
                 id: "viruses",
                 title: "Вирусы",
                 description: "Вирусы, такие как аденовирусы и лентивирусы, используются как векторы для доставки генов в клетки в ходе генной терапии. Это важное направление в медицине, которое позволяет лечить генетические заболевания и развивать новые методы иммунной терапии.",
-                image: blockImg3
+                imageWebp: blockImg3Webp,
+                imageFallback: blockImg3Jpg
             },
             {
                 id: "mold_fungi",
                 title: "Плесневелые грибы",
                 description: "Эти грибы известны как источник пенициллина - первого массово применяемого антибиотика. Современные исследования и производство антибиотиков, основанных на плесневых грибах, продолжают играть важнейшую роль в лечении инфекционных заболеваний.",
-                image: blockImg4
+                imageWebp: blockImg4Webp,
+                imageFallback: blockImg4Jpg
             },
             {
                 id: "cho_cells",
                 title: "Клетки яичника китайского хомячка (СНО)",
                 description: "Эти клетки являются стандартной платформой для производства моноклональных антител, гормонов и вакцин. Их применяют в биофармацевтике для создания жизненно важных препаратов, используемых в лечении рака, аутоимунных и других заболеваниях.",
-                image: blockImg5
+                imageWebp: blockImg5Webp,
+                imageFallback: blockImg5Jpg
             },
             {
                 id: "crab_chitin",
                 title: "Краб | Хитин",
                 description: "Хитин, получаемый из панцерей крабов и других ракообразных, активно используются в медицине. Его производные, такие как хитозан применяются для заживления ран, создания лекарств. Хитозан так же используется для производства перевязочных материалов с антимикробными свойствами и для создания биопластырей.",
-                image: blockImg6
+                imageWebp: blockImg6Webp,
+                imageFallback: blockImg6Jpg
             },
             {
                 id: "corynebacteria",
                 title: "Коринебактерии",
                 description: "Эти бактерии активно используются для биосинтеза аминокислот, таких как глутамат и лимизин, которые применяются в производстве медицинских добавок и в терапевтических целях",
-                image: blockImg7
+                imageWebp: blockImg7Webp,
+                imageFallback: blockImg7Png
             }
         ]
     },
@@ -85,43 +114,50 @@ const partitionsData = {
                 id: "industrial_1",
                 title: "Энтомопатогенные нематоды",
                 description: "Эти микроогранизмы применяются в сельском хозяйстве как биоинсектициды. Они помогают контролировать вредителей без химических средств, что востребовано при производстве экологически чистой продукции.",
-                image: blockImg8
+                imageWebp: blockImg8Webp,
+                imageFallback: blockImg8Jpg
             },
             {
                 id: "industrial_2",
                 title: "Нитрифицирующие бактерии",
                 description: "Эти бактерии учавствуют в очистке сточных вод, превращая аммиак в нитраты. Они важны для биофильтров на промышленных объектах.",
-                image: blockImg9
+                imageWebp: blockImg9Webp,
+                imageFallback: blockImg9Jpg
             },
             {
                 id: "industrial_3",
                 title: "Микромицеты",
                 description: "Эти грибы испольщуются для биодеградации пластиков и резины, востребованные в промышленности переработки отходов. Они разлагают важные полимерны, уменьшая экологический след промтоваров.",
-                image: blockImg10
+                imageWebp: blockImg10Webp,
+                imageFallback: blockImg10Jpg
             },
             {
                 id: "industrial_4",
                 title: "Галофильные бактерии",
                 description: "Эти микроогранизмы выживают в услових высокой солености и применяются в биодобыче редких металлов, таких как литий или уран, из соляных растворов и шахтных вод.",
-                image: blockImg11
+                imageWebp: blockImg11Webp,
+                imageFallback: blockImg11Png
             },
             {
                 id: "industrial_5",
                 title: "Красные вородосли",
                 description: "Красные водоросли служат источником агар-агара, который используется в текстильной промышленности для обработки тканей и в производстве бумаги. Так же его применяют в качестве загустителя в красках и косметике.",
-                image: blockImg12
+                imageWebp: blockImg12Webp,
+                imageFallback: blockImg12Jpg
             },
             {
                 id: "industrial_6",
                 title: "Метаногенные бактерии",
                 description: "Эти бактерии учавствуют в анаэробном брожении и используются для производства биогаза из органических отходов. Полученный метан применяют в энергетике и отоплении промышленных объектов.",
-                image: blockImg13
+                imageWebp: blockImg13Webp,
+                imageFallback: blockImg13Jpg
             },
             {
                 id: "industrial_7",
                 title: "Цианобактерии",
                 description: "Это фотосинтезирующие микроогранизмы используются для проиводства биотоплива и биопластика, который применяется в упаковочных материалах. Цианобактерии превращают углекислый газ и солнечный свет в углеводороды, заменяющие ископаемые топлива.",
-                image: blockImg14
+                imageWebp: blockImg14Webp,
+                imageFallback: blockImg14Jpg
             }
         ]
     },
@@ -131,25 +167,29 @@ const partitionsData = {
                 id: "food_1",
                 title: "Молочнокислые бактерии",
                 description: "Это микроогранизмы используются в производстве йогуртов, кефира и сыра. Они ферментируют лактозу в молочную кислоту, улучшая вкус и хранение продуктов.",
-                image: blockImg15
+                imageWebp: blockImg15Webp,
+                imageFallback: blockImg15Jpg
             },
             {
                 id: "food_2",
                 title: "Дрожжи",
                 description: "Эти грибы применяются в хлебопекарной и алкогольной промышленности. Дрожжи учавствуют в брожении, производя углекислый газ и алкоголь, что важно для выпечки хлеба, производства пива и вина.",
-                image: blockImg16
+                imageWebp: blockImg16Webp,
+                imageFallback: blockImg16Jpg
             },
             {
                 id: "food_3",
                 title: "Тауматин",
                 description: "Это растение своим белком таумантином, который используется как натуральный подсластитель. Таумарин в 2000 раз слаще сахара и применяется в производстве низкокаларийных продуктов, конфет и напитков.",
-                image: blockImg17
+                imageWebp: blockImg17Webp,
+                imageFallback: blockImg17Jpg
             },
             {
                 id: "food_4",
                 title: "Ризобиуим",
                 description: "Эти симбиотические бактерии фиксируют атмосферный азот в корнях бобовых растений, улучшая плодородие почты и урожайность. Их потребность в химических удобрениях и способствует производству экологически чистой продукции.",
-                image: blockImg18
+                imageWebp: blockImg18Webp,
+                imageFallback: blockImg18Jpg
             }
         ]
     },
@@ -159,25 +199,26 @@ const partitionsData = {
                 id: "science_1",
                 title: "Культуры стволовых клеток",
                 description: "Эти культуры активно используются в регенеративной медицине и биомедицинских исследоваеиях. Ученые механизмы дифференцировки и взаимодействия клеток, что позволяет разрабатывать новые подходы к лечению поврежденных тканей и органов.",
-                image: blockImg19
+                imageWebp: blockImg19Webp,
+                imageFallback: blockImg19Png
             },
             {
                 id: "science_2",
                 title: "Метанокисляющие бактерии",
                 description: "Эти микроорганизмы изучаются в экологии и микробиологии из-за их способности окислять метан, мощный парниковый газ. Исследование мтанокисляющих бактерий помогает разрабатывать технологии по снижению выбросов метана и улучшению экологической ситуации, а так же способствует понимаю углеродного цикла.",
-                image: blockImg20
+                imageWebp: blockImg20Webp,
+                imageFallback: blockImg20Jpg
             },
             {
                 id: "science_3",
                 title: "Кишечная палочка",
                 description: "Кишечная палочка (Escherichia coli) лучше всего относится к разделу Наука. Она широко используется в биотезнологических и молекулярно-биологических исследованиях. E. coli является модельным организмом для изучения генетики, физиологии и биохимии. Она так же активно применяется для производства рекомбинантных белков, таких как инсулин, и для проведения экспериментов в области генной инженерии и синтетической биологии.",
-                image: blockImg21
+                imageWebp: blockImg21Webp,
+                imageFallback: blockImg21Jpg
             }
         ]
     }
 };
-
-
 
 export default function BlockPartition({ 
     isHidden, 
@@ -214,7 +255,17 @@ export default function BlockPartition({
                         className="block_live_system"
                         onClick={() => handleLiveSystemClick(system)}
                     >
-                        <img src={system.image.src} alt={system.title} />
+                        <picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+                            <source srcSet={system.imageWebp.src} type="image/webp" />
+                            <source srcSet={system.imageFallback.src} type={system.imageFallback.src.endsWith('.png') ? 'image/png' : 'image/jpeg'} />
+                            <Image 
+                                src={system.imageFallback.src} 
+                                alt={system.title} 
+                                fill
+                                unoptimized={true}
+                                objectFit='cover'
+                            />
+                        </picture>
                         <p>{system.title}</p>
                     </div>
                 ))}
@@ -225,7 +276,17 @@ export default function BlockPartition({
                 {selectedLiveSystem && (
                     <>
                         <div className="block_img">
-                            <img src={selectedLiveSystem.image.src} alt={selectedLiveSystem.title} />
+                            <picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+                                <source srcSet={selectedLiveSystem.imageWebp.src} type="image/webp" />
+                                <source srcSet={selectedLiveSystem.imageFallback.src} type={selectedLiveSystem.imageFallback.src.endsWith('.png') ? 'image/png' : 'image/jpeg'} />
+                                <Image 
+                                    src={selectedLiveSystem.imageFallback.src} 
+                                    alt={selectedLiveSystem.title} 
+                                    fill
+                                    unoptimized={true}
+                                    objectFit='cover'
+                                />
+                            </picture>
                         </div>
 
                         <div className="block_info">
