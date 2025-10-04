@@ -168,21 +168,29 @@ const videos = [
 	{
 		id: 1,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_1.mp4',
+		srcImg1: '/img/musei/window_1/bg.webp',
+		srcImg2: '/img/musei/window_1/bg.jpg',
 		Controls: Video1Controls,
 	},
 	{
 		id: 2,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_4.mp4',
+		srcImg1: '/img/musei/window_1/bg.webp',
+		srcImg2: '/img/musei/window_1/bg.jpg',
 		Controls: Video2Controls,
 	},
 	{
 		id: 3,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_2.mp4',
+		srcImg1: '/img/musei/window_1/bg.webp',
+		srcImg2: '/img/musei/window_1/bg.jpg',
 		Controls: Video3Controls,
 	},
 	{
 		id: 4,
 		src: 'https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/musei/video_3.mp4',
+		srcImg1: '/img/musei/window_1/bg.webp',
+		srcImg2: '/img/musei/window_1/bg.jpg',
 		Controls: Video4Controls,
 	}
 ];
@@ -310,6 +318,8 @@ export default function MainWidget({ isMobile }) {
 						<VideoPlayer
 							key={video.id}
 							src={video.src}
+							srcImg1={video.srcImg1}
+							srcImg2={video.srcImg2}
 							onReady={(player) => handlePlayerReady(player, index)}
 							preload={index === currentIndex ? 'auto' : 'metadata'} // Активное видео загружает больше
 							autoplay={index === currentIndex && !isTransitioning} // Автовоспроизведение только для активного видео

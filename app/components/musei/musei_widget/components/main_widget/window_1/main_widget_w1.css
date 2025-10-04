@@ -1,5 +1,9 @@
+.musei_widget .window .video-wrapper-1 .block_img{
+	top: 0;
+}
+
 .musei_widget .window .video-wrapper-1 video {
-	top: -50px;
+	top: 0;
 }
 
 .musei_widget .window_1 .block_transitions{
@@ -22,7 +26,6 @@
 	top: 0;
 	left: 0;
 	pointer-events: painted;
-	/* background-color: #00000050; */
 }
 
 
