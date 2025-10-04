@@ -1,12 +1,17 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import './fermenter.css';
 
 import MainScreen from './components/main_screen/MainScreen';
+
+import bgImgWebp from './img/bg.webp';
+import bgImgPng from './img/bg.png';
 
 
 
@@ -38,6 +43,20 @@ export default function Fermenter({ funForCloseWidget, isMobile }) {
 
 	return (
 		<>
+			<div className="block_img_bg">
+				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+					<source srcSet={bgImgWebp.src} type="image/webp" />
+					<source srcSet={bgImgPng.src} type="image/jpeg" />
+					<Image 
+						src={bgImgPng} 
+						alt="" 
+						fill
+						unoptimized={true}
+						objectFit='cover'
+					/>
+				</picture>
+			</div>
+								
 			{shouldRenderWelcome && (
 				<MainScreen
 					stateButton={buttonStartActive}
