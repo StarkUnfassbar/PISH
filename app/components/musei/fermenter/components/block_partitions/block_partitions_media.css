@@ -1,0 +1,39 @@
+@media only screen and (max-height : 750px){
+    .widget_window.fermenter .main_screen .block_main .block_partitions .partition:nth-child(1){
+        width: 180px;
+        height: 180px;
+        top: 0;
+        left: 30px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partitions .partition:nth-child(2){
+        width: 180px;
+        height: 180px;
+        top: 30px;
+        right: 40px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partitions .partition:nth-child(3){
+        width: 200px;
+        height: 200px;
+        border: 5px solid #90EB24;
+        top: 150px;
+        left: 150px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partitions .partition:nth-child(4){
+        width: 160px;
+        height: 160px;
+        border: 5px solid #EA44B0;
+        bottom: 20px;
+        right: 60px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partitions .partition:nth-child(5){
+        width: 110px;
+        height: 110px;
+        border: 2px solid #fff;
+        bottom: 25px;
+        left: 50px;
+    }
+}

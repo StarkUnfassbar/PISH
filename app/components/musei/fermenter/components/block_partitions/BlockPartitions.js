@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import './block_partitions.css';
+import './block_partitions_media.css';
 
 
 import partitionBg1Webp from '../../img/block_partitions/1.webp';

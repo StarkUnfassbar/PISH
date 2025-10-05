@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import './block_partition.css';
+import './block_partition_media.css';
 
 
 import blockImg1Webp from '../../img/block_partition/bioengineering/1.webp';

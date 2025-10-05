@@ -105,6 +105,8 @@
 	margin: 80px 0 20px;
 	box-sizing: border-box;
 	overflow: hidden;
+	position: relative;
+	z-index: 4;
 }
 
 .widget_window.challenges_century .info_window .block_info .block_info__container{
@@ -456,6 +458,7 @@
 	height: 300px;
 	margin-bottom: 25px;
 	position: relative;
+	z-index: 5;
 }
 
 

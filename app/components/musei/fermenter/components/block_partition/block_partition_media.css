@@ -1,0 +1,9 @@
+@media only screen and (max-height : 750px){
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_list_live_system{
+	    height: 470px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system{
+	    height: 470px;
+    }
+}

@@ -59,6 +59,7 @@ export default function BlockBiotechnologies({
                             alt="" 
                             fill
                             unoptimized={true}
+                            objectFit='cover'
                         />
                     </picture>
                 </div>

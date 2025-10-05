@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 
 import './main_screen.css';
+import './main_screen_media.css';
 
 import BlockPartitions from '../block_partitions/BlockPartitions';
 import BlockPartition from '../block_partition/BlockPartition';
