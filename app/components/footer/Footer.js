@@ -109,7 +109,7 @@ export default function Footer({ isMobile, patternsActive }) {
 						<h5>Передовая инженерная школа</h5>
 
 						<Link href="/">Приёмная комиссия</Link>
-						<Link href="/">Поступить</Link>
+						<Link href="https://pish.dvfu.ru/">Поступить</Link>
 					</nav>
 				</div>
 			</div>
