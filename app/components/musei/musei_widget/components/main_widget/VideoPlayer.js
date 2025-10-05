@@ -54,6 +54,7 @@ const VideoPlayer = ({
             alt="Интерактивный музей 1 этап" 
             fill
             unoptimized={true}
+            objectFit='cover'
           />
         </picture>
       </div>

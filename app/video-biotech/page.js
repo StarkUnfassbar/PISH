@@ -125,7 +125,8 @@ export default function VideoBiotech() {
 					<div className="list_video">
 						<BlockVideo
 							videoBlocked={false}
-							videoCoverSrc={"/img/video_biotech/cover_1.png"}
+							videoCoverSrc={"/img/video_biotech/cover_1.jpg"}
+							videoCoverwebpSrc={"/img/video_biotech/cover_1.webp"}
 							videoTimer={"08:48"}
 							funForButton={() => handleVideoPlayerShow(
 								true, 
@@ -138,7 +139,8 @@ export default function VideoBiotech() {
 
 						<BlockVideo
 							videoBlocked={false}
-							videoCoverSrc={"/img/video_biotech/cover_2.png"}
+							videoCoverSrc={"/img/video_biotech/cover_2.jpg"}
+							videoCoverwebpSrc={"/img/video_biotech/cover_2.webp"}
 							videoTimer={"07:24"}
 							funForButton={() => handleVideoPlayerShow(
 								true, 
@@ -151,7 +153,8 @@ export default function VideoBiotech() {
 
 						<BlockVideo
 							videoBlocked={false}
-							videoCoverSrc={"/img/video_biotech/cover_3.png"}
+							videoCoverSrc={"/img/video_biotech/cover_3.jpg"}
+							videoCoverwebpSrc={"/img/video_biotech/cover_3.webp"}
 							videoTimer={"24:18"}
 							funForButton={() => handleVideoPlayerShow(
 								true, 
@@ -164,7 +167,8 @@ export default function VideoBiotech() {
 
 						<BlockVideo
 							videoBlocked={false}
-							videoCoverSrc={"/img/video_biotech/cover_4.png"}
+							videoCoverSrc={"/img/video_biotech/cover_4.jpg"}
+							videoCoverwebpSrc={"/img/video_biotech/cover_4.webp"}
 							videoTimer={"22:47"}
 							funForButton={() => handleVideoPlayerShow(
 								true, 
@@ -177,7 +181,8 @@ export default function VideoBiotech() {
 
 						<BlockVideo
 							videoBlocked={false}
-							videoCoverSrc={"/img/video_biotech/cover_5.png"}
+							videoCoverSrc={"/img/video_biotech/cover_5.jpg"}
+							videoCoverwebpSrc={"/img/video_biotech/cover_5.webp"}
 							videoTimer={"35:13"}
 							funForButton={() => handleVideoPlayerShow(
 								true, 

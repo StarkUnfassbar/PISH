@@ -55,7 +55,18 @@ export default function SectionInfoMusei({ isMobile }) {
 						</div>
 
 						<div className="block_content">
-
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/about_us/info_musei/frame_3_mobile.webp" type="image/webp" />
+									<source srcSet="/img/about_us/info_musei/frame_3_mobile.png" type="image/png" />
+									<Image 
+										src="/img/about_us/info_musei/frame_3_mobile.png" 
+										alt="" 
+										fill
+										unoptimized={true}
+										objectFit='contain'
+										objectPosition='top'
+									/>
+								</picture>
 						</div>
 					</div>
 
@@ -104,7 +115,18 @@ export default function SectionInfoMusei({ isMobile }) {
 							</div>
 
 							<div className="block_content">
-
+								<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+									<source srcSet="/img/about_us/info_musei/frame_3.webp" type="image/webp" />
+									<source srcSet="/img/about_us/info_musei/frame_3.png" type="image/png" />
+									<Image 
+										src="/img/about_us/info_musei/frame_3.png" 
+										alt="" 
+										fill
+										unoptimized={true}
+										objectFit='contain'
+										objectPosition='top'
+									/>
+								</picture>
 							</div>
 						</div>
 					</div>

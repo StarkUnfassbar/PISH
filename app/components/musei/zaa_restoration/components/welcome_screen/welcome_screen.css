@@ -4,10 +4,10 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background: url("../../img/bg.png");
+	/* background: url("../../img/bg.png"); */
 	background-color: #000;
-	background-repeat: no-repeat;
-	background-size: cover;
+	/* background-repeat: no-repeat;
+	background-size: cover; */
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -20,12 +20,27 @@
 	opacity: 0;
 }
 
+
+
+.widget_window.zaa_restoration .welcome_window .block_img_bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+
+
 .widget_window.zaa_restoration .welcome_window .info{
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	align-items: center;
 	width: 800px;
+	position: relative;
+	z-index: 2;
 }
 
 

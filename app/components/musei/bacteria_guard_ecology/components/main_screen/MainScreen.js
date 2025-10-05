@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from "next/image";
 
 import './main_screen.css';
 import './main_screen_media.css';
@@ -43,12 +44,18 @@ const INITIAL_BACTERIA_STATE = {
 };
 
 
-import bgIllustrationImg from '../../img/bg_illustrations/bg.png';
+import bgIllustrationImgWebp from '../../img/bg_illustrations/bg.webp';
+import bgIllustrationImg from '../../img/bg_illustrations/bg.jpg';
 
+import musorImg1Webp from '../../img/bg_illustrations/musor_1.webp';
 import musorImg1 from '../../img/bg_illustrations/musor_1.png';
+import musorImg2Webp from '../../img/bg_illustrations/musor_2.webp';
 import musorImg2 from '../../img/bg_illustrations/musor_2.png';
+import musorImg3Webp from '../../img/bg_illustrations/musor_3.webp';
 import musorImg3 from '../../img/bg_illustrations/musor_3.png';
+import musorImg4Webp from '../../img/bg_illustrations/musor_4.webp';
 import musorImg4 from '../../img/bg_illustrations/musor_4.png';
+import musorImg5Webp from '../../img/bg_illustrations/musor_5.webp';
 import musorImg5 from '../../img/bg_illustrations/musor_5.png';
 
 
@@ -100,7 +107,18 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 		return (
 			<div className={`main_screen ${hiddenStatus ? "_hidden" : ''}`}>
 				<div className="block_bg">
-					<img className="bg_illustration" src={bgIllustrationImg.src} alt=""></img>
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet={bgIllustrationImgWebp.src} type="image/webp" />
+						<source srcSet={bgIllustrationImg.src} type="image/jpeg" />
+						<Image 
+							className="bg_illustration" 
+							src={bgIllustrationImg} 
+							alt="" 
+							fill
+							unoptimized={true}
+							objectFit='cover'
+						/>
+					</picture>
 					
 					<div className="musur_illustrations">
 						<img className={`musor_illustration ${bacteriaVictoryState.marine_bacteria ? "_victory" : ""}`} src={musorImg1.src} alt=""></img>
@@ -150,14 +168,89 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 			</div>
 
 			<div className="block_bg">
-				<img className="bg_illustration" src={bgIllustrationImg.src} alt=""></img>
+				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+					<source srcSet={bgIllustrationImgWebp.src} type="image/webp" />
+					<source srcSet={bgIllustrationImg.src} type="image/jpeg" />
+					<Image 
+						className="bg_illustration" 
+						src={bgIllustrationImg} 
+						alt="" 
+						fill
+						unoptimized={true}
+						objectFit='cover'
+					/>
+				</picture>
 
 				<div className="musur_illustrations">
-					<img className={`musor_illustration ${bacteriaVictoryState.marine_bacteria ? "_victory" : ""}`} src={musorImg1.src} alt=""></img>
-					<img className={`musor_illustration ${bacteriaVictoryState.clostridium ? "_victory" : ""}`} src={musorImg2.src} alt=""></img>
+					{/* <img className={`musor_illustration ${bacteriaVictoryState.marine_bacteria ? "_victory" : ""}`} src={musorImg1.src} alt=""></img> */}
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet={musorImg1Webp.src} type="image/webp" />
+						<source srcSet={musorImg1.src} type="image/jpeg" />
+						<Image 
+							className={`musor_illustration ${bacteriaVictoryState.marine_bacteria ? "_victory" : ""}`} 
+							src={musorImg1} 
+							alt="" 
+							fill
+							unoptimized={true}
+							objectFit='cover'
+						/>
+					</picture>
+
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet={musorImg2Webp.src} type="image/webp" />
+						<source srcSet={musorImg2.src} type="image/jpeg" />
+						<Image 
+							className={`musor_illustration ${bacteriaVictoryState.clostridium ? "_victory" : ""}`} 
+							src={musorImg2} 
+							alt="" 
+							fill
+							unoptimized={true}
+							objectFit='cover'
+						/>
+					</picture>
+
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet={musorImg3Webp.src} type="image/webp" />
+						<source srcSet={musorImg3.src} type="image/jpeg" />
+						<Image 
+							className={`musor_illustration ${bacteriaVictoryState.sphingomonas ? "_victory" : ""}`} 
+							src={musorImg3} 
+							alt="" 
+							fill
+							unoptimized={true}
+							objectFit='cover'
+						/>
+					</picture>
+
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet={musorImg4Webp.src} type="image/webp" />
+						<source srcSet={musorImg4.src} type="image/jpeg" />
+						<Image 
+							className={`musor_illustration ${bacteriaVictoryState.flavobacteria ? "_victory" : ""}`} 
+							src={musorImg4} 
+							alt="" 
+							fill
+							unoptimized={true}
+							objectFit='cover'
+						/>
+					</picture>
+
+					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+						<source srcSet={musorImg5Webp.src} type="image/webp" />
+						<source srcSet={musorImg5.src} type="image/jpeg" />
+						<Image 
+							className={`musor_illustration ${bacteriaVictoryState.pediococcus ? "_victory" : ""}`} 
+							src={musorImg5} 
+							alt="" 
+							fill
+							unoptimized={true}
+							objectFit='cover'
+						/>
+					</picture>
+					{/* <img className={`musor_illustration ${bacteriaVictoryState.clostridium ? "_victory" : ""}`} src={musorImg2.src} alt=""></img>
 					<img className={`musor_illustration ${bacteriaVictoryState.sphingomonas ? "_victory" : ""}`} src={musorImg3.src} alt=""></img>
 					<img className={`musor_illustration ${bacteriaVictoryState.flavobacteria ? "_victory" : ""}`} src={musorImg4.src} alt=""></img>
-					<img className={`musor_illustration ${bacteriaVictoryState.pediococcus ? "_victory" : ""}`} src={musorImg5.src} alt=""></img>
+					<img className={`musor_illustration ${bacteriaVictoryState.pediococcus ? "_victory" : ""}`} src={musorImg5.src} alt=""></img> */}
 				</div>
 			</div>
 		</div>

@@ -39,7 +39,17 @@ export default function AboutUs() {
 	return (
 		<div className="page_about_us">
 			<div className="page_bg">
-				<img src="/img/about_us/bg.png" alt="" />
+				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+					<source srcSet="/img/about_us/bg.webp" type="image/webp" />
+					<source srcSet="/img/about_us/bg.png" type="image/jpeg" />
+					<Image 
+						src="/img/about_us/bg.png" 
+						alt="" 
+						fill
+						unoptimized={true}
+						objectFit='cover'
+					/>
+				</picture>
 			</div>
 
 			<Header isMobile={isMobile} />

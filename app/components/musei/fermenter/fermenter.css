@@ -1,9 +1,6 @@
-/* .widget_window.fermenter{
-	background: url("./img/bg.png");
+.widget_window.fermenter{
 	background-color: #000;
-	background-repeat: no-repeat;
-	background-size: cover;
-} */
+}
 
 .widget_window.fermenter .block_img_bg{
 	width: 100%;

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef } from 'react';
+import Image from "next/image";
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -30,9 +32,12 @@ export const instructionsForTipRight = {
 	},
 };
 
-import art1 from '../../img/arts/art1.png';
-import art2 from '../../img/arts/art2.png';
-import art3 from '../../img/arts/art3.png';
+import art1Webp from '../../img/arts/art1.webp';
+import art1 from '../../img/arts/art1.jpg';
+import art2Webp from '../../img/arts/art2.webp';
+import art2 from '../../img/arts/art2.jpg';
+import art3Webp from '../../img/arts/art3.webp';
+import art3 from '../../img/arts/art3.jpg';
 
 const paintingsData = [
 	{
@@ -40,21 +45,24 @@ const paintingsData = [
 		title: "Богатыри",
 		author: "Виктор Васнецов",
 		year: "1898",
-		image: art1
+		img: art1,
+		imgWebp: art1Webp
 	},
 	{
 		id: 2,
 		title: "Христос в шторм на Галилейском море",
 		author: "Рембрандт",
 		year: "1633",
-		image: art2
+		img: art2,
+		imgWebp: art2Webp
 	},
 	{
 		id: 3,
 		title: "Огни большого города",
 		author: "Артем Малыгин",
 		year: "",
-		image: art3
+		img: art3,
+		imgWebp: art3Webp
 	}
 ];
 
@@ -275,7 +283,20 @@ export default function MainScreen({ isMobile }) {
 							>
 								{paintingsData.map((painting) => (
 									<SwiperSlide key={painting.id}>
-										<img src={painting.image.src} alt={painting.title} />
+										<div className="block_img">
+											<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+												<source srcSet={painting.imgWebp.src} type="image/webp" />
+												<source srcSet={painting.img.src} type="image/jpeg" />
+												<Image 
+													src={painting.img.src} 
+													alt={painting.title} 
+													fill
+													unoptimized={true}
+													objectFit='cover'
+													objectPosition='top'
+												/>
+											</picture>
+										</div>
 									</SwiperSlide>
 								))}
 							</Swiper>
@@ -376,7 +397,20 @@ export default function MainScreen({ isMobile }) {
 							>
 								{paintingsData.map((painting) => (
 									<SwiperSlide key={painting.id}>
-										<img src={painting.image.src} alt={painting.title} />
+										<div className="block_img">
+											<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+												<source srcSet={painting.imgWebp.src} type="image/webp" />
+												<source srcSet={painting.img.src} type="image/jpeg" />
+												<Image 
+													src={painting.img.src} 
+													alt={painting.title} 
+													fill
+													unoptimized={true}
+													objectFit='cover'
+													objectPosition='top'
+												/>
+											</picture>
+										</div>
 									</SwiperSlide>
 								))}
 							</Swiper>

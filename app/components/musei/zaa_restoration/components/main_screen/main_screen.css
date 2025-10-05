@@ -158,11 +158,10 @@
     flex-shrink: 0;
 }
 
-.widget_window.zaa_restoration .main_window .block_left .block_swiper .swiper-slide img {
+.widget_window.zaa_restoration .main_window .block_left .block_swiper .swiper-slide .block_img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top;
+	position: relative;
 }
 
 

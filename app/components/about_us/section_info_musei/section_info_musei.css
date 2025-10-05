@@ -96,6 +96,7 @@
 	width: 100%;
 	height: 440px;
 	padding: 20px;
+	position: relative;
 	box-sizing: border-box;
 }
 
@@ -105,11 +106,11 @@
 	background-size: contain;
 }
 
-.info_musei.main .block_facts .block_content:nth-child(2){
+/* .info_musei.main .block_facts .block_content:nth-child(2){
 	background: url("/img/about_us/info_musei/frame_3.png");
 	background-repeat: no-repeat;
 	background-size: contain;
-}
+} */
 
 
 .info_musei.main .block_facts .block_content .block_text{
@@ -279,6 +280,7 @@
 	width: 850px;
 	height: 560px;
 	padding: 20px;
+	position: relative;
 	box-sizing: border-box;
 }
 
@@ -288,11 +290,11 @@
 	background-size: contain;
 }
 
-.info_musei.mobile .block_facts .block_content:nth-child(2){
+/* .info_musei.mobile .block_facts .block_content:nth-child(2){
 	background: url("/img/about_us/info_musei/frame_3_mobile.png");
 	background-repeat: no-repeat;
 	background-size: contain;
-}
+} */
 
 
 .info_musei.mobile .block_facts .block_content .block_text{

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -9,6 +11,11 @@ import './challenges_century.css';
 import MainScreen from './components/main_screen/MainScreen';
 import WelcomeScreen from './components/welcome_screen/WelcomeScreen';
 import InfoScreen from './components/info_screen/InfoScreen';
+
+import bgImgWebp from './img/bg.webp';
+import bgImg from './img/bg.jpg';
+
+
 
 export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
 	const [activeYear, setActiveYear] = useState(null);
@@ -91,6 +98,20 @@ export default function ChallengesCentury({ funForCloseWidget, isMobile }) {
 
 	return (
 		<>
+			<div className="block_img_bg">
+				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+					<source srcSet={bgImgWebp.src} type="image/webp" />
+					<source srcSet={bgImg.src} type="image/jpeg" />
+					<Image 
+						src={bgImg} 
+						alt="" 
+						fill
+						unoptimized={true}
+						objectFit='cover'
+					/>
+				</picture>
+			</div>
+
 			{shouldRenderWelcome && (
 				<WelcomeScreen
 					stateButton={buttonStartActive}

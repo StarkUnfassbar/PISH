@@ -5,7 +5,7 @@ import "./block_video.css";
 
 
 
-export default function BlockVideo({ videoBlocked, videoCoverSrc, videoTimer, funForButton, videoInfoHeader, videoInfoDescription }) {
+export default function BlockVideo({ videoBlocked, videoCoverSrc, videoCoverwebpSrc, videoTimer, funForButton, videoInfoHeader, videoInfoDescription }) {
 	return (
 		<>
 			{videoBlocked ? (
@@ -26,7 +26,20 @@ export default function BlockVideo({ videoBlocked, videoCoverSrc, videoTimer, fu
 			) : (
 				<div className="block_video" onClick={funForButton}>
 					<div className="video_cover">
-						<img src={videoCoverSrc} alt="video cover" />
+						{/* <img src={videoCoverSrc} alt="video cover" /> */}
+						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+							<source srcSet={videoCoverwebpSrc} type="image/webp" />
+							<source srcSet={videoCoverSrc} type="image/jpeg" />
+							<Image 
+								src={videoCoverSrc} 
+								alt="" 
+								fill
+								unoptimized={true}
+								objectFit='cover'
+								objectPosition='bottom right'
+							/>
+						</picture>
+
 						<span>{videoTimer}</span>
 					</div>
 

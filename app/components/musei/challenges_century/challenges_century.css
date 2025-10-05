@@ -1,8 +1,14 @@
 .widget_window.challenges_century{
-	background: url("img/bg.png");
 	background-color: #000;
-	background-repeat: no-repeat;
-	background-size: cover;
+}
+
+.widget_window.challenges_century .block_img_bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 
