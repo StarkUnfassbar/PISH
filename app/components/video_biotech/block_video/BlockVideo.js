@@ -26,7 +26,6 @@ export default function BlockVideo({ videoBlocked, videoCoverSrc, videoCoverwebp
 			) : (
 				<div className="block_video" onClick={funForButton}>
 					<div className="video_cover">
-						{/* <img src={videoCoverSrc} alt="video cover" /> */}
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
 							<source srcSet={videoCoverwebpSrc} type="image/webp" />
 							<source srcSet={videoCoverSrc} type="image/jpeg" />

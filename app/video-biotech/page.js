@@ -21,18 +21,29 @@ import VideoPlayerMobile from '../components/video_biotech/video_player/video_pl
 
 export default function VideoBiotech() {
 	const [isMobile, setIsMobile] = useState(null);
+	const [videosUnlocked, setVideosUnlocked] = useState(false);
 	
 	useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 1100);
         };
 
+        const checkUnlockedStatus = () => {
+            const unlocked = localStorage.getItem('videosUnlocked');
+            setVideosUnlocked(unlocked === 'true');
+        };
+
         handleResize();
+        checkUnlockedStatus();
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const unlockAllVideos = () => {
+        setVideosUnlocked(true);
+        localStorage.setItem('videosUnlocked', 'true');
+    };
 
 	const [popupHeroShow, setPopupHeroShow] = useState(false);
 	const [popupHeroOpen, setPopupHeroOpen] = useState(false);
@@ -53,32 +64,28 @@ export default function VideoBiotech() {
 		}
 	};
 
-
 	const [videoPlayerShow, setVideoPlayerShow] = useState(false);
 	const [videoSrc, setVideoSrc] = useState("");
-	const [videoTitle, setVideoTitle] = useState(""); // Добавляем состояние для заголовка
+	const [videoTitle, setVideoTitle] = useState("");
 
-	// Функция для определения позиции скролла в зависимости от ширины экрана
 	const getScrollPosition = () => {
 		const screenWidth = window.innerWidth;
 		
 		if (screenWidth > 2000) {
-			return 125; // для экранов больше 2000px
+			return 125;
 		} else if (screenWidth < 1800) {
-			return 100;  // для экранов меньше 1800px
+			return 100;
 		} else {
-			return 110; // стандартное значение
+			return 110;
 		}
 	};
 
-	// Обновляем функцию для принятия заголовка
 	const handleVideoPlayerShow = (open, src, title = "") => {
 		if(open){
 			setVideoSrc(src);
-			setVideoTitle(title); // Устанавливаем заголовок
+			setVideoTitle(title);
 			setVideoPlayerShow(true);
 			
-			// Плавный скролл к адаптивной позиции
 			const scrollPosition = getScrollPosition();
 			window.scrollTo({
 				top: scrollPosition,
@@ -89,7 +96,15 @@ export default function VideoBiotech() {
 		}
 	};
 
-
+	const handleBlockedVideoClick = (open, src, title = "") => {
+		if(open){
+			if (!videosUnlocked) {
+				handlePopupOpen(true);
+				return;
+			}
+			handleVideoPlayerShow(open, src, title);
+		}
+	};
 
 	if (isMobile === null) {
         return null;
@@ -110,17 +125,16 @@ export default function VideoBiotech() {
 							key="video-player" 
 							videoPlayerShow={videoPlayerShow} 
 							videoSrc={videoSrc} 
-							videoTitle={videoTitle} // Передаем заголовок
+							videoTitle={videoTitle}
 						/>
 					) : (
 						<VideoPlayer 
 							key="video-player" 
 							videoPlayerShow={videoPlayerShow} 
 							videoSrc={videoSrc} 
-							videoTitle={videoTitle} // Передаем заголовок
+							videoTitle={videoTitle}
 						/>
 					)}
-
 
 					<div className="list_video">
 						<BlockVideo
@@ -131,63 +145,63 @@ export default function VideoBiotech() {
 							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4",
-								"Получение и применение генетически модифицированных растений" // Передаем заголовок
+								"Получение и применение генетически модифицированных растений"
 							)}
 							videoInfoHeader={"«Получение и применение генетически модифицированных растений»"}
 							videoInfoDescription={"От создания супер-культур, побеждающих голод, до «золотого риса», спасающего миллионы людей от болезней."}
 						/>
 
 						<BlockVideo
-							videoBlocked={false}
+							videoBlocked={!videosUnlocked}
 							videoCoverSrc={"/img/video_biotech/cover_2.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_2.webp"}
 							videoTimer={"07:24"}
-							funForButton={() => handleVideoPlayerShow(
+							funForButton={() => handleBlockedVideoClick(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4",
-								"Бактерии как объект биотехнологий" // Передаем заголовок
+								"Бактерии как объект биотехнологий"
 							)}
 							videoInfoHeader={"«Бактерии как объект биотехнологии»"}
 							videoInfoDescription={"Как бактерии совершают революцию в медицине, производят топливо будущего и создают любимые продукты питания."}
 						/>
 
 						<BlockVideo
-							videoBlocked={false}
+							videoBlocked={!videosUnlocked}
 							videoCoverSrc={"/img/video_biotech/cover_3.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_3.webp"}
 							videoTimer={"24:18"}
-							funForButton={() => handleVideoPlayerShow(
+							funForButton={() => handleBlockedVideoClick(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_3.mp4",
-								"Объекты микробиологических технологий" // Передаем заголовок
+								"Объекты микробиологических технологий"
 							)}
 							videoInfoHeader={"«Объекты микробиологических технологий»"}
 							videoInfoDescription={"Фабрики микробов, день и ночь производящие антибиотики, витамины и ферменты, меняя будущее."}
 						/>
 
 						<BlockVideo
-							videoBlocked={false}
+							videoBlocked={!videosUnlocked}
 							videoCoverSrc={"/img/video_biotech/cover_4.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_4.webp"}
 							videoTimer={"22:47"}
-							funForButton={() => handleVideoPlayerShow(
+							funForButton={() => handleBlockedVideoClick(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_4.mp4",
-								"Использование моноклональных и поликлональных антител в медицине" // Передаем заголовок
+								"Использование моноклональных и поликлональных антител в медицине"
 							)}
 							videoInfoHeader={"«Использование моноклональных и поликлональных антител в медицине»"}
 							videoInfoDescription={"Как умные антитела стали новым словом в лечении рака и победе над опасными вирусами."}
 						/>
 
 						<BlockVideo
-							videoBlocked={false}
+							videoBlocked={!videosUnlocked}
 							videoCoverSrc={"/img/video_biotech/cover_5.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_5.webp"}
 							videoTimer={"35:13"}
-							funForButton={() => handleVideoPlayerShow(
+							funForButton={() => handleBlockedVideoClick(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4",
-								"Экологические и этические проблемы генной инженерии" // Передаем заголовок
+								"Экологические и этические проблемы генной инженерии"
 							)}
 							videoInfoHeader={"«Экологические и этические проблемы генной инженерии»"}
 							videoInfoDescription={"«За» и «против» генной инженерии — от редактирования ДНК человека до этичных границ науки будущего."}
@@ -198,7 +212,13 @@ export default function VideoBiotech() {
 
 			<Footer isMobile={isMobile} patternsActive={true} />
 
-			{popupHeroShow && <PopupAboutBlocked popupHeroOpen={popupHeroOpen} funForClose={() => handlePopupOpen(false)} />}
+			{popupHeroShow && (
+				<PopupAboutBlocked 
+					popupHeroOpen={popupHeroOpen} 
+					funForClose={() => handlePopupOpen(false)}
+					onFormSuccess={unlockAllVideos}
+				/>
+			)}
 		</div>
 	);
 }
