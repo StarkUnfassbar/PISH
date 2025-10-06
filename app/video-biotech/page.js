@@ -22,6 +22,8 @@ import VideoPlayerMobile from '../components/video_biotech/video_player/video_pl
 export default function VideoBiotech() {
 	const [isMobile, setIsMobile] = useState(null);
 	const [videosUnlocked, setVideosUnlocked] = useState(false);
+
+	console.log(videosUnlocked)
 	
 	useEffect(() => {
         const handleResize = () => {
@@ -145,7 +147,7 @@ export default function VideoBiotech() {
 							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_1.mp4",
-								"Получение и применение генетически модифицированных растений"
+								"Получение и применение генетически модифицированных растений1"
 							)}
 							videoInfoHeader={"«Получение и применение генетически модифицированных растений»"}
 							videoInfoDescription={"От создания супер-культур, побеждающих голод, до «золотого риса», спасающего миллионы людей от болезней."}
@@ -159,7 +161,7 @@ export default function VideoBiotech() {
 							funForButton={() => handleBlockedVideoClick(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4",
-								"Бактерии как объект биотехнологий"
+								"Бактерии как объект биотехнологий2"
 							)}
 							videoInfoHeader={"«Бактерии как объект биотехнологии»"}
 							videoInfoDescription={"Как бактерии совершают революцию в медицине, производят топливо будущего и создают любимые продукты питания."}
