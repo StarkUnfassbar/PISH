@@ -119,7 +119,7 @@ export default function VideoBiotech() {
 			<main>
 				<section className="video_content">
 					{!videoPlayerShow && (
-						<h1>Видеоуроки о биотехе1</h1>
+						<h1>Видеоуроки о биотехе</h1>
 					)}
 
 					{isMobile ? (

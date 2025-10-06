@@ -15,7 +15,7 @@ export default function SectionHome({ isMobile }) {
 				<div className="text_heading">
 					<span>Фестиваль</span>
 					<span>биотехнологических</span>
-					<span>профессий1</span>
+					<span>профессий</span>
 				</div>
 
 				<p className="text_subheading">Наука рядом с тобой</p>

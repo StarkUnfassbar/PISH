@@ -1,3 +1,4 @@
+// app/musei/page.js
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -5,32 +6,51 @@ import { useState, useEffect } from 'react';
 import "./page.css";
 
 import MuseiWidget from '../components/musei/musei_widget/MuseiWidget';
+import PopupMusei from '../components/musei/popup_musei/PopupMusei';
 
 
 
 export default function Musei() {
-	const [isMobile, setIsMobile] = useState(null);
-	
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(window.innerWidth < 1100);
-		};
+    const [isMobile, setIsMobile] = useState(null);
+    const [showPopup, setShowPopup] = useState(false);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1100);
+        };
 
-		handleResize();
-		window.addEventListener('resize', handleResize);
+        // Проверяем, отправлял ли пользователь форму ранее
+        const checkFormSubmission = () => {
+            const formSubmitted = localStorage.getItem('museiFormSubmitted');
+            if (formSubmitted !== 'true') {
+                setShowPopup(true);
+            }
+        };
 
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+        handleResize();
+        checkFormSubmission();
+        window.addEventListener('resize', handleResize);
 
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
+    const handleFormSuccess = () => {
+        setShowPopup(false);
+    };
 
-	if (isMobile === null) {
-		return (<div className="musei_page"></div>);
-	}
-	
-	return (
-		<div className="musei_page">
-			<MuseiWidget isMobile={isMobile} />
-		</div>
-	);
+    if (isMobile === null) {
+        return (<div className="musei_page"></div>);
+    }
+    
+    return (
+        <div className="musei_page">
+            {showPopup && (
+                <PopupMusei 
+                    onFormSuccess={handleFormSuccess}
+                />
+            )}
+			
+            <MuseiWidget isMobile={isMobile} />
+        </div>
+    );
 }
