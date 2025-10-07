@@ -31,7 +31,7 @@ export default function VideoBiotech() {
         };
 
         const checkUnlockedStatus = () => {
-            const unlocked = localStorage.getItem('videosUnlocked');
+            const unlocked = localStorage.getItem('formCompleted');
             setVideosUnlocked(unlocked === 'true');
         };
 
@@ -44,7 +44,7 @@ export default function VideoBiotech() {
 
     const unlockAllVideos = () => {
         setVideosUnlocked(true);
-        localStorage.setItem('videosUnlocked', 'true');
+        localStorage.setItem('formCompleted', 'true');
     };
 
 	const [popupHeroShow, setPopupHeroShow] = useState(false);

@@ -60,7 +60,7 @@ export default function PopupMusei({ popupOpen, onFormSuccess }) {
                 setFormData({ fio: '', email: '', region: '' });
                 
                 // Сохраняем в localStorage, что форма отправлена
-                localStorage.setItem('museiFormSubmitted', 'true');
+                localStorage.setItem('formCompleted', 'true');
                 
                 if (onFormSuccess) {
                     onFormSuccess();

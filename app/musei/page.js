@@ -21,7 +21,7 @@ export default function Musei() {
 
         // Проверяем, отправлял ли пользователь форму ранее
         const checkFormSubmission = () => {
-            const formSubmitted = localStorage.getItem('museiFormSubmitted');
+            const formSubmitted = localStorage.getItem('formCompleted');
             if (formSubmitted !== 'true') {
                 setShowPopup(true);
             }
