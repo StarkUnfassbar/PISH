@@ -44,11 +44,11 @@ export default function Musei() {
     
     return (
         <div className="musei_page">
-            {showPopup && (
+            {/* {showPopup && (
                 <PopupMusei 
                     onFormSuccess={handleFormSuccess}
                 />
-            )}
+            )} */}
 			
             <MuseiWidget isMobile={isMobile} />
         </div>

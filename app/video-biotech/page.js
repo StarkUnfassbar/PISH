@@ -154,7 +154,7 @@ export default function VideoBiotech() {
 						/>
 
 						<BlockVideo
-							videoBlocked={!videosUnlocked}
+							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_2.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_2.webp"}
 							videoTimer={"07:24"}
@@ -168,7 +168,7 @@ export default function VideoBiotech() {
 						/>
 
 						<BlockVideo
-							videoBlocked={!videosUnlocked}
+							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_3.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_3.webp"}
 							videoTimer={"24:18"}
@@ -182,7 +182,7 @@ export default function VideoBiotech() {
 						/>
 
 						<BlockVideo
-							videoBlocked={!videosUnlocked}
+							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_4.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_4.webp"}
 							videoTimer={"22:47"}
@@ -196,7 +196,7 @@ export default function VideoBiotech() {
 						/>
 
 						<BlockVideo
-							videoBlocked={!videosUnlocked}
+							videoBlocked={false}
 							videoCoverSrc={"/img/video_biotech/cover_5.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_5.webp"}
 							videoTimer={"35:13"}
@@ -208,6 +208,20 @@ export default function VideoBiotech() {
 							videoInfoHeader={"«Экологические и этические проблемы генной инженерии»"}
 							videoInfoDescription={"«За» и «против» генной инженерии — от редактирования ДНК человека до этичных границ науки будущего."}
 						/>
+
+						{/* <BlockVideo
+							videoBlocked={!videosUnlocked}
+							videoCoverSrc={"/img/video_biotech/cover_5.jpg"}
+							videoCoverwebpSrc={"/img/video_biotech/cover_5.webp"}
+							videoTimer={"35:13"}
+							funForButton={() => handleBlockedVideoClick(
+								true, 
+								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4",
+								"Экологические и этические проблемы генной инженерии"
+							)}
+							videoInfoHeader={"«Экологические и этические проблемы генной инженерии»"}
+							videoInfoDescription={"«За» и «против» генной инженерии — от редактирования ДНК человека до этичных границ науки будущего."}
+						/> */}
 					</div>
 				</section>
 			</main>
