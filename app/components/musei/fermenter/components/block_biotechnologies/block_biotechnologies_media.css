@@ -1,3 +1,15 @@
+@media only screen and (max-width : 700px) and (max-height : 800px){
+    .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_img {
+        height: 120px;
+        min-height: 120px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_hint {
+        display: none;
+    }
+}
+
+
 @media only screen and (max-width : 550px){
     .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_info_biotechnology .content .block_info {
         padding: 0 20px;
@@ -6,11 +18,25 @@
     }
 }
 
+@media only screen and (max-width : 550px) and (max-height : 700px){
+    .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_img {
+        display: none;
+    }
+}
+
+
 @media only screen and (max-width : 470px){
     .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_hint {
         display: none;
     }
 }
+
+@media only screen and (max-width : 470px) and (max-height : 730px){
+    .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_img {
+        display: flex;
+    }
+}
+
 
 @media only screen and (max-width : 420px){
     .widget_window.fermenter .main_screen .block_main .block_biotechnologies .block_selection_biotechnologies .block_img {
