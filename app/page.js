@@ -16,10 +16,18 @@ import SectionHeroesPish from './components/main_page/sections/section_heroes_pi
 import SectionAboutPish from './components/main_page/sections/section_about_pish/SectionAboutPish';
 import SectionInfo from './components/main_page/sections/section_info/SectionInfo';
 
+import { usePageTitle } from '@/hooks/usePageTitle';
 
 
 
 export default function Home() {
+	usePageTitle(
+		"Фестиваль Биотех Профессий - ПИШ ДВФУ", 
+		"Передовая инженерная школа ДВФУ: инновации в биоинженерии, достижения биоинженеров Дальнего востока и интерактивный музей биотехнологий"
+	);
+
+
+
 	const [isMobile, setIsMobile] = useState(null);
 	
 	useEffect(() => {

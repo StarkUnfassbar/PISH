@@ -17,9 +17,18 @@ import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/P
 import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
 import VideoPlayerMobile from '../components/video_biotech/video_player/video_player_mobile/VideoPlayerMobile';
 
+import { usePageTitle } from '@/hooks/usePageTitle';
+
 
 
 export default function VideoBiotech() {
+	usePageTitle(
+		"Видеоуроки по Биотехнологиям - ПИШ ДВФУ", 
+		"Бесплатные видеоуроки по биотехнологиям от ПИШ ДВФУ: ГМ-растения, бактерии, микробиологические технологии. Учебные материалы для будущих биоинженеров"
+	);
+
+
+
 	const [isMobile, setIsMobile] = useState(null);
 	const [videosUnlocked, setVideosUnlocked] = useState(false);
 
@@ -158,7 +167,7 @@ export default function VideoBiotech() {
 							videoCoverSrc={"/img/video_biotech/cover_2.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_2.webp"}
 							videoTimer={"07:24"}
-							funForButton={() => handleBlockedVideoClick(
+							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_2.mp4",
 								"Бактерии как объект биотехнологий"
@@ -172,7 +181,7 @@ export default function VideoBiotech() {
 							videoCoverSrc={"/img/video_biotech/cover_3.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_3.webp"}
 							videoTimer={"24:18"}
-							funForButton={() => handleBlockedVideoClick(
+							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_3.mp4",
 								"Объекты микробиологических технологий"
@@ -186,7 +195,7 @@ export default function VideoBiotech() {
 							videoCoverSrc={"/img/video_biotech/cover_4.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_4.webp"}
 							videoTimer={"22:47"}
-							funForButton={() => handleBlockedVideoClick(
+							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_4.mp4",
 								"Использование моноклональных и поликлональных антител в медицине"
@@ -200,7 +209,7 @@ export default function VideoBiotech() {
 							videoCoverSrc={"/img/video_biotech/cover_5.jpg"}
 							videoCoverwebpSrc={"/img/video_biotech/cover_5.webp"}
 							videoTimer={"35:13"}
-							funForButton={() => handleBlockedVideoClick(
+							funForButton={() => handleVideoPlayerShow(
 								true, 
 								"https://s3.twcstorage.ru/e6b9f60a-42dc8220-bab7-406e-a09c-8252246c303b/pish_video/video-biotech/video_5.mp4",
 								"Экологические и этические проблемы генной инженерии"

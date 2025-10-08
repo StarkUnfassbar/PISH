@@ -7,8 +7,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "ПИШ - музей",
-  description: "Информационный музей передовой инженерной школы ДВФУ",
+  title: "Передовая Инженерная Школа ДВФУ",
+  description: "Передовая инженерная школа Дальневосточного Федерального Университета, видеоуроки ПИШ и его интерактивный музей",
 };
 
 export default function RootLayout({ children }) {

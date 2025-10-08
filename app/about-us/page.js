@@ -14,9 +14,18 @@ import Footer from '../components/footer/Footer';
 import SectionInfoMusei from '../components/about_us/section_info_musei/SectionInfoMusei';
 import SectionAdvantages from '../components/about_us/section_advantages/SectionAdvantages';
 
+import { usePageTitle } from '@/hooks/usePageTitle';
+
 
 
 export default function AboutUs() {
+	usePageTitle(
+		"О Нас - Интерактивный Музей Биотехнологий ПИШ ДВФУ", 
+  		"Единственный на Дальнем Востоке интерактивный музей биотехнологий ПИШ ДВФУ. Уникальные экспонаты, региональные проекты и наглядные демонстрации инноваций"
+	);
+
+
+
 	const [isMobile, setIsMobile] = useState(null);
 	
 	useEffect(() => {

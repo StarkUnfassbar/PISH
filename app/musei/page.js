@@ -8,9 +8,18 @@ import "./page.css";
 import MuseiWidget from '../components/musei/musei_widget/MuseiWidget';
 import PopupMusei from '../components/musei/popup_musei/PopupMusei';
 
+import { usePageTitle } from '@/hooks/usePageTitle';
+
 
 
 export default function Musei() {
+    usePageTitle(
+        "Экспозиция Музея Биотехнологий ПИШ ДВФУ", 
+        "Интерактивная экспозиция музея биотехнологий ПИШ ДВФУ: наглядные демонстрации, уникальные экспонаты и современные биотехнологические разработки"
+    );
+
+
+
     const [isMobile, setIsMobile] = useState(null);
     const [showPopup, setShowPopup] = useState(false);
     
