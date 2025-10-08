@@ -72,6 +72,7 @@
     }
 }
 
+
 @media only screen and (max-width : 550px){
     .widget_window.fermenter .main_screen .menu_left{
         gap: 10px;
@@ -110,5 +111,94 @@
 
     .widget_window.fermenter .main_screen .block_main .block_header .icon_right {
         display: none;
+    }
+}
+
+
+@media only screen and (max-width : 470px){
+    .widget_window.fermenter .main_screen .menu_left{
+        gap: 7px;
+    }
+
+    .widget_window.fermenter .main_screen .menu_left button{
+	    width: 95px;
+    }
+    
+
+    .widget_window.fermenter .main_screen .menu_left button .icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 7px;
+    }
+
+    .widget_window.fermenter .main_screen .menu_left button .icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .widget_window.fermenter .main_screen .menu_left button .text{
+	    font-size: 10px;
+    }
+
+
+
+    .widget_window.fermenter .main_screen .block_main{
+        width: 400px;
+        height: 550px;
+        border-radius: 10px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_header {
+        padding: 15px 10px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_header h2 {
+        font-size: 24px;
+    }
+}
+
+
+@media only screen and (max-width : 420px){
+    .widget_window.fermenter .main_screen .menu_left{
+        gap: 7px;
+        height: 110px;
+    }
+
+    .widget_window.fermenter .main_screen .menu_left button{
+	    width: 80px;
+    }
+    
+
+    .widget_window.fermenter .main_screen .menu_left button .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 7px;
+    }
+
+    .widget_window.fermenter .main_screen .menu_left button .icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .widget_window.fermenter .main_screen .menu_left button .text{
+	    font-size: 8px;
+    }
+
+
+
+    .widget_window.fermenter .main_screen .block_main{
+        width: 360px;
+        height: 550px;
+        border-radius: 10px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_header {
+        padding: 15px 10px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_header h2 {
+        font-size: 24px;
     }
 }

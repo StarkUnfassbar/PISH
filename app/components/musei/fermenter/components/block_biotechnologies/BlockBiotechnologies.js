@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import './block_biotechnologies.css';
+import './block_biotechnologies_media.css';
 
 import blockImg1Webp from '../../img/block_biotechnologies/img1.webp';
 import blockImg1Png from '../../img/block_biotechnologies/img1.png';

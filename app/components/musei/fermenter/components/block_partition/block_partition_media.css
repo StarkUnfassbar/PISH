@@ -17,4 +17,35 @@
     .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system{
 	    height: 470px;
     }
+
+    
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system .block_info .text{
+        height: 150px;
+        max-height: 150px;
+    }
+}
+
+
+@media only screen and (max-width : 550px){
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system .block_info .text{
+        height: 180px;
+        max-height: 180px;
+    }
+}
+
+@media only screen and (max-width : 470px){
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system .block_info {
+        padding: 10px 15px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system .block_info h2 {
+        height: 53px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .widget_window.fermenter .main_screen .block_main .block_partition .block_info_live_system .block_info .text{
+        height: 150px;
+        max-height: 150px;
+    }
 }
