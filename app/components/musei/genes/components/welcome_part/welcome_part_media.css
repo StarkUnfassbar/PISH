@@ -139,6 +139,37 @@
         width: 255px;
         height: 174px;
     }
+
+
+
+    .widget_window.genes .level_one .welcome_part .block_open_level .window_open_level{
+        width: 600px;
+        height: 250px;
+    }
+
+    .widget_window.genes .level_one .welcome_part .block_open_level .window_open_level p{
+        width: 200px;
+        height: 38px;
+        top: 70px;
+        left: calc(50% - 100px);
+    }
+
+    .widget_window.genes .level_one .welcome_part .block_open_level .window_open_level p::before{
+        width: 29px;
+        height: 29px;
+    }
+
+    .widget_window.genes .level_one .welcome_part .block_open_level .window_open_level p span{
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .widget_window.genes .level_one .welcome_part .block_open_level .window_open_level h1{
+        width: 400px;
+        font-size: 46px;
+        bottom: 70px;
+        left: calc(50% - 200px);
+    }
 }
 
 @media only screen and (max-width : 1600px) and (max-height : 800px){

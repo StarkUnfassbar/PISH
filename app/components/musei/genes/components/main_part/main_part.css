@@ -26,9 +26,9 @@
 
 .widget_window.genes .level_one .main_part .block_rnk{
 	width: 400px;
-	height: 85px;
+	height: 200px;
 	position: absolute;
-	top: 120px;
+	top: 80px;
 	left: 10px;
 	z-index: 1;
 	pointer-events: none;
@@ -132,8 +132,27 @@
 	font-family: "Roboto";
 	font-weight: 900;
 	border-radius: 50%;
-	background-color: #F7B500;
-	box-shadow: inset 0 0 1px 3px #D69F00;
+	background-color: #5C63BE;
+	box-shadow: inset 0 0 1px 3px #484ea2;
+	position: absolute;
+	z-index: 2;
+}
+
+.widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+.widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+	content: "T";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 26px;
+	font-family: "Roboto";
+	font-weight: 900;
+	border-radius: 50%;
+	background-color: #5C63BE;
+	box-shadow: inset 0 0 1px 3px #484ea2;
 	position: absolute;
 	z-index: 2;
 }
@@ -151,8 +170,8 @@
 	font-family: "Roboto";
 	font-weight: 900;
 	border-radius: 50%;
-	background-color: #FF2D2D;
-	box-shadow: inset 0 0 1px 3px #D62525;
+	background-color: #B957B6;
+	box-shadow: inset 0 0 1px 3px #934e9f;
 	position: absolute;
 	z-index: 2;
 }
@@ -170,46 +189,24 @@
 	font-family: "Roboto";
 	font-weight: 900;
 	border-radius: 50%;
-	background-color: #8C52FF;
-	box-shadow: inset 0 0 1px 3px #7746D6;
+	background-color: #B4CA59;
+	box-shadow: inset 0 0 1px 3px #8EA551;
 	position: absolute;
 	z-index: 2;
-}
-
-.widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._active{
-	animation: pulseAnimation 2s infinite;
-}
-
-@keyframes pulseAnimation {
-	0% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(1.1);
-	}
-	100% {
-		transform: scale(1);
-	}
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes{
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 500px;
-	height: 150px;
+	gap: 20px;
 	position: absolute;
-	bottom: 30px;
+	bottom: 20px;
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes p{
-	font-size: 20px;
+	font-size: 16px;
 	font-family: "Roboto";
-	font-weight: 700;
-	color: #fff;
-	text-transform: uppercase;
-	margin-bottom: 10px;
+	font-weight: 400;
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons{
@@ -221,42 +218,84 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	font-size: 26px;
+	width: 80px;
+	height: 80px;
+	color: #fff;
+	font-size: 32px;
 	font-family: "Roboto";
 	font-weight: 900;
-	color: #fff;
+	border-radius: 10px;
+	background-color: #ffffff00;
+	box-shadow: inset 0 0 1px 5px #ffffff00;
 	cursor: pointer;
-	transition: all .3s ease;
+	transition: all .2s ease;
 }
 
-.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:disabled{
-	opacity: 0.5;
-	cursor: not-allowed;
-}
-
-.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:not(:disabled):hover{
-	transform: scale(1.1);
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:active{
+	transform: scale(0.92);
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note._a_note{
+	background-color: #1AA39F;
+	box-shadow: inset 0 0 1px 5px #1AA39F;
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:hover._a_note{
 	background-color: #03C8C4;
-	box-shadow: inset 0 0 1px 3px #1AA39F;
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note._u_note{
-	background-color: #F7B500;
-	box-shadow: inset 0 0 1px 3px #D69F00;
+	background-color: #484ea2;
+	box-shadow: inset 0 0 1px 5px #484ea2;
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:hover._u_note{
+	background-color: #5C63BE;
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note._c_note{
-	background-color: #FF2D2D;
-	box-shadow: inset 0 0 1px 3px #D62525;
+	background-color: #934e9f;
+	box-shadow: inset 0 0 1px 5px #934e9f;
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:hover._c_note{
+	background-color: #B957B6;
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note._g_note{
-	background-color: #8C52FF;
-	box-shadow: inset 0 0 1px 3px #7746D6;
+	background-color: #8EA551;
+	box-shadow: inset 0 0 1px 5px #8EA551;
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:hover._g_note{
+	background-color: #B4CA59;
+}
+
+.widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._active::after,
+.widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._active::after {
+	animation: slideFromRightEdge 1s ease-out forwards;
+	transform: translateX(500px);
+	opacity: 0;
+}
+
+@keyframes slideFromRightEdge {
+	0% {
+		transform: translateX(500px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	transform: none !important;
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:disabled:hover {
+	transform: none;
+	background-color: inherit;
 }
