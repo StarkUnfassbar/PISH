@@ -10,6 +10,7 @@ import Aquabio from '../../../aquabio/Aquabio';
 import ChallengesCentury from '../../../challenges_century/ChallengesCentury';
 import BacteriaGuardEcology from '../../../bacteria_guard_ecology/BacteriaGuardEcology';
 import Fermenter from '../../../fermenter/Fermenter';
+import Genes from '../../../genes/Genes';
 
 const WidgetID = {
 	WIDGET_IN_DEV: "widget_in_dev",
@@ -19,6 +20,7 @@ const WidgetID = {
 	CHALLENGES_CENTURY: "challenges_century",
 	BACTERIA_GUARD_ECOLOGY: "bacteria_guard_ecology",
 	FERMENTER: "fermenter",
+	GENES: "genes",
 };
 
 const WIDGET_COMPONENTS = {
@@ -29,6 +31,7 @@ const WIDGET_COMPONENTS = {
 	[WidgetID.CHALLENGES_CENTURY]: ChallengesCentury,
 	[WidgetID.BACTERIA_GUARD_ECOLOGY]: BacteriaGuardEcology,
 	[WidgetID.FERMENTER]: Fermenter,
+	[WidgetID.GENES]: Genes,
 };
 
 export default function ControllerWidgets({ openWidget, idOpenedWidget, funForCloseWidget, isMobile }) {

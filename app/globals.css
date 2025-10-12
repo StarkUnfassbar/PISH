@@ -1,14 +1,14 @@
 @font-face {
 	font-family: 'Grandis';
-	src: url('/fonts/Grandis/Grandis-Regular.otf') format('opentype');
-	font-weight: 400;
+	src: url('/fonts/Grandis/Grandis-Bold.otf') format('opentype');
+	font-weight: 700;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Grandis';
-	src: url('/fonts/Grandis/Grandis-Bold.otf') format('opentype');
-	font-weight: 700;
+	src: url('/fonts/Grandis/Grandis-Regular.otf') format('opentype');
+	font-weight: 400;
 	font-display: swap;
 }
 
@@ -60,6 +60,31 @@
 @font-face {
 	font-family: 'Eimantas';
 	src: url('/fonts/Eimantas/Eimantas-Regular.otf') format('opentype');
+	font-weight: 400;
+}
+
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Black.ttf') format('truetype');
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
 	font-weight: 400;
 }
 
