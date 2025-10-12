@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+
 import './main_part.css';
+import './main_part_media.css';
 
 import imgHitUp from '../../img/level_1/main_part/hint_up.png';
 import imgRnk from '../../img/level_1/rnk.png';
