@@ -27,6 +27,35 @@
 	pointer-events: none;
 }
 
+.widget_window.genes .level_one .main_part .block_hint_up .hint_img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.widget_window.genes .level_one .main_part .block_hint_up .hint_img.default_hint{
+	transition: all .3s ease;
+}
+
+.widget_window.genes .level_one .main_part .block_hint_up .hint_img.default_hint.fade-out {
+  	opacity: 0;
+}
+
+.widget_window.genes .level_one .main_part .block_hint_up .hint_img.result_hint {
+	transform: translateY(-100%);
+	opacity: 0;
+	transition: all .5s ease .3s;
+}
+
+.widget_window.genes .level_one .main_part .block_hint_up .hint_img.result_hint.slide-down {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+
+
+
 .widget_window.genes .level_one .main_part .block_rnk{
 	width: 450px;
 	height: 230px;
@@ -55,6 +84,12 @@
 	height: 130px;
 	position: absolute;
 	top: 520px;
+
+	transition: all .3s ease-in-out;
+}
+
+.widget_window.genes .level_one .main_part .block_rkn_notes.fade-out {
+	opacity: 0;
 }
 
 .widget_window.genes .level_one .main_part .block_rkn_notes .first_row{
@@ -210,6 +245,12 @@
 	gap: 20px;
 	position: absolute;
 	bottom: 20px;
+
+	transition: all .3s ease-in-out;
+}
+
+.widget_window.genes .level_one .main_part .block_btns_notes.fade-out {
+	opacity: 0;
 }
 
 .widget_window.genes .level_one .main_part .block_btns_notes p{
@@ -307,4 +348,135 @@
 .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note:disabled:hover {
 	transform: none;
 	background-color: inherit;
+}
+
+
+
+
+.widget_window.genes .level_one .main_part .block_result_text{
+	display: flex;
+	gap: 25px;
+	align-items: top;
+	width: 740px;
+	height: fit-content;
+	border: 1px solid #B5D14D;
+	border-radius: 20px;
+	padding: 15px 15px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 388px;
+
+	opacity: 0;
+	transition: all .3s ease;
+}
+
+.widget_window.genes .level_one .main_part .block_result_text.fade-in {
+	opacity: 1;
+}
+
+
+.widget_window.genes .level_one .main_part .block_result_text span{
+	width: 43px;
+	min-width: 43px;
+	height: 43px;
+}
+
+.widget_window.genes .level_one .main_part .block_result_text span svg{
+	width: 100%;
+	height: 100%;
+}
+
+
+.widget_window.genes .level_one .main_part .block_result_text .text{
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.widget_window.genes .level_one .main_part .block_result_text p{
+	width: 100%;
+	color: #fff;
+	font-size: 20px;
+	font-family: "Roboto";
+	font-weight: 400;
+}
+
+
+
+
+.widget_window.genes .level_one .main_part .block_button_next{
+	display: flex;
+	align-items: center;
+	width: 600px;
+	height: 60px;
+	position: absolute;
+	bottom: 50px;
+
+	opacity: 0;
+	transition: opacity .3s ease;
+}
+
+.widget_window.genes .level_one .main_part .block_button_next.fade-in {
+	opacity: 1;
+}
+
+
+
+.widget_window.genes .level_one .main_part .block_button_next button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 40px;
+	background: linear-gradient(90deg, #737AFF, #07b4cb);
+	position: absolute;
+	cursor: pointer;
+	transition: all .2s ease;
+}
+
+.widget_window.genes .level_one .main_part .block_button_next:hover button{
+	transform: scale(1.05);
+}
+
+
+.widget_window.genes .level_one .main_part .block_button_next button::before{
+	content: "";
+	width: 102%;
+	height: 122%;
+	border: 1px solid #5C61CB;
+	border-radius: 50px;
+	position: absolute;
+	transition: all .2s ease;
+}
+
+.widget_window.genes .level_one .main_part .block_button_next:hover button::before{
+	width: 100%;
+	height: 100%;
+}
+
+
+.widget_window.genes .level_one .main_part .block_button_next button .text{
+	font-size: 22px;
+	font-family: "Eimantas";
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.widget_window.genes .level_one .main_part .block_button_next button .icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(90deg, #5861F4, #5861F4);
+	border-radius: 50%;
+	position: absolute;
+	left: 5px;
+	z-index: 2;
+}
+
+.widget_window.genes .level_one .main_part .block_button_next button .icon svg{
+	width: 35px;
+	height: 35px;
 }

@@ -21,6 +21,8 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 	const [activeNoteIndex, setActiveNoteIndex] = useState(null);
 	const [timerActive, setTimerActive] = useState(false);
 	const [score, setScore] = useState(0);
+	const [gameCompleted, setGameCompleted] = useState(false);
+	const [gameResult, setGameResult] = useState(null); // 'win' or 'fail'
 
 	const timerRef = useRef(null);
 	const timerActiveRef = useRef(false);
@@ -49,6 +51,8 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 		timerActiveRef.current = false;
 		setScore(0);
 		setGameStarted(true);
+		setGameCompleted(false);
+		setGameResult(null);
 	};
 
 	const handleAnswer = (selectedNote) => {
@@ -83,7 +87,9 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 
 	const startNextPair = () => {
 		if (currentPairIndex >= notePairs.length) {
-			console.log(`Игра завершена! Правильных ответов: ${score} из ${notePairs.length}`);
+			const isWin = score === notePairs.length;
+			setGameResult(isWin ? 'win' : 'fail');
+			setGameCompleted(true);
 			return;
 		}
 
@@ -136,7 +142,9 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 		if (gameStarted && currentPairIndex < notePairs.length) {
 			startNextPair();
 		} else if (gameStarted && currentPairIndex >= notePairs.length) {
-			console.log(`Игра завершена! Правильных ответов: ${score} из ${notePairs.length}`);
+			const isWin = score === notePairs.length;
+			setGameResult(isWin ? 'win' : 'fail');
+			setGameCompleted(true);
 		}
 	}, [currentPairIndex, gameStarted]);
 
@@ -162,6 +170,8 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 					currentPairIndex={currentPairIndex}
 					timerActive={timerActive}
 					onAnswer={handleAnswer}
+					gameCompleted={gameCompleted}
+					gameResult={gameResult}
 				/>
 			)}
 		</div>
