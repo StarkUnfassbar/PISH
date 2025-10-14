@@ -7,10 +7,9 @@ import "./page.css";
 
 import MuseiWidget from '../components/musei/musei_widget/MuseiWidget';
 import PopupMusei from '../components/musei/popup_musei/PopupMusei';
+import PopupWelcome from '../components/musei/popup_welcome/PopupWelcome';
 
 import { usePageTitle } from '@/hooks/usePageTitle';
-
-
 
 export default function Musei() {
     usePageTitle(
@@ -18,10 +17,9 @@ export default function Musei() {
         "Интерактивная экспозиция музея биотехнологий ПИШ ДВФУ: наглядные демонстрации, уникальные экспонаты и современные биотехнологические разработки"
     );
 
-
-
     const [isMobile, setIsMobile] = useState(null);
     const [showPopup, setShowPopup] = useState(false);
+    const [showWelcome, setShowWelcome] = useState(true); // Всегда показываем приветствие
     
     useEffect(() => {
         const handleResize = () => {
@@ -45,6 +43,11 @@ export default function Musei() {
 
     const handleFormSuccess = () => {
         setShowPopup(false);
+        setShowWelcome(true);
+    };
+
+    const handleWelcomeClose = () => {
+        setShowWelcome(false);
     };
 
     if (isMobile === null) {
@@ -58,6 +61,12 @@ export default function Musei() {
                     onFormSuccess={handleFormSuccess}
                 />
             )} */}
+            
+            {showWelcome && (
+                <PopupWelcome 
+                    onClose={handleWelcomeClose}
+                />
+            )}
 			
             <MuseiWidget isMobile={isMobile} />
         </div>
