@@ -436,6 +436,7 @@
     }
 }
 
+
 @media only screen and (max-width : 1300px){
     .widget_window.genes .level_one .main_part .block_rnk{
         left: 10px;
@@ -443,5 +444,675 @@
 
     .widget_window.genes .level_one .main_part .block_dnk{
         right: 50px;
+    }
+}
+
+
+
+@media only screen and (max-width : 1100px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        width: 600px;
+        height: 300px;
+        top: 770px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 600px;
+        height: 300px;
+        top: 380px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 650px;
+    }
+}
+
+@media only screen and (max-width : 1100px) and (max-height : 1200px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 720px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 330px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 600px;
+    }
+}
+
+@media only screen and (max-width : 1100px) and (max-height : 1100px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        width: 500px;
+        height: 250px;
+        top: 650px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 480px;
+        height: 250px;
+        top: 340px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 540px;
+    }
+}
+
+@media only screen and (max-width : 1100px) and (max-height : 1000px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        width: 400px;
+        height: 210px;
+        top: 590px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 390px;
+        height: 210px;
+        top: 310px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 480px;
+    }
+}
+
+@media only screen and (max-width : 1100px) and (max-height : 900px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width : 900px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        width: 500px;
+        height: 250px;
+        top: 620px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 480px;
+        height: 250px;
+        top: 340px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        width: 650px;
+        height: 100px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note, .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note {
+        width: 35px;
+        height: 35px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._a_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._a_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._u_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._u_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._c_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._c_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._g_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._g_note::after{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width : 900px) and (max-height : 1000px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        width: 400px;
+        height: 210px;
+        top: 570px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 390px;
+        height: 210px;
+        top: 310px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 480px;
+    }
+}
+
+@media only screen and (max-width : 900px) and (max-height : 900px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width : 760px){
+    .widget_window.genes .level_one .main_part .block_hint_up {
+        width: 550px;
+        height: 268px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: block;
+        width: 450px;
+        height: 230px;
+        top: 590px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 380px;
+        height: 210px;
+        top: 370px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        width: 500px;
+        height: 80px;
+        top: 540px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row {
+        gap: 15px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row {
+        gap: 15px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note, .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note {
+        width: 28px;
+        height: 28px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._a_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._a_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._u_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._u_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._c_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._c_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._g_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._g_note::after{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width : 760px) and (max-height : 1000px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 530px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 310px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 480px;
+    }
+}
+
+@media only screen and (max-width : 760px) and (max-height : 900px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        width: 400px;
+        height: 210px;
+        top: 480px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 260px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 430px;
+    }
+}
+
+@media only screen and (max-width : 760px) and (max-height : 800px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width : 600px){
+    .widget_window.genes .level_one .main_part .block_hint_up {
+        width: 450px;
+        height: 218px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: block;
+        width: 350px;
+        height: 180px;
+        top: 500px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 310px;
+        height: 180px;
+        top: 300px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        width: 450px;
+        height: 80px;
+        top: 450px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row {
+        gap: 10px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row {
+        gap: 10px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note, .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note {
+        width: 28px;
+        height: 28px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._a_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._a_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._u_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._u_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._c_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._c_note::after{
+        font-size: 20px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._g_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._g_note::after{
+        font-size: 20px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width : 600px) and (max-height : 800px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 430px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 240px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 380px;
+    }
+}
+
+@media only screen and (max-width : 600px) and (max-height : 700px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 380px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 200px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 330px;
+    }
+}
+
+@media only screen and (max-width : 600px) and (max-height : 650px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width : 500px){
+    .widget_window.genes .level_one .main_part .block_hint_up {
+        width: 400px;
+        height: 193px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: block;
+        width: 300px;
+        height: 150px;
+        top: 500px;
+        left: auto;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        width: 260px;
+        height: 150px;
+        top: 320px;
+        right: auto;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        width: 395px;
+        height: 65px;
+        top: 440px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row {
+        gap: 10px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row {
+        gap: 10px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note, .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note {
+        width: 24px;
+        height: 24px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._a_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._a_note::after{
+        font-size: 18px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._u_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._u_note::after{
+        font-size: 18px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+        font-size: 18px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._c_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._c_note::after{
+        font-size: 18px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._g_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._g_note::after{
+        font-size: 18px;
+    }
+
+
+
+
+    .widget_window.genes .level_one .main_part .block_btns_notes {
+        gap: 10px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_btns_notes p {
+        font-size: 14px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons {
+        gap: 10px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width : 500px) and (max-height : 800px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 430px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 250px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 380px;
+    }
+}
+
+@media only screen and (max-width : 500px) and (max-height : 700px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 380px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 210px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 330px;
+    }
+}
+
+@media only screen and (max-width : 500px) and (max-height : 650px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        top: 350px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_dnk {
+        top: 180px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        top: 300px;
+    }
+}
+
+@media only screen and (max-width : 500px) and (max-height : 600px){
+    .widget_window.genes .level_one .main_part .block_rnk {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width : 430px){
+    .widget_window.genes .level_one .main_part .block_hint_up {
+        width: 360px;
+        height: 175px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        width: 375px;
+        height: 60px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note, .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note {
+        width: 22px;
+        height: 22px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._a_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._a_note::after{
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._u_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._u_note::after{
+        font-size: 15px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+        font-size: 15px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._c_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._c_note::after{
+        font-size: 15px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._g_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._g_note::after{
+        font-size: 15px;
+    }
+}
+
+
+
+@media only screen and (max-width : 400px){
+    .widget_window.genes .level_one .main_part .block_hint_up {
+        width: 340px;
+        height: 165px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes {
+        width: 330px;
+        height: 50px;
+    }
+
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note, .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note {
+        width: 18px;
+        height: 18px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._a_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._a_note::after{
+        font-size: 12px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._u_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._u_note::after{
+        font-size: 12px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._t_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._t_note::after{
+        font-size: 12px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._c_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._c_note::after{
+        font-size: 12px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_rkn_notes .first_row .rnk_note._g_note::after,
+    .widget_window.genes .level_one .main_part .block_rkn_notes .second_row .rnk_note._g_note::after{
+        font-size: 12px;
+    }
+
+
+
+    .widget_window.genes .level_one .main_part .block_btns_notes {
+        gap: 10px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_btns_notes p {
+        font-size: 12px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons {
+        gap: 10px;
+    }
+
+    .widget_window.genes .level_one .main_part .block_btns_notes .block_buttons .button_rnk_note {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        border-radius: 5px;
     }
 }

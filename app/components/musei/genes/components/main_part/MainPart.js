@@ -136,35 +136,35 @@ export default function MainPart({
 				)}
 			</div>
 
-			<div className="block_rnk">
-				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-					<source srcSet={imgRnk.src} type="image/webp" />
-					<source srcSet={imgRnk.src} type="image/jpeg" />
-					<Image 
-						src={imgRnk} 
-						alt="" 
-						fill
-						unoptimized={true}
-					/>
-				</picture>
-			</div>
-
-			<div className="block_dnk">
-				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-					<source srcSet={imgDnk.src} type="image/webp" />
-					<source srcSet={imgDnk.src} type="image/jpeg" />
-					<Image 
-						src={imgDnk} 
-						alt="" 
-						fill
-						unoptimized={true}
-					/>
-				</picture>
-			</div>
-
 			{/* Игровые блоки (отображаются во время игры) */}
 			{showGameBlocks && (
 				<>
+					<div className={`block_rnk ${!gameBlocksOpacity ? 'fade-out' : ''}`}>
+						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+							<source srcSet={imgRnk.src} type="image/webp" />
+							<source srcSet={imgRnk.src} type="image/jpeg" />
+							<Image 
+								src={imgRnk} 
+								alt="" 
+								fill
+								unoptimized={true}
+							/>
+						</picture>
+					</div>
+
+					<div className={`block_dnk ${!gameBlocksOpacity ? 'fade-out' : ''}`}>
+						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+							<source srcSet={imgDnk.src} type="image/webp" />
+							<source srcSet={imgDnk.src} type="image/jpeg" />
+							<Image 
+								src={imgDnk} 
+								alt="" 
+								fill
+								unoptimized={true}
+							/>
+						</picture>
+					</div>
+
 					<div className={`block_rkn_notes ${!gameBlocksOpacity ? 'fade-out' : ''}`}>
 						<div className="first_row">
 							{firstRowNotes.map((note, index) => (
