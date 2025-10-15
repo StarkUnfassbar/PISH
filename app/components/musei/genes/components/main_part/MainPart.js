@@ -6,12 +6,19 @@ import Image from "next/image";
 import './main_part.css';
 import './main_part_media.css';
 
-import imgHitUp from '../../img/level_1/main_part/hint_up.png';
-import imgHintFail from '../../img/level_1/main_part/hint_fail.png';
-import imgHintWin from '../../img/level_1/main_part/hint_win.png';
-
-import imgRnk from '../../img/level_1/rnk.png';
 import imgDnk from '../../img/level_1/dnk.png';
+import imgDnkWebp from '../../img/level_1/dnk.webp';
+import imgRnk from '../../img/level_1/rnk.png';
+import imgRnkWebp from '../../img/level_1/rnk.webp';
+
+import imgHitUp from '../../img/level_1/main_part/hint_up.png';
+import imgHitUpWebp from '../../img/level_1/main_part/hint_up.webp';
+
+import imgHintFail from '../../img/level_1/main_part/hint_fail.png';
+import imgHintFailWebp from '../../img/level_1/main_part/hint_fail.webp';
+
+import imgHintWin from '../../img/level_1/main_part/hint_win.png';
+import imgHintWinWebp from '../../img/level_1/main_part/hint_win.webp';
 
 
 
@@ -90,7 +97,7 @@ export default function MainPart({
 				{showDefaultHint && (
 					<div className={`hint_img default_hint ${!defaultHintOpacity ? 'fade-out' : ''}`}>
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgHitUp.src} type="image/webp" />
+							<source srcSet={imgHitUpWebp.src} type="image/webp" />
 							<source srcSet={imgHitUp.src} type="image/jpeg" />
 							<Image 
 								src={imgHitUp} 
@@ -106,7 +113,7 @@ export default function MainPart({
 				{showResultHint && gameResult === 'fail' && (
 					<div className={`hint_img result_hint ${resultHintAnimation ? 'slide-down' : ''}`}>
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgHintFail.src} type="image/webp" />
+							<source srcSet={imgHintFailWebp.src} type="image/webp" />
 							<source srcSet={imgHintFail.src} type="image/jpeg" />
 							<Image 
 								src={imgHintFail} 
@@ -122,7 +129,7 @@ export default function MainPart({
 				{showResultHint && gameResult === 'win' && (
 					<div className={`hint_img result_hint ${resultHintAnimation ? 'slide-down' : ''}`}>
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgHintWin.src} type="image/webp" />
+							<source srcSet={imgHintWinWebp.src} type="image/webp" />
 							<source srcSet={imgHintWin.src} type="image/jpeg" />
 							<Image 
 								src={imgHintWin} 
@@ -141,7 +148,7 @@ export default function MainPart({
 				<>
 					<div className={`block_rnk ${!gameBlocksOpacity ? 'fade-out' : ''}`}>
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgRnk.src} type="image/webp" />
+							<source srcSet={imgRnkWebp.src} type="image/webp" />
 							<source srcSet={imgRnk.src} type="image/jpeg" />
 							<Image 
 								src={imgRnk} 
@@ -154,7 +161,7 @@ export default function MainPart({
 
 					<div className={`block_dnk ${!gameBlocksOpacity ? 'fade-out' : ''}`}>
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgDnk.src} type="image/webp" />
+							<source srcSet={imgDnkWebp.src} type="image/webp" />
 							<source srcSet={imgDnk.src} type="image/jpeg" />
 							<Image 
 								src={imgDnk} 
@@ -229,13 +236,13 @@ export default function MainPart({
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" fill="none">
 								<circle cx="16.4993" cy="16.4993" r="16.4993" fill="url(#paint0_linear_747_31)"/>
-								<path d="M13.5 21.1428H16.75M20 21.1428H16.75M16.75 21.1428V14.6428H13.9643" stroke="white" stroke-width="2"/>
+								<path d="M13.5 21.1428H16.75M20 21.1428H16.75M16.75 21.1428V14.6428H13.9643" stroke="white" strokeWidth="2"/>
 								<rect x="15.8203" y="10" width="1.85714" height="1.85714" fill="white"/>
 								<path d="M26.1641 11.9646C26.8109 13.3412 27.1729 14.8781 27.1729 16.4998L27.1592 17.0486C26.8734 22.6897 22.2092 27.1754 16.4971 27.1755L15.9473 27.1619C14.3802 27.0824 12.9033 26.6631 11.5859 25.9792L11.9678 25.6121C13.3321 26.2914 14.8695 26.6755 16.4971 26.6755C22.1172 26.6754 26.6727 22.1198 26.6729 16.4998C26.6729 15.0145 26.3521 13.6049 25.7803 12.3328L26.1641 11.9646ZM17.0459 5.83667C18.3923 5.90488 19.6723 6.22498 20.8418 6.74683L20.4531 7.12085C19.2371 6.60725 17.9001 6.32304 16.4971 6.323C10.877 6.32323 6.32031 10.8796 6.32031 16.4998C6.32035 17.7607 6.55144 18.9675 6.9707 20.0818L6.5791 20.4578C6.15449 19.3948 5.89475 18.248 5.83398 17.0486L5.82031 16.4998C5.82031 10.6034 10.6008 5.82323 16.4971 5.823L17.0459 5.83667Z" fill="white"/>
 									<defs>
 									<linearGradient id="paint0_linear_747_31" x1="4.5" y1="5" x2="28" y2="29" gradientUnits="userSpaceOnUse">
-										<stop stop-color="#95BC33"/>
-										<stop offset="1" stop-color="#08D1B9"/>
+										<stop stopColor="#95BC33"/>
+										<stop offset="1" stopColor="#08D1B9"/>
 									</linearGradient>
 								</defs>
 							</svg>

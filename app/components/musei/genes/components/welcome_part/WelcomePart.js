@@ -7,11 +7,19 @@ import './welcome_part.css';
 import './welcome_part_media.css';
 
 import imgDnk from '../../img/level_1/dnk.png';
+import imgDnkWebp from '../../img/level_1/dnk.webp';
 import imgRnk from '../../img/level_1/rnk.png';
-import imgHint1 from '../../img/level_1/welcome_part/2.png';
-import imgHint2 from '../../img/level_1/welcome_part/3.png';
+import imgRnkWebp from '../../img/level_1/rnk.webp';
+
+import imgHint1 from '../../img/level_1/welcome_part/1.png';
+import imgHint1Webp from '../../img/level_1/welcome_part/1.webp';
+import imgHint2 from '../../img/level_1/welcome_part/2.png';
+import imgHint2Webp from '../../img/level_1/welcome_part/2.webp';
+
 import imgGen1 from '../../img/level_1/select_gen/1.png';
+import imgGen1Webp from '../../img/level_1/select_gen/1.webp';
 import imgGen2 from '../../img/level_1/select_gen/2.png';
+import imgGen2Webp from '../../img/level_1/select_gen/2.webp';
 
 
 
@@ -63,7 +71,7 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 			<div className={`welcome_content ${welcomeContentHidden ? "_hidden" : ''}`}>
 				<div className="block_img_gen">
 					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-						<source srcSet={imgDnk.src} type="image/webp" />
+						<source srcSet={imgDnkWebp.src} type="image/webp" />
 						<source srcSet={imgDnk.src} type="image/jpeg" />
 						<Image 
 							src={imgDnk} 
@@ -79,7 +87,7 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 				<div className="block_hints">
 					<div className="block_hint">
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgHint1.src} type="image/webp" />
+							<source srcSet={imgHint1Webp.src} type="image/webp" />
 							<source srcSet={imgHint1.src} type="image/jpeg" />
 							<Image 
 								src={imgHint1} 
@@ -93,7 +101,7 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 
 					<div className="block_hint">
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgHint2.src} type="image/webp" />
+							<source srcSet={imgHint2Webp.src} type="image/webp" />
 							<source srcSet={imgHint2.src} type="image/jpeg" />
 							<Image 
 								src={imgHint2} 
@@ -130,7 +138,7 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 					<div className={`block_select_gen ${selectGenActive ? '_active' : '_hidden'}`}>
 						<button onClick={handleGeneSelect}>
 							<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-								<source srcSet={imgGen1.src} type="image/webp" />
+								<source srcSet={imgGen1Webp.src} type="image/webp" />
 								<source srcSet={imgGen1.src} type="image/jpeg" />
 								<Image 
 									src={imgGen1} 
@@ -144,7 +152,7 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 
 						<button onClick={handleGeneSelect}>
 							<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-								<source srcSet={imgGen2.src} type="image/webp" />
+								<source srcSet={imgGen2Webp.src} type="image/webp" />
 								<source srcSet={imgGen2.src} type="image/jpeg" />
 								<Image 
 									src={imgGen2} 
@@ -163,7 +171,7 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 				<div className={`block_open_level ${newBlockHidden ? '_hidden' : ''}`}>
 					<div className="bg_rnk">
 						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgRnk.src} type="image/webp" />
+							<source srcSet={imgRnkWebp.src} type="image/webp" />
 							<source srcSet={imgRnk.src} type="image/jpeg" />
 							<Image 
 								src={imgRnk} 

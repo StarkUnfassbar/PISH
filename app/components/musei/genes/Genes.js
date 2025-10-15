@@ -11,6 +11,7 @@ import './genes.css';
 import LevelOne from './components/level_one/LevelOne';
 
 import bgImgPng from './img/bg.png';
+import bgImgWebp from './img/bg.webp';
 
 
 
@@ -44,7 +45,7 @@ export default function Genes({ funForCloseWidget, isMobile }) {
 		<>
 			<div className="block_img_bg">
 				<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-					<source srcSet={bgImgPng.src} type="image/webp" />
+					<source srcSet={bgImgWebp.src} type="image/webp" />
 					<source srcSet={bgImgPng.src} type="image/jpeg" />
 					<Image 
 						src={bgImgPng} 
