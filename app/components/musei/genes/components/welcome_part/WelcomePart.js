@@ -8,8 +8,6 @@ import './welcome_part_media.css';
 
 import imgDnk from '../../img/level_1/dnk.png';
 import imgDnkWebp from '../../img/level_1/dnk.webp';
-import imgRnk from '../../img/level_1/rnk.png';
-import imgRnkWebp from '../../img/level_1/rnk.webp';
 
 import imgHint1 from '../../img/level_1/welcome_part/1.png';
 import imgHint1Webp from '../../img/level_1/welcome_part/1.webp';
@@ -23,14 +21,12 @@ import imgGen2Webp from '../../img/level_1/select_gen/2.webp';
 
 
 
-export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
+export default function WelcomePart({ onRemoveFromDOM, onTutorialShow }) {
 	const [showWelcomeButton, setShowWelcomeButton] = useState(true);
 	const [showSelectGen, setShowSelectGen] = useState(false);
 	const [selectGenActive, setSelectGenActive] = useState(false);
 	const [welcomePartHidden, setWelcomePartHidden] = useState(false);
-	const [showNewBlock, setShowNewBlock] = useState(false);
 	const [welcomeContentHidden, setWelcomeContentHidden] = useState(false);
-	const [newBlockHidden, setNewBlockHidden] = useState(true);
 
 	const handleStartButtonClick = () => {
 		setShowWelcomeButton(false);
@@ -49,19 +45,12 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 			setWelcomeContentHidden(true);
 			
 			setTimeout(() => {
-				setShowNewBlock(true);
-				setTimeout(() => {
-					setNewBlockHidden(false);
-				}, 50);
+				setWelcomePartHidden(true);
 				
 				setTimeout(() => {
-					setWelcomePartHidden(true);
-					
-					setTimeout(() => {
-						onRemoveFromDOM();
-						onMainPartShow();
-					}, 100);
-				}, 2700);
+					onRemoveFromDOM();
+					onTutorialShow();
+				}, 300);
 			}, 300);
 		}, 700);
 	};
@@ -166,29 +155,6 @@ export default function WelcomePart({ onRemoveFromDOM, onMainPartShow }) {
 					</div>
 				)}
 			</div>
-
-			{showNewBlock && (
-				<div className={`block_open_level ${newBlockHidden ? '_hidden' : ''}`}>
-					<div className="bg_rnk">
-						<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-							<source srcSet={imgRnkWebp.src} type="image/webp" />
-							<source srcSet={imgRnk.src} type="image/jpeg" />
-							<Image 
-								src={imgRnk} 
-								alt="" 
-								fill
-								unoptimized={true}
-								objectFit='cover'
-							/>
-						</picture>
-					</div>
-
-					<div className="window_open_level">
-						<p><span>Уровень 1</span></p>
-						<h1>Создание ркн</h1>
-					</div>
-				</div>
-			)}
 		</div>
 	);
 }

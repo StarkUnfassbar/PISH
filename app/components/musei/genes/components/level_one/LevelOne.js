@@ -5,12 +5,14 @@ import './level_one.css';
 import './level_one_media.css';
 
 import WelcomePart from '../welcome_part/WelcomePart';
+import TutorialPart from '../tutorial_part/TutorialPart';
 import MainPart from '../main_part/MainPart';
 
 
 
 export default function LevelOne({ stateButton, funForButton, hiddenStatus, step }) {
 	const [removeWelcomeFromDOM, setRemoveWelcomeFromDOM] = useState(false);
+	const [showTutorial, setShowTutorial] = useState(false);
 	const [showMain, setShowMain] = useState(false);
 	const [mainPartHidden, setMainPartHidden] = useState(true);
 
@@ -114,17 +116,23 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 		}, 700);
 	};
 
+	const handleTutorialShow = () => {
+		setShowTutorial(true);
+	};
+
 	const handleMainPartShow = () => {
+		setShowTutorial(false);
 		setShowMain(true);
 		setMainPartHidden(true);
 		
 		setTimeout(() => {
 			setMainPartHidden(false);
+			// Добавляем задержку перед началом игры, чтобы пользователь успел увидеть интерфейс
 			setTimeout(() => {
 				setTimeout(() => {
 					setTimeout(() => {
 						initGame();
-					}, 300);
+					}, 3000); // Задержка 1 секунда перед началом игры
 				}, 1000);
 			}, 300);
 		}, 50);
@@ -157,6 +165,12 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 			{!removeWelcomeFromDOM && (
 				<WelcomePart 
 					onRemoveFromDOM={() => setRemoveWelcomeFromDOM(true)}
+					onTutorialShow={handleTutorialShow}
+				/>
+			)}
+			
+			{showTutorial && (
+				<TutorialPart 
 					onMainPartShow={handleMainPartShow}
 				/>
 			)}
