@@ -31,24 +31,22 @@ export default function MainPart({
 	timerActive, 
 	onAnswer,
 	gameCompleted,
-	gameResult
+	gameResult,
+	onNextLevel
 }) {
 	const [showDefaultHint, setShowDefaultHint] = useState(true);
 	const [defaultHintOpacity, setDefaultHintOpacity] = useState(true);
 	const [showResultHint, setShowResultHint] = useState(false);
 	const [resultHintAnimation, setResultHintAnimation] = useState(false);
 	
-	// Новые состояния для замены блоков
 	const [showGameBlocks, setShowGameBlocks] = useState(true);
 	const [gameBlocksOpacity, setGameBlocksOpacity] = useState(true);
 	const [showResultBlocks, setShowResultBlocks] = useState(false);
 	const [resultBlocksOpacity, setResultBlocksOpacity] = useState(false);
 
-	// Состояния для блока открытия уровня
 	const [showLevelIntro, setShowLevelIntro] = useState(true);
 	const [levelIntroHidden, setLevelIntroHidden] = useState(false);
 	
-	// Состояние для игровой части (появляется после levelIntro)
 	const [showGameContent, setShowGameContent] = useState(false);
 	const [gameContentOpacity, setGameContentOpacity] = useState(false);
 
@@ -67,7 +65,6 @@ export default function MainPart({
 				return () => clearTimeout(timer2);
 			}, 300);
 			
-			// Анимация замены блоков
 			setGameBlocksOpacity(false);
 			
 			const timer3 = setTimeout(() => {
@@ -91,7 +88,6 @@ export default function MainPart({
 			setShowResultHint(false);
 			setResultHintAnimation(false);
 			
-			// Сброс состояний блоков
 			setShowGameBlocks(true);
 			setGameBlocksOpacity(true);
 			setShowResultBlocks(false);
@@ -99,25 +95,18 @@ export default function MainPart({
 		}
 	}, [gameCompleted]);
 
-	// Анимация появления блока открытия уровня и последующего перехода к игровой части
 	useEffect(() => {
 		if (!mainPartHidden) {
-			// Сначала показываем levelIntro
 			setShowLevelIntro(true);
 			
 			const timer = setTimeout(() => {
-				// Скрываем levelIntro
 				setLevelIntroHidden(true);
 				
 				const timer2 = setTimeout(() => {
-					// Убираем levelIntro из DOM
 					setShowLevelIntro(false);
-					
-					// Показываем игровую часть
 					setShowGameContent(true);
 					
 					const timer3 = setTimeout(() => {
-						// Анимируем появление игровой части
 						setGameContentOpacity(true);
 					}, 50);
 					
@@ -133,7 +122,6 @@ export default function MainPart({
 
 	return (
 		<div className={`main_part ${mainPartHidden ? '_hidden' : ''}`}>
-			{/* Блок открытия уровня (появляется перед началом игры) */}
 			{showLevelIntro && (
 				<div className={`block_open_level ${levelIntroHidden ? '_hidden' : ''}`}>
 					<div className="bg_rnk">
@@ -157,7 +145,6 @@ export default function MainPart({
 				</div>
 			)}
 
-			{/* Игровая часть (появляется после levelIntro) */}
 			{showGameContent && (
 				<div className={`game_content ${gameContentOpacity ? '_fade-in' : ''}`}>
 					<div className="block_hint_up">
@@ -210,7 +197,6 @@ export default function MainPart({
 						)}
 					</div>
 
-					{/* Игровые блоки (отображаются во время игры) */}
 					{showGameBlocks && (
 						<>
 							<div className={`block_rnk ${!gameBlocksOpacity ? 'fade-out' : ''}`}>
@@ -296,7 +282,6 @@ export default function MainPart({
 						</>
 					)}
 
-					{/* Блоки результатов (отображаются после завершения игры) */}
 					{showResultBlocks && (
 						<>
 							<div className={`block_result_text ${resultBlocksOpacity ? 'fade-in' : ''}`}>
@@ -330,7 +315,7 @@ export default function MainPart({
 							</div>
 
 							<div className={`block_button_next ${resultBlocksOpacity ? 'fade-in' : ''}`}>
-								<button>
+								<button onClick={onNextLevel}>
 									<span className="icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="91" height="127" viewBox="0 0 91 127" fill="none">
 											<circle cx="15.5" cy="73.5015" r="6.5" stroke="#93ACFC" strokeWidth="6"/>

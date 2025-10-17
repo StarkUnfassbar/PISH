@@ -9,14 +9,18 @@ import 'swiper/css/navigation';
 import './genes.css';
 
 import LevelOne from './components/level_one/LevelOne';
+import LevelTwo from './components/level_two/LevelTwo';
 
 import bgImgPng from './img/bg.png';
 import bgImgWebp from './img/bg.webp';
 
-
-
 export default function Genes({ funForCloseWidget, isMobile }) {
 	const [buttonStartActive, setButtonStartActive] = useState(false);
+	const [currentLevel, setCurrentLevel] = useState(1);
+	const [levelOneHidden, setLevelOneHidden] = useState(false);
+	const [levelTwoHidden, setLevelTwoHidden] = useState(true);
+	const [shouldRenderLevelOne, setShouldRenderLevelOne] = useState(true);
+	const [shouldRenderLevelTwo, setShouldRenderLevelTwo] = useState(false);
 
 	useEffect(() => {
 		const buttonTimer = setTimeout(() => {
@@ -41,6 +45,42 @@ export default function Genes({ funForCloseWidget, isMobile }) {
 		}, 800);
 	};
 
+	const handleNextLevel = () => {
+		// Сначала скрываем первый уровень
+		setLevelOneHidden(true);
+		
+		// После завершения анимации скрытия первого уровня
+		setTimeout(() => {
+			setShouldRenderLevelOne(false);
+			setShouldRenderLevelTwo(true);
+			
+			// Запускаем анимацию появления второго уровня
+			setTimeout(() => {
+				setLevelTwoHidden(false);
+				setCurrentLevel(2);
+			}, 50);
+		}, 800); // Время должно совпадать с duration анимации в CSS
+	};
+
+	const handleCloseWidget = (close, data) => {
+		if (close) {
+			funForCloseWidget(true, data);
+		} else {
+			// При нажатии на кнопку выхода во втором уровне возвращаемся к первому
+			setLevelTwoHidden(true);
+			
+			setTimeout(() => {
+				setShouldRenderLevelTwo(false);
+				setShouldRenderLevelOne(true);
+				
+				setTimeout(() => {
+					setLevelOneHidden(false);
+					setCurrentLevel(1);
+				}, 50);
+			}, 800);
+		}
+	};
+
 	return (
 		<>
 			<div className="block_img_bg">
@@ -56,12 +96,20 @@ export default function Genes({ funForCloseWidget, isMobile }) {
 					/>
 				</picture>
 			</div>
-								
-			{shouldRenderWelcome && (
+			
+			{shouldRenderLevelOne && (
 				<LevelOne
 					stateButton={buttonStartActive}
 					funForButton={handleStartClick}
-					hiddenStatus={welcomeHidden}
+					hiddenStatus={welcomeHidden || levelOneHidden}
+					onNextLevel={handleNextLevel}
+				/>
+			)}
+			
+			{shouldRenderLevelTwo && (
+				<LevelTwo 
+					funForCloseWidget={handleCloseWidget}
+					hiddenStatus={levelTwoHidden}
 				/>
 			)}
 

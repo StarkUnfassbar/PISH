@@ -235,21 +235,23 @@
 }
 
 @media only screen and (max-width : 500px){
-    .widget_window.genes .level_one .tutorial_part .block_tutorial_info .title{
-        font-size: 26px;
-    }
-
-
     .widget_window.genes .level_one .tutorial_part .block_tutorial_info{
+        gap: 15px;
         width: 350px;
-        height: 280px;
+        height: 260px;
         border-radius: 0 0 10px 10px;
         padding: 10px;
     }
 
+
+    .widget_window.genes .level_one .tutorial_part .block_tutorial_info .title{
+        font-size: 22px;
+    }
+
+
     .widget_window.genes .level_one .tutorial_part .block_tutorial_info .block_explanations .block_explanation{
         gap: 15px;
-        padding: 20px;
+        padding: 10px 20px;
     }
 
     .widget_window.genes .level_one .tutorial_part .block_tutorial_info .block_explanations .block_explanation .text{
@@ -269,7 +271,7 @@
 
     .widget_window.genes .level_one .tutorial_part .block_button_switch{
         width: 350px;
-        top: 320px;
+        top: 280px;
     }
 
     .widget_window.genes .level_one .tutorial_part .block_button_switch button{
@@ -290,21 +292,22 @@
 }
 
 @media only screen and (max-width : 400px){
-    .widget_window.genes .level_one .tutorial_part .block_tutorial_info .title{
-        font-size: 26px;
-    }
-
-
     .widget_window.genes .level_one .tutorial_part .block_tutorial_info{
         width: 330px;
-        height: 280px;
+        height: 240px;
         border-radius: 0 0 10px 10px;
         padding: 10px;
     }
 
+
+    .widget_window.genes .level_one .tutorial_part .block_tutorial_info .title{
+        font-size: 20px;
+    }
+
+
     .widget_window.genes .level_one .tutorial_part .block_tutorial_info .block_explanations .block_explanation{
         gap: 15px;
-        padding: 15px;
+        padding: 5px 15px;
     }
 
     .widget_window.genes .level_one .tutorial_part .block_tutorial_info .block_explanations .block_explanation .text{
@@ -324,7 +327,7 @@
 
     .widget_window.genes .level_one .tutorial_part .block_button_switch{
         width: 330px;
-        top: 305px;
+        top: 260px;
     }
 
     .widget_window.genes .level_one .tutorial_part .block_button_switch button{

@@ -8,9 +8,7 @@ import WelcomePart from '../welcome_part/WelcomePart';
 import TutorialPart from '../tutorial_part/TutorialPart';
 import MainPart from '../main_part/MainPart';
 
-
-
-export default function LevelOne({ stateButton, funForButton, hiddenStatus, step }) {
+export default function LevelOne({ stateButton, funForButton, hiddenStatus, step, onNextLevel }) {
 	const [removeWelcomeFromDOM, setRemoveWelcomeFromDOM] = useState(false);
 	const [showTutorial, setShowTutorial] = useState(false);
 	const [showMain, setShowMain] = useState(false);
@@ -24,24 +22,24 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 	const [timerActive, setTimerActive] = useState(false);
 	const [score, setScore] = useState(0);
 	const [gameCompleted, setGameCompleted] = useState(false);
-	const [gameResult, setGameResult] = useState(null); // 'win' or 'fail'
+	const [gameResult, setGameResult] = useState(null);
 
 	const timerRef = useRef(null);
 	const timerActiveRef = useRef(false);
 
 	const notePairs = [
 		{ first: 'C', second: 'G' },
-		{ first: 'G', second: 'C' },
-		{ first: 'G', second: 'C' },
-		{ first: 'C', second: 'G' },
-		{ first: 'A', second: 'U' },
-		{ first: 'T', second: 'A' },
-		{ first: 'G', second: 'C' },
-		{ first: 'A', second: 'U' },
-		{ first: 'C', second: 'G' },
-		{ first: 'T', second: 'A' },
-		{ first: 'G', second: 'C' },
-		{ first: 'A', second: 'U' }
+		// { first: 'G', second: 'C' },
+		// { first: 'G', second: 'C' },
+		// { first: 'C', second: 'G' },
+		// { first: 'A', second: 'U' },
+		// { first: 'T', second: 'A' },
+		// { first: 'G', second: 'C' },
+		// { first: 'A', second: 'U' },
+		// { first: 'C', second: 'G' },
+		// { first: 'T', second: 'A' },
+		// { first: 'G', second: 'C' },
+		// { first: 'A', second: 'U' }
 	];
 
 	const initGame = () => {
@@ -127,12 +125,11 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 		
 		setTimeout(() => {
 			setMainPartHidden(false);
-			// Добавляем задержку перед началом игры, чтобы пользователь успел увидеть интерфейс
 			setTimeout(() => {
 				setTimeout(() => {
 					setTimeout(() => {
 						initGame();
-					}, 3000); // Задержка 1 секунда перед началом игры
+					}, 3000);
 				}, 1000);
 			}, 300);
 		}, 50);
@@ -186,6 +183,7 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 					onAnswer={handleAnswer}
 					gameCompleted={gameCompleted}
 					gameResult={gameResult}
+					onNextLevel={onNextLevel}
 				/>
 			)}
 		</div>
