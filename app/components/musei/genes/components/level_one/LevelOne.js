@@ -29,17 +29,17 @@ export default function LevelOne({ stateButton, funForButton, hiddenStatus, step
 
 	const notePairs = [
 		{ first: 'C', second: 'G' },
-		// { first: 'G', second: 'C' },
-		// { first: 'G', second: 'C' },
-		// { first: 'C', second: 'G' },
-		// { first: 'A', second: 'U' },
-		// { first: 'T', second: 'A' },
-		// { first: 'G', second: 'C' },
-		// { first: 'A', second: 'U' },
-		// { first: 'C', second: 'G' },
-		// { first: 'T', second: 'A' },
-		// { first: 'G', second: 'C' },
-		// { first: 'A', second: 'U' }
+		{ first: 'G', second: 'C' },
+		{ first: 'G', second: 'C' },
+		{ first: 'C', second: 'G' },
+		{ first: 'A', second: 'U' },
+		{ first: 'T', second: 'A' },
+		{ first: 'G', second: 'C' },
+		{ first: 'A', second: 'U' },
+		{ first: 'C', second: 'G' },
+		{ first: 'T', second: 'A' },
+		{ first: 'G', second: 'C' },
+		{ first: 'A', second: 'U' }
 	];
 
 	const initGame = () => {

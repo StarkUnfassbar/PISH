@@ -7,6 +7,7 @@ import './level_two.css';
 import './level_two_media.css';
 
 import imgPattern from '../../img/level_2/pattern.png';
+import imgPatternWebp from '../../img/level_2/pattern.webp';
 
 import imgRnk from '../../img/level_1/rnk.png';
 import imgRnkWebp from '../../img/level_1/rnk.webp';
@@ -393,7 +394,7 @@ export default function LevelTwo({ funForCloseWidget, hiddenStatus }) {
 
             <div className="block_pattern">
                 <picture style={{ position: "absolute", width: "100%", height: "100%"}}>
-                    <source srcSet={imgPattern.src} type="image/webp" />
+                    <source srcSet={imgPatternWebp.src} type="image/webp" />
                     <source srcSet={imgPattern.src} type="image/jpeg" />
                     <Image 
                         src={imgPattern} 
