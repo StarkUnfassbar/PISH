@@ -13,6 +13,7 @@ import Footer from '../components/footer/Footer';
 
 import BlockVideo from '../components/video_biotech/block_video/BlockVideo';
 import PopupAboutBlocked from '../components/video_biotech/popup_about_blocked/PopupAboutBlocked';
+import PopupWelcome from '../components/musei/popup_welcome/PopupWelcome';
 
 import VideoPlayer from '../components/video_biotech/video_player/VideoPlayer';
 import VideoPlayerMobile from '../components/video_biotech/video_player/video_player_mobile/VideoPlayerMobile';
@@ -31,6 +32,7 @@ export default function VideoBiotech() {
 
 	const [isMobile, setIsMobile] = useState(null);
 	const [videosUnlocked, setVideosUnlocked] = useState(false);
+	const [showWelcome, setShowWelcome] = useState(true);
 
 	console.log(videosUnlocked)
 	
@@ -54,6 +56,10 @@ export default function VideoBiotech() {
     const unlockAllVideos = () => {
         setVideosUnlocked(true);
         localStorage.setItem('formCompleted', 'true');
+    };
+
+	const handleWelcomeClose = () => {
+        setShowWelcome(false);
     };
 
 	const [popupHeroShow, setPopupHeroShow] = useState(false);
@@ -242,6 +248,13 @@ export default function VideoBiotech() {
 					popupHeroOpen={popupHeroOpen} 
 					funForClose={() => handlePopupOpen(false)}
 					onFormSuccess={unlockAllVideos}
+				/>
+			)}
+			
+			{showWelcome && (
+				<PopupWelcome 
+					onClose={handleWelcomeClose}
+					pageType="video_lessons"
 				/>
 			)}
 		</div>

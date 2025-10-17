@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-
-
 export async function GET() {
     let connection;
     
@@ -51,35 +49,34 @@ export async function GET() {
         
         console.log('✅ SSL подключение к TimeWeb MySQL установлено');
 
-        // Проверяем существование таблицы
-        const [tables] = await connection.execute(
-            `SELECT TABLE_NAME 
-            FROM information_schema.TABLES 
-            WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?`,
-            [process.env.DB_NAME, 'registrations']
-        );
-
-        if (tables.length === 0) {
-        console.log('❌ Таблица "registrations" не найдена');
-        return NextResponse.json(
-            { 
-                error: 'Таблица registrations не найдена',
-                data: []
-            },
-            { status: 404 }
-        );
+        // Получаем данные из таблицы registrations
+        let registrations = [];
+        try {
+            const [regRows] = await connection.execute(
+                'SELECT * FROM registrations ORDER BY created_at ASC'
+            );
+            registrations = regRows;
+            console.log(`✅ Успешно получено ${registrations.length} записей из таблицы registrations`);
+        } catch (error) {
+            console.log('ℹ️ Таблица registrations не найдена или пуста:', error.message);
         }
 
-        console.log('✅ Таблица "registrations" существует, получаем данные...');
+        // Получаем данные из таблицы visits
+        let visits = [];
+        try {
+            const [visRows] = await connection.execute(
+                'SELECT * FROM visits ORDER BY created_at ASC'
+            );
+            visits = visRows;
+            console.log(`✅ Успешно получено ${visits.length} записей из таблицы visits`);
+        } catch (error) {
+            console.log('ℹ️ Таблица visits не найдена или пуста:', error.message);
+        }
 
-        // Получаем все данные из таблицы в хронологическом порядке (старые сверху)
-        const [rows] = await connection.execute(
-            'SELECT * FROM registrations ORDER BY created_at ASC'
-        );
+        // Формируем данные для Excel
+        const excelData = formatDataForExcel(registrations, visits);
 
-        console.log(`✅ Успешно получено ${rows.length} записей из MySQL`);
-
-        return NextResponse.json(rows);
+        return NextResponse.json(excelData);
 
     } catch (error) {
         console.error('❌ Ошибка при получении данных из TimeWeb MySQL:');
@@ -107,4 +104,22 @@ export async function GET() {
             }
         }
     }
+}
+
+// Функция для форматирования данных для Excel
+function formatDataForExcel(registrations, visits) {
+    // Создаем объект для хранения данных
+    const result = {
+        registrations: registrations || [],
+        visits: visits || [],
+        summary: {
+            totalRegistrations: (registrations || []).length,
+            totalVisits: (visits || []).length,
+            museumVisits: (visits || []).filter(v => v.page_type === 'museum').length,
+            videoLessonsVisits: (visits || []).filter(v => v.page_type === 'video_lessons').length,
+            otherVisits: (visits || []).filter(v => v.page_type && v.page_type !== 'museum' && v.page_type !== 'video_lessons').length
+        }
+    };
+
+    return result;
 }

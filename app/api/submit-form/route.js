@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-
-
 export async function POST(request) {
     let connection;
     
@@ -17,17 +15,9 @@ export async function POST(request) {
 
         // Получаем данные из тела запроса
         const body = await request.json();
-        const { fio, email, region } = body;
+        const { fio, email, region, type, pageType } = body;
 
-        console.log('📥 Получены данные:', { fio, email, region });
-
-        // Валидация данных
-        if (!fio || !email || !region) {
-        return NextResponse.json(
-            { message: 'Все поля обязательны для заполнения' },
-            { status: 400 }
-        );
-        }
+        console.log('📥 Получены данные:', body);
 
         // Подключаемся к MySQL
         const mysql = await import('mysql2/promise');
@@ -43,7 +33,7 @@ export async function POST(request) {
         // Настройки подключения для TimeWeb Cloud
         const connectionConfig = {
             host: process.env.DB_HOST,
-            port: parseInt(process.env.DB_PORT) || 3306, // Явно преобразуем в число
+            port: parseInt(process.env.DB_PORT) || 3306,
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
@@ -70,24 +60,68 @@ export async function POST(request) {
         
         console.log('✅ SSL подключение к TimeWeb MySQL установлено');
 
-        // Автоматически создаем таблицу если её нет
-        await createTableIfNotExists(connection);
+        // Обработка разных типов запросов
+        if (type === 'visit') {
+            // Запрос от кнопки "Посетить"
+            console.log('🎯 Обработка данных о посещении для страницы:', pageType);
+            
+            if (!pageType) {
+                return NextResponse.json(
+                    { message: 'Тип страницы обязателен для данных о посещении' },
+                    { status: 400 }
+                );
+            }
 
-        // Вставляем данные в таблицу
-        const [result] = await connection.execute(
-            'INSERT INTO registrations (fio, email, region) VALUES (?, ?, ?)',
-            [fio, email, region]
-        );
+            // Создаем таблицу для посещений если её нет
+            await createVisitsTableIfNotExists(connection);
 
-        console.log('✅ Данные успешно сохранены в TimeWeb MySQL, ID:', result.insertId);
+            // Вставляем данные о посещении
+            const [result] = await connection.execute(
+                'INSERT INTO visits (page_type) VALUES (?)',
+                [pageType]
+            );
 
-        return NextResponse.json(
-            { 
-                message: 'Данные успешно сохранены в базу данных!',
-                id: result.insertId 
-            },
-            { status: 201 }
-        );
+            console.log('✅ Данные о посещении сохранены, ID:', result.insertId);
+
+            return NextResponse.json(
+                { 
+                    message: 'Данные о посещении успешно сохранены!',
+                    id: result.insertId 
+                },
+                { status: 201 }
+            );
+
+        } else {
+            // Старый запрос от формы регистрации
+            console.log('📝 Обработка данных формы регистрации');
+
+            // Валидация данных для формы регистрации
+            if (!fio || !email || !region) {
+                return NextResponse.json(
+                    { message: 'Все поля обязательны для заполнения' },
+                    { status: 400 }
+                );
+            }
+
+            // Создаем таблицу для регистраций если её нет
+            await createRegistrationsTableIfNotExists(connection);
+
+            // Вставляем данные в таблицу регистраций
+            const [result] = await connection.execute(
+                'INSERT INTO registrations (fio, email, region) VALUES (?, ?, ?)',
+                [fio, email, region]
+            );
+
+            console.log('✅ Данные регистрации успешно сохранены, ID:', result.insertId);
+
+            return NextResponse.json(
+                { 
+                    message: 'Данные успешно сохранены в базу данных!',
+                    id: result.insertId 
+                },
+                { status: 201 }
+            );
+        }
 
     } catch (error) {
         console.error('❌ Ошибка при сохранении в TimeWeb MySQL:');
@@ -117,10 +151,9 @@ export async function POST(request) {
     }
 }
 
-// Функция для создания таблицы если её нет
-async function createTableIfNotExists(connection) {
+// Функция для создания таблицы регистраций если её нет
+async function createRegistrationsTableIfNotExists(connection) {
     try {
-        // Проверяем существование таблицы
         const [tables] = await connection.execute(
             `SELECT TABLE_NAME 
             FROM information_schema.TABLES 
@@ -131,7 +164,6 @@ async function createTableIfNotExists(connection) {
         if (tables.length === 0) {
             console.log('🆕 Таблица "registrations" не найдена, создаем...');
             
-            // Создаем таблицу
             await connection.execute(`
                 CREATE TABLE registrations (
                 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -148,7 +180,39 @@ async function createTableIfNotExists(connection) {
         }
 
     } catch (error) {
-        console.error('❌ Ошибка при создании таблицы:', error);
+        console.error('❌ Ошибка при создании таблицы registrations:', error);
+        throw error;
+    }
+}
+
+// Функция для создания таблицы посещений если её нет
+async function createVisitsTableIfNotExists(connection) {
+    try {
+        const [tables] = await connection.execute(
+            `SELECT TABLE_NAME 
+            FROM information_schema.TABLES 
+            WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?`,
+            [process.env.DB_NAME, 'visits']
+        );
+
+        if (tables.length === 0) {
+            console.log('🆕 Таблица "visits" не найдена, создаем...');
+            
+            await connection.execute(`
+                CREATE TABLE visits (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                page_type VARCHAR(50) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            `);
+
+            console.log('✅ Таблица "visits" успешно создана');
+        } else {
+            console.log('✅ Таблица "visits" уже существует');
+        }
+
+    } catch (error) {
+        console.error('❌ Ошибка при создании таблицы visits:', error);
         throw error;
     }
 }

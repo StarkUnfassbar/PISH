@@ -68,6 +68,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .popup_welcome .popup_content .block_content .block_text h1 {
@@ -79,4 +80,23 @@
     line-height: 40px;
     text-transform: uppercase;
     text-align: center;
+}
+
+.popup_welcome .popup_content .block_content .visit_button {
+    padding: 15px 40px;
+    background-color: #4547bb;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Benzin';
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup_welcome .popup_content .block_content .visit_button:hover {
+    background-color: #5a5cd4;
+    transform: scale(1.05);
 }
