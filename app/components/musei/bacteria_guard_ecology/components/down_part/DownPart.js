@@ -1,7 +1,9 @@
-// DownPart.js
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import Image from "next/image";
+
+
 import './down_part.css';
 import './down_part_media.css';
 
@@ -20,6 +22,7 @@ import slideImg9 from '../../img/slider_img/9.png';
 import slideImg10 from '../../img/slider_img/10.png';
 import slideImg11 from '../../img/slider_img/11.png';
 import slideImg12 from '../../img/slider_img/12.png';
+
 
 import SlideComponent from './SlideComponent';
 
@@ -41,14 +44,42 @@ const SLIDES_DATA_2 = [
     { id: "neft", image: slideImg12, text: "Нефть" },
 ];
 
-// Компонент для приветственного блока
+
 const WelcomeBlock = ({ className = '' }) => (
     <div className={`block_welcome ${className}`}>
         <p>Очистите пролив <br/> с помощью бактерий</p>
     </div>
 );
 
-// Компонент для блока подтверждения
+
+import imgIconWin from '../../img/icon_win.png';
+
+const CompleteVictoryBlock = ({ className = '' }) => (
+    <div className={`block_complete_victory ${className}`}>
+        <div className="block_icon">
+            <div className="icon_container">
+                <picture style={{ position: "absolute", width: "100%", height: "100%"}}>
+                    <source srcSet={imgIconWin.src} type="image/webp" />
+                    <source srcSet={imgIconWin.src} type="image/jpeg" />
+                    <Image 
+                        className="bg_illustration" 
+                        src={imgIconWin} 
+                        alt="" 
+                        fill
+                        unoptimized={true}
+                        objectFit='cover'
+                    />
+                </picture>
+            </div>
+        </div>
+
+        <div className="block_text">
+            <h1>Победа!</h1>
+            <p>Благодаря вам бактерии полностью очистили <br/> окружающую среду от отходов</p>
+        </div>
+    </div>
+);
+
 const ConfirmationBlock = ({ onConfirm }) => (
     <div className="block_confirmations">
         <h4>Подтвердить выбор?</h4>
@@ -80,7 +111,6 @@ const ConfirmationBlock = ({ onConfirm }) => (
     </div>
 );
 
-// Компонент для информационного блока
 const InfoBlock = () => (
     <div className="block_info">
         <span className="icon"></span>
@@ -89,7 +119,6 @@ const InfoBlock = () => (
     </div>
 );
 
-// Компонент для блока результата
 const ResultBlock = ({ isCorrect }) => (
     <>
         {isCorrect ? (
@@ -106,18 +135,13 @@ const ResultBlock = ({ isCorrect }) => (
     </>
 );
 
-// Компонент для блока выбора
 const SelectionBlock = ({ isSwiped, onSlideChange, className = '', onConfirm, answerResult }) => {
-    // Определяем какой блок показывать
     const renderCenterBlock = () => {
         if (answerResult !== null) {
-            // Показываем результат если есть ответ
             return <ResultBlock isCorrect={answerResult} />;
         } else if (isSwiped) {
-            // Показываем подтверждение если был свайп но нет ответа
             return <ConfirmationBlock onConfirm={onConfirm} />;
         } else {
-            // Показываем информационный блок по умолчанию
             return <InfoBlock />;
         }
     };
@@ -143,7 +167,7 @@ const SelectionBlock = ({ isSwiped, onSlideChange, className = '', onConfirm, an
 
 
 
-export default function DownPart({ selectedBacteria, onCheckAnswer }) {
+export default function DownPart({ selectedBacteria, onCheckAnswer, bacteriaVictoryState }) {
     const [currentDownPart, setCurrentDownPart] = useState({
         id: 0,
         content: "welcome",
@@ -151,7 +175,7 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
     });
     const [nextDownPart, setNextDownPart] = useState(null);
     const [isSwiped, setIsSwiped] = useState(false);
-    const [answerResult, setAnswerResult] = useState(null); // null - нет ответа, true - правильно, false - неправильно
+    const [answerResult, setAnswerResult] = useState(null);
 
     const currentSlidesRef = useRef({
         slider1: null,
@@ -162,60 +186,48 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
     const selectedBacteriaRef = useRef(selectedBacteria);
     const previousSlidesState = useRef(JSON.stringify(currentSlidesRef.current));
 
+    const isCompleteVictory = bacteriaVictoryState && 
+        Object.values(bacteriaVictoryState).filter(Boolean).length === 5;
+
     const handleSlideChange = (sliderId, slideId) => {
         currentSlidesRef.current[sliderId] = slideId;
         
-        console.log('Текущие ID слайдов:', currentSlidesRef.current, isSwiped);
-        
         const currentState = JSON.stringify(currentSlidesRef.current);
         
-        // Сравниваем с предыдущим состоянием для обнаружения изменений
         if (currentState !== previousSlidesState.current) {
-            // Если был получен ответ и пользователь снова свайпнул - сбрасываем результат
             if (answerResult !== null) {
                 setAnswerResult(null);
-                console.log('Answer result reset due to new swipe');
             }
             
-            // Обновляем предыдущее состояние
             previousSlidesState.current = currentState;
         }
         
-        // Сравниваем с начальным состоянием только после инициализации
         if (hasTrackedInitialization.current) {
             if (currentState !== initialSlidesState.current && !isSwiped) {
                 setIsSwiped(true);
-                console.log('First swipe detected!');
             }
         }
     };
 
-    // Функция для обработки подтверждения выбора
     const handleConfirm = () => {
         if (onCheckAnswer && currentSlidesRef.current.slider1 && currentSlidesRef.current.slider2) {
             const result = onCheckAnswer(currentSlidesRef.current.slider1, currentSlidesRef.current.slider2);
             setAnswerResult(result);
-            console.log('Answer result set to:', result);
         }
     };
 
-    // Отслеживаем завершение инициализации слайдеров
     useEffect(() => {
-        // Ждем пока оба слайдера проинициализируются (будут не null)
         if (currentSlidesRef.current.slider1 !== null && currentSlidesRef.current.slider2 !== null) {
-            // Даем немного времени для стабилизации
             const timer = setTimeout(() => {
                 initialSlidesState.current = JSON.stringify(currentSlidesRef.current);
                 previousSlidesState.current = JSON.stringify(currentSlidesRef.current);
                 hasTrackedInitialization.current = true;
-                console.log('Initial slides state tracked:', initialSlidesState.current);
             }, 100);
             
             return () => clearTimeout(timer);
         }
     }, [currentSlidesRef.current.slider1, currentSlidesRef.current.slider2]);
 
-    // Сброс состояний при изменении выбранной бактерии
     useEffect(() => {
         if (selectedBacteria !== null && selectedBacteriaRef.current !== selectedBacteria) {
             setIsSwiped(false);
@@ -227,12 +239,10 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
             };
             initialSlidesState.current = JSON.stringify(currentSlidesRef.current);
             previousSlidesState.current = JSON.stringify(currentSlidesRef.current);
-            console.log('Bacteria changed, states reset');
         }
         selectedBacteriaRef.current = selectedBacteria;
     }, [selectedBacteria]);
 
-    // Сброс состояний при сбросе выбора бактерий
     useEffect(() => {
         if (selectedBacteria === null) {
             setIsSwiped(false);
@@ -246,7 +256,28 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
     }, [selectedBacteria]);
 
     useEffect(() => {
-        if (selectedBacteria !== null) {
+        if (isCompleteVictory) {
+            const newDownPartId = currentDownPart.id + 1;
+            
+            setNextDownPart({
+                id: newDownPartId,
+                content: "complete_victory",
+                show: false
+            });
+            
+            setTimeout(() => {
+                setNextDownPart(prev => prev ? { ...prev, show: true } : null);
+            }, 50);
+            
+            setTimeout(() => {
+                setCurrentDownPart({
+                    id: newDownPartId,
+                    content: "complete_victory",
+                    show: true
+                });
+                setNextDownPart(null);
+            }, 550);
+        } else if (selectedBacteria !== null) {
             const newDownPartId = currentDownPart.id + 1;
             
             setNextDownPart({
@@ -268,10 +299,10 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
                 setNextDownPart(null);
             }, 550);
         }
-    }, [selectedBacteria]);
+    }, [selectedBacteria, isCompleteVictory]);
 
     useEffect(() => {
-        if (selectedBacteria === null && currentDownPart.id > 0) {
+        if (selectedBacteria === null && currentDownPart.id > 0 && !isCompleteVictory) {
             const newDownPartId = currentDownPart.id + 1;
             
             setNextDownPart({
@@ -298,9 +329,7 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
                 slider2: null
             };
         }
-    }, [selectedBacteria]);
-
-
+    }, [selectedBacteria, isCompleteVictory]);
     
     return (
         <div className="down_part">
@@ -322,6 +351,13 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
                 />
             )}
 
+            {currentDownPart.content === "complete_victory" && (
+                <CompleteVictoryBlock 
+                    key={currentDownPart.id} 
+                    className={nextDownPart ? '_hidden' : ''}
+                />
+            )}
+
             {nextDownPart && nextDownPart.content === "welcome" && (
                 <WelcomeBlock 
                     key={nextDownPart.id} 
@@ -336,6 +372,13 @@ export default function DownPart({ selectedBacteria, onCheckAnswer }) {
                     onSlideChange={handleSlideChange}
                     onConfirm={handleConfirm}
                     answerResult={answerResult}
+                    className={nextDownPart.show ? '' : '_hide'}
+                />
+            )}
+
+            {nextDownPart && nextDownPart.content === "complete_victory" && (
+                <CompleteVictoryBlock 
+                    key={nextDownPart.id} 
                     className={nextDownPart.show ? '' : '_hide'}
                 />
             )}

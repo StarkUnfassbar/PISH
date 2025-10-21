@@ -70,7 +70,12 @@ export default function PopupWelcome({ onClose, pageType = 'museum' }) {
 
                 <div className="block_content">
                     <div className="block_text">
-                        <h1>Добро пожаловать в биотех музей!</h1>
+                        {/* <h1>Добро пожаловать в биотех музей!</h1> */}
+                        {pageType == 'museum' ? (
+                            <h1>Добро пожаловать в биотех музей!</h1>
+                        ) : (
+                            <h1>Видеоуроки о биотехе</h1>
+                        )}
                     </div>
                     <button className="visit_button" onClick={handleClose}>
                         Посетить

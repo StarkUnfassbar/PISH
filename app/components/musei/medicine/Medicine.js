@@ -7,10 +7,10 @@ import './medicine.css';
 import './medicine_media.css';
 
 const videoList = [
-    '/video/medicine/part_1.mp4',
-    '/video/medicine/part_2.mp4',
-    '/video/medicine/part_3.mp4',
-    '/video/medicine/part_4.mp4',
+    'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_1.mp4',
+    'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_2.mp4',
+    'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_3.mp4',
+    'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_4.mp4',
 ];
 
 export default function Medicine({ funForCloseWidget, isMobile }) {

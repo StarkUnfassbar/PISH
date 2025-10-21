@@ -9,8 +9,6 @@ import './main_screen_media.css';
 import UpperPart from '../upper_part/UpperPart';
 import DownPart from '../down_part/DownPart';
 
-
-// Список правильных ответов для каждой бактерии
 const CORRECT_ANSWERS = {
 	"marine_bacteria": {
 		slider1: "dizelnoe-toplivo",
@@ -34,7 +32,6 @@ const CORRECT_ANSWERS = {
 	}
 };
 
-// Начальное состояние для всех бактерий
 const INITIAL_BACTERIA_STATE = {
 	"marine_bacteria": false,
 	"clostridium": false,
@@ -42,7 +39,6 @@ const INITIAL_BACTERIA_STATE = {
 	"flavobacteria": false,
 	"pediococcus": false
 };
-
 
 import bgIllustrationImgWebp from '../../img/bg_illustrations/bg.webp';
 import bgIllustrationImg from '../../img/bg_illustrations/bg.jpg';
@@ -89,9 +85,7 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 		if (!correctAnswer) return false;
 		
 		const isCorrect = slider1Id === correctAnswer.slider1 && slider2Id === correctAnswer.slider2;
-		console.log('Answer is correct:', isCorrect);
 		
-		// Если ответ правильный, обновляем состояние победы для этой бактерии
 		if (isCorrect) {
 			setBacteriaVictoryState(prevState => ({
 				...prevState,
@@ -102,7 +96,6 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 		return isCorrect;
 	};
 
-	// Верстка для мобильных устройств
 	if (isMobile) {
 		return (
 			<div className={`main_screen ${hiddenStatus ? "_hidden" : ''}`}>
@@ -143,6 +136,7 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 						<DownPart 
 							selectedBacteria={selectedBacteria} 
 							onCheckAnswer={checkAnswer}
+							bacteriaVictoryState={bacteriaVictoryState}
 						/>
 					</div>
 				</div>
@@ -150,7 +144,6 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 		);
 	}
 
-	// Стандартная верстка для десктопов
 	return (
 		<div className={`main_screen ${hiddenStatus ? "_hidden" : ''}`}>
 			<div className="choosing_bacterium">
@@ -164,6 +157,7 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 				<DownPart 
 					selectedBacteria={selectedBacteria} 
 					onCheckAnswer={checkAnswer}
+					bacteriaVictoryState={bacteriaVictoryState}
 				/>
 			</div>
 
@@ -182,7 +176,6 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 				</picture>
 
 				<div className="musur_illustrations">
-					{/* <img className={`musor_illustration ${bacteriaVictoryState.marine_bacteria ? "_victory" : ""}`} src={musorImg1.src} alt=""></img> */}
 					<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
 						<source srcSet={musorImg1Webp.src} type="image/webp" />
 						<source srcSet={musorImg1.src} type="image/jpeg" />
@@ -247,10 +240,6 @@ export default function MainScreen({ stateButton, funForButton, hiddenStatus, is
 							objectFit='cover'
 						/>
 					</picture>
-					{/* <img className={`musor_illustration ${bacteriaVictoryState.clostridium ? "_victory" : ""}`} src={musorImg2.src} alt=""></img>
-					<img className={`musor_illustration ${bacteriaVictoryState.sphingomonas ? "_victory" : ""}`} src={musorImg3.src} alt=""></img>
-					<img className={`musor_illustration ${bacteriaVictoryState.flavobacteria ? "_victory" : ""}`} src={musorImg4.src} alt=""></img>
-					<img className={`musor_illustration ${bacteriaVictoryState.pediococcus ? "_victory" : ""}`} src={musorImg5.src} alt=""></img> */}
 				</div>
 			</div>
 		</div>

@@ -8,13 +8,13 @@ import './aquabio_media.css';
 
 
 const videoList = [
-	'/video/aquabio/part_1.mp4',
-	'/video/aquabio/part_2.mp4',
-	'/video/aquabio/part_3.mp4',
-	'/video/aquabio/part_4.mp4',
-	'/video/aquabio/part_5.mp4',
-	'/video/aquabio/part_6.mp4',
-	'/video/aquabio/part_7.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_1.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_2.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_3.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_4.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_5.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_6.mp4',
+	'https://s3.twcstorage.ru/e89c3020-2d77e7ca-e868-4d3a-992d-70ee90c24707/pish_video/musei/aquabio/video_7.mp4',
 ];
 
 
