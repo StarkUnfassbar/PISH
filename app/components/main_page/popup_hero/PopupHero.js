@@ -64,17 +64,6 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, p
 			</button>
 
 			<div className="popup_content">
-				{/* {!isMobile && <Image src="/img/main/popup_hero/bg.png" alt="" fill unoptimized={true} />}
-
-				<div className="block_info">
-					<div className="block_img"></div>
-
-					<div className="block_text">
-						<h3>{hero.fio}</h3>
-            			<p>{hero.description}</p>
-					</div>
-				</div> */}
-
 				{isMobile ? (
 					<VideoPlayerMobile 
 						key="video-player"
@@ -88,14 +77,6 @@ export default function StandardButton({ isMobile, popupHeroOpen, popupIdHero, p
 						videoTitle={"Биоженеры дальнего"}
 					/>
 				)}
-
-				{/* <video 
-					autoPlay 
-					loop={true}
-				>
-					<source src={popupVideoUrl} type="video/mp4" />
-					Your browser does not support the video tag.
-				</video> */}
 			</div>
 		</div>
 	);

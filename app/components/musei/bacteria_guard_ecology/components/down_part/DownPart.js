@@ -3,10 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 
-
 import './down_part.css';
 import './down_part_media.css';
-
 
 import imgInfo from '../../img/img_info.png';
 
@@ -22,7 +20,6 @@ import slideImg9 from '../../img/slider_img/9.png';
 import slideImg10 from '../../img/slider_img/10.png';
 import slideImg11 from '../../img/slider_img/11.png';
 import slideImg12 from '../../img/slider_img/12.png';
-
 
 import SlideComponent from './SlideComponent';
 
@@ -44,13 +41,11 @@ const SLIDES_DATA_2 = [
     { id: "neft", image: slideImg12, text: "Нефть" },
 ];
 
-
 const WelcomeBlock = ({ className = '' }) => (
     <div className={`block_welcome ${className}`}>
         <p>Очистите пролив <br/> с помощью бактерий</p>
     </div>
 );
-
 
 import imgIconWin from '../../img/icon_win.png';
 
@@ -136,6 +131,9 @@ const ResultBlock = ({ isCorrect }) => (
 );
 
 const SelectionBlock = ({ isSwiped, onSlideChange, className = '', onConfirm, answerResult }) => {
+    const [currentBlock, setCurrentBlock] = useState(null);
+    const [isVisible, setIsVisible] = useState(true);
+
     const renderCenterBlock = () => {
         if (answerResult !== null) {
             return <ResultBlock isCorrect={answerResult} />;
@@ -146,6 +144,19 @@ const SelectionBlock = ({ isSwiped, onSlideChange, className = '', onConfirm, an
         }
     };
 
+    useEffect(() => {
+        if (currentBlock === null) {
+            setCurrentBlock(renderCenterBlock());
+        } else {
+            setIsVisible(false);
+            
+            setTimeout(() => {
+                setCurrentBlock(renderCenterBlock());
+                setIsVisible(true);
+            }, 300);
+        }
+    }, [answerResult, isSwiped]);
+
     return (
         <div className={`block_selection ${className}`}>
             <SlideComponent 
@@ -154,7 +165,14 @@ const SelectionBlock = ({ isSwiped, onSlideChange, className = '', onConfirm, an
                 sliderId="slider1"
             />
 
-            {renderCenterBlock()}
+            <div 
+                className="center_block"
+                style={{
+                    opacity: isVisible ? 1 : 0,
+                }}
+            >
+                {currentBlock}
+            </div>
 
             <SlideComponent 
                 slides={SLIDES_DATA_2} 
@@ -164,8 +182,6 @@ const SelectionBlock = ({ isSwiped, onSlideChange, className = '', onConfirm, an
         </div>
     );
 };
-
-
 
 export default function DownPart({ selectedBacteria, onCheckAnswer, bacteriaVictoryState }) {
     const [currentDownPart, setCurrentDownPart] = useState({
