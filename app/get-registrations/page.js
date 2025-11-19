@@ -54,6 +54,10 @@ export default function GetRegistrationsPage() {
             return;
         }
 
+        // Базовые значения для статистики
+        const BASE_MUSEUM_COUNT = 62855;
+        const BASE_VIDEO_LESSONS_COUNT = 102539;
+
         // Создаем CSV содержимое с двумя таблицами
         let csvContent = '';
 
@@ -83,9 +87,9 @@ export default function GetRegistrationsPage() {
         csvContent += ';;СТАТИСТИКА ПОСЕЩЕНИЙ;;\n';
         csvContent += ';;Тип страницы;Количество посещений;\n';
         
-        // Подсчитываем статистику
-        const museumCount = data.visits ? data.visits.filter(v => v.page_type === 'museum').length : 0;
-        const videoLessonsCount = data.visits ? data.visits.filter(v => v.page_type === 'video_lessons').length : 0;
+        // Подсчитываем статистику и добавляем базовые значения
+        const museumCount = (data.visits ? data.visits.filter(v => v.page_type === 'museum').length : 0) + BASE_MUSEUM_COUNT;
+        const videoLessonsCount = (data.visits ? data.visits.filter(v => v.page_type === 'video_lessons').length : 0) + BASE_VIDEO_LESSONS_COUNT;
         
         // Данные статистики (с отступом в 2 ячейки)
         csvContent += `;;"Страница музея";${museumCount};\n`;
