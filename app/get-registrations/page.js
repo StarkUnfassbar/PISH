@@ -104,7 +104,7 @@ export default function GetRegistrationsPage() {
                 📊 Скачать все данные в Excel
             </button>
             
-            <div style={{ marginTop: '30px', padding: '15px', backgroundColor: '#f3f4f6', borderRadius: '8px' }}>
+            {/* <div style={{ marginTop: '30px', padding: '15px', backgroundColor: '#f3f4f6', borderRadius: '8px' }}>
                 <p style={{ margin: 0, color: '#374151' }}>
                 💡 <strong>Информация:</strong> Будет скачан один файл с тремя таблицами
                 </p>
@@ -115,7 +115,7 @@ export default function GetRegistrationsPage() {
                     <li>Справа - детальная таблица всех посещений</li>
                     <li>Файл открывается в Excel, Google Sheets и других табличных редакторах</li>
                 </ul>
-            </div>
+            </div> */}
         </div>
     );
 }
