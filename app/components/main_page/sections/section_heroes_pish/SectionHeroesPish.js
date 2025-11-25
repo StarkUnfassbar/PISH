@@ -9,7 +9,7 @@ import './section_heroes_pish_media.css';
 import StandardButton from '../../standard_button/StandardButton';
 
 import PopupHero from '../../popup_hero/PopupHero';
-import PopupBioengineerBlocked from './popup_bioengineer_blocked/PopupBioengineerBlocked';
+// import PopupBioengineerBlocked from './popup_bioengineer_blocked/PopupBioengineerBlocked';
 
 
 
@@ -19,7 +19,7 @@ export default function SectionHeroesPish({ isMobile }) {
 	const [popupIdHero, setPopupIdHero] = useState(1);
 	const [popupVideoUrl, setPopupVideoUrl] = useState("");
 
-	const [popupBioengineerShow, setPopupBioengineerShow] = useState(false);
+	// const [popupBioengineerShow, setPopupBioengineerShow] = useState(false);
 
 	const handlePopupOpen = (open, id) => {
 		if(open){
@@ -54,13 +54,13 @@ export default function SectionHeroesPish({ isMobile }) {
 		}
 	};
 
-	const handleBioengineerPopupOpen = () => {
-		setPopupBioengineerShow(true);
-	};
+	// const handleBioengineerPopupOpen = () => {
+	// 	setPopupBioengineerShow(true);
+	// };
 
-	const handleBioengineerPopupClose = () => {
-		setPopupBioengineerShow(false);
-	};
+	// const handleBioengineerPopupClose = () => {
+	// 	setPopupBioengineerShow(false);
+	// };
 
 
 
@@ -76,7 +76,7 @@ export default function SectionHeroesPish({ isMobile }) {
 								<span className="fio">Сидоренко Андрей Владимирович</span>
 								<span className="description">Главный механик производства «Кормбиосинтез».</span>
 
-								<StandardButton text="Узнать больше" type="learn_more" funForButton={handleBioengineerPopupOpen} />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 1)} />
 							</div>
 
 							<div className="block_img">
@@ -114,7 +114,7 @@ export default function SectionHeroesPish({ isMobile }) {
 									для сельскохозяйственной отрасли.
 								</span>
 
-								<StandardButton text="Узнать больше" type="learn_more" funForButton={handleBioengineerPopupOpen} />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 2)} />
 							</div>
 						</div>
 
@@ -123,7 +123,7 @@ export default function SectionHeroesPish({ isMobile }) {
 								<span className="fio">Штермер Ванесса</span>
 								<span className="description">Лаборант-исследователь молодёжной лаборатории ДНК-рекомбинантных технологий ПИШ, студентка 4 курса направления «Биотехнология»</span>
 
-								<StandardButton text="Узнать больше" type="learn_more" funForButton={handleBioengineerPopupOpen} />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 							</div>
 
 							<div className="block_img">
@@ -166,7 +166,7 @@ export default function SectionHeroesPish({ isMobile }) {
 									</div>
 								</div>
 
-								<StandardButton text="Узнать больше" type="learn_more" funForButton={handleBioengineerPopupOpen} />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 1)} />
 							</div>
 
 							<div className="block_hero">
@@ -191,13 +191,13 @@ export default function SectionHeroesPish({ isMobile }) {
 									</div>
 								</div>
 
-								<StandardButton text="Узнать больше" type="learn_more" funForButton={handleBioengineerPopupOpen} />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 2)} />
 							</div>
 						</div>
 
 						<div className="lower_part">
 							<div className="block_hero">
-								<StandardButton text="Узнать больше" type="learn_more" funForButton={handleBioengineerPopupOpen} />
+								<StandardButton text="Узнать больше" type="learn_more" funForButton={() => handlePopupOpen(true, 3)} />
 
 								<div className="block_info">
 									<picture style={{ position: "absolute", width: "100%", height: "100%"}}>
@@ -234,7 +234,7 @@ export default function SectionHeroesPish({ isMobile }) {
 
 			{popupHeroShow && <PopupHero isMobile={isMobile} popupHeroOpen={popupHeroOpen} popupIdHero={popupIdHero} popupVideoUrl={popupVideoUrl} funForClose={() => handlePopupOpen(false)} />}
 			
-			{popupBioengineerShow && <PopupBioengineerBlocked onClose={handleBioengineerPopupClose} />}
+			{/* {popupBioengineerShow && <PopupBioengineerBlocked onClose={handleBioengineerPopupClose} />} */}
 		</>
 	);
 }
