@@ -49,8 +49,8 @@ export default function GetRegistrationsPage() {
             return;
         }
 
-        const BASE_MUSEUM_COUNT = 62855;
-        const BASE_VIDEO_LESSONS_COUNT = 102539;
+        const BASE_MUSEUM_COUNT = 134264;
+        const BASE_VIDEO_LESSONS_COUNT = 183885;
 
         let csvContent = '';
 
